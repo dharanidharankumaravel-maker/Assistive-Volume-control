@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:50:11.758Z" hostname="DESKTOP-45Q6PEN" time="0.068">
+  <properties/>
+  <testcase name="initial uiState observes diagnostic state" classname="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" time="0.006"/>
+  <testcase name="onRepairOverlay failure emits failure message" classname="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" time="0.008"/>
+  <testcase name="onRepairOverlay executes repair and emits success message" classname="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

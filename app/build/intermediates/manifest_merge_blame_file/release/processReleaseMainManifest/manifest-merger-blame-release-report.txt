@@ -1,0 +1,215 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.volumepilot"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="35" />
+10
+11    <!-- Normal permissions for volume and feedback -->
+12    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+12-->D:\assitivePilot\app\src\main\AndroidManifest.xml:5:5-80
+12-->D:\assitivePilot\app\src\main\AndroidManifest.xml:5:22-77
+13    <uses-permission android:name="android.permission.VIBRATE" />
+13-->D:\assitivePilot\app\src\main\AndroidManifest.xml:6:5-66
+13-->D:\assitivePilot\app\src\main\AndroidManifest.xml:6:22-63
+14    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+14-->D:\assitivePilot\app\src\main\AndroidManifest.xml:7:5-85
+14-->D:\assitivePilot\app\src\main\AndroidManifest.xml:7:22-82
+15
+16    <!-- Overlay & Foreground Service permissions -->
+17    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+17-->D:\assitivePilot\app\src\main\AndroidManifest.xml:10:5-78
+17-->D:\assitivePilot\app\src\main\AndroidManifest.xml:10:22-75
+18    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+18-->D:\assitivePilot\app\src\main\AndroidManifest.xml:11:5-77
+18-->D:\assitivePilot\app\src\main\AndroidManifest.xml:11:22-74
+19    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+19-->D:\assitivePilot\app\src\main\AndroidManifest.xml:12:5-89
+19-->D:\assitivePilot\app\src\main\AndroidManifest.xml:12:22-86
+20    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+20-->D:\assitivePilot\app\src\main\AndroidManifest.xml:13:5-77
+20-->D:\assitivePilot\app\src\main\AndroidManifest.xml:13:22-74
+21    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+21-->D:\assitivePilot\app\src\main\AndroidManifest.xml:14:5-81
+21-->D:\assitivePilot\app\src\main\AndroidManifest.xml:14:22-78
+22
+23    <permission
+23-->[androidx.core:core:1.15.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\d08c1fa56ea22fe8efb958b741fa041e\workspace\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+24        android:name="com.volumepilot.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+24-->[androidx.core:core:1.15.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\d08c1fa56ea22fe8efb958b741fa041e\workspace\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+25        android:protectionLevel="signature" />
+25-->[androidx.core:core:1.15.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\d08c1fa56ea22fe8efb958b741fa041e\workspace\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+26
+27    <uses-permission android:name="com.volumepilot.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Privacy declaration: Strictly NO INTERNET permission in this application -->
+27-->[androidx.core:core:1.15.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\d08c1fa56ea22fe8efb958b741fa041e\workspace\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+27-->[androidx.core:core:1.15.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\d08c1fa56ea22fe8efb958b741fa041e\workspace\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+28    <application
+28-->D:\assitivePilot\app\src\main\AndroidManifest.xml:18:5-71:19
+29        android:name="com.volumepilot.VolumePilotApp"
+29-->D:\assitivePilot\app\src\main\AndroidManifest.xml:19:9-39
+30        android:allowBackup="false"
+30-->D:\assitivePilot\app\src\main\AndroidManifest.xml:20:9-36
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.15.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\d08c1fa56ea22fe8efb958b741fa041e\workspace\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+32        android:extractNativeLibs="false"
+33        android:icon="@mipmap/ic_launcher"
+33-->D:\assitivePilot\app\src\main\AndroidManifest.xml:21:9-43
+34        android:label="@string/app_name"
+34-->D:\assitivePilot\app\src\main\AndroidManifest.xml:22:9-41
+35        android:roundIcon="@mipmap/ic_launcher"
+35-->D:\assitivePilot\app\src\main\AndroidManifest.xml:23:9-48
+36        android:supportsRtl="true"
+36-->D:\assitivePilot\app\src\main\AndroidManifest.xml:24:9-35
+37        android:theme="@style/Theme.VolumePilot" >
+37-->D:\assitivePilot\app\src\main\AndroidManifest.xml:25:9-49
+38        <activity
+38-->D:\assitivePilot\app\src\main\AndroidManifest.xml:27:9-36:20
+39            android:name="com.volumepilot.MainActivity"
+39-->D:\assitivePilot\app\src\main\AndroidManifest.xml:28:13-41
+40            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+40-->D:\assitivePilot\app\src\main\AndroidManifest.xml:30:13-87
+41            android:exported="true"
+41-->D:\assitivePilot\app\src\main\AndroidManifest.xml:29:13-36
+42            android:theme="@style/Theme.VolumePilot" >
+42-->D:\assitivePilot\app\src\main\AndroidManifest.xml:31:13-53
+43            <intent-filter>
+43-->D:\assitivePilot\app\src\main\AndroidManifest.xml:32:13-35:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->D:\assitivePilot\app\src\main\AndroidManifest.xml:33:17-69
+44-->D:\assitivePilot\app\src\main\AndroidManifest.xml:33:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->D:\assitivePilot\app\src\main\AndroidManifest.xml:34:17-77
+46-->D:\assitivePilot\app\src\main\AndroidManifest.xml:34:27-74
+47            </intent-filter>
+48        </activity>
+49
+50        <!-- Dedicated Foreground Service for the persistent volume overlay -->
+51        <service
+51-->D:\assitivePilot\app\src\main\AndroidManifest.xml:39:9-46:19
+52            android:name="com.volumepilot.service.overlay.OverlayService"
+52-->D:\assitivePilot\app\src\main\AndroidManifest.xml:40:13-59
+53            android:exported="false"
+53-->D:\assitivePilot\app\src\main\AndroidManifest.xml:41:13-37
+54            android:foregroundServiceType="specialUse" >
+54-->D:\assitivePilot\app\src\main\AndroidManifest.xml:42:13-55
+55            <property
+55-->D:\assitivePilot\app\src\main\AndroidManifest.xml:43:13-45:123
+56                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+56-->D:\assitivePilot\app\src\main\AndroidManifest.xml:44:17-76
+57                android:value="Floating assistive volume control overlay for accessibility and broken hardware buttons" />
+57-->D:\assitivePilot\app\src\main\AndroidManifest.xml:45:17-120
+58        </service>
+59
+60        <!-- Boot receiver for restoring overlay when Start on Boot is enabled -->
+61        <receiver
+61-->D:\assitivePilot\app\src\main\AndroidManifest.xml:49:9-57:20
+62            android:name="com.volumepilot.service.overlay.BootReceiver"
+62-->D:\assitivePilot\app\src\main\AndroidManifest.xml:50:13-57
+63            android:exported="true"
+63-->D:\assitivePilot\app\src\main\AndroidManifest.xml:51:13-36
+64            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+64-->D:\assitivePilot\app\src\main\AndroidManifest.xml:52:13-75
+65            <intent-filter>
+65-->D:\assitivePilot\app\src\main\AndroidManifest.xml:53:13-56:29
+66                <action android:name="android.intent.action.BOOT_COMPLETED" />
+66-->D:\assitivePilot\app\src\main\AndroidManifest.xml:54:17-79
+66-->D:\assitivePilot\app\src\main\AndroidManifest.xml:54:25-76
+67                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+67-->D:\assitivePilot\app\src\main\AndroidManifest.xml:55:17-82
+67-->D:\assitivePilot\app\src\main\AndroidManifest.xml:55:25-79
+68            </intent-filter>
+69        </receiver>
+70
+71        <!-- Time automation receiver for scheduled profile adjustments -->
+72        <receiver
+72-->D:\assitivePilot\app\src\main\AndroidManifest.xml:60:9-68:20
+73            android:name="com.volumepilot.service.automation.TimeAutomationReceiver"
+73-->D:\assitivePilot\app\src\main\AndroidManifest.xml:61:13-70
+74            android:exported="false" >
+74-->D:\assitivePilot\app\src\main\AndroidManifest.xml:62:13-37
+75            <intent-filter>
+75-->D:\assitivePilot\app\src\main\AndroidManifest.xml:63:13-67:29
+76                <action android:name="com.volumepilot.ACTION_TIME_AUTOMATION_TRIGGER" />
+76-->D:\assitivePilot\app\src\main\AndroidManifest.xml:64:17-89
+76-->D:\assitivePilot\app\src\main\AndroidManifest.xml:64:25-86
+77                <action android:name="android.intent.action.TIME_SET" />
+77-->D:\assitivePilot\app\src\main\AndroidManifest.xml:65:17-73
+77-->D:\assitivePilot\app\src\main\AndroidManifest.xml:65:25-70
+78                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+78-->D:\assitivePilot\app\src\main\AndroidManifest.xml:66:17-81
+78-->D:\assitivePilot\app\src\main\AndroidManifest.xml:66:25-78
+79            </intent-filter>
+80        </receiver>
+81
+82        <provider
+82-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\aecfbbcbd1626b3c673b97a19742230b\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+83            android:name="androidx.startup.InitializationProvider"
+83-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\aecfbbcbd1626b3c673b97a19742230b\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+84            android:authorities="com.volumepilot.androidx-startup"
+84-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\aecfbbcbd1626b3c673b97a19742230b\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+85            android:exported="false" >
+85-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\aecfbbcbd1626b3c673b97a19742230b\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+86            <meta-data
+86-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\aecfbbcbd1626b3c673b97a19742230b\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+87                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+87-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\aecfbbcbd1626b3c673b97a19742230b\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+88                android:value="androidx.startup" />
+88-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\aecfbbcbd1626b3c673b97a19742230b\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+89            <meta-data
+89-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\70fd7a7942cbab78ba235f12160f31e4\workspace\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+90                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+90-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\70fd7a7942cbab78ba235f12160f31e4\workspace\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+91                android:value="androidx.startup" />
+91-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\70fd7a7942cbab78ba235f12160f31e4\workspace\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+92            <meta-data
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+93                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+94                android:value="androidx.startup" />
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+95        </provider>
+96
+97        <receiver
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+98            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+99            android:directBootAware="false"
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+100            android:enabled="true"
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+101            android:exported="true"
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+102            android:permission="android.permission.DUMP" >
+102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+103            <intent-filter>
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+104                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+105            </intent-filter>
+106            <intent-filter>
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+107                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+108            </intent-filter>
+109            <intent-filter>
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+110                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+111            </intent-filter>
+112            <intent-filter>
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+113                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+114            </intent-filter>
+115        </receiver>
+116    </application>
+117
+118</manifest>

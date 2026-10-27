@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.volumepilot.feature.home.HomeViewModelTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:50:11.851Z" hostname="DESKTOP-45Q6PEN" time="0.118">
+  <properties/>
+  <testcase name="onMuteToggle toggles stream mute state" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.019"/>
+  <testcase name="onToggleStartOnBoot updates start on boot setting" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.013"/>
+  <testcase name="onVolumeChange successfully updates state" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.024"/>
+  <testcase name="onToggleOverlay fails with AudioPermissionDenied when overlay permission is denied" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.006"/>
+  <testcase name="initial uiState combines volume state and settings" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.009"/>
+  <testcase name="onToggleOverlay enables overlay when permission is granted" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.006"/>
+  <testcase name="onVolumeChange failure produces AppError in state and onClearError clears it" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.008"/>
+  <testcase name="onApplyPreset adjusts stream levels" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.029"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

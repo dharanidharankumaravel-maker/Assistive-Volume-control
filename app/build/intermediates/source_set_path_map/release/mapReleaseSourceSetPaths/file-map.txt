@@ -1,0 +1,61 @@
+com.volumepilot.app-savedstate-ktx-1.2.1-0 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\0073cc76b95738acfe914c986ad6cf30\workspace\transformed\savedstate-ktx-1.2.1\res
+com.volumepilot.app-activity-ktx-1.9.3-1 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\01d246bfac1247feedcdf0b4535376e6\workspace\transformed\activity-ktx-1.9.3\res
+com.volumepilot.app-lifecycle-livedata-2.8.7-2 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\087e84c40969ef9483b05237348c1d3e\workspace\transformed\lifecycle-livedata-2.8.7\res
+com.volumepilot.app-ui-geometry-release-3 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\1375369841beca23fb0dc08bd1dff247\workspace\transformed\ui-geometry-release\res
+com.volumepilot.app-graphics-path-1.0.1-4 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\154b56f884b1058bd6b145f4b5bd65c4\workspace\transformed\graphics-path-1.0.1\res
+com.volumepilot.app-lifecycle-viewmodel-savedstate-2.8.7-5 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\1734c1ddb6a95366c08d5edfad188225\workspace\transformed\lifecycle-viewmodel-savedstate-2.8.7\res
+com.volumepilot.app-ui-unit-release-6 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\1c07b20457862905c2283272670a7ed1\workspace\transformed\ui-unit-release\res
+com.volumepilot.app-runtime-saveable-release-7 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\1c518a97141fa9797128ff6b302bdf4f\workspace\transformed\runtime-saveable-release\res
+com.volumepilot.app-annotation-experimental-1.4.1-8 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\29a8140b01d8289d67ce98bad0757e49\workspace\transformed\annotation-experimental-1.4.1\res
+com.volumepilot.app-hilt-navigation-1.2.0-9 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\2aae74aed32558ff25bcedab846ab8f8\workspace\transformed\hilt-navigation-1.2.0\res
+com.volumepilot.app-activity-1.9.3-10 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\2d0d169c4f09b9eeb082520cc75468a9\workspace\transformed\activity-1.9.3\res
+com.volumepilot.app-animation-release-11 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\302d7e8720a89065d6e78869a95b1872\workspace\transformed\animation-release\res
+com.volumepilot.app-tracing-1.2.0-12 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\33b0fa419fd9dd178660d44e49f339bc\workspace\transformed\tracing-1.2.0\res
+com.volumepilot.app-datastore-release-13 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\38b8615d16fd3958d5bf20787c04f7d4\workspace\transformed\datastore-release\res
+com.volumepilot.app-customview-poolingcontainer-1.0.0-14 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\416b5c6da58dab4d4eec924cf5a81e56\workspace\transformed\customview-poolingcontainer-1.0.0\res
+com.volumepilot.app-foundation-layout-release-15 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\44145173d6439f9049c5a765cb7863cd\workspace\transformed\foundation-layout-release\res
+com.volumepilot.app-navigation-compose-2.8.4-16 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\48149ff87aff86877c0534c5652f3ff7\workspace\transformed\navigation-compose-2.8.4\res
+com.volumepilot.app-ui-util-release-17 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\61bf07a37f6bf0161463c3eb3034cc8f\workspace\transformed\ui-util-release\res
+com.volumepilot.app-startup-runtime-1.1.1-18 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\640d21c1b0c5d295064a982e6d75d350\workspace\transformed\startup-runtime-1.1.1\res
+com.volumepilot.app-lifecycle-viewmodel-compose-release-19 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\6ddf3752de2230dd0c5e80a83e07f1ab\workspace\transformed\lifecycle-viewmodel-compose-release\res
+com.volumepilot.app-lifecycle-process-2.8.7-20 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\70fd7a7942cbab78ba235f12160f31e4\workspace\transformed\lifecycle-process-2.8.7\res
+com.volumepilot.app-ui-graphics-release-21 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\71d52b7f803d0b7bf861afd7439a56a5\workspace\transformed\ui-graphics-release\res
+com.volumepilot.app-core-ktx-1.15.0-22 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\77fc847735e3c13e0cf8384e1baadc34\workspace\transformed\core-ktx-1.15.0\res
+com.volumepilot.app-lifecycle-viewmodel-ktx-2.8.7-23 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7904234b65a7c5606194f8e50dcdcf80\workspace\transformed\lifecycle-viewmodel-ktx-2.8.7\res
+com.volumepilot.app-navigation-runtime-ktx-2.8.4-24 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7b07704ce6fa523bd51be352a4858ade\workspace\transformed\navigation-runtime-ktx-2.8.4\res
+com.volumepilot.app-profileinstaller-1.3.1-25 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\7f7658b708258bb17ac1225d64d96ec4\workspace\transformed\profileinstaller-1.3.1\res
+com.volumepilot.app-core-runtime-2.2.0-26 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\81ff37ba836d56f683a5bf73ba5c7c33\workspace\transformed\core-runtime-2.2.0\res
+com.volumepilot.app-material3-release-27 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\8898ffc7cc47e22c355446be6feb5f4b\workspace\transformed\material3-release\res
+com.volumepilot.app-material-ripple-release-28 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\89705ec429f3ed11a2544e1df6f0cc38\workspace\transformed\material-ripple-release\res
+com.volumepilot.app-navigation-common-2.8.4-29 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\8a36a26ed2c28c1ad6fda06029ebce7b\workspace\transformed\navigation-common-2.8.4\res
+com.volumepilot.app-savedstate-1.2.1-30 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\92bb61eaf7001de19cbd85ccfc530622\workspace\transformed\savedstate-1.2.1\res
+com.volumepilot.app-lifecycle-viewmodel-release-31 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\a5323bc005b033f4e3ad1b7802db9aeb\workspace\transformed\lifecycle-viewmodel-release\res
+com.volumepilot.app-emoji2-1.3.0-32 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\aecfbbcbd1626b3c673b97a19742230b\workspace\transformed\emoji2-1.3.0\res
+com.volumepilot.app-datastore-core-release-33 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\b9b7188730cb5d2f4b2834011f7c54f6\workspace\transformed\datastore-core-release\res
+com.volumepilot.app-material-icons-extended-release-34 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\bbba018856c2b6df6e185188097a1f29\workspace\transformed\material-icons-extended-release\res
+com.volumepilot.app-lifecycle-runtime-release-35 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\be79250e628649a2d84b8c5cad8f4ac4\workspace\transformed\lifecycle-runtime-release\res
+com.volumepilot.app-fragment-1.5.1-36 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\bfc90f01bb4076bcccf6c9ed13e1207e\workspace\transformed\fragment-1.5.1\res
+com.volumepilot.app-navigation-runtime-2.8.4-37 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\c6a3f26a5a2a455e675e45453895d84d\workspace\transformed\navigation-runtime-2.8.4\res
+com.volumepilot.app-hilt-navigation-compose-1.2.0-38 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\c7e52c507e7b0b38fca8d121ff1a0b31\workspace\transformed\hilt-navigation-compose-1.2.0\res
+com.volumepilot.app-lifecycle-runtime-compose-release-39 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\c96edf5f4015369c215902524ff8030b\workspace\transformed\lifecycle-runtime-compose-release\res
+com.volumepilot.app-core-1.15.0-40 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\d08c1fa56ea22fe8efb958b741fa041e\workspace\transformed\core-1.15.0\res
+com.volumepilot.app-runtime-release-41 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\d416eb4808f5e26c493637464d8463e8\workspace\transformed\runtime-release\res
+com.volumepilot.app-ui-release-42 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\d4af28e3806df1d82d481020c26c623a\workspace\transformed\ui-release\res
+com.volumepilot.app-foundation-release-43 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\dd4ca1a7bb6836bd0e235780c37eb71b\workspace\transformed\foundation-release\res
+com.volumepilot.app-lifecycle-livedata-core-ktx-2.8.7-44 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\e71c9d5c7e1806ff3ba9922a93353f5b\workspace\transformed\lifecycle-livedata-core-ktx-2.8.7\res
+com.volumepilot.app-ui-text-release-45 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\e8ee68bb6ad2d2e2e282ea3508c84923\workspace\transformed\ui-text-release\res
+com.volumepilot.app-activity-compose-1.9.3-46 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\eb03cae0f692006ff26b26980c0c2f2f\workspace\transformed\activity-compose-1.9.3\res
+com.volumepilot.app-datastore-preferences-release-47 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\ed612d045231539ed97f2aeaa99fed5f\workspace\transformed\datastore-preferences-release\res
+com.volumepilot.app-lifecycle-livedata-core-2.8.7-48 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\eee7dee47fff3a5a7b0a8d17ecfce276\workspace\transformed\lifecycle-livedata-core-2.8.7\res
+com.volumepilot.app-material-icons-core-release-49 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\f1f2234bbb9414a5bbc487501bcad33b\workspace\transformed\material-icons-core-release\res
+com.volumepilot.app-lifecycle-runtime-ktx-release-50 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\f64ed9776ef092506c6d9ccc9fc73435\workspace\transformed\lifecycle-runtime-ktx-release\res
+com.volumepilot.app-animation-core-release-51 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\fa6eca0efd2211b90ce7891de27cd13a\workspace\transformed\animation-core-release\res
+com.volumepilot.app-navigation-common-ktx-2.8.4-52 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\fba26a0cc17d8dbbb0e9ac19592ab227\workspace\transformed\navigation-common-ktx-2.8.4\res
+com.volumepilot.app-ui-tooling-preview-release-53 C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\ff26ad79086fc67cafbca8352ae0fa3b\workspace\transformed\ui-tooling-preview-release\res
+com.volumepilot.app-resValues-54 D:\assitivePilot\app\build\generated\res\resValues\release
+com.volumepilot.app-packageReleaseResources-55 D:\assitivePilot\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.volumepilot.app-packageReleaseResources-56 D:\assitivePilot\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.volumepilot.app-merged-not-compiled-resources-57 D:\assitivePilot\app\build\intermediates\merged-not-compiled-resources\release
+com.volumepilot.app-release-58 D:\assitivePilot\app\build\intermediates\merged_res\release\mergeReleaseResources
+com.volumepilot.app-main-59 D:\assitivePilot\app\src\main\res
+com.volumepilot.app-release-60 D:\assitivePilot\app\src\release\res

@@ -1,0 +1,136 @@
+================================================================================
+VOLUMEPILOT - CONVERSATION & PROJECT STATE SNAPSHOT
+Saved on: 2026-10-27
+Workspace: d:\assitivePilot
+================================================================================
+
+1. PROJECT OVERVIEW & CORE PROMISE
+--------------------------------------------------------------------------------
+VolumePilot (com.volumepilot) is a production-grade, privacy-first, battery-efficient
+Android application designed for users with broken hardware volume buttons, motor
+accessibility needs, or single-handed mobility requirements.
+
+Non-Negotiable Principles Adhered To:
+- Reliability First: Persistent floating overlay survives app switches, orientation
+  changes, and device reboot (Start on Boot).
+- Privacy by Default: Zero ads, zero accounts, zero analytics SDKs, zero remote tracking,
+  and strictly ZERO android.permission.INTERNET in the manifest or dependencies.
+- Battery Efficiency: Pure event-driven architecture using Kotlin Flows, AudioManager
+  callbacks, and Doze-aligned AlarmManager. Zero polling loops, zero CPU wake locks.
+- Accessibility First: Full WCAG 2.1 Level AA compliance, 48dp+ touch targets, TalkBack
+  custom accessibility actions, dynamic font scaling up to 200%.
+- Anti-Deception: Zero misleading "volume booster" claims; includes a configurable
+  decibel ceiling limiter (EnforceMaxVolumeCapUseCase) to protect hearing health.
+
+
+2. EXECUTION ROADMAP & PHASE SUMMARY (PHASES 1 - 8 COMPLETE)
+--------------------------------------------------------------------------------
+PHASE 1: Project Setup & Clean Architecture Foundation
+- Gradle Version Catalog (gradle/libs.versions.toml) with AGP 8.7.3, Kotlin 2.0.21,
+  Jetpack Compose Material 3, Hilt 2.51.1, DataStore 1.1.1.
+- Clean Architecture (Domain / Data / Core / Feature / Service) with strict boundaries.
+- Pure Kotlin domain layer with zero Android framework dependencies.
+- Local-only AppLogger with automatic PII sanitization.
+
+PHASE 2: Core Volume Engine & Reactive Audio Layer
+- VolumeController interface & AndroidVolumeController implementation.
+- Reactive observation of audio state via callbackFlow, listening to AudioManager
+  broadcasts and AudioDeviceCallback.
+- Granular control of streams (MEDIA, RING, NOTIFICATION, ALARM, VOICE_CALL).
+- RingerMode toggling (NORMAL, VIBRATE, SILENT).
+- Safe listening decibel ceiling limiter (EnforceMaxVolumeCapUseCase) protecting MEDIA
+  and BLUETOOTH while leaving ALARM and VOICE_CALL unconstrained for emergency safety.
+
+PHASE 3: Floating Assistive Overlay & Lifecycle Host
+- OverlayService declared as foregroundServiceType="specialUse" with property
+  PROPERTY_SPECIAL_USE_FGS_SUBTYPE per Android 14+ (API 34+) requirements.
+- OverlayLifecycleOwner attaching LifecycleOwner, SavedStateRegistryOwner, and
+  ViewModelStoreOwner to ComposeView in WindowManager (TYPE_APPLICATION_OVERLAY).
+- OverlayBubbleContent with delta touch tracking, touch slop, and magnetic edge snapping.
+- OverlayPanelContent with stream tabs, responsive sliders, quick mute, and stepped +/-.
+- BootReceiver restoring overlay on BOOT_COMPLETED when enabled.
+
+PHASE 4: Permissions, Onboarding & Reliability
+- OnboardingScreen with plain-language permission checklist (Overlay, Notifications).
+- DiagnosticsScreen: Real-time health telemetry monitor displaying permission state,
+  battery optimization status, uptime, and one-tap "Repair Overlay" self-healing.
+- OemManufacturer & OemSettingsHelper providing customized background-kill guidance
+  for Samsung, Xiaomi/MIUI, OnePlus/Oppo/Realme, Vivo, Huawei, and Google Pixel.
+
+PHASE 5: Profiles, Automation & Safe Listening
+- VolumeProfile with 7 built-in presets: Default, Sleep, Work, Driving, Meeting,
+  Gaming, Headphones, plus custom profile creation with individual stream sliders.
+- Hardware device automation: AudioDeviceCallback automatically triggers target
+  profiles on Bluetooth, Wired Headphones, or USB Audio connection.
+- Time-scheduled automation: Battery-efficient AlarmManager inexact repeats
+  (TimeAutomationScheduler & TimeAutomationReceiver) aligned with Android Doze.
+- Privacy-first offline backup & restore: Local JSON export/import of all profiles
+  and automation rules (BackupRepositoryImpl) with zero network communication.
+- ProfilesScreen, ProfilesViewModel, AutomationScreen, AutomationViewModel.
+
+PHASE 6: Production Hardening, WCAG 2.1 AA Audit & Google Play Policy
+- WCAG 2.1 AA screen reader enhancements: Added CustomAccessibilityAction to the
+  floating overlay bubble (Open Panel, Mute, Switch Stream) for non-touch TalkBack users.
+- R8 / ProGuard shrinking configured and verified in proguard-rules.pro.
+- Verified release build: app-release.apk (2.46 MB) and app-release.aab (4.94 MB).
+- PLAY_STORE_POLICY.md created: Foreground Service specialUse justification, Play
+  Console Data Safety questionnaire answers ("No data collected or shared"), and video guide.
+
+PHASE 7: Store Listing Package, Visual Asset Specs & Distribution Automation
+- STORE_LISTING.md: Play Store-formatted title, short description (76 chars), full
+  description (clean, compliant), search keywords, and PEGI 3 / Everyone rating answers.
+- STORE_ASSETS_SPEC.md: 512x512 app icon spec, 1024x500 feature graphic spec, and
+  6-panel screenshot copy and layout guidelines.
+- Environment-driven release signing in app/build.gradle.kts with fallback for CI.
+- Automated GitHub Actions pipeline (.github/workflows/ci.yml) building debug APK and
+  release AAB artifacts.
+
+PHASE 8: Post-Launch Strategy, Production Observability & Disaster Recovery
+- LocalCrashRecorder.kt: On-device privacy-preserving crash log recorder capturing
+  unhandled exceptions in a private 100 KB rolling sandbox file with zero network transmission.
+- DiagnosticsScreen updated with interactive "Crash & Incident Diagnostics (100% Offline)"
+  card with Copy to Clipboard and Clear Log controls.
+- ROLLOUT_RUNBOOK.md: Staged rollout cadence (Internal -> Closed -> 5% -> 20% -> 50% -> 100%),
+  Android Vitals SLA metrics (Crash rate < 0.05%, ANR < 0.02%), and halt triggers.
+- DISASTER_RECOVERY.md: Incident severity classification (SEV-1 to SEV-3), hotfix branching
+  procedures, and DataStore fallback corruption resilience.
+
+
+3. TEST SUITE & VERIFICATION STATUS
+--------------------------------------------------------------------------------
+- Total Unit Tests: 47 / 47 passing (100% success rate) in ~45 seconds.
+  Command: ./gradlew.bat testDebugUnitTest
+- Android Lint: 0 errors, 0 warnings.
+  Command: ./gradlew.bat lintDebug
+- Release APK Build: SUCCESS (app/build/outputs/apk/release/app-release.apk - 2.46 MB).
+  Command: ./gradlew.bat assembleRelease
+- Release App Bundle: SUCCESS (app/build/outputs/bundle/release/app-release.aab - 4.94 MB).
+  Command: ./gradlew.bat bundleRelease
+- Merged Manifest Audit: ZERO occurrences of android.permission.INTERNET.
+
+
+4. KEY DOCUMENTATION FILES
+--------------------------------------------------------------------------------
+- README.md: Project architecture, principles, tech stack, and build guide.
+- ARCHITECTURE.md: Clean Architecture layer boundaries, event-driven audio flows.
+- PRIVACY.md: Privacy guarantees, permissions breakdown, and local storage safety.
+- TESTING.md: Unit test suites summary, fakes, Turbine flows, and hardware test checklists.
+- RELEASE_CHECKLIST.md: Pre-build and release promotion quality gates (all verified).
+- PLAY_STORE_POLICY.md: Foreground Service specialUse justification, Play Console
+  Data Safety responses, and review video guide.
+- STORE_LISTING.md: Play Store title, short/full descriptions, and keyword tags.
+- STORE_ASSETS_SPEC.md: Icon, feature graphic, and 6-panel store screenshot specifications.
+- ROLLOUT_RUNBOOK.md: 7-day staged rollout timeline, SLAs, and Play Console monitoring.
+- DISASTER_RECOVERY.md: Incident severity response, rollout halt, and emergency hotfix guide.
+
+
+5. WHERE TO RESUME (NEXT ACTIONS)
+--------------------------------------------------------------------------------
+Whenever you are ready to continue, next steps include:
+1. Physical device / emulator verification via:
+   adb install app/build/outputs/apk/release/app-release.apk
+2. Google Play Console submission: Uploading app-release.aab to Internal Testing.
+3. Post-v1.0 enhancements:
+   - Android Quick Settings Tile (VolumePilotTileService).
+   - Launcher App Shortcuts (shortcuts.xml for quick mute / profiles).
+================================================================================

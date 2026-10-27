@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.7.3" type="incidents">
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/feature/automation/AutomationScreen.kt"
+            line="439"
+            column="24"
+            startOffset="17618"
+            endLine="439"
+            endColumn="126"
+            endOffset="17720"/>
+    </incident>
+
+    <incident
+        id="OldTargetApi"
+        severity="warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details.">
+        <fix-replace
+            description="Update targetSdkVersion to 36"
+            oldString="35"
+            replacement="36"
+            priority="0"/>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="16"
+            column="9"
+            startOffset="355"
+            endLine="16"
+            endColumn="23"
+            endOffset="369"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.7.3 is available: 9.4.1">
+        <fix-replace
+            description="Change to 9.4.1"
+            family="Update versions"
+            oldString="8.7.3"
+            replacement="9.4.1"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="14"
+            endOffset="24"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.android than 2.0.21 is available: 2.3.20">
+        <fix-replace
+            description="Change to 2.3.20"
+            family="Update versions"
+            oldString="2.0.21"
+            replacement="2.3.20"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="3"
+            column="10"
+            startOffset="34"
+            endLine="3"
+            endColumn="18"
+            endOffset="42"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.21 is available: 2.2.10">
+        <fix-replace
+            description="Change to 2.2.10"
+            family="Update versions"
+            oldString="2.0.21"
+            replacement="2.2.10"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="3"
+            column="10"
+            startOffset="34"
+            endLine="3"
+            endColumn="18"
+            endOffset="42"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.devtools.ksp than 2.0.21-1.0.28 is available: 2.3.5">
+        <fix-replace
+            description="Change to 2.3.5"
+            family="Update versions"
+            oldString="2.0.21-1.0.28"
+            replacement="2.3.5"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="4"
+            column="7"
+            startOffset="49"
+            endLine="4"
+            endColumn="22"
+            endOffset="64"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose:compose-bom than 2024.10.01 is available: 2026.09.00">
+        <fix-replace
+            description="Change to 2026.09.00"
+            family="Update versions"
+            oldString="2024.10.01"
+            replacement="2026.09.00"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="6"
+            column="15"
+            startOffset="95"
+            endLine="6"
+            endColumn="27"
+            endOffset="107"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1">
+        <fix-replace
+            description="Change to 1.19.1"
+            family="Update versions"
+            oldString="1.15.0"
+            replacement="1.19.1"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="7"
+            column="17"
+            startOffset="124"
+            endLine="7"
+            endColumn="25"
+            endOffset="132"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0">
+        <fix-replace
+            description="Change to 2.11.0"
+            family="Update versions"
+            oldString="2.8.7"
+            replacement="2.11.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="8"
+            column="22"
+            startOffset="154"
+            endLine="8"
+            endColumn="29"
+            endOffset="161"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.7 is available: 2.11.0">
+        <fix-replace
+            description="Change to 2.11.0"
+            family="Update versions"
+            oldString="2.8.7"
+            replacement="2.11.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="8"
+            column="22"
+            startOffset="154"
+            endLine="8"
+            endColumn="29"
+            endOffset="161"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.7 is available: 2.11.0">
+        <fix-replace
+            description="Change to 2.11.0"
+            family="Update versions"
+            oldString="2.8.7"
+            replacement="2.11.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="8"
+            column="22"
+            startOffset="154"
+            endLine="8"
+            endColumn="29"
+            endOffset="161"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.9.3 is available: 1.13.0">
+        <fix-replace
+            description="Change to 1.13.0"
+            family="Update versions"
+            oldString="1.9.3"
+            replacement="1.13.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="9"
+            column="21"
+            startOffset="182"
+            endLine="9"
+            endColumn="28"
+            endOffset="189"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.navigation:navigation-compose than 2.8.4 is available: 2.10.2">
+        <fix-replace
+            description="Change to 2.10.2"
+            family="Update versions"
+            oldString="2.8.4"
+            replacement="2.10.2"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="10"
+            column="23"
+            startOffset="212"
+            endLine="10"
+            endColumn="30"
+            endOffset="219"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.hilt:hilt-navigation-compose than 1.2.0 is available: 1.4.0">
+        <fix-replace
+            description="Change to 1.4.0"
+            family="Update versions"
+            oldString="1.2.0"
+            replacement="1.4.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="11"
+            column="28"
+            startOffset="247"
+            endLine="11"
+            endColumn="35"
+            endOffset="254"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.datastore:datastore-preferences than 1.1.1 is available: 1.3.0">
+        <fix-replace
+            description="Change to 1.3.0"
+            family="Update versions"
+            oldString="1.1.1"
+            replacement="1.3.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="12"
+            column="22"
+            startOffset="276"
+            endLine="12"
+            endColumn="29"
+            endOffset="283"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.9.0 is available: 1.10.2">
+        <fix-replace
+            description="Change to 1.10.2"
+            family="Update versions"
+            oldString="1.9.0"
+            replacement="1.10.2"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="13"
+            column="22"
+            startOffset="305"
+            endLine="13"
+            endColumn="29"
+            endOffset="312"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.9.0 is available: 1.10.2">
+        <fix-replace
+            description="Change to 1.10.2"
+            family="Update versions"
+            oldString="1.9.0"
+            replacement="1.10.2"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="13"
+            column="22"
+            startOffset="305"
+            endLine="13"
+            endColumn="29"
+            endOffset="312"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.9.0 is available: 1.10.2">
+        <fix-replace
+            description="Change to 1.10.2"
+            family="Update versions"
+            oldString="1.9.0"
+            replacement="1.10.2"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="13"
+            column="22"
+            startOffset="305"
+            endLine="13"
+            endColumn="29"
+            endOffset="312"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0">
+        <fix-replace
+            description="Change to 1.3.0"
+            family="Update versions"
+            oldString="1.2.1"
+            replacement="1.3.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="15"
+            column="21"
+            startOffset="350"
+            endLine="15"
+            endColumn="28"
+            endOffset="357"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0">
+        <fix-replace
+            description="Change to 3.7.0"
+            family="Update versions"
+            oldString="3.6.1"
+            replacement="3.7.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="16"
+            column="21"
+            startOffset="378"
+            endLine="16"
+            endColumn="28"
+            endOffset="385"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.robolectric:robolectric than 4.14.1 is available: 4.16.1">
+        <fix-replace
+            description="Change to 4.16.1"
+            family="Update versions"
+            oldString="4.14.1"
+            replacement="4.16.1"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="19"
+            column="15"
+            startOffset="436"
+            endLine="19"
+            endColumn="23"
+            endOffset="444"/>
+    </incident>
+
+    <incident
+        id="ModifierParameter"
+        severity="warning"
+        message="Modifier parameter should be the first optional parameter">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/feature/home/HomeScreen.kt"
+            line="80"
+            column="5"
+            startOffset="3585"
+            endLine="80"
+            endColumn="13"
+            endOffset="3593"/>
+    </incident>
+
+    <incident
+        id="SwitchIntDef"
+        severity="warning"
+        message="Switch statement on an `int` with known associated constant missing case `AudioDeviceInfo.TYPE_AUX_LINE`, `AudioDeviceInfo.TYPE_BLE_BROADCAST`, `AudioDeviceInfo.TYPE_BUILTIN_EARPIECE`, `AudioDeviceInfo.TYPE_BUILTIN_MIC`, `AudioDeviceInfo.TYPE_BUILTIN_SPEAKER_SAFE`, `AudioDeviceInfo.TYPE_BUS`, `AudioDeviceInfo.TYPE_DOCK`, `AudioDeviceInfo.TYPE_DOCK_ANALOG`, `AudioDeviceInfo.TYPE_FM`, `AudioDeviceInfo.TYPE_FM_TUNER`, `AudioDeviceInfo.TYPE_HDMI`, `AudioDeviceInfo.TYPE_HDMI_ARC`, `AudioDeviceInfo.TYPE_HDMI_EARC`, `AudioDeviceInfo.TYPE_HEARING_AID`, `AudioDeviceInfo.TYPE_IP`, `AudioDeviceInfo.TYPE_LINE_ANALOG`, `AudioDeviceInfo.TYPE_LINE_DIGITAL`, `AudioDeviceInfo.TYPE_REMOTE_SUBMIX`, `AudioDeviceInfo.TYPE_TELEPHONY`, `AudioDeviceInfo.TYPE_TV_TUNER`, `AudioDeviceInfo.TYPE_USB_ACCESSORY`">
+        <fix-data cases="android.media.AudioDeviceInfo.TYPE_AUX_LINE, android.media.AudioDeviceInfo.TYPE_BLE_BROADCAST, android.media.AudioDeviceInfo.TYPE_BUILTIN_EARPIECE, android.media.AudioDeviceInfo.TYPE_BUILTIN_MIC, android.media.AudioDeviceInfo.TYPE_BUILTIN_SPEAKER_SAFE, android.media.AudioDeviceInfo.TYPE_BUS, android.media.AudioDeviceInfo.TYPE_DOCK, android.media.AudioDeviceInfo.TYPE_DOCK_ANALOG, android.media.AudioDeviceInfo.TYPE_FM, android.media.AudioDeviceInfo.TYPE_FM_TUNER, android.media.AudioDeviceInfo.TYPE_HDMI, android.media.AudioDeviceInfo.TYPE_HDMI_ARC, android.media.AudioDeviceInfo.TYPE_HDMI_EARC, android.media.AudioDeviceInfo.TYPE_HEARING_AID, android.media.AudioDeviceInfo.TYPE_IP, android.media.AudioDeviceInfo.TYPE_LINE_ANALOG, android.media.AudioDeviceInfo.TYPE_LINE_DIGITAL, android.media.AudioDeviceInfo.TYPE_REMOTE_SUBMIX, android.media.AudioDeviceInfo.TYPE_TELEPHONY, android.media.AudioDeviceInfo.TYPE_TV_TUNER, android.media.AudioDeviceInfo.TYPE_USB_ACCESSORY"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/volume/AndroidVolumeController.kt"
+            line="208"
+            column="17"
+            startOffset="8895"
+            endLine="208"
+            endColumn="21"
+            endOffset="8899"/>
+    </incident>
+
+    <incident
+        id="PluralsCandidate"
+        severity="warning"
+        message="Formatting %d followed by words (&quot;percent&quot;): This should probably be a plural rather than a string">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="84"
+            column="5"
+            startOffset="4274"
+            endLine="84"
+            endColumn="71"
+            endOffset="4340"/>
+    </incident>
+
+    <incident
+        id="UnsafeProtectedBroadcastReceiver"
+        severity="warning"
+        message="This broadcast receiver declares an intent-filter for a protected broadcast action string, which can only be sent by the system, not third-party applications. However, the receiver&apos;s `onReceive` method does not appear to call `getAction` to ensure that the received Intent&apos;s action string matches the expected value, potentially making it possible for another actor to send a spoofed intent with no action string or a different action string and cause undesired behavior.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/automation/TimeAutomationReceiver.kt"
+            line="21"
+            column="18"
+            startOffset="690"
+            endLine="21"
+            endColumn="27"
+            endOffset="699"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/volume/AndroidVolumeController.kt"
+            line="59"
+            column="17"
+            startOffset="2271"
+            endLine="59"
+            endColumn="63"
+            endOffset="2317"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/volume/AndroidVolumeController.kt"
+            line="104"
+            column="35"
+            startOffset="4040"
+            endLine="104"
+            endColumn="81"
+            endOffset="4086"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/volume/AndroidVolumeController.kt"
+            line="129"
+            column="25"
+            startOffset="4960"
+            endLine="129"
+            endColumn="71"
+            endOffset="5006"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/volume/AndroidVolumeController.kt"
+            line="168"
+            column="21"
+            startOffset="6751"
+            endLine="168"
+            endColumn="67"
+            endOffset="6797"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/core/battery/BatteryOptimizationHelper.kt"
+            line="13"
+            column="13"
+            startOffset="325"
+            endLine="13"
+            endColumn="59"
+            endOffset="371"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/core/battery/BatteryOptimizationHelper.kt"
+            line="21"
+            column="20"
+            startOffset="697"
+            endLine="21"
+            endColumn="66"
+            endOffset="743"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/overlay/OverlayNotificationHelper.kt"
+            line="24"
+            column="13"
+            startOffset="778"
+            endLine="24"
+            endColumn="59"
+            endOffset="824"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/overlay/OverlayService.kt"
+            line="173"
+            column="34"
+            startOffset="6845"
+            endLine="173"
+            endColumn="80"
+            endOffset="6891"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/overlay/OverlayService.kt"
+            line="339"
+            column="21"
+            startOffset="14461"
+            endLine="339"
+            endColumn="67"
+            endOffset="14507"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/overlay/OverlayService.kt"
+            line="393"
+            column="17"
+            startOffset="16511"
+            endLine="393"
+            endColumn="63"
+            endOffset="16557"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/automation/TimeAutomationScheduler.kt"
+            line="25"
+            column="25"
+            startOffset="837"
+            endLine="25"
+            endColumn="71"
+            endOffset="883"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/automation/TimeAutomationScheduler.kt"
+            line="50"
+            column="25"
+            startOffset="1964"
+            endLine="50"
+            endColumn="71"
+            endOffset="2010"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="This folder configuration (`v26`) is unnecessary; `minSdkVersion` is 26. Merge all the resources in this folder into `mipmap-anydpi`.">
+        <fix-data file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26" folderName="mipmap-anydpi" requiresApi="26"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="272"/>
+    </incident>
+
+</incidents>

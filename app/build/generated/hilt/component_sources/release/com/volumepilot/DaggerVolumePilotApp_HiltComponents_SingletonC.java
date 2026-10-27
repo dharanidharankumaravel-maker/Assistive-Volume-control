@@ -1,0 +1,933 @@
+package com.volumepilot;
+
+import android.app.Activity;
+import android.app.Service;
+import android.media.AudioManager;
+import android.view.View;
+import androidx.datastore.core.DataStore;
+import androidx.datastore.preferences.core.Preferences;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.SavedStateHandle;
+import androidx.lifecycle.ViewModel;
+import com.volumepilot.core.common.AppLogger;
+import com.volumepilot.core.di.AppModule_ProvideAppLoggerFactory;
+import com.volumepilot.core.di.AppModule_ProvidePermissionCheckerFactory;
+import com.volumepilot.core.di.AppModule_ProvidePreferencesDataStoreFactory;
+import com.volumepilot.core.di.AudioModule_Companion_ProvideAudioManagerFactory;
+import com.volumepilot.core.di.CoroutinesModule_ProvideIoDispatcherFactory;
+import com.volumepilot.core.permissions.PermissionChecker;
+import com.volumepilot.data.repository.AutomationRepositoryImpl;
+import com.volumepilot.data.repository.BackupRepositoryImpl;
+import com.volumepilot.data.repository.DiagnosticRepositoryImpl;
+import com.volumepilot.data.repository.ProfileRepositoryImpl;
+import com.volumepilot.data.repository.VolumeRepositoryImpl;
+import com.volumepilot.data.settings.SettingsRepositoryImpl;
+import com.volumepilot.domain.usecase.ActivateProfileUseCase;
+import com.volumepilot.domain.usecase.DeleteProfileUseCase;
+import com.volumepilot.domain.usecase.EnforceMaxVolumeCapUseCase;
+import com.volumepilot.domain.usecase.EvaluateTimeAutomationUseCase;
+import com.volumepilot.domain.usecase.ExportSettingsUseCase;
+import com.volumepilot.domain.usecase.GetAutomationConfigUseCase;
+import com.volumepilot.domain.usecase.GetDiagnosticsUseCase;
+import com.volumepilot.domain.usecase.GetOemGuidanceUseCase;
+import com.volumepilot.domain.usecase.GetProfilesUseCase;
+import com.volumepilot.domain.usecase.GetSettingsUseCase;
+import com.volumepilot.domain.usecase.GetVolumeStateUseCase;
+import com.volumepilot.domain.usecase.HandleDeviceConnectedUseCase;
+import com.volumepilot.domain.usecase.ImportSettingsUseCase;
+import com.volumepilot.domain.usecase.MuteUseCase;
+import com.volumepilot.domain.usecase.RepairOverlayUseCase;
+import com.volumepilot.domain.usecase.SaveProfileUseCase;
+import com.volumepilot.domain.usecase.SetVolumeUseCase;
+import com.volumepilot.domain.usecase.ToggleMasterAutomationUseCase;
+import com.volumepilot.domain.usecase.ToggleVibrateUseCase;
+import com.volumepilot.domain.usecase.UpdateSettingsUseCase;
+import com.volumepilot.feature.automation.AutomationViewModel;
+import com.volumepilot.feature.automation.AutomationViewModel_HiltModules;
+import com.volumepilot.feature.diagnostics.DiagnosticsViewModel;
+import com.volumepilot.feature.diagnostics.DiagnosticsViewModel_HiltModules;
+import com.volumepilot.feature.home.HomeViewModel;
+import com.volumepilot.feature.home.HomeViewModel_HiltModules;
+import com.volumepilot.feature.onboarding.OnboardingViewModel;
+import com.volumepilot.feature.onboarding.OnboardingViewModel_HiltModules;
+import com.volumepilot.feature.profiles.ProfilesViewModel;
+import com.volumepilot.feature.profiles.ProfilesViewModel_HiltModules;
+import com.volumepilot.service.automation.TimeAutomationReceiver;
+import com.volumepilot.service.automation.TimeAutomationReceiver_MembersInjector;
+import com.volumepilot.service.automation.TimeAutomationScheduler;
+import com.volumepilot.service.overlay.BootReceiver;
+import com.volumepilot.service.overlay.BootReceiver_MembersInjector;
+import com.volumepilot.service.overlay.OverlayService;
+import com.volumepilot.service.overlay.OverlayService_MembersInjector;
+import com.volumepilot.service.volume.AndroidVolumeController;
+import dagger.hilt.android.ActivityRetainedLifecycle;
+import dagger.hilt.android.ViewModelLifecycle;
+import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
+import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
+import dagger.hilt.android.internal.builders.FragmentComponentBuilder;
+import dagger.hilt.android.internal.builders.ServiceComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewModelComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewWithFragmentComponentBuilder;
+import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
+import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories_InternalFactoryFactory_Factory;
+import dagger.hilt.android.internal.managers.ActivityRetainedComponentManager_LifecycleModule_ProvideActivityRetainedLifecycleFactory;
+import dagger.hilt.android.internal.managers.SavedStateHandleHolder;
+import dagger.hilt.android.internal.modules.ApplicationContextModule;
+import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideContextFactory;
+import dagger.internal.DaggerGenerated;
+import dagger.internal.DoubleCheck;
+import dagger.internal.IdentifierNameString;
+import dagger.internal.KeepFieldType;
+import dagger.internal.LazyClassKeyMap;
+import dagger.internal.MapBuilder;
+import dagger.internal.Preconditions;
+import dagger.internal.Provider;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Set;
+import javax.annotation.processing.Generated;
+import kotlinx.coroutines.CoroutineDispatcher;
+
+@DaggerGenerated
+@Generated(
+    value = "dagger.internal.codegen.ComponentProcessor",
+    comments = "https://dagger.dev"
+)
+@SuppressWarnings({
+    "unchecked",
+    "rawtypes",
+    "KotlinInternal",
+    "KotlinInternalInJava",
+    "cast"
+})
+public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
+  private DaggerVolumePilotApp_HiltComponents_SingletonC() {
+  }
+
+  public static Builder builder() {
+    return new Builder();
+  }
+
+  public static final class Builder {
+    private ApplicationContextModule applicationContextModule;
+
+    private Builder() {
+    }
+
+    public Builder applicationContextModule(ApplicationContextModule applicationContextModule) {
+      this.applicationContextModule = Preconditions.checkNotNull(applicationContextModule);
+      return this;
+    }
+
+    public VolumePilotApp_HiltComponents.SingletonC build() {
+      Preconditions.checkBuilderRequirement(applicationContextModule, ApplicationContextModule.class);
+      return new SingletonCImpl(applicationContextModule);
+    }
+  }
+
+  private static final class ActivityRetainedCBuilder implements VolumePilotApp_HiltComponents.ActivityRetainedC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private SavedStateHandleHolder savedStateHandleHolder;
+
+    private ActivityRetainedCBuilder(SingletonCImpl singletonCImpl) {
+      this.singletonCImpl = singletonCImpl;
+    }
+
+    @Override
+    public ActivityRetainedCBuilder savedStateHandleHolder(
+        SavedStateHandleHolder savedStateHandleHolder) {
+      this.savedStateHandleHolder = Preconditions.checkNotNull(savedStateHandleHolder);
+      return this;
+    }
+
+    @Override
+    public VolumePilotApp_HiltComponents.ActivityRetainedC build() {
+      Preconditions.checkBuilderRequirement(savedStateHandleHolder, SavedStateHandleHolder.class);
+      return new ActivityRetainedCImpl(singletonCImpl, savedStateHandleHolder);
+    }
+  }
+
+  private static final class ActivityCBuilder implements VolumePilotApp_HiltComponents.ActivityC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private Activity activity;
+
+    private ActivityCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+    }
+
+    @Override
+    public ActivityCBuilder activity(Activity activity) {
+      this.activity = Preconditions.checkNotNull(activity);
+      return this;
+    }
+
+    @Override
+    public VolumePilotApp_HiltComponents.ActivityC build() {
+      Preconditions.checkBuilderRequirement(activity, Activity.class);
+      return new ActivityCImpl(singletonCImpl, activityRetainedCImpl, activity);
+    }
+  }
+
+  private static final class FragmentCBuilder implements VolumePilotApp_HiltComponents.FragmentC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private Fragment fragment;
+
+    private FragmentCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+    }
+
+    @Override
+    public FragmentCBuilder fragment(Fragment fragment) {
+      this.fragment = Preconditions.checkNotNull(fragment);
+      return this;
+    }
+
+    @Override
+    public VolumePilotApp_HiltComponents.FragmentC build() {
+      Preconditions.checkBuilderRequirement(fragment, Fragment.class);
+      return new FragmentCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, fragment);
+    }
+  }
+
+  private static final class ViewWithFragmentCBuilder implements VolumePilotApp_HiltComponents.ViewWithFragmentC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl;
+
+    private View view;
+
+    private ViewWithFragmentCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        FragmentCImpl fragmentCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+      this.fragmentCImpl = fragmentCImpl;
+    }
+
+    @Override
+    public ViewWithFragmentCBuilder view(View view) {
+      this.view = Preconditions.checkNotNull(view);
+      return this;
+    }
+
+    @Override
+    public VolumePilotApp_HiltComponents.ViewWithFragmentC build() {
+      Preconditions.checkBuilderRequirement(view, View.class);
+      return new ViewWithFragmentCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl, view);
+    }
+  }
+
+  private static final class ViewCBuilder implements VolumePilotApp_HiltComponents.ViewC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private View view;
+
+    private ViewCBuilder(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+        ActivityCImpl activityCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+    }
+
+    @Override
+    public ViewCBuilder view(View view) {
+      this.view = Preconditions.checkNotNull(view);
+      return this;
+    }
+
+    @Override
+    public VolumePilotApp_HiltComponents.ViewC build() {
+      Preconditions.checkBuilderRequirement(view, View.class);
+      return new ViewCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, view);
+    }
+  }
+
+  private static final class ViewModelCBuilder implements VolumePilotApp_HiltComponents.ViewModelC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private SavedStateHandle savedStateHandle;
+
+    private ViewModelLifecycle viewModelLifecycle;
+
+    private ViewModelCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+    }
+
+    @Override
+    public ViewModelCBuilder savedStateHandle(SavedStateHandle handle) {
+      this.savedStateHandle = Preconditions.checkNotNull(handle);
+      return this;
+    }
+
+    @Override
+    public ViewModelCBuilder viewModelLifecycle(ViewModelLifecycle viewModelLifecycle) {
+      this.viewModelLifecycle = Preconditions.checkNotNull(viewModelLifecycle);
+      return this;
+    }
+
+    @Override
+    public VolumePilotApp_HiltComponents.ViewModelC build() {
+      Preconditions.checkBuilderRequirement(savedStateHandle, SavedStateHandle.class);
+      Preconditions.checkBuilderRequirement(viewModelLifecycle, ViewModelLifecycle.class);
+      return new ViewModelCImpl(singletonCImpl, activityRetainedCImpl, savedStateHandle, viewModelLifecycle);
+    }
+  }
+
+  private static final class ServiceCBuilder implements VolumePilotApp_HiltComponents.ServiceC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private Service service;
+
+    private ServiceCBuilder(SingletonCImpl singletonCImpl) {
+      this.singletonCImpl = singletonCImpl;
+    }
+
+    @Override
+    public ServiceCBuilder service(Service service) {
+      this.service = Preconditions.checkNotNull(service);
+      return this;
+    }
+
+    @Override
+    public VolumePilotApp_HiltComponents.ServiceC build() {
+      Preconditions.checkBuilderRequirement(service, Service.class);
+      return new ServiceCImpl(singletonCImpl, service);
+    }
+  }
+
+  private static final class ViewWithFragmentCImpl extends VolumePilotApp_HiltComponents.ViewWithFragmentC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl;
+
+    private final ViewWithFragmentCImpl viewWithFragmentCImpl = this;
+
+    private ViewWithFragmentCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        FragmentCImpl fragmentCImpl, View viewParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+      this.fragmentCImpl = fragmentCImpl;
+
+
+    }
+  }
+
+  private static final class FragmentCImpl extends VolumePilotApp_HiltComponents.FragmentC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl = this;
+
+    private FragmentCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        Fragment fragmentParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+
+
+    }
+
+    @Override
+    public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
+      return activityCImpl.getHiltInternalFactoryFactory();
+    }
+
+    @Override
+    public ViewWithFragmentComponentBuilder viewWithFragmentComponentBuilder() {
+      return new ViewWithFragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl);
+    }
+  }
+
+  private static final class ViewCImpl extends VolumePilotApp_HiltComponents.ViewC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final ViewCImpl viewCImpl = this;
+
+    private ViewCImpl(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+        ActivityCImpl activityCImpl, View viewParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+
+
+    }
+  }
+
+  private static final class ActivityCImpl extends VolumePilotApp_HiltComponents.ActivityC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl = this;
+
+    private ActivityCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, Activity activityParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+
+
+    }
+
+    @Override
+    public void injectMainActivity(MainActivity arg0) {
+      injectMainActivity2(arg0);
+    }
+
+    @Override
+    public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
+      return DefaultViewModelFactories_InternalFactoryFactory_Factory.newInstance(getViewModelKeys(), new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl));
+    }
+
+    @Override
+    public Map<Class<?>, Boolean> getViewModelKeys() {
+      return LazyClassKeyMap.<Boolean>of(MapBuilder.<String, Boolean>newMapBuilder(5).put(LazyClassKeyProvider.com_volumepilot_feature_automation_AutomationViewModel, AutomationViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_diagnostics_DiagnosticsViewModel, DiagnosticsViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_home_HomeViewModel, HomeViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_onboarding_OnboardingViewModel, OnboardingViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_profiles_ProfilesViewModel, ProfilesViewModel_HiltModules.KeyModule.provide()).build());
+    }
+
+    @Override
+    public ViewModelComponentBuilder getViewModelComponentBuilder() {
+      return new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl);
+    }
+
+    @Override
+    public FragmentComponentBuilder fragmentComponentBuilder() {
+      return new FragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+
+    @Override
+    public ViewComponentBuilder viewComponentBuilder() {
+      return new ViewCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+
+    private MainActivity injectMainActivity2(MainActivity instance) {
+      MainActivity_MembersInjector.injectGetSettingsUseCase(instance, singletonCImpl.getSettingsUseCase());
+      return instance;
+    }
+
+    @IdentifierNameString
+    private static final class LazyClassKeyProvider {
+      static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
+
+      static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
+
+      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
+
+      static String com_volumepilot_feature_diagnostics_DiagnosticsViewModel = "com.volumepilot.feature.diagnostics.DiagnosticsViewModel";
+
+      static String com_volumepilot_feature_onboarding_OnboardingViewModel = "com.volumepilot.feature.onboarding.OnboardingViewModel";
+
+      @KeepFieldType
+      HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
+
+      @KeepFieldType
+      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
+
+      @KeepFieldType
+      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
+
+      @KeepFieldType
+      DiagnosticsViewModel com_volumepilot_feature_diagnostics_DiagnosticsViewModel2;
+
+      @KeepFieldType
+      OnboardingViewModel com_volumepilot_feature_onboarding_OnboardingViewModel2;
+    }
+  }
+
+  private static final class ViewModelCImpl extends VolumePilotApp_HiltComponents.ViewModelC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ViewModelCImpl viewModelCImpl = this;
+
+    private Provider<AutomationViewModel> automationViewModelProvider;
+
+    private Provider<DiagnosticsViewModel> diagnosticsViewModelProvider;
+
+    private Provider<HomeViewModel> homeViewModelProvider;
+
+    private Provider<OnboardingViewModel> onboardingViewModelProvider;
+
+    private Provider<ProfilesViewModel> profilesViewModelProvider;
+
+    private ViewModelCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, SavedStateHandle savedStateHandleParam,
+        ViewModelLifecycle viewModelLifecycleParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+
+      initialize(savedStateHandleParam, viewModelLifecycleParam);
+
+    }
+
+    private GetAutomationConfigUseCase getAutomationConfigUseCase() {
+      return new GetAutomationConfigUseCase(singletonCImpl.automationRepositoryImplProvider.get());
+    }
+
+    private ToggleMasterAutomationUseCase toggleMasterAutomationUseCase() {
+      return new ToggleMasterAutomationUseCase(singletonCImpl.automationRepositoryImplProvider.get());
+    }
+
+    private GetProfilesUseCase getProfilesUseCase() {
+      return new GetProfilesUseCase(singletonCImpl.profileRepositoryImplProvider.get());
+    }
+
+    private ExportSettingsUseCase exportSettingsUseCase() {
+      return new ExportSettingsUseCase(singletonCImpl.backupRepositoryImplProvider.get());
+    }
+
+    private ImportSettingsUseCase importSettingsUseCase() {
+      return new ImportSettingsUseCase(singletonCImpl.backupRepositoryImplProvider.get());
+    }
+
+    private GetDiagnosticsUseCase getDiagnosticsUseCase() {
+      return new GetDiagnosticsUseCase(singletonCImpl.diagnosticRepositoryImplProvider.get());
+    }
+
+    private GetOemGuidanceUseCase getOemGuidanceUseCase() {
+      return new GetOemGuidanceUseCase(singletonCImpl.diagnosticRepositoryImplProvider.get());
+    }
+
+    private RepairOverlayUseCase repairOverlayUseCase() {
+      return new RepairOverlayUseCase(singletonCImpl.diagnosticRepositoryImplProvider.get());
+    }
+
+    private GetVolumeStateUseCase getVolumeStateUseCase() {
+      return new GetVolumeStateUseCase(singletonCImpl.volumeRepositoryImplProvider.get());
+    }
+
+    private MuteUseCase muteUseCase() {
+      return new MuteUseCase(singletonCImpl.volumeRepositoryImplProvider.get());
+    }
+
+    private ToggleVibrateUseCase toggleVibrateUseCase() {
+      return new ToggleVibrateUseCase(singletonCImpl.volumeRepositoryImplProvider.get());
+    }
+
+    private UpdateSettingsUseCase updateSettingsUseCase() {
+      return new UpdateSettingsUseCase(singletonCImpl.settingsRepositoryImplProvider.get());
+    }
+
+    private SaveProfileUseCase saveProfileUseCase() {
+      return new SaveProfileUseCase(singletonCImpl.profileRepositoryImplProvider.get());
+    }
+
+    private DeleteProfileUseCase deleteProfileUseCase() {
+      return new DeleteProfileUseCase(singletonCImpl.profileRepositoryImplProvider.get());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final SavedStateHandle savedStateHandleParam,
+        final ViewModelLifecycle viewModelLifecycleParam) {
+      this.automationViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 0);
+      this.diagnosticsViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 1);
+      this.homeViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 2);
+      this.onboardingViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 3);
+      this.profilesViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 4);
+    }
+
+    @Override
+    public Map<Class<?>, javax.inject.Provider<ViewModel>> getHiltViewModelMap() {
+      return LazyClassKeyMap.<javax.inject.Provider<ViewModel>>of(MapBuilder.<String, javax.inject.Provider<ViewModel>>newMapBuilder(5).put(LazyClassKeyProvider.com_volumepilot_feature_automation_AutomationViewModel, ((Provider) automationViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_diagnostics_DiagnosticsViewModel, ((Provider) diagnosticsViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_home_HomeViewModel, ((Provider) homeViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_onboarding_OnboardingViewModel, ((Provider) onboardingViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_profiles_ProfilesViewModel, ((Provider) profilesViewModelProvider)).build());
+    }
+
+    @Override
+    public Map<Class<?>, Object> getHiltViewModelAssistedMap() {
+      return Collections.<Class<?>, Object>emptyMap();
+    }
+
+    @IdentifierNameString
+    private static final class LazyClassKeyProvider {
+      static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
+
+      static String com_volumepilot_feature_diagnostics_DiagnosticsViewModel = "com.volumepilot.feature.diagnostics.DiagnosticsViewModel";
+
+      static String com_volumepilot_feature_onboarding_OnboardingViewModel = "com.volumepilot.feature.onboarding.OnboardingViewModel";
+
+      static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
+
+      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
+
+      @KeepFieldType
+      HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
+
+      @KeepFieldType
+      DiagnosticsViewModel com_volumepilot_feature_diagnostics_DiagnosticsViewModel2;
+
+      @KeepFieldType
+      OnboardingViewModel com_volumepilot_feature_onboarding_OnboardingViewModel2;
+
+      @KeepFieldType
+      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
+
+      @KeepFieldType
+      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final ActivityRetainedCImpl activityRetainedCImpl;
+
+      private final ViewModelCImpl viewModelCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+          ViewModelCImpl viewModelCImpl, int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.activityRetainedCImpl = activityRetainedCImpl;
+        this.viewModelCImpl = viewModelCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.volumepilot.feature.automation.AutomationViewModel 
+          return (T) new AutomationViewModel(viewModelCImpl.getAutomationConfigUseCase(), viewModelCImpl.toggleMasterAutomationUseCase(), singletonCImpl.automationRepositoryImplProvider.get(), viewModelCImpl.getProfilesUseCase(), viewModelCImpl.exportSettingsUseCase(), viewModelCImpl.importSettingsUseCase(), singletonCImpl.timeAutomationSchedulerProvider.get());
+
+          case 1: // com.volumepilot.feature.diagnostics.DiagnosticsViewModel 
+          return (T) new DiagnosticsViewModel(viewModelCImpl.getDiagnosticsUseCase(), viewModelCImpl.getOemGuidanceUseCase(), viewModelCImpl.repairOverlayUseCase());
+
+          case 2: // com.volumepilot.feature.home.HomeViewModel 
+          return (T) new HomeViewModel(viewModelCImpl.getVolumeStateUseCase(), singletonCImpl.setVolumeUseCase(), viewModelCImpl.muteUseCase(), viewModelCImpl.toggleVibrateUseCase(), singletonCImpl.getSettingsUseCase(), viewModelCImpl.updateSettingsUseCase(), new EnforceMaxVolumeCapUseCase(), singletonCImpl.providePermissionCheckerProvider.get());
+
+          case 3: // com.volumepilot.feature.onboarding.OnboardingViewModel 
+          return (T) new OnboardingViewModel(singletonCImpl.providePermissionCheckerProvider.get(), viewModelCImpl.getOemGuidanceUseCase(), viewModelCImpl.updateSettingsUseCase());
+
+          case 4: // com.volumepilot.feature.profiles.ProfilesViewModel 
+          return (T) new ProfilesViewModel(viewModelCImpl.getProfilesUseCase(), singletonCImpl.profileRepositoryImplProvider.get(), singletonCImpl.activateProfileUseCaseProvider.get(), viewModelCImpl.saveProfileUseCase(), viewModelCImpl.deleteProfileUseCase());
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+
+  private static final class ActivityRetainedCImpl extends VolumePilotApp_HiltComponents.ActivityRetainedC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl = this;
+
+    private Provider<ActivityRetainedLifecycle> provideActivityRetainedLifecycleProvider;
+
+    private ActivityRetainedCImpl(SingletonCImpl singletonCImpl,
+        SavedStateHandleHolder savedStateHandleHolderParam) {
+      this.singletonCImpl = singletonCImpl;
+
+      initialize(savedStateHandleHolderParam);
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final SavedStateHandleHolder savedStateHandleHolderParam) {
+      this.provideActivityRetainedLifecycleProvider = DoubleCheck.provider(new SwitchingProvider<ActivityRetainedLifecycle>(singletonCImpl, activityRetainedCImpl, 0));
+    }
+
+    @Override
+    public ActivityComponentBuilder activityComponentBuilder() {
+      return new ActivityCBuilder(singletonCImpl, activityRetainedCImpl);
+    }
+
+    @Override
+    public ActivityRetainedLifecycle getActivityRetainedLifecycle() {
+      return provideActivityRetainedLifecycleProvider.get();
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final ActivityRetainedCImpl activityRetainedCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+          int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.activityRetainedCImpl = activityRetainedCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // dagger.hilt.android.ActivityRetainedLifecycle 
+          return (T) ActivityRetainedComponentManager_LifecycleModule_ProvideActivityRetainedLifecycleFactory.provideActivityRetainedLifecycle();
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+
+  private static final class ServiceCImpl extends VolumePilotApp_HiltComponents.ServiceC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ServiceCImpl serviceCImpl = this;
+
+    private ServiceCImpl(SingletonCImpl singletonCImpl, Service serviceParam) {
+      this.singletonCImpl = singletonCImpl;
+
+
+    }
+
+    private GetVolumeStateUseCase getVolumeStateUseCase() {
+      return new GetVolumeStateUseCase(singletonCImpl.volumeRepositoryImplProvider.get());
+    }
+
+    private MuteUseCase muteUseCase() {
+      return new MuteUseCase(singletonCImpl.volumeRepositoryImplProvider.get());
+    }
+
+    private ToggleVibrateUseCase toggleVibrateUseCase() {
+      return new ToggleVibrateUseCase(singletonCImpl.volumeRepositoryImplProvider.get());
+    }
+
+    private UpdateSettingsUseCase updateSettingsUseCase() {
+      return new UpdateSettingsUseCase(singletonCImpl.settingsRepositoryImplProvider.get());
+    }
+
+    private HandleDeviceConnectedUseCase handleDeviceConnectedUseCase() {
+      return new HandleDeviceConnectedUseCase(singletonCImpl.automationRepositoryImplProvider.get());
+    }
+
+    @Override
+    public void injectOverlayService(OverlayService arg0) {
+      injectOverlayService2(arg0);
+    }
+
+    private OverlayService injectOverlayService2(OverlayService instance) {
+      OverlayService_MembersInjector.injectGetVolumeStateUseCase(instance, getVolumeStateUseCase());
+      OverlayService_MembersInjector.injectSetVolumeUseCase(instance, singletonCImpl.setVolumeUseCase());
+      OverlayService_MembersInjector.injectMuteUseCase(instance, muteUseCase());
+      OverlayService_MembersInjector.injectToggleVibrateUseCase(instance, toggleVibrateUseCase());
+      OverlayService_MembersInjector.injectGetSettingsUseCase(instance, singletonCImpl.getSettingsUseCase());
+      OverlayService_MembersInjector.injectUpdateSettingsUseCase(instance, updateSettingsUseCase());
+      OverlayService_MembersInjector.injectHandleDeviceConnectedUseCase(instance, handleDeviceConnectedUseCase());
+      OverlayService_MembersInjector.injectLogger(instance, singletonCImpl.provideAppLoggerProvider.get());
+      return instance;
+    }
+  }
+
+  private static final class SingletonCImpl extends VolumePilotApp_HiltComponents.SingletonC {
+    private final ApplicationContextModule applicationContextModule;
+
+    private final SingletonCImpl singletonCImpl = this;
+
+    private Provider<AppLogger> provideAppLoggerProvider;
+
+    private Provider<CoroutineDispatcher> provideIoDispatcherProvider;
+
+    private Provider<DataStore<Preferences>> providePreferencesDataStoreProvider;
+
+    private Provider<ProfileRepositoryImpl> profileRepositoryImplProvider;
+
+    private Provider<AudioManager> provideAudioManagerProvider;
+
+    private Provider<AndroidVolumeController> androidVolumeControllerProvider;
+
+    private Provider<VolumeRepositoryImpl> volumeRepositoryImplProvider;
+
+    private Provider<SettingsRepositoryImpl> settingsRepositoryImplProvider;
+
+    private Provider<ActivateProfileUseCase> activateProfileUseCaseProvider;
+
+    private Provider<AutomationRepositoryImpl> automationRepositoryImplProvider;
+
+    private Provider<BackupRepositoryImpl> backupRepositoryImplProvider;
+
+    private Provider<TimeAutomationScheduler> timeAutomationSchedulerProvider;
+
+    private Provider<PermissionChecker> providePermissionCheckerProvider;
+
+    private Provider<DiagnosticRepositoryImpl> diagnosticRepositoryImplProvider;
+
+    private SingletonCImpl(ApplicationContextModule applicationContextModuleParam) {
+      this.applicationContextModule = applicationContextModuleParam;
+      initialize(applicationContextModuleParam);
+
+    }
+
+    private SetVolumeUseCase setVolumeUseCase() {
+      return new SetVolumeUseCase(volumeRepositoryImplProvider.get(), settingsRepositoryImplProvider.get(), new EnforceMaxVolumeCapUseCase());
+    }
+
+    private EvaluateTimeAutomationUseCase evaluateTimeAutomationUseCase() {
+      return new EvaluateTimeAutomationUseCase(automationRepositoryImplProvider.get());
+    }
+
+    private GetSettingsUseCase getSettingsUseCase() {
+      return new GetSettingsUseCase(settingsRepositoryImplProvider.get());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final ApplicationContextModule applicationContextModuleParam) {
+      this.provideAppLoggerProvider = DoubleCheck.provider(new SwitchingProvider<AppLogger>(singletonCImpl, 0));
+      this.provideIoDispatcherProvider = DoubleCheck.provider(new SwitchingProvider<CoroutineDispatcher>(singletonCImpl, 3));
+      this.providePreferencesDataStoreProvider = DoubleCheck.provider(new SwitchingProvider<DataStore<Preferences>>(singletonCImpl, 2));
+      this.profileRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<ProfileRepositoryImpl>(singletonCImpl, 5));
+      this.provideAudioManagerProvider = DoubleCheck.provider(new SwitchingProvider<AudioManager>(singletonCImpl, 8));
+      this.androidVolumeControllerProvider = DoubleCheck.provider(new SwitchingProvider<AndroidVolumeController>(singletonCImpl, 7));
+      this.volumeRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<VolumeRepositoryImpl>(singletonCImpl, 6));
+      this.settingsRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<SettingsRepositoryImpl>(singletonCImpl, 9));
+      this.activateProfileUseCaseProvider = new SwitchingProvider<>(singletonCImpl, 4);
+      this.automationRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<AutomationRepositoryImpl>(singletonCImpl, 1));
+      this.backupRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<BackupRepositoryImpl>(singletonCImpl, 10));
+      this.timeAutomationSchedulerProvider = DoubleCheck.provider(new SwitchingProvider<TimeAutomationScheduler>(singletonCImpl, 11));
+      this.providePermissionCheckerProvider = DoubleCheck.provider(new SwitchingProvider<PermissionChecker>(singletonCImpl, 13));
+      this.diagnosticRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<DiagnosticRepositoryImpl>(singletonCImpl, 12));
+    }
+
+    @Override
+    public void injectVolumePilotApp(VolumePilotApp volumePilotApp) {
+      injectVolumePilotApp2(volumePilotApp);
+    }
+
+    @Override
+    public void injectTimeAutomationReceiver(TimeAutomationReceiver arg0) {
+      injectTimeAutomationReceiver2(arg0);
+    }
+
+    @Override
+    public void injectBootReceiver(BootReceiver arg0) {
+      injectBootReceiver2(arg0);
+    }
+
+    @Override
+    public Set<Boolean> getDisableFragmentGetContextFix() {
+      return Collections.<Boolean>emptySet();
+    }
+
+    @Override
+    public ActivityRetainedComponentBuilder retainedComponentBuilder() {
+      return new ActivityRetainedCBuilder(singletonCImpl);
+    }
+
+    @Override
+    public ServiceComponentBuilder serviceComponentBuilder() {
+      return new ServiceCBuilder(singletonCImpl);
+    }
+
+    private VolumePilotApp injectVolumePilotApp2(VolumePilotApp instance) {
+      VolumePilotApp_MembersInjector.injectLogger(instance, provideAppLoggerProvider.get());
+      return instance;
+    }
+
+    private TimeAutomationReceiver injectTimeAutomationReceiver2(TimeAutomationReceiver instance) {
+      TimeAutomationReceiver_MembersInjector.injectEvaluateTimeAutomationUseCase(instance, evaluateTimeAutomationUseCase());
+      TimeAutomationReceiver_MembersInjector.injectLogger(instance, provideAppLoggerProvider.get());
+      return instance;
+    }
+
+    private BootReceiver injectBootReceiver2(BootReceiver instance) {
+      BootReceiver_MembersInjector.injectGetSettingsUseCase(instance, getSettingsUseCase());
+      BootReceiver_MembersInjector.injectLogger(instance, provideAppLoggerProvider.get());
+      return instance;
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.volumepilot.core.common.AppLogger 
+          return (T) AppModule_ProvideAppLoggerFactory.provideAppLogger();
+
+          case 1: // com.volumepilot.data.repository.AutomationRepositoryImpl 
+          return (T) new AutomationRepositoryImpl(singletonCImpl.providePreferencesDataStoreProvider.get(), singletonCImpl.activateProfileUseCaseProvider, singletonCImpl.provideAppLoggerProvider.get());
+
+          case 2: // androidx.datastore.core.DataStore<androidx.datastore.preferences.core.Preferences> 
+          return (T) AppModule_ProvidePreferencesDataStoreFactory.providePreferencesDataStore(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule), singletonCImpl.provideIoDispatcherProvider.get());
+
+          case 3: // @javax.inject.Named("IoDispatcher") kotlinx.coroutines.CoroutineDispatcher 
+          return (T) CoroutinesModule_ProvideIoDispatcherFactory.provideIoDispatcher();
+
+          case 4: // com.volumepilot.domain.usecase.ActivateProfileUseCase 
+          return (T) new ActivateProfileUseCase(singletonCImpl.profileRepositoryImplProvider.get(), singletonCImpl.volumeRepositoryImplProvider.get(), singletonCImpl.setVolumeUseCase(), singletonCImpl.settingsRepositoryImplProvider.get());
+
+          case 5: // com.volumepilot.data.repository.ProfileRepositoryImpl 
+          return (T) new ProfileRepositoryImpl(singletonCImpl.providePreferencesDataStoreProvider.get(), singletonCImpl.provideAppLoggerProvider.get());
+
+          case 6: // com.volumepilot.data.repository.VolumeRepositoryImpl 
+          return (T) new VolumeRepositoryImpl(singletonCImpl.androidVolumeControllerProvider.get());
+
+          case 7: // com.volumepilot.service.volume.AndroidVolumeController 
+          return (T) new AndroidVolumeController(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule), singletonCImpl.provideAudioManagerProvider.get(), singletonCImpl.provideAppLoggerProvider.get(), singletonCImpl.provideIoDispatcherProvider.get());
+
+          case 8: // android.media.AudioManager 
+          return (T) AudioModule_Companion_ProvideAudioManagerFactory.provideAudioManager(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
+
+          case 9: // com.volumepilot.data.settings.SettingsRepositoryImpl 
+          return (T) new SettingsRepositoryImpl(singletonCImpl.providePreferencesDataStoreProvider.get(), singletonCImpl.provideAppLoggerProvider.get());
+
+          case 10: // com.volumepilot.data.repository.BackupRepositoryImpl 
+          return (T) new BackupRepositoryImpl(singletonCImpl.providePreferencesDataStoreProvider.get(), singletonCImpl.profileRepositoryImplProvider.get(), singletonCImpl.automationRepositoryImplProvider.get(), singletonCImpl.settingsRepositoryImplProvider.get(), singletonCImpl.provideAppLoggerProvider.get());
+
+          case 11: // com.volumepilot.service.automation.TimeAutomationScheduler 
+          return (T) new TimeAutomationScheduler(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule), singletonCImpl.provideAppLoggerProvider.get());
+
+          case 12: // com.volumepilot.data.repository.DiagnosticRepositoryImpl 
+          return (T) new DiagnosticRepositoryImpl(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule), singletonCImpl.providePermissionCheckerProvider.get(), singletonCImpl.settingsRepositoryImplProvider.get(), singletonCImpl.provideAppLoggerProvider.get());
+
+          case 13: // com.volumepilot.core.permissions.PermissionChecker 
+          return (T) AppModule_ProvidePermissionCheckerFactory.providePermissionChecker(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+}

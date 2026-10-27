@@ -1,0 +1,874 @@
+Marking id:hide_graphics_layer_in_inspector_tag:2131165232 reachable: referenced from base/dex/classes.dex
+Marking id:consume_window_insets_tag:2131165227 reachable: referenced from base/dex/classes.dex
+Marking id:compose_view_saveable_id_tag:2131165226 reachable: referenced from base/dex/classes.dex
+Marking id:view_tree_view_model_store_owner:2131165273 reachable: referenced from base/dex/classes.dex
+Marking id:view_tree_saved_state_registry_owner:2131165272 reachable: referenced from base/dex/classes.dex
+Marking id:tag_on_apply_window_listener:2131165257 reachable: referenced from base/dex/classes.dex
+Marking id:tag_window_insets_animation_callback:2131165265 reachable: referenced from base/dex/classes.dex
+Marking id:androidx_compose_ui_view_composition_context:2131165222 reachable: referenced from base/dex/classes.dex
+Marking string:notification_action_resume:2131427430 reachable: referenced from base/dex/classes.dex
+Marking string:notification_action_pause:2131427429 reachable: referenced from base/dex/classes.dex
+Marking string:notification_title:2131427436 reachable: referenced from base/dex/classes.dex
+Marking string:notification_text:2131427435 reachable: referenced from base/dex/classes.dex
+Marking drawable:ic_launcher_foreground:2131099655 reachable: referenced from base/dex/classes.dex
+Marking string:notification_action_stop:2131427432 reachable: referenced from base/dex/classes.dex
+Marking id:pooling_container_listener_holder_tag:2131165248 reachable: referenced from base/dex/classes.dex
+Marking id:hide_in_inspector_tag:2131165234 reachable: referenced from base/dex/classes.dex
+Marking id:is_pooling_container_tag:2131165239 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_0:2131165185 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_1:2131165186 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_2:2131165197 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_3:2131165208 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_4:2131165211 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_5:2131165212 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_6:2131165213 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_7:2131165214 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_8:2131165215 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_9:2131165216 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_10:2131165187 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_11:2131165188 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_12:2131165189 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_13:2131165190 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_14:2131165191 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_15:2131165192 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_16:2131165193 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_17:2131165194 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_18:2131165195 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_19:2131165196 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_20:2131165198 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_21:2131165199 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_22:2131165200 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_23:2131165201 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_24:2131165202 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_25:2131165203 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_26:2131165204 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_27:2131165205 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_28:2131165206 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_29:2131165207 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_30:2131165209 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_custom_action_31:2131165210 reachable: referenced from base/dex/classes.dex
+Marking string:indeterminate:2131427366 reachable: referenced from base/dex/classes.dex
+Marking string:state_off:2131427465 reachable: referenced from base/dex/classes.dex
+Marking string:state_on:2131427466 reachable: referenced from base/dex/classes.dex
+Marking string:selected:2131427454 reachable: referenced from base/dex/classes.dex
+Marking string:not_selected:2131427428 reachable: referenced from base/dex/classes.dex
+Marking string:template_percent:2131427476 reachable: referenced from base/dex/classes.dex
+Marking string:in_progress:2131427365 reachable: referenced from base/dex/classes.dex
+Marking string:state_empty:2131427464 reachable: referenced from base/dex/classes.dex
+Marking string:tab:2131427475 reachable: referenced from base/dex/classes.dex
+Marking string:switch_role:2131427474 reachable: referenced from base/dex/classes.dex
+Marking string:default_error_message:2131427357 reachable: referenced from base/dex/classes.dex
+Marking id:tag_unhandled_key_listeners:2131165264 reachable: referenced from base/dex/classes.dex
+Marking id:view_tree_on_back_pressed_dispatcher_owner:2131165271 reachable: referenced from base/dex/classes.dex
+Marking string:section_audio:2131427451 reachable: referenced from base/dex/classes.dex
+Marking string:setting_max_volume_cap_title:2131427458 reachable: referenced from base/dex/classes.dex
+Marking string:setting_max_volume_cap_desc:2131427457 reachable: referenced from base/dex/classes.dex
+Marking string:overlay_permission_title:2131427439 reachable: referenced from base/dex/classes.dex
+Marking string:overlay_permission_desc:2131427438 reachable: referenced from base/dex/classes.dex
+Marking string:overlay_toggle_title:2131427441 reachable: referenced from base/dex/classes.dex
+Marking string:overlay_toggle_desc:2131427440 reachable: referenced from base/dex/classes.dex
+Marking string:notification_channel_name:2131427434 reachable: referenced from base/dex/classes.dex
+Marking string:notification_channel_desc:2131427433 reachable: referenced from base/dex/classes.dex
+Marking style:DialogWindowTheme:2131492864 reachable: referenced from base/dex/classes.dex
+Marking string:tooltip_description:2131427477 reachable: referenced from base/dex/classes.dex
+Marking string:tooltip_label:2131427478 reachable: referenced from base/dex/classes.dex
+Marking id:wrapped_composition_tag:2131165275 reachable: referenced from base/dex/classes.dex
+Marking string:app_name:2131427337 reachable: referenced from base/dex/classes.dex
+Marking string:warning_dnd_active:2131427479 reachable: referenced from base/dex/classes.dex
+Marking string:privacy_banner_desc:2131427446 reachable: referenced from base/dex/classes.dex
+Marking string:androidx_startup:2131427336 reachable: referenced from base/dex/classes.dex
+Marking id:view_tree_lifecycle_owner:2131165270 reachable: referenced from base/dex/classes.dex
+Marking string:close_drawer:2131427355 reachable: referenced from base/dex/classes.dex
+Marking string:close_sheet:2131427356 reachable: referenced from base/dex/classes.dex
+Marking string:dropdown_menu:2131427364 reachable: referenced from base/dex/classes.dex
+Marking string:navigation_menu:2131427427 reachable: referenced from base/dex/classes.dex
+Marking string:range_end:2131427448 reachable: referenced from base/dex/classes.dex
+Marking string:range_start:2131427449 reachable: referenced from base/dex/classes.dex
+Marking string:preset_silent:2131427444 reachable: referenced from base/dex/classes.dex
+Marking string:preset_vibrate:2131427445 reachable: referenced from base/dex/classes.dex
+Marking string:preset_normal:2131427443 reachable: referenced from base/dex/classes.dex
+Marking string:preset_loud:2131427442 reachable: referenced from base/dex/classes.dex
+Marking id:inspection_slot_table_set:2131165238 reachable: referenced from base/dex/classes.dex
+Marking id:tag_screen_reader_focusable:2131165260 reachable: referenced from base/dex/classes.dex
+Marking id:tag_accessibility_heading:2131165255 reachable: referenced from base/dex/classes.dex
+Marking id:tag_accessibility_pane_title:2131165256 reachable: referenced from base/dex/classes.dex
+Marking id:tag_state_description:2131165261 reachable: referenced from base/dex/classes.dex
+Marking id:tag_accessibility_actions:2131165253 reachable: referenced from base/dex/classes.dex
+Marking id:accessibility_action_clickable_span:2131165184 reachable: referenced from base/dex/classes.dex
+Marking id:tag_accessibility_clickable_spans:2131165254 reachable: referenced from base/dex/classes.dex
+Marking string:default_popup_window_title:2131427358 reachable: referenced from base/dex/classes.dex
+Marking id:tag_unhandled_key_event_manager:2131165263 reachable: referenced from base/dex/classes.dex
+Marking id:report_drawn:2131165249 reachable: referenced from base/dex/classes.dex
+@com.volumepilot:anim/fragment_fast_out_extra_slow_in : reachable=false
+@com.volumepilot:animator/fragment_close_enter : reachable=false
+    @com.volumepilot:anim/fragment_fast_out_extra_slow_in
+@com.volumepilot:animator/fragment_close_exit : reachable=false
+    @com.volumepilot:anim/fragment_fast_out_extra_slow_in
+@com.volumepilot:animator/fragment_fade_enter : reachable=false
+@com.volumepilot:animator/fragment_fade_exit : reachable=false
+@com.volumepilot:animator/fragment_open_enter : reachable=false
+    @com.volumepilot:anim/fragment_fast_out_extra_slow_in
+@com.volumepilot:animator/fragment_open_exit : reachable=false
+    @com.volumepilot:anim/fragment_fast_out_extra_slow_in
+@com.volumepilot:attr/action : reachable=false
+@com.volumepilot:attr/alpha : reachable=false
+@com.volumepilot:attr/argType : reachable=false
+@com.volumepilot:attr/data : reachable=false
+@com.volumepilot:attr/dataPattern : reachable=false
+@com.volumepilot:attr/destination : reachable=false
+@com.volumepilot:attr/enterAnim : reachable=false
+@com.volumepilot:attr/exitAnim : reachable=false
+@com.volumepilot:attr/font : reachable=false
+@com.volumepilot:attr/fontProviderAuthority : reachable=false
+@com.volumepilot:attr/fontProviderCerts : reachable=false
+@com.volumepilot:attr/fontProviderFallbackQuery : reachable=false
+@com.volumepilot:attr/fontProviderFetchStrategy : reachable=false
+@com.volumepilot:attr/fontProviderFetchTimeout : reachable=false
+@com.volumepilot:attr/fontProviderPackage : reachable=false
+@com.volumepilot:attr/fontProviderQuery : reachable=false
+@com.volumepilot:attr/fontProviderSystemFontFamily : reachable=false
+@com.volumepilot:attr/fontStyle : reachable=false
+@com.volumepilot:attr/fontVariationSettings : reachable=false
+@com.volumepilot:attr/fontWeight : reachable=false
+@com.volumepilot:attr/graph : reachable=false
+@com.volumepilot:attr/lStar : reachable=false
+@com.volumepilot:attr/launchSingleTop : reachable=false
+@com.volumepilot:attr/mimeType : reachable=false
+@com.volumepilot:attr/navGraph : reachable=false
+@com.volumepilot:attr/nestedScrollViewStyle : reachable=false
+@com.volumepilot:attr/nullable : reachable=false
+@com.volumepilot:attr/popEnterAnim : reachable=false
+@com.volumepilot:attr/popExitAnim : reachable=false
+@com.volumepilot:attr/popUpTo : reachable=false
+@com.volumepilot:attr/popUpToInclusive : reachable=false
+@com.volumepilot:attr/popUpToSaveState : reachable=false
+@com.volumepilot:attr/queryPatterns : reachable=false
+@com.volumepilot:attr/restoreState : reachable=false
+@com.volumepilot:attr/route : reachable=false
+@com.volumepilot:attr/shortcutMatchRequired : reachable=false
+@com.volumepilot:attr/startDestination : reachable=false
+@com.volumepilot:attr/targetPackage : reachable=false
+@com.volumepilot:attr/ttcIndex : reachable=false
+@com.volumepilot:attr/uri : reachable=false
+@com.volumepilot:color/androidx_core_ripple_material_light : reachable=false
+@com.volumepilot:color/androidx_core_secondary_text_default_material_light : reachable=false
+@com.volumepilot:color/call_notification_answer_color : reachable=false
+@com.volumepilot:color/call_notification_decline_color : reachable=false
+@com.volumepilot:color/md_theme_dark_background : reachable=false
+@com.volumepilot:color/md_theme_dark_onBackground : reachable=false
+@com.volumepilot:color/md_theme_dark_onPrimary : reachable=false
+@com.volumepilot:color/md_theme_dark_onPrimaryContainer : reachable=false
+@com.volumepilot:color/md_theme_dark_onSurface : reachable=false
+@com.volumepilot:color/md_theme_dark_primary : reachable=false
+@com.volumepilot:color/md_theme_dark_primaryContainer : reachable=false
+@com.volumepilot:color/md_theme_dark_surface : reachable=false
+@com.volumepilot:color/md_theme_light_background : reachable=false
+@com.volumepilot:color/md_theme_light_onBackground : reachable=false
+@com.volumepilot:color/md_theme_light_onPrimary : reachable=false
+@com.volumepilot:color/md_theme_light_onPrimaryContainer : reachable=false
+@com.volumepilot:color/md_theme_light_onSurface : reachable=false
+@com.volumepilot:color/md_theme_light_primary : reachable=false
+@com.volumepilot:color/md_theme_light_primaryContainer : reachable=false
+@com.volumepilot:color/md_theme_light_surface : reachable=false
+@com.volumepilot:color/notification_action_color_filter : reachable=false
+    @com.volumepilot:color/androidx_core_secondary_text_default_material_light
+@com.volumepilot:color/notification_icon_bg_color : reachable=false
+@com.volumepilot:color/vector_tint_color : reachable=false
+@com.volumepilot:color/vector_tint_theme_color : reachable=false
+@com.volumepilot:dimen/compat_button_inset_horizontal_material : reachable=false
+@com.volumepilot:dimen/compat_button_inset_vertical_material : reachable=false
+@com.volumepilot:dimen/compat_button_padding_horizontal_material : reachable=false
+@com.volumepilot:dimen/compat_button_padding_vertical_material : reachable=false
+@com.volumepilot:dimen/compat_control_corner_material : reachable=false
+@com.volumepilot:dimen/compat_notification_large_icon_max_height : reachable=false
+@com.volumepilot:dimen/compat_notification_large_icon_max_width : reachable=false
+@com.volumepilot:dimen/notification_action_icon_size : reachable=false
+@com.volumepilot:dimen/notification_action_text_size : reachable=false
+@com.volumepilot:dimen/notification_big_circle_margin : reachable=false
+@com.volumepilot:dimen/notification_content_margin_start : reachable=false
+@com.volumepilot:dimen/notification_large_icon_height : reachable=false
+@com.volumepilot:dimen/notification_large_icon_width : reachable=false
+@com.volumepilot:dimen/notification_main_column_padding_top : reachable=false
+@com.volumepilot:dimen/notification_media_narrow_margin : reachable=false
+@com.volumepilot:dimen/notification_right_icon_size : reachable=false
+@com.volumepilot:dimen/notification_right_side_padding_top : reachable=false
+@com.volumepilot:dimen/notification_small_icon_background_padding : reachable=false
+@com.volumepilot:dimen/notification_small_icon_size_as_large : reachable=false
+@com.volumepilot:dimen/notification_subtext_size : reachable=false
+@com.volumepilot:dimen/notification_top_pad : reachable=false
+@com.volumepilot:dimen/notification_top_pad_large_text : reachable=false
+@com.volumepilot:drawable/ic_call_answer : reachable=false
+@com.volumepilot:drawable/ic_call_answer_low : reachable=false
+@com.volumepilot:drawable/ic_call_answer_video : reachable=false
+@com.volumepilot:drawable/ic_call_answer_video_low : reachable=false
+@com.volumepilot:drawable/ic_call_decline : reachable=false
+@com.volumepilot:drawable/ic_call_decline_low : reachable=false
+@com.volumepilot:drawable/ic_launcher_background : reachable=false
+@com.volumepilot:drawable/ic_launcher_foreground : reachable=true
+@com.volumepilot:drawable/notification_action_background : reachable=false
+    @com.volumepilot:color/androidx_core_ripple_material_light
+    @com.volumepilot:dimen/compat_button_inset_horizontal_material
+    @com.volumepilot:dimen/compat_button_inset_vertical_material
+    @com.volumepilot:dimen/compat_control_corner_material
+    @com.volumepilot:dimen/compat_button_padding_vertical_material
+    @com.volumepilot:dimen/compat_button_padding_horizontal_material
+@com.volumepilot:drawable/notification_bg : reachable=false
+    @com.volumepilot:drawable/notification_bg_normal_pressed
+    @com.volumepilot:drawable/notification_bg_normal
+@com.volumepilot:drawable/notification_bg_low : reachable=false
+    @com.volumepilot:drawable/notification_bg_low_pressed
+    @com.volumepilot:drawable/notification_bg_low_normal
+@com.volumepilot:drawable/notification_bg_low_normal : reachable=false
+@com.volumepilot:drawable/notification_bg_low_pressed : reachable=false
+@com.volumepilot:drawable/notification_bg_normal : reachable=false
+@com.volumepilot:drawable/notification_bg_normal_pressed : reachable=false
+@com.volumepilot:drawable/notification_icon_background : reachable=false
+    @com.volumepilot:color/notification_icon_bg_color
+@com.volumepilot:drawable/notification_oversize_large_icon_bg : reachable=false
+@com.volumepilot:drawable/notification_template_icon_bg : reachable=false
+@com.volumepilot:drawable/notification_template_icon_low_bg : reachable=false
+@com.volumepilot:drawable/notification_tile_bg : reachable=false
+    @com.volumepilot:drawable/notify_panel_notification_icon_bg
+@com.volumepilot:drawable/notify_panel_notification_icon_bg : reachable=false
+@com.volumepilot:id/accessibility_action_clickable_span : reachable=true
+@com.volumepilot:id/accessibility_custom_action_0 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_1 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_10 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_11 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_12 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_13 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_14 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_15 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_16 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_17 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_18 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_19 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_2 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_20 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_21 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_22 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_23 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_24 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_25 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_26 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_27 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_28 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_29 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_3 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_30 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_31 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_4 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_5 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_6 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_7 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_8 : reachable=true
+@com.volumepilot:id/accessibility_custom_action_9 : reachable=true
+@com.volumepilot:id/action_container : reachable=false
+@com.volumepilot:id/action_divider : reachable=false
+@com.volumepilot:id/action_image : reachable=false
+@com.volumepilot:id/action_text : reachable=false
+@com.volumepilot:id/actions : reachable=false
+@com.volumepilot:id/androidx_compose_ui_view_composition_context : reachable=true
+@com.volumepilot:id/async : reachable=false
+@com.volumepilot:id/blocking : reachable=false
+@com.volumepilot:id/chronometer : reachable=false
+@com.volumepilot:id/compose_view_saveable_id_tag : reachable=true
+@com.volumepilot:id/consume_window_insets_tag : reachable=true
+@com.volumepilot:id/dialog_button : reachable=false
+@com.volumepilot:id/edit_text_id : reachable=false
+@com.volumepilot:id/forever : reachable=false
+@com.volumepilot:id/fragment_container_view_tag : reachable=false
+@com.volumepilot:id/hide_graphics_layer_in_inspector_tag : reachable=true
+@com.volumepilot:id/hide_ime_id : reachable=false
+@com.volumepilot:id/hide_in_inspector_tag : reachable=true
+@com.volumepilot:id/icon : reachable=false
+@com.volumepilot:id/icon_group : reachable=false
+@com.volumepilot:id/info : reachable=false
+@com.volumepilot:id/inspection_slot_table_set : reachable=true
+@com.volumepilot:id/is_pooling_container_tag : reachable=true
+@com.volumepilot:id/italic : reachable=false
+@com.volumepilot:id/line1 : reachable=false
+@com.volumepilot:id/line3 : reachable=false
+@com.volumepilot:id/nav_controller_view_tag : reachable=false
+@com.volumepilot:id/normal : reachable=false
+@com.volumepilot:id/notification_background : reachable=false
+@com.volumepilot:id/notification_main_column : reachable=false
+@com.volumepilot:id/notification_main_column_container : reachable=false
+@com.volumepilot:id/pooling_container_listener_holder_tag : reachable=true
+@com.volumepilot:id/report_drawn : reachable=true
+@com.volumepilot:id/right_icon : reachable=false
+@com.volumepilot:id/right_side : reachable=false
+@com.volumepilot:id/special_effects_controller_view_tag : reachable=false
+@com.volumepilot:id/tag_accessibility_actions : reachable=true
+@com.volumepilot:id/tag_accessibility_clickable_spans : reachable=true
+@com.volumepilot:id/tag_accessibility_heading : reachable=true
+@com.volumepilot:id/tag_accessibility_pane_title : reachable=true
+@com.volumepilot:id/tag_on_apply_window_listener : reachable=true
+@com.volumepilot:id/tag_on_receive_content_listener : reachable=false
+@com.volumepilot:id/tag_on_receive_content_mime_types : reachable=false
+@com.volumepilot:id/tag_screen_reader_focusable : reachable=true
+@com.volumepilot:id/tag_state_description : reachable=true
+@com.volumepilot:id/tag_transition_group : reachable=false
+@com.volumepilot:id/tag_unhandled_key_event_manager : reachable=true
+@com.volumepilot:id/tag_unhandled_key_listeners : reachable=true
+@com.volumepilot:id/tag_window_insets_animation_callback : reachable=true
+@com.volumepilot:id/text : reachable=false
+@com.volumepilot:id/text2 : reachable=false
+@com.volumepilot:id/time : reachable=false
+@com.volumepilot:id/title : reachable=false
+@com.volumepilot:id/view_tree_lifecycle_owner : reachable=true
+@com.volumepilot:id/view_tree_on_back_pressed_dispatcher_owner : reachable=true
+@com.volumepilot:id/view_tree_saved_state_registry_owner : reachable=true
+@com.volumepilot:id/view_tree_view_model_store_owner : reachable=true
+@com.volumepilot:id/visible_removing_fragment_view_tag : reachable=false
+@com.volumepilot:id/wrapped_composition_tag : reachable=true
+@com.volumepilot:integer/m3c_window_layout_in_display_cutout_mode : reachable=false
+@com.volumepilot:integer/status_bar_notification_info_maxnum : reachable=false
+@com.volumepilot:layout/custom_dialog : reachable=false
+@com.volumepilot:layout/ime_base_split_test_activity : reachable=false
+@com.volumepilot:layout/ime_secondary_split_test_activity : reachable=false
+@com.volumepilot:layout/notification_action : reachable=false
+    @com.volumepilot:style/Widget_Compat_NotificationActionContainer
+    @com.volumepilot:dimen/notification_action_icon_size
+    @com.volumepilot:style/Widget_Compat_NotificationActionText
+@com.volumepilot:layout/notification_action_tombstone : reachable=false
+    @com.volumepilot:style/Widget_Compat_NotificationActionContainer
+    @com.volumepilot:dimen/notification_action_icon_size
+    @com.volumepilot:style/Widget_Compat_NotificationActionText
+@com.volumepilot:layout/notification_template_custom_big : reachable=false
+    @com.volumepilot:layout/notification_template_icon_group
+    @com.volumepilot:dimen/notification_large_icon_width
+    @com.volumepilot:dimen/notification_large_icon_height
+    @com.volumepilot:dimen/notification_right_side_padding_top
+    @com.volumepilot:layout/notification_template_part_time
+    @com.volumepilot:layout/notification_template_part_chronometer
+    @com.volumepilot:style/TextAppearance_Compat_Notification_Info
+@com.volumepilot:layout/notification_template_icon_group : reachable=false
+    @com.volumepilot:dimen/notification_large_icon_width
+    @com.volumepilot:dimen/notification_large_icon_height
+    @com.volumepilot:dimen/notification_big_circle_margin
+    @com.volumepilot:dimen/notification_right_icon_size
+@com.volumepilot:layout/notification_template_part_chronometer : reachable=false
+    @com.volumepilot:style/TextAppearance_Compat_Notification_Time
+@com.volumepilot:layout/notification_template_part_time : reachable=false
+    @com.volumepilot:style/TextAppearance_Compat_Notification_Time
+@com.volumepilot:mipmap/ic_launcher : reachable=true
+    @com.volumepilot:drawable/ic_launcher_background
+    @com.volumepilot:drawable/ic_launcher_foreground
+@com.volumepilot:string/action_close : reachable=false
+@com.volumepilot:string/action_grant_permission : reachable=false
+@com.volumepilot:string/action_learn_more : reachable=false
+@com.volumepilot:string/action_mute : reachable=false
+@com.volumepilot:string/action_reset : reachable=false
+@com.volumepilot:string/action_retry : reachable=false
+@com.volumepilot:string/action_unmute : reachable=false
+@com.volumepilot:string/action_vibrate : reachable=false
+@com.volumepilot:string/androidx_startup : reachable=true
+@com.volumepilot:string/app_name : reachable=true
+@com.volumepilot:string/app_tagline : reachable=false
+@com.volumepilot:string/call_notification_answer_action : reachable=false
+@com.volumepilot:string/call_notification_answer_video_action : reachable=false
+@com.volumepilot:string/call_notification_decline_action : reachable=false
+@com.volumepilot:string/call_notification_hang_up_action : reachable=false
+@com.volumepilot:string/call_notification_incoming_text : reachable=false
+@com.volumepilot:string/call_notification_ongoing_text : reachable=false
+@com.volumepilot:string/call_notification_screening_text : reachable=false
+@com.volumepilot:string/cd_app_icon : reachable=false
+@com.volumepilot:string/cd_audio_device_indicator : reachable=false
+@com.volumepilot:string/cd_decrease_volume : reachable=false
+@com.volumepilot:string/cd_increase_volume : reachable=false
+@com.volumepilot:string/cd_mute_button : reachable=false
+@com.volumepilot:string/cd_overlay_bubble : reachable=false
+@com.volumepilot:string/cd_overlay_panel : reachable=false
+@com.volumepilot:string/cd_unmute_button : reachable=false
+@com.volumepilot:string/cd_volume_slider : reachable=false
+@com.volumepilot:string/close_drawer : reachable=true
+@com.volumepilot:string/close_sheet : reachable=true
+@com.volumepilot:string/default_error_message : reachable=true
+@com.volumepilot:string/default_popup_window_title : reachable=true
+@com.volumepilot:string/device_bluetooth : reachable=false
+@com.volumepilot:string/device_speaker : reachable=false
+@com.volumepilot:string/device_unknown : reachable=false
+@com.volumepilot:string/device_usb : reachable=false
+@com.volumepilot:string/device_wired_headphones : reachable=false
+@com.volumepilot:string/dropdown_menu : reachable=true
+@com.volumepilot:string/in_progress : reachable=true
+@com.volumepilot:string/indeterminate : reachable=true
+@com.volumepilot:string/m3c_bottom_sheet_collapse_description : reachable=true
+@com.volumepilot:string/m3c_bottom_sheet_dismiss_description : reachable=true
+@com.volumepilot:string/m3c_bottom_sheet_drag_handle_description : reachable=true
+@com.volumepilot:string/m3c_bottom_sheet_expand_description : reachable=true
+@com.volumepilot:string/m3c_bottom_sheet_pane_title : reachable=true
+@com.volumepilot:string/m3c_date_input_headline : reachable=true
+@com.volumepilot:string/m3c_date_input_headline_description : reachable=true
+@com.volumepilot:string/m3c_date_input_invalid_for_pattern : reachable=true
+@com.volumepilot:string/m3c_date_input_invalid_not_allowed : reachable=true
+@com.volumepilot:string/m3c_date_input_invalid_year_range : reachable=true
+@com.volumepilot:string/m3c_date_input_label : reachable=true
+@com.volumepilot:string/m3c_date_input_no_input_description : reachable=true
+@com.volumepilot:string/m3c_date_input_title : reachable=true
+@com.volumepilot:string/m3c_date_picker_headline : reachable=true
+@com.volumepilot:string/m3c_date_picker_headline_description : reachable=true
+@com.volumepilot:string/m3c_date_picker_navigate_to_year_description : reachable=true
+@com.volumepilot:string/m3c_date_picker_no_selection_description : reachable=true
+@com.volumepilot:string/m3c_date_picker_scroll_to_earlier_years : reachable=true
+@com.volumepilot:string/m3c_date_picker_scroll_to_later_years : reachable=true
+@com.volumepilot:string/m3c_date_picker_switch_to_calendar_mode : reachable=true
+@com.volumepilot:string/m3c_date_picker_switch_to_day_selection : reachable=true
+@com.volumepilot:string/m3c_date_picker_switch_to_input_mode : reachable=true
+@com.volumepilot:string/m3c_date_picker_switch_to_next_month : reachable=true
+@com.volumepilot:string/m3c_date_picker_switch_to_previous_month : reachable=true
+@com.volumepilot:string/m3c_date_picker_switch_to_year_selection : reachable=true
+@com.volumepilot:string/m3c_date_picker_title : reachable=true
+@com.volumepilot:string/m3c_date_picker_today_description : reachable=true
+@com.volumepilot:string/m3c_date_picker_year_picker_pane_title : reachable=true
+@com.volumepilot:string/m3c_date_range_input_invalid_range_input : reachable=true
+@com.volumepilot:string/m3c_date_range_input_title : reachable=true
+@com.volumepilot:string/m3c_date_range_picker_day_in_range : reachable=true
+@com.volumepilot:string/m3c_date_range_picker_end_headline : reachable=true
+@com.volumepilot:string/m3c_date_range_picker_scroll_to_next_month : reachable=true
+@com.volumepilot:string/m3c_date_range_picker_scroll_to_previous_month : reachable=true
+@com.volumepilot:string/m3c_date_range_picker_start_headline : reachable=true
+@com.volumepilot:string/m3c_date_range_picker_title : reachable=true
+@com.volumepilot:string/m3c_dialog : reachable=true
+@com.volumepilot:string/m3c_dropdown_menu_collapsed : reachable=true
+@com.volumepilot:string/m3c_dropdown_menu_expanded : reachable=true
+@com.volumepilot:string/m3c_dropdown_menu_toggle : reachable=true
+@com.volumepilot:string/m3c_search_bar_search : reachable=true
+@com.volumepilot:string/m3c_snackbar_dismiss : reachable=true
+@com.volumepilot:string/m3c_suggestions_available : reachable=true
+@com.volumepilot:string/m3c_time_picker_am : reachable=true
+@com.volumepilot:string/m3c_time_picker_hour : reachable=true
+@com.volumepilot:string/m3c_time_picker_hour_24h_suffix : reachable=true
+@com.volumepilot:string/m3c_time_picker_hour_selection : reachable=true
+@com.volumepilot:string/m3c_time_picker_hour_suffix : reachable=true
+@com.volumepilot:string/m3c_time_picker_hour_text_field : reachable=true
+@com.volumepilot:string/m3c_time_picker_minute : reachable=true
+@com.volumepilot:string/m3c_time_picker_minute_selection : reachable=true
+@com.volumepilot:string/m3c_time_picker_minute_suffix : reachable=true
+@com.volumepilot:string/m3c_time_picker_minute_text_field : reachable=true
+@com.volumepilot:string/m3c_time_picker_period_toggle_description : reachable=true
+@com.volumepilot:string/m3c_time_picker_pm : reachable=true
+@com.volumepilot:string/m3c_tooltip_long_press_label : reachable=true
+@com.volumepilot:string/m3c_tooltip_pane_description : reachable=true
+@com.volumepilot:string/nav_diagnostics : reachable=false
+@com.volumepilot:string/nav_home : reachable=false
+@com.volumepilot:string/nav_settings : reachable=false
+@com.volumepilot:string/navigation_menu : reachable=true
+@com.volumepilot:string/not_selected : reachable=true
+@com.volumepilot:string/notification_action_pause : reachable=true
+@com.volumepilot:string/notification_action_resume : reachable=true
+@com.volumepilot:string/notification_action_settings : reachable=false
+@com.volumepilot:string/notification_action_stop : reachable=true
+@com.volumepilot:string/notification_channel_desc : reachable=true
+@com.volumepilot:string/notification_channel_name : reachable=true
+@com.volumepilot:string/notification_text : reachable=true
+@com.volumepilot:string/notification_title : reachable=true
+@com.volumepilot:string/overlay_panel_title : reachable=false
+@com.volumepilot:string/overlay_permission_desc : reachable=true
+@com.volumepilot:string/overlay_permission_title : reachable=true
+@com.volumepilot:string/overlay_toggle_desc : reachable=true
+@com.volumepilot:string/overlay_toggle_title : reachable=true
+@com.volumepilot:string/preset_loud : reachable=true
+@com.volumepilot:string/preset_normal : reachable=true
+@com.volumepilot:string/preset_silent : reachable=true
+@com.volumepilot:string/preset_vibrate : reachable=true
+@com.volumepilot:string/privacy_banner_desc : reachable=true
+@com.volumepilot:string/privacy_banner_title : reachable=false
+@com.volumepilot:string/range_end : reachable=true
+@com.volumepilot:string/range_start : reachable=true
+@com.volumepilot:string/section_appearance : reachable=false
+@com.volumepilot:string/section_audio : reachable=true
+@com.volumepilot:string/section_haptics : reachable=false
+@com.volumepilot:string/section_privacy : reachable=false
+@com.volumepilot:string/selected : reachable=true
+@com.volumepilot:string/setting_haptics_desc : reachable=false
+@com.volumepilot:string/setting_haptics_title : reachable=false
+@com.volumepilot:string/setting_max_volume_cap_desc : reachable=true
+@com.volumepilot:string/setting_max_volume_cap_title : reachable=true
+@com.volumepilot:string/setting_theme_dark : reachable=false
+@com.volumepilot:string/setting_theme_light : reachable=false
+@com.volumepilot:string/setting_theme_system : reachable=false
+@com.volumepilot:string/setting_theme_title : reachable=false
+@com.volumepilot:string/settings_title : reachable=false
+@com.volumepilot:string/state_empty : reachable=true
+@com.volumepilot:string/state_off : reachable=true
+@com.volumepilot:string/state_on : reachable=true
+@com.volumepilot:string/status_bar_notification_info_overflow : reachable=false
+@com.volumepilot:string/stream_alarm : reachable=false
+@com.volumepilot:string/stream_bluetooth : reachable=false
+@com.volumepilot:string/stream_media : reachable=false
+@com.volumepilot:string/stream_notification : reachable=false
+@com.volumepilot:string/stream_ring : reachable=false
+@com.volumepilot:string/stream_voice_call : reachable=false
+@com.volumepilot:string/switch_role : reachable=true
+@com.volumepilot:string/tab : reachable=true
+@com.volumepilot:string/template_percent : reachable=true
+@com.volumepilot:string/tooltip_description : reachable=true
+@com.volumepilot:string/tooltip_label : reachable=true
+@com.volumepilot:string/warning_dnd_active : reachable=true
+@com.volumepilot:string/warning_max_volume_reached : reachable=false
+@com.volumepilot:style/DialogWindowTheme : reachable=true
+@com.volumepilot:style/EdgeToEdgeFloatingDialogTheme : reachable=false
+    @com.volumepilot:integer/m3c_window_layout_in_display_cutout_mode
+@com.volumepilot:style/EdgeToEdgeFloatingDialogWindowTheme : reachable=true
+    @com.volumepilot:style/EdgeToEdgeFloatingDialogTheme
+@com.volumepilot:style/FloatingDialogTheme : reachable=false
+@com.volumepilot:style/FloatingDialogWindowTheme : reachable=false
+    @com.volumepilot:style/FloatingDialogTheme
+@com.volumepilot:style/TextAppearance_Compat_Notification : reachable=false
+@com.volumepilot:style/TextAppearance_Compat_Notification_Info : reachable=false
+@com.volumepilot:style/TextAppearance_Compat_Notification_Line2 : reachable=false
+    @com.volumepilot:style/TextAppearance_Compat_Notification_Info
+@com.volumepilot:style/TextAppearance_Compat_Notification_Time : reachable=false
+@com.volumepilot:style/TextAppearance_Compat_Notification_Title : reachable=false
+@com.volumepilot:style/Theme_VolumePilot : reachable=true
+@com.volumepilot:style/Widget_Compat_NotificationActionContainer : reachable=false
+    @com.volumepilot:drawable/notification_action_background
+@com.volumepilot:style/Widget_Compat_NotificationActionText : reachable=false
+    @com.volumepilot:color/androidx_core_secondary_text_default_material_light
+    @com.volumepilot:dimen/notification_action_text_size
+
+The root reachable resources are:
+ drawable:ic_launcher_foreground:2131099655
+ id:accessibility_action_clickable_span:2131165184
+ id:accessibility_custom_action_0:2131165185
+ id:accessibility_custom_action_1:2131165186
+ id:accessibility_custom_action_10:2131165187
+ id:accessibility_custom_action_11:2131165188
+ id:accessibility_custom_action_12:2131165189
+ id:accessibility_custom_action_13:2131165190
+ id:accessibility_custom_action_14:2131165191
+ id:accessibility_custom_action_15:2131165192
+ id:accessibility_custom_action_16:2131165193
+ id:accessibility_custom_action_17:2131165194
+ id:accessibility_custom_action_18:2131165195
+ id:accessibility_custom_action_19:2131165196
+ id:accessibility_custom_action_2:2131165197
+ id:accessibility_custom_action_20:2131165198
+ id:accessibility_custom_action_21:2131165199
+ id:accessibility_custom_action_22:2131165200
+ id:accessibility_custom_action_23:2131165201
+ id:accessibility_custom_action_24:2131165202
+ id:accessibility_custom_action_25:2131165203
+ id:accessibility_custom_action_26:2131165204
+ id:accessibility_custom_action_27:2131165205
+ id:accessibility_custom_action_28:2131165206
+ id:accessibility_custom_action_29:2131165207
+ id:accessibility_custom_action_3:2131165208
+ id:accessibility_custom_action_30:2131165209
+ id:accessibility_custom_action_31:2131165210
+ id:accessibility_custom_action_4:2131165211
+ id:accessibility_custom_action_5:2131165212
+ id:accessibility_custom_action_6:2131165213
+ id:accessibility_custom_action_7:2131165214
+ id:accessibility_custom_action_8:2131165215
+ id:accessibility_custom_action_9:2131165216
+ id:androidx_compose_ui_view_composition_context:2131165222
+ id:compose_view_saveable_id_tag:2131165226
+ id:consume_window_insets_tag:2131165227
+ id:hide_graphics_layer_in_inspector_tag:2131165232
+ id:hide_in_inspector_tag:2131165234
+ id:inspection_slot_table_set:2131165238
+ id:is_pooling_container_tag:2131165239
+ id:pooling_container_listener_holder_tag:2131165248
+ id:report_drawn:2131165249
+ id:tag_accessibility_actions:2131165253
+ id:tag_accessibility_clickable_spans:2131165254
+ id:tag_accessibility_heading:2131165255
+ id:tag_accessibility_pane_title:2131165256
+ id:tag_on_apply_window_listener:2131165257
+ id:tag_screen_reader_focusable:2131165260
+ id:tag_state_description:2131165261
+ id:tag_unhandled_key_event_manager:2131165263
+ id:tag_unhandled_key_listeners:2131165264
+ id:tag_window_insets_animation_callback:2131165265
+ id:view_tree_lifecycle_owner:2131165270
+ id:view_tree_on_back_pressed_dispatcher_owner:2131165271
+ id:view_tree_saved_state_registry_owner:2131165272
+ id:view_tree_view_model_store_owner:2131165273
+ id:wrapped_composition_tag:2131165275
+ mipmap:ic_launcher:2131361792
+ string:androidx_startup:2131427336
+ string:app_name:2131427337
+ string:close_drawer:2131427355
+ string:close_sheet:2131427356
+ string:default_error_message:2131427357
+ string:default_popup_window_title:2131427358
+ string:dropdown_menu:2131427364
+ string:in_progress:2131427365
+ string:indeterminate:2131427366
+ string:m3c_bottom_sheet_collapse_description:2131427367
+ string:m3c_bottom_sheet_dismiss_description:2131427368
+ string:m3c_bottom_sheet_drag_handle_description:2131427369
+ string:m3c_bottom_sheet_expand_description:2131427370
+ string:m3c_bottom_sheet_pane_title:2131427371
+ string:m3c_date_input_headline:2131427372
+ string:m3c_date_input_headline_description:2131427373
+ string:m3c_date_input_invalid_for_pattern:2131427374
+ string:m3c_date_input_invalid_not_allowed:2131427375
+ string:m3c_date_input_invalid_year_range:2131427376
+ string:m3c_date_input_label:2131427377
+ string:m3c_date_input_no_input_description:2131427378
+ string:m3c_date_input_title:2131427379
+ string:m3c_date_picker_headline:2131427380
+ string:m3c_date_picker_headline_description:2131427381
+ string:m3c_date_picker_navigate_to_year_description:2131427382
+ string:m3c_date_picker_no_selection_description:2131427383
+ string:m3c_date_picker_scroll_to_earlier_years:2131427384
+ string:m3c_date_picker_scroll_to_later_years:2131427385
+ string:m3c_date_picker_switch_to_calendar_mode:2131427386
+ string:m3c_date_picker_switch_to_day_selection:2131427387
+ string:m3c_date_picker_switch_to_input_mode:2131427388
+ string:m3c_date_picker_switch_to_next_month:2131427389
+ string:m3c_date_picker_switch_to_previous_month:2131427390
+ string:m3c_date_picker_switch_to_year_selection:2131427391
+ string:m3c_date_picker_title:2131427392
+ string:m3c_date_picker_today_description:2131427393
+ string:m3c_date_picker_year_picker_pane_title:2131427394
+ string:m3c_date_range_input_invalid_range_input:2131427395
+ string:m3c_date_range_input_title:2131427396
+ string:m3c_date_range_picker_day_in_range:2131427397
+ string:m3c_date_range_picker_end_headline:2131427398
+ string:m3c_date_range_picker_scroll_to_next_month:2131427399
+ string:m3c_date_range_picker_scroll_to_previous_month:2131427400
+ string:m3c_date_range_picker_start_headline:2131427401
+ string:m3c_date_range_picker_title:2131427402
+ string:m3c_dialog:2131427403
+ string:m3c_dropdown_menu_collapsed:2131427404
+ string:m3c_dropdown_menu_expanded:2131427405
+ string:m3c_dropdown_menu_toggle:2131427406
+ string:m3c_search_bar_search:2131427407
+ string:m3c_snackbar_dismiss:2131427408
+ string:m3c_suggestions_available:2131427409
+ string:m3c_time_picker_am:2131427410
+ string:m3c_time_picker_hour:2131427411
+ string:m3c_time_picker_hour_24h_suffix:2131427412
+ string:m3c_time_picker_hour_selection:2131427413
+ string:m3c_time_picker_hour_suffix:2131427414
+ string:m3c_time_picker_hour_text_field:2131427415
+ string:m3c_time_picker_minute:2131427416
+ string:m3c_time_picker_minute_selection:2131427417
+ string:m3c_time_picker_minute_suffix:2131427418
+ string:m3c_time_picker_minute_text_field:2131427419
+ string:m3c_time_picker_period_toggle_description:2131427420
+ string:m3c_time_picker_pm:2131427421
+ string:m3c_tooltip_long_press_label:2131427422
+ string:m3c_tooltip_pane_description:2131427423
+ string:navigation_menu:2131427427
+ string:not_selected:2131427428
+ string:notification_action_pause:2131427429
+ string:notification_action_resume:2131427430
+ string:notification_action_stop:2131427432
+ string:notification_channel_desc:2131427433
+ string:notification_channel_name:2131427434
+ string:notification_text:2131427435
+ string:notification_title:2131427436
+ string:overlay_permission_desc:2131427438
+ string:overlay_permission_title:2131427439
+ string:overlay_toggle_desc:2131427440
+ string:overlay_toggle_title:2131427441
+ string:preset_loud:2131427442
+ string:preset_normal:2131427443
+ string:preset_silent:2131427444
+ string:preset_vibrate:2131427445
+ string:privacy_banner_desc:2131427446
+ string:range_end:2131427448
+ string:range_start:2131427449
+ string:section_audio:2131427451
+ string:selected:2131427454
+ string:setting_max_volume_cap_desc:2131427457
+ string:setting_max_volume_cap_title:2131427458
+ string:state_empty:2131427464
+ string:state_off:2131427465
+ string:state_on:2131427466
+ string:switch_role:2131427474
+ string:tab:2131427475
+ string:template_percent:2131427476
+ string:tooltip_description:2131427477
+ string:tooltip_label:2131427478
+ string:warning_dnd_active:2131427479
+ style:DialogWindowTheme:2131492864
+ style:EdgeToEdgeFloatingDialogWindowTheme:2131492866
+ style:Theme_VolumePilot:2131492874
+Unused resources are: 
+ anim:fragment_fast_out_extra_slow_in:2130771968
+ animator:fragment_close_enter:2130837504
+ animator:fragment_close_exit:2130837505
+ animator:fragment_fade_enter:2130837506
+ animator:fragment_fade_exit:2130837507
+ animator:fragment_open_enter:2130837508
+ animator:fragment_open_exit:2130837509
+ color:androidx_core_ripple_material_light:2130968576
+ color:androidx_core_secondary_text_default_material_light:2130968577
+ color:call_notification_answer_color:2130968578
+ color:call_notification_decline_color:2130968579
+ color:md_theme_dark_background:2130968580
+ color:md_theme_dark_onBackground:2130968581
+ color:md_theme_dark_onPrimary:2130968582
+ color:md_theme_dark_onPrimaryContainer:2130968583
+ color:md_theme_dark_onSurface:2130968584
+ color:md_theme_dark_primary:2130968585
+ color:md_theme_dark_primaryContainer:2130968586
+ color:md_theme_dark_surface:2130968587
+ color:md_theme_light_background:2130968588
+ color:md_theme_light_onBackground:2130968589
+ color:md_theme_light_onPrimary:2130968590
+ color:md_theme_light_onPrimaryContainer:2130968591
+ color:md_theme_light_onSurface:2130968592
+ color:md_theme_light_primary:2130968593
+ color:md_theme_light_primaryContainer:2130968594
+ color:md_theme_light_surface:2130968595
+ color:notification_action_color_filter:2130968596
+ color:notification_icon_bg_color:2130968597
+ color:vector_tint_color:2130968598
+ color:vector_tint_theme_color:2130968599
+ dimen:compat_button_inset_horizontal_material:2131034112
+ dimen:compat_button_inset_vertical_material:2131034113
+ dimen:compat_button_padding_horizontal_material:2131034114
+ dimen:compat_button_padding_vertical_material:2131034115
+ dimen:compat_control_corner_material:2131034116
+ dimen:compat_notification_large_icon_max_height:2131034117
+ dimen:compat_notification_large_icon_max_width:2131034118
+ dimen:notification_action_icon_size:2131034119
+ dimen:notification_action_text_size:2131034120
+ dimen:notification_big_circle_margin:2131034121
+ dimen:notification_content_margin_start:2131034122
+ dimen:notification_large_icon_height:2131034123
+ dimen:notification_large_icon_width:2131034124
+ dimen:notification_main_column_padding_top:2131034125
+ dimen:notification_media_narrow_margin:2131034126
+ dimen:notification_right_icon_size:2131034127
+ dimen:notification_right_side_padding_top:2131034128
+ dimen:notification_small_icon_background_padding:2131034129
+ dimen:notification_small_icon_size_as_large:2131034130
+ dimen:notification_subtext_size:2131034131
+ dimen:notification_top_pad:2131034132
+ dimen:notification_top_pad_large_text:2131034133
+ drawable:ic_call_answer:2131099648
+ drawable:ic_call_answer_low:2131099649
+ drawable:ic_call_answer_video:2131099650
+ drawable:ic_call_answer_video_low:2131099651
+ drawable:ic_call_decline:2131099652
+ drawable:ic_call_decline_low:2131099653
+ drawable:notification_action_background:2131099656
+ drawable:notification_bg:2131099657
+ drawable:notification_bg_low:2131099658
+ drawable:notification_bg_low_normal:2131099659
+ drawable:notification_bg_low_pressed:2131099660
+ drawable:notification_bg_normal:2131099661
+ drawable:notification_bg_normal_pressed:2131099662
+ drawable:notification_icon_background:2131099663
+ drawable:notification_oversize_large_icon_bg:2131099664
+ drawable:notification_template_icon_bg:2131099665
+ drawable:notification_template_icon_low_bg:2131099666
+ drawable:notification_tile_bg:2131099667
+ drawable:notify_panel_notification_icon_bg:2131099668
+ id:action_container:2131165217
+ id:action_divider:2131165218
+ id:action_image:2131165219
+ id:action_text:2131165220
+ id:actions:2131165221
+ id:async:2131165223
+ id:blocking:2131165224
+ id:chronometer:2131165225
+ id:dialog_button:2131165228
+ id:edit_text_id:2131165229
+ id:forever:2131165230
+ id:fragment_container_view_tag:2131165231
+ id:hide_ime_id:2131165233
+ id:icon:2131165235
+ id:icon_group:2131165236
+ id:info:2131165237
+ id:italic:2131165240
+ id:line1:2131165241
+ id:line3:2131165242
+ id:nav_controller_view_tag:2131165243
+ id:normal:2131165244
+ id:notification_background:2131165245
+ id:notification_main_column:2131165246
+ id:notification_main_column_container:2131165247
+ id:right_icon:2131165250
+ id:right_side:2131165251
+ id:special_effects_controller_view_tag:2131165252
+ id:tag_on_receive_content_listener:2131165258
+ id:tag_on_receive_content_mime_types:2131165259
+ id:tag_transition_group:2131165262
+ id:text:2131165266
+ id:text2:2131165267
+ id:time:2131165268
+ id:title:2131165269
+ id:visible_removing_fragment_view_tag:2131165274
+ integer:status_bar_notification_info_maxnum:2131230721
+ layout:custom_dialog:2131296256
+ layout:ime_base_split_test_activity:2131296257
+ layout:ime_secondary_split_test_activity:2131296258
+ layout:notification_action:2131296259
+ layout:notification_action_tombstone:2131296260
+ layout:notification_template_custom_big:2131296261
+ layout:notification_template_icon_group:2131296262
+ layout:notification_template_part_chronometer:2131296263
+ layout:notification_template_part_time:2131296264
+ string:action_close:2131427328
+ string:action_grant_permission:2131427329
+ string:action_learn_more:2131427330
+ string:action_mute:2131427331
+ string:action_reset:2131427332
+ string:action_retry:2131427333
+ string:action_unmute:2131427334
+ string:action_vibrate:2131427335
+ string:app_tagline:2131427338
+ string:call_notification_answer_action:2131427339
+ string:call_notification_answer_video_action:2131427340
+ string:call_notification_decline_action:2131427341
+ string:call_notification_hang_up_action:2131427342
+ string:call_notification_incoming_text:2131427343
+ string:call_notification_ongoing_text:2131427344
+ string:call_notification_screening_text:2131427345
+ string:cd_app_icon:2131427346
+ string:cd_audio_device_indicator:2131427347
+ string:cd_decrease_volume:2131427348
+ string:cd_increase_volume:2131427349
+ string:cd_mute_button:2131427350
+ string:cd_overlay_bubble:2131427351
+ string:cd_overlay_panel:2131427352
+ string:cd_unmute_button:2131427353
+ string:cd_volume_slider:2131427354
+ string:device_bluetooth:2131427359
+ string:device_speaker:2131427360
+ string:device_unknown:2131427361
+ string:device_usb:2131427362
+ string:device_wired_headphones:2131427363
+ string:nav_diagnostics:2131427424
+ string:nav_home:2131427425
+ string:nav_settings:2131427426
+ string:notification_action_settings:2131427431
+ string:overlay_panel_title:2131427437
+ string:privacy_banner_title:2131427447
+ string:section_appearance:2131427450
+ string:section_haptics:2131427452
+ string:section_privacy:2131427453
+ string:setting_haptics_desc:2131427455
+ string:setting_haptics_title:2131427456
+ string:setting_theme_dark:2131427459
+ string:setting_theme_light:2131427460
+ string:setting_theme_system:2131427461
+ string:setting_theme_title:2131427462
+ string:settings_title:2131427463
+ string:status_bar_notification_info_overflow:2131427467
+ string:stream_alarm:2131427468
+ string:stream_bluetooth:2131427469
+ string:stream_media:2131427470
+ string:stream_notification:2131427471
+ string:stream_ring:2131427472
+ string:stream_voice_call:2131427473
+ string:warning_max_volume_reached:2131427480
+ style:FloatingDialogTheme:2131492867
+ style:FloatingDialogWindowTheme:2131492868
+ style:TextAppearance_Compat_Notification:2131492869
+ style:TextAppearance_Compat_Notification_Info:2131492870
+ style:TextAppearance_Compat_Notification_Line2:2131492871
+ style:TextAppearance_Compat_Notification_Time:2131492872
+ style:TextAppearance_Compat_Notification_Title:2131492873
+ style:Widget_Compat_NotificationActionContainer:2131492875
+ style:Widget_Compat_NotificationActionText:2131492876
