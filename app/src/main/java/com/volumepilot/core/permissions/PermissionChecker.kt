@@ -45,6 +45,9 @@ class AndroidPermissionChecker @Inject constructor(
                     true
                 }
             }
+            PermissionType.ACCESSIBILITY -> {
+                com.volumepilot.service.accessibility.VolumeAccessibilityService.isAccessibilityServiceEnabled(context)
+            }
         }
     }
 }

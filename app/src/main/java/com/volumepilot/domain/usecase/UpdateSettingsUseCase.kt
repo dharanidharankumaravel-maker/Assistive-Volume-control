@@ -42,4 +42,21 @@ class UpdateSettingsUseCase @Inject constructor(
     suspend fun setOnboardingCompleted(completed: Boolean): Result<Unit> {
         return settingsRepository.setOnboardingCompleted(completed)
     }
+
+    suspend fun updateFloatingWidgetCustomization(
+        arrangement: com.volumepilot.domain.model.FloatingButtonArrangement,
+        color: com.volumepilot.domain.model.FloatingButtonColor,
+        powerSingleTap: com.volumepilot.domain.model.PowerSingleTapAction,
+        powerLongPress: com.volumepilot.domain.model.PowerLongPressAction
+    ): Result<Unit> {
+        return settingsRepository.updateFloatingWidgetCustomization(arrangement, color, powerSingleTap, powerLongPress)
+    }
+
+    suspend fun setRgbGlowSettings(enabled: Boolean, intensity: Float): Result<Unit> {
+        return settingsRepository.updateRgbGlowSettings(enabled, intensity)
+    }
+
+    suspend fun setOverlayHidden(hidden: Boolean): Result<Unit> {
+        return settingsRepository.updateOverlayHidden(hidden)
+    }
 }

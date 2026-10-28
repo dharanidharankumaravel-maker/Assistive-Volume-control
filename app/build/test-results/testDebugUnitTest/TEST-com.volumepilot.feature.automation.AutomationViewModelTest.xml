@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.feature.automation.AutomationViewModelTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:50:07.367Z" hostname="DESKTOP-45Q6PEN" time="4.377">
+<testsuite name="com.volumepilot.feature.automation.AutomationViewModelTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-28T13:44:24.713Z" hostname="DESKTOP-45Q6PEN" time="2.396">
   <properties/>
-  <testcase name="importSettings invokes backup repository and sets feedback message" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="3.064"/>
-  <testcase name="exportSettings stores exportedJson in uiState and feedback message" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="0.014"/>
-  <testcase name="updateSafeListeningConfig updates max volume cap and warning flags" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="0.012"/>
-  <testcase name="toggleMasterAutomation false cancels scheduler and updates config" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="1.226"/>
-  <testcase name="initial uiState loads automation config and profiles" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="0.048"/>
-  <testcase name="saveDeviceRule updates device rules in config" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="0.01"/>
+  <testcase name="importSettings invokes backup repository and sets feedback message" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="1.728"/>
+  <testcase name="exportSettings stores exportedJson in uiState and feedback message" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="0.017"/>
+  <testcase name="updateSafeListeningConfig updates max volume cap and warning flags" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="0.016"/>
+  <testcase name="toggleMasterAutomation false cancels scheduler and updates config" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="0.592"/>
+  <testcase name="initial uiState loads automation config and profiles" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="0.017"/>
+  <testcase name="saveDeviceRule updates device rules in config" classname="com.volumepilot.feature.automation.AutomationViewModelTest" time="0.026"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

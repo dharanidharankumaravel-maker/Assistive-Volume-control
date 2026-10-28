@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.feature.profiles.ProfilesViewModelTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:50:12.010Z" hostname="DESKTOP-45Q6PEN" time="0.06">
+<testsuite name="com.volumepilot.feature.profiles.ProfilesViewModelTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-28T13:44:27.390Z" hostname="DESKTOP-45Q6PEN" time="0.069">
   <properties/>
-  <testcase name="activateProfile updates activeProfileId in uiState" classname="com.volumepilot.feature.profiles.ProfilesViewModelTest" time="0.013"/>
-  <testcase name="saveProfile adds new custom profile to list" classname="com.volumepilot.feature.profiles.ProfilesViewModelTest" time="0.011"/>
-  <testcase name="initial uiState loads default profiles and default active id" classname="com.volumepilot.feature.profiles.ProfilesViewModelTest" time="0.006"/>
-  <testcase name="deleteProfile removes custom profile" classname="com.volumepilot.feature.profiles.ProfilesViewModelTest" time="0.029"/>
+  <testcase name="activateProfile updates activeProfileId in uiState" classname="com.volumepilot.feature.profiles.ProfilesViewModelTest" time="0.022"/>
+  <testcase name="saveProfile adds new custom profile to list" classname="com.volumepilot.feature.profiles.ProfilesViewModelTest" time="0.019"/>
+  <testcase name="initial uiState loads default profiles and default active id" classname="com.volumepilot.feature.profiles.ProfilesViewModelTest" time="0.013"/>
+  <testcase name="deleteProfile removes custom profile" classname="com.volumepilot.feature.profiles.ProfilesViewModelTest" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

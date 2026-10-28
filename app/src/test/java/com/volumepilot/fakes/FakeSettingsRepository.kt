@@ -64,4 +64,31 @@ class FakeSettingsRepository(
         _settings.update { it.copy(hasCompletedOnboarding = completed) }
         return Result.success(Unit)
     }
+
+    override suspend fun updateFloatingWidgetCustomization(
+        arrangement: com.volumepilot.domain.model.FloatingButtonArrangement,
+        color: com.volumepilot.domain.model.FloatingButtonColor,
+        powerSingleTap: com.volumepilot.domain.model.PowerSingleTapAction,
+        powerLongPress: com.volumepilot.domain.model.PowerLongPressAction
+    ): Result<Unit> {
+        _settings.update {
+            it.copy(
+                buttonArrangement = arrangement,
+                widgetColor = color,
+                powerSingleTapAction = powerSingleTap,
+                powerLongPressAction = powerLongPress
+            )
+        }
+        return Result.success(Unit)
+    }
+
+    override suspend fun updateRgbGlowSettings(enabled: Boolean, intensity: Float): Result<Unit> {
+        _settings.update { it.copy(rgbGlowEnabled = enabled, rgbGlowIntensity = intensity) }
+        return Result.success(Unit)
+    }
+
+    override suspend fun updateOverlayHidden(hidden: Boolean): Result<Unit> {
+        _settings.update { it.copy(isOverlayHidden = hidden) }
+        return Result.success(Unit)
+    }
 }

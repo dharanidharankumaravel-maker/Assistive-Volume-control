@@ -12,5 +12,12 @@ data class UserSettings(
     val isOverlayEnabled: Boolean = false,
     val overlayPosition: OverlayPosition = OverlayPosition(),
     val preferredStreamType: AudioStreamType = AudioStreamType.MEDIA,
-    val hasCompletedOnboarding: Boolean = false
+    val hasCompletedOnboarding: Boolean = false,
+    val buttonArrangement: FloatingButtonArrangement = FloatingButtonArrangement.POWER_UP_DOWN,
+    val widgetColor: FloatingButtonColor = FloatingButtonColor.BASIL,
+    val powerSingleTapAction: PowerSingleTapAction = PowerSingleTapAction.LOCK_SCREEN,
+    val powerLongPressAction: PowerLongPressAction = PowerLongPressAction.TAKE_SCREENSHOT,
+    val rgbGlowEnabled: Boolean = true,
+    val rgbGlowIntensity: Float = 0.6f,
+    val isOverlayHidden: Boolean = false
 )

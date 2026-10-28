@@ -64,6 +64,12 @@ fun VolumePilotAppNavHost(
                 onToggleMaxVolumeLimiter = homeViewModel::onToggleMaxVolumeLimiter,
                 onToggleOverlay = homeViewModel::onToggleOverlay,
                 onToggleStartOnBoot = homeViewModel::onToggleStartOnBoot,
+                onUpdateWidgetArrangement = homeViewModel::onUpdateWidgetArrangement,
+                onUpdateWidgetColor = homeViewModel::onUpdateWidgetColor,
+                onUpdatePowerSingleTap = homeViewModel::onUpdatePowerSingleTap,
+                onUpdatePowerLongPress = homeViewModel::onUpdatePowerLongPress,
+                onUpdateOverlayAppearance = homeViewModel::onUpdateOverlayAppearance,
+                onUpdateRgbGlow = homeViewModel::onUpdateRgbGlow,
                 onNavigateToDiagnostics = {
                     navController.navigate(NavDestination.Diagnostics.route)
                 },

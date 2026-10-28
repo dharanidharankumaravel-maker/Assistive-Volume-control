@@ -8,6 +8,7 @@ class FakePermissionChecker : PermissionChecker {
     var modifyAudioGranted: Boolean = true
     var notificationPolicyGranted: Boolean = true
     var postNotificationsGranted: Boolean = true
+    var accessibilityGranted: Boolean = true
 
     override fun isPermissionGranted(permission: PermissionType): Boolean {
         return when (permission) {
@@ -15,6 +16,7 @@ class FakePermissionChecker : PermissionChecker {
             PermissionType.MODIFY_AUDIO -> modifyAudioGranted
             PermissionType.NOTIFICATION_POLICY -> notificationPolicyGranted
             PermissionType.POST_NOTIFICATIONS -> postNotificationsGranted
+            PermissionType.ACCESSIBILITY -> accessibilityGranted
         }
     }
 }

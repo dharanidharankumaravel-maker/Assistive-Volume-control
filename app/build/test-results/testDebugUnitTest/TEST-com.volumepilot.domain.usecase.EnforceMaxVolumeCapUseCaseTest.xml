@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.domain.usecase.EnforceMaxVolumeCapUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:50:07.168Z" hostname="DESKTOP-45Q6PEN" time="0.001">
+<testsuite name="com.volumepilot.domain.usecase.EnforceMaxVolumeCapUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-28T13:44:24.525Z" hostname="DESKTOP-45Q6PEN" time="0.002">
   <properties/>
-  <testcase name="when limiter is enabled on media stream, caps maximum volume to configured percent" classname="com.volumepilot.domain.usecase.EnforceMaxVolumeCapUseCaseTest" time="0.0"/>
-  <testcase name="when limiter is enabled on alarm stream, does not cap to preserve alarm safety" classname="com.volumepilot.domain.usecase.EnforceMaxVolumeCapUseCaseTest" time="0.001"/>
-  <testcase name="when limiter is disabled, returns stream max volume" classname="com.volumepilot.domain.usecase.EnforceMaxVolumeCapUseCaseTest" time="0.0"/>
+  <testcase name="when limiter is enabled on media stream, caps maximum volume to configured percent" classname="com.volumepilot.domain.usecase.EnforceMaxVolumeCapUseCaseTest" time="0.001"/>
+  <testcase name="when limiter is enabled on alarm stream, does not cap to preserve alarm safety" classname="com.volumepilot.domain.usecase.EnforceMaxVolumeCapUseCaseTest" time="0.0"/>
+  <testcase name="when limiter is disabled, returns stream max volume" classname="com.volumepilot.domain.usecase.EnforceMaxVolumeCapUseCaseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -51,6 +51,7 @@ class HomeViewModel @Inject constructor(
             ) { volumeState, settings ->
                 val overlayGranted = permissionChecker.isPermissionGranted(PermissionType.OVERLAY)
                 val dndGranted = permissionChecker.isPermissionGranted(PermissionType.NOTIFICATION_POLICY)
+                val accessibilityGranted = permissionChecker.isPermissionGranted(PermissionType.ACCESSIBILITY)
 
                 HomeUiState(
                     isLoading = false,
@@ -58,7 +59,8 @@ class HomeViewModel @Inject constructor(
                     settings = settings,
                     error = null,
                     isOverlayPermissionGranted = overlayGranted,
-                    isNotificationPolicyGranted = dndGranted
+                    isNotificationPolicyGranted = dndGranted,
+                    isAccessibilityGranted = accessibilityGranted
                 )
             }.collect { newState ->
                 _uiState.value = newState
@@ -130,6 +132,70 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             val currentCap = _uiState.value.settings.maxVolumeCapPercent
             updateSettingsUseCase.setMaxVolumeLimiter(enabled, currentCap)
+        }
+    }
+
+    fun onUpdateWidgetArrangement(arrangement: com.volumepilot.domain.model.FloatingButtonArrangement) {
+        val current = _uiState.value.settings
+        viewModelScope.launch {
+            updateSettingsUseCase.updateFloatingWidgetCustomization(
+                arrangement = arrangement,
+                color = current.widgetColor,
+                powerSingleTap = current.powerSingleTapAction,
+                powerLongPress = current.powerLongPressAction
+            )
+        }
+    }
+
+    fun onUpdateWidgetColor(color: com.volumepilot.domain.model.FloatingButtonColor) {
+        val current = _uiState.value.settings
+        viewModelScope.launch {
+            updateSettingsUseCase.updateFloatingWidgetCustomization(
+                arrangement = current.buttonArrangement,
+                color = color,
+                powerSingleTap = current.powerSingleTapAction,
+                powerLongPress = current.powerLongPressAction
+            )
+        }
+    }
+
+    fun onUpdatePowerSingleTap(action: com.volumepilot.domain.model.PowerSingleTapAction) {
+        val current = _uiState.value.settings
+        viewModelScope.launch {
+            updateSettingsUseCase.updateFloatingWidgetCustomization(
+                arrangement = current.buttonArrangement,
+                color = current.widgetColor,
+                powerSingleTap = action,
+                powerLongPress = current.powerLongPressAction
+            )
+        }
+    }
+
+    fun onUpdatePowerLongPress(action: com.volumepilot.domain.model.PowerLongPressAction) {
+        val current = _uiState.value.settings
+        viewModelScope.launch {
+            updateSettingsUseCase.updateFloatingWidgetCustomization(
+                arrangement = current.buttonArrangement,
+                color = current.widgetColor,
+                powerSingleTap = current.powerSingleTapAction,
+                powerLongPress = action
+            )
+        }
+    }
+
+    fun onUpdateOverlayAppearance(opacity: Float, sizeDp: Int) {
+        viewModelScope.launch {
+            updateSettingsUseCase.setOverlayAppearance(
+                opacity = opacity,
+                sizeDp = sizeDp,
+                autoHideDelaySeconds = _uiState.value.settings.autoHideDelaySeconds
+            )
+        }
+    }
+
+    fun onUpdateRgbGlow(enabled: Boolean, intensity: Float) {
+        viewModelScope.launch {
+            updateSettingsUseCase.setRgbGlowSettings(enabled, intensity)
         }
     }
 

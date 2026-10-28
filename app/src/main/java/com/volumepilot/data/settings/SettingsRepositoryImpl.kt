@@ -54,6 +54,38 @@ class SettingsRepositoryImpl @Inject constructor(
             val posY = preferences[PreferencesKeys.OVERLAY_POSITION_Y] ?: 200
             val isSnappedLeft = preferences[PreferencesKeys.OVERLAY_SNAPPED_LEFT] ?: false
 
+            val arrangementStr = preferences[PreferencesKeys.BUTTON_ARRANGEMENT] ?: com.volumepilot.domain.model.FloatingButtonArrangement.POWER_UP_DOWN.name
+            val arrangement = try {
+                com.volumepilot.domain.model.FloatingButtonArrangement.valueOf(arrangementStr)
+            } catch (e: Exception) {
+                com.volumepilot.domain.model.FloatingButtonArrangement.POWER_UP_DOWN
+            }
+
+            val colorStr = preferences[PreferencesKeys.WIDGET_COLOR] ?: com.volumepilot.domain.model.FloatingButtonColor.BASIL.name
+            val color = try {
+                com.volumepilot.domain.model.FloatingButtonColor.valueOf(colorStr)
+            } catch (e: Exception) {
+                com.volumepilot.domain.model.FloatingButtonColor.BASIL
+            }
+
+            val singleTapStr = preferences[PreferencesKeys.POWER_SINGLE_TAP_ACTION] ?: com.volumepilot.domain.model.PowerSingleTapAction.LOCK_SCREEN.name
+            val singleTap = try {
+                com.volumepilot.domain.model.PowerSingleTapAction.valueOf(singleTapStr)
+            } catch (e: Exception) {
+                com.volumepilot.domain.model.PowerSingleTapAction.LOCK_SCREEN
+            }
+
+            val longPressStr = preferences[PreferencesKeys.POWER_LONG_PRESS_ACTION] ?: com.volumepilot.domain.model.PowerLongPressAction.TAKE_SCREENSHOT.name
+            val longPress = try {
+                com.volumepilot.domain.model.PowerLongPressAction.valueOf(longPressStr)
+            } catch (e: Exception) {
+                com.volumepilot.domain.model.PowerLongPressAction.TAKE_SCREENSHOT
+            }
+
+            val rgbGlowEnabled = preferences[PreferencesKeys.RGB_GLOW_ENABLED] ?: true
+            val rgbGlowIntensity = preferences[PreferencesKeys.RGB_GLOW_INTENSITY] ?: 0.6f
+            val isOverlayHidden = preferences[PreferencesKeys.IS_OVERLAY_HIDDEN] ?: false
+
             UserSettings(
                 maxVolumeLimiterEnabled = preferences[PreferencesKeys.MAX_VOLUME_LIMITER_ENABLED] ?: false,
                 maxVolumeCapPercent = preferences[PreferencesKeys.MAX_VOLUME_CAP_PERCENT] ?: 80,
@@ -66,7 +98,14 @@ class SettingsRepositoryImpl @Inject constructor(
                 isOverlayEnabled = preferences[PreferencesKeys.IS_OVERLAY_ENABLED] ?: false,
                 overlayPosition = com.volumepilot.domain.model.OverlayPosition(posX, posY, isSnappedLeft),
                 preferredStreamType = preferredStream,
-                hasCompletedOnboarding = preferences[PreferencesKeys.HAS_COMPLETED_ONBOARDING] ?: false
+                hasCompletedOnboarding = preferences[PreferencesKeys.HAS_COMPLETED_ONBOARDING] ?: false,
+                buttonArrangement = arrangement,
+                widgetColor = color,
+                powerSingleTapAction = singleTap,
+                powerLongPressAction = longPress,
+                rgbGlowEnabled = rgbGlowEnabled,
+                rgbGlowIntensity = rgbGlowIntensity,
+                isOverlayHidden = isOverlayHidden
             )
         }
 
@@ -121,6 +160,29 @@ class SettingsRepositoryImpl @Inject constructor(
     override suspend fun setOnboardingCompleted(completed: Boolean): Result<Unit> =
         safeEdit { preferences ->
             preferences[PreferencesKeys.HAS_COMPLETED_ONBOARDING] = completed
+        }
+
+    override suspend fun updateFloatingWidgetCustomization(
+        arrangement: com.volumepilot.domain.model.FloatingButtonArrangement,
+        color: com.volumepilot.domain.model.FloatingButtonColor,
+        powerSingleTap: com.volumepilot.domain.model.PowerSingleTapAction,
+        powerLongPress: com.volumepilot.domain.model.PowerLongPressAction
+    ): Result<Unit> = safeEdit { preferences ->
+        preferences[PreferencesKeys.BUTTON_ARRANGEMENT] = arrangement.name
+        preferences[PreferencesKeys.WIDGET_COLOR] = color.name
+        preferences[PreferencesKeys.POWER_SINGLE_TAP_ACTION] = powerSingleTap.name
+        preferences[PreferencesKeys.POWER_LONG_PRESS_ACTION] = powerLongPress.name
+    }
+
+    override suspend fun updateRgbGlowSettings(enabled: Boolean, intensity: Float): Result<Unit> =
+        safeEdit { preferences ->
+            preferences[PreferencesKeys.RGB_GLOW_ENABLED] = enabled
+            preferences[PreferencesKeys.RGB_GLOW_INTENSITY] = intensity
+        }
+
+    override suspend fun updateOverlayHidden(hidden: Boolean): Result<Unit> =
+        safeEdit { preferences ->
+            preferences[PreferencesKeys.IS_OVERLAY_HIDDEN] = hidden
         }
 
     private suspend fun safeEdit(action: (androidx.datastore.preferences.core.MutablePreferences) -> Unit): Result<Unit> {

@@ -90,4 +90,21 @@
     <string name="cd_app_icon">VolumePilot logo</string>
     <string name="cd_overlay_bubble">VolumePilot floating button. Tap to expand, drag to move, double-tap to mute.</string>
     <string name="cd_overlay_panel">Floating volume panel</string>
+
+    <!-- Accessibility Service Strings -->
+    <string name="accessibility_service_desc">VolumePilot Accessibility Service provides software shortcuts to lock the screen, take screenshots, and open the power menu for users with motor impairments or damaged hardware keys.</string>
+    <string name="accessibility_permission_title">Accessibility Service</string>
+    <string name="accessibility_permission_desc">Required to lock your screen and capture screenshots from the floating power button without using physical hardware keys.</string>
+    <string name="accessibility_enable_btn">Enable Accessibility</string>
+    <string name="accessibility_status_active">Accessibility Service Active</string>
+    <string name="accessibility_status_needed">Accessibility permission required for power and screenshot actions</string>
+
+    <!-- Floating Widget Customization Strings -->
+    <string name="section_floating_controls">Floating Control Widget</string>
+    <string name="setting_button_arrangement">Button Order</string>
+    <string name="setting_widget_color">Accent Color</string>
+    <string name="setting_power_single_tap">Power Single Tap</string>
+    <string name="setting_power_long_press">Power Long Press</string>
+    <string name="setting_widget_size">Widget Button Size</string>
+    <string name="setting_widget_opacity">Transparency</string>
 </resources>

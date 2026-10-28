@@ -25,6 +25,28 @@ import androidx.compose.material.icons.filled.Speaker
 import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material.icons.filled.Vibration
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.PowerSettingsNew
+import androidx.compose.material.icons.filled.TouchApp
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FilterChipDefaults
+import androidx.compose.material3.Slider
+import com.volumepilot.domain.model.FloatingButtonArrangement
+import com.volumepilot.domain.model.FloatingButtonColor
+import com.volumepilot.domain.model.PowerLongPressAction
+import com.volumepilot.domain.model.PowerSingleTapAction
+import com.volumepilot.service.accessibility.VolumeAccessibilityService
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.Card
@@ -73,6 +95,12 @@ fun HomeScreen(
     onToggleMaxVolumeLimiter: (Boolean) -> Unit,
     onToggleOverlay: (Boolean) -> Unit,
     onToggleStartOnBoot: (Boolean) -> Unit,
+    onUpdateWidgetArrangement: (com.volumepilot.domain.model.FloatingButtonArrangement) -> Unit = {},
+    onUpdateWidgetColor: (com.volumepilot.domain.model.FloatingButtonColor) -> Unit = {},
+    onUpdatePowerSingleTap: (com.volumepilot.domain.model.PowerSingleTapAction) -> Unit = {},
+    onUpdatePowerLongPress: (com.volumepilot.domain.model.PowerLongPressAction) -> Unit = {},
+    onUpdateOverlayAppearance: (Float, Int) -> Unit = { _, _ -> },
+    onUpdateRgbGlow: (Boolean, Float) -> Unit = { _, _ -> },
     onNavigateToDiagnostics: () -> Unit,
     onNavigateToProfiles: () -> Unit = {},
     onNavigateToAutomation: () -> Unit = {},
@@ -182,6 +210,23 @@ fun HomeScreen(
                             checked = uiState.settings.isOverlayEnabled,
                             onCheckedChange = onToggleOverlay
                         )
+
+                        if (uiState.settings.isOverlayEnabled) {
+                            Spacer(modifier = Modifier.height(spacing.small))
+                            FloatingWidgetCustomizationCard(
+                                settings = uiState.settings,
+                                isAccessibilityGranted = uiState.isAccessibilityGranted,
+                                onUpdateArrangement = onUpdateWidgetArrangement,
+                                onUpdateColor = onUpdateWidgetColor,
+                                onUpdatePowerSingleTap = onUpdatePowerSingleTap,
+                                onUpdatePowerLongPress = onUpdatePowerLongPress,
+                                onUpdateAppearance = onUpdateOverlayAppearance,
+                                onUpdateRgbGlow = onUpdateRgbGlow,
+                                onOpenAccessibility = {
+                                    VolumeAccessibilityService.openAccessibilitySettings(context)
+                                }
+                            )
+                        }
                     }
                 }
 
@@ -362,3 +407,313 @@ private fun PresetChip(
         )
     )
 }
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun FloatingWidgetCustomizationCard(
+    settings: com.volumepilot.domain.model.UserSettings,
+    isAccessibilityGranted: Boolean,
+    onUpdateArrangement: (FloatingButtonArrangement) -> Unit,
+    onUpdateColor: (FloatingButtonColor) -> Unit,
+    onUpdatePowerSingleTap: (PowerSingleTapAction) -> Unit,
+    onUpdatePowerLongPress: (PowerLongPressAction) -> Unit,
+    onUpdateAppearance: (Float, Int) -> Unit,
+    onUpdateRgbGlow: (Boolean, Float) -> Unit,
+    onOpenAccessibility: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val spacing = LocalSpacing.current
+
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        shape = MaterialTheme.shapes.medium,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f)
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(spacing.medium),
+            verticalArrangement = Arrangement.spacedBy(spacing.small)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.TouchApp,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.size(20.dp)
+                )
+                Text(
+                    text = "Floating Controls Customization",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
+
+            // Accessibility permission helper card
+            if (!isAccessibilityGranted) {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = MaterialTheme.shapes.small,
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.5f)
+                    )
+                ) {
+                    Column(
+                        modifier = Modifier.padding(spacing.small),
+                        verticalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+                    ) {
+                        Text(
+                            text = "Accessibility Permission Needed",
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.error
+                        )
+                        Text(
+                            text = "Required for software Lock Screen and Screenshot shortcuts without hardware buttons.",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onErrorContainer
+                        )
+                        Button(
+                            onClick = onOpenAccessibility,
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.error
+                            ),
+                            modifier = Modifier.align(Alignment.End)
+                        ) {
+                            Text("Enable Accessibility", style = MaterialTheme.typography.labelSmall)
+                        }
+                    }
+                }
+            } else {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Text(
+                        text = "Accessibility Service Active (Power & Screenshot ready)",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
+
+            // 1. Button Order
+            Text(
+                text = "Button Order",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+            ) {
+                FloatingButtonArrangement.values().forEach { arrangement ->
+                    FilterChip(
+                        selected = settings.buttonArrangement == arrangement,
+                        onClick = { onUpdateArrangement(arrangement) },
+                        label = {
+                            Text(
+                                text = when (arrangement) {
+                                    FloatingButtonArrangement.POWER_UP_DOWN -> "Power • + • −"
+                                    FloatingButtonArrangement.UP_DOWN_POWER -> "+ • − • Power"
+                                    FloatingButtonArrangement.UP_POWER_DOWN -> "+ • Power • −"
+                                },
+                                style = MaterialTheme.typography.labelSmall
+                            )
+                        }
+                    )
+                }
+            }
+
+            // 2. Widget Color Accent
+            Text(
+                text = "Widget Accent Color",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(spacing.small),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                FloatingButtonColor.values().forEach { colorTheme ->
+                    val isSelected = settings.widgetColor == colorTheme
+                    val color = Color(colorTheme.primaryColor)
+
+                    Box(
+                        modifier = Modifier
+                            .size(36.dp)
+                            .clip(CircleShape)
+                            .background(color)
+                            .clickable { onUpdateColor(colorTheme) }
+                            .border(
+                                width = if (isSelected) 2.5.dp else 1.dp,
+                                color = if (isSelected) MaterialTheme.colorScheme.onSurface else Color.Transparent,
+                                shape = CircleShape
+                            ),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        if (isSelected) {
+                            Icon(
+                                imageVector = Icons.Default.Check,
+                                contentDescription = null,
+                                tint = Color.White,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+                    }
+                }
+            }
+
+            // 3. Power Button Single Tap Action
+            Text(
+                text = "Power Single Tap",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+            ) {
+                PowerSingleTapAction.values().forEach { action ->
+                    FilterChip(
+                        selected = settings.powerSingleTapAction == action,
+                        onClick = { onUpdatePowerSingleTap(action) },
+                        label = { Text(action.displayName, style = MaterialTheme.typography.labelSmall) }
+                    )
+                }
+            }
+
+            // 4. Power Button Long Press Action
+            Text(
+                text = "Power Long Press",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+            ) {
+                PowerLongPressAction.values().forEach { action ->
+                    FilterChip(
+                        selected = settings.powerLongPressAction == action,
+                        onClick = { onUpdatePowerLongPress(action) },
+                        label = { Text(action.displayName, style = MaterialTheme.typography.labelSmall) }
+                    )
+                }
+            }
+
+            // 5. Button Size Slider
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Widget Size",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "${settings.overlaySizeDp} dp",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+            Slider(
+                value = settings.overlaySizeDp.toFloat(),
+                onValueChange = { newSize ->
+                    onUpdateAppearance(settings.overlayOpacity, newSize.toInt())
+                },
+                valueRange = 38f..56f,
+                steps = 8
+            )
+
+            // 6. Opacity Slider
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Transparency",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "${(settings.overlayOpacity * 100).toInt()}%",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+            Slider(
+                value = settings.overlayOpacity,
+                onValueChange = { newOpacity ->
+                    onUpdateAppearance(newOpacity, settings.overlaySizeDp)
+                },
+                valueRange = 0.3f..1.0f
+            )
+
+            // 7. RGB Glowing Aura Effect
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = "RGB Glowing Aura",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Text(
+                        text = "Animated neon glow around widget and panel",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                    )
+                }
+                androidx.compose.material3.Switch(
+                    checked = settings.rgbGlowEnabled,
+                    onCheckedChange = { enabled ->
+                        onUpdateRgbGlow(enabled, settings.rgbGlowIntensity)
+                    }
+                )
+            }
+
+            if (settings.rgbGlowEnabled) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "Glow Intensity",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Text(
+                        text = "${(settings.rgbGlowIntensity * 100).toInt()}%",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+                Slider(
+                    value = settings.rgbGlowIntensity,
+                    onValueChange = { newIntensity ->
+                        onUpdateRgbGlow(settings.rgbGlowEnabled, newIntensity)
+                    },
+                    valueRange = 0.2f..1.0f
+                )
+            }
+        }
+    }
+}
+

@@ -4,6 +4,7 @@
 -keep class androidx.startup.InitializationProvider { <init>(); }
 -keep class com.volumepilot.MainActivity { <init>(); }
 -keep class com.volumepilot.VolumePilotApp { <init>(); }
+-keep class com.volumepilot.service.accessibility.VolumeAccessibilityService { <init>(); }
 -keep class com.volumepilot.service.automation.TimeAutomationReceiver { <init>(); }
 -keep class com.volumepilot.service.overlay.BootReceiver { <init>(); }
 -keep class com.volumepilot.service.overlay.OverlayService { <init>(); }

@@ -447,30 +447,30 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
+      static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
+
+      static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
+
+      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
+
       static String com_volumepilot_feature_diagnostics_DiagnosticsViewModel = "com.volumepilot.feature.diagnostics.DiagnosticsViewModel";
 
       static String com_volumepilot_feature_onboarding_OnboardingViewModel = "com.volumepilot.feature.onboarding.OnboardingViewModel";
 
-      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
+      @KeepFieldType
+      HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
 
-      static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
+      @KeepFieldType
+      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
 
-      static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
+      @KeepFieldType
+      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
 
       @KeepFieldType
       DiagnosticsViewModel com_volumepilot_feature_diagnostics_DiagnosticsViewModel2;
 
       @KeepFieldType
       OnboardingViewModel com_volumepilot_feature_onboarding_OnboardingViewModel2;
-
-      @KeepFieldType
-      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
-
-      @KeepFieldType
-      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
-
-      @KeepFieldType
-      HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
     }
   }
 
@@ -823,8 +823,8 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
     }
 
     @Override
-    public void injectVolumePilotApp(VolumePilotApp arg0) {
-      injectVolumePilotApp2(arg0);
+    public void injectVolumePilotApp(VolumePilotApp volumePilotApp) {
+      injectVolumePilotApp2(volumePilotApp);
     }
 
     @Override

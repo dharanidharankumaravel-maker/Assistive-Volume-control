@@ -10,5 +10,6 @@ data class HomeUiState(
     val settings: UserSettings = UserSettings(),
     val error: AppError? = null,
     val isNotificationPolicyGranted: Boolean = false,
-    val isOverlayPermissionGranted: Boolean = false
+    val isOverlayPermissionGranted: Boolean = false,
+    val isAccessibilityGranted: Boolean = false
 )

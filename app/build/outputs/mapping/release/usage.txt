@@ -1667,19 +1667,15 @@ androidx.compose.animation.EnterExitTransitionElement:
     public final void setSizeAnimation(androidx.compose.animation.core.Transition$DeferredAnimation)
     public final void setSlideAnimation(androidx.compose.animation.core.Transition$DeferredAnimation)
 androidx.compose.animation.EnterExitTransitionKt$slideInHorizontally$1
-androidx.compose.animation.EnterExitTransitionKt$slideInHorizontally$2
 androidx.compose.animation.EnterExitTransitionKt$slideOutHorizontally$1
-androidx.compose.animation.EnterExitTransitionKt$slideOutHorizontally$2
 androidx.compose.animation.EnterExitTransitionKt:
     public static final androidx.compose.animation.TransitionEffect get(androidx.compose.animation.EnterTransition,androidx.compose.animation.TransitionEffectKey)
     public static final androidx.compose.animation.TransitionEffect get(androidx.compose.animation.ExitTransition,androidx.compose.animation.TransitionEffectKey)
     public static final androidx.compose.animation.ExitTransition scaleOut-L8ZKh-E(androidx.compose.animation.core.FiniteAnimationSpec,float,long)
     public static synthetic androidx.compose.animation.ExitTransition scaleOut-L8ZKh-E$default(androidx.compose.animation.core.FiniteAnimationSpec,float,long,int,java.lang.Object)
     public static synthetic androidx.compose.animation.EnterTransition slideIn$default(androidx.compose.animation.core.FiniteAnimationSpec,kotlin.jvm.functions.Function1,int,java.lang.Object)
-    public static final androidx.compose.animation.EnterTransition slideInHorizontally(androidx.compose.animation.core.FiniteAnimationSpec,kotlin.jvm.functions.Function1)
     public static synthetic androidx.compose.animation.EnterTransition slideInHorizontally$default(androidx.compose.animation.core.FiniteAnimationSpec,kotlin.jvm.functions.Function1,int,java.lang.Object)
     public static synthetic androidx.compose.animation.ExitTransition slideOut$default(androidx.compose.animation.core.FiniteAnimationSpec,kotlin.jvm.functions.Function1,int,java.lang.Object)
-    public static final androidx.compose.animation.ExitTransition slideOutHorizontally(androidx.compose.animation.core.FiniteAnimationSpec,kotlin.jvm.functions.Function1)
     public static synthetic androidx.compose.animation.ExitTransition slideOutHorizontally$default(androidx.compose.animation.core.FiniteAnimationSpec,kotlin.jvm.functions.Function1,int,java.lang.Object)
     public static final androidx.compose.animation.EnterTransition withEffect(androidx.compose.animation.EnterTransition,androidx.compose.animation.TransitionEffect)
     public static final androidx.compose.animation.ExitTransition withEffect(androidx.compose.animation.ExitTransition,androidx.compose.animation.TransitionEffect)
@@ -6435,8 +6431,6 @@ androidx.compose.material.icons.filled.CheckCircleOutlineKt
 androidx.compose.material.icons.filled.ChecklistKt
 androidx.compose.material.icons.filled.ChecklistRtlKt
 androidx.compose.material.icons.filled.CheckroomKt
-androidx.compose.material.icons.filled.ChevronLeftKt
-androidx.compose.material.icons.filled.ChevronRightKt
 androidx.compose.material.icons.filled.ChildCareKt
 androidx.compose.material.icons.filled.ChildFriendlyKt
 androidx.compose.material.icons.filled.ChromeReaderModeKt
@@ -7494,7 +7488,6 @@ androidx.compose.material.icons.filled.PostAddKt
 androidx.compose.material.icons.filled.PowerInputKt
 androidx.compose.material.icons.filled.PowerKt
 androidx.compose.material.icons.filled.PowerOffKt
-androidx.compose.material.icons.filled.PowerSettingsNewKt
 androidx.compose.material.icons.filled.PrecisionManufacturingKt
 androidx.compose.material.icons.filled.PregnantWomanKt
 androidx.compose.material.icons.filled.PresentToAllKt
@@ -7964,7 +7957,6 @@ androidx.compose.material.icons.filled.TollKt
 androidx.compose.material.icons.filled.TonalityKt
 androidx.compose.material.icons.filled.TopicKt
 androidx.compose.material.icons.filled.TornadoKt
-androidx.compose.material.icons.filled.TouchAppKt
 androidx.compose.material.icons.filled.TourKt
 androidx.compose.material.icons.filled.ToysKt
 androidx.compose.material.icons.filled.TrackChangesKt
@@ -19175,7 +19167,6 @@ androidx.compose.ui.graphics.AndroidRenderEffect_androidKt
 androidx.compose.ui.graphics.AndroidShader_androidKt:
     public static final android.graphics.Shader ActualImageShader-F49vj9s(androidx.compose.ui.graphics.ImageBitmap,int,int)
     public static final android.graphics.Shader ActualRadialGradientShader-8uybcMk(long,float,java.util.List,java.util.List,int)
-    public static final android.graphics.Shader ActualSweepGradientShader-9KIMszo(long,java.util.List,java.util.List)
 androidx.compose.ui.graphics.AndroidTileMode_androidKt$WhenMappings
 androidx.compose.ui.graphics.AndroidTileMode_androidKt:
     public static final boolean isSupported-0vamqd0(int)
@@ -19251,9 +19242,7 @@ androidx.compose.ui.graphics.Brush$Companion:
     public final androidx.compose.ui.graphics.Brush radialGradient-P_Vx-Ks(kotlin.Pair[],long,float,int)
     public static synthetic androidx.compose.ui.graphics.Brush radialGradient-P_Vx-Ks$default(androidx.compose.ui.graphics.Brush$Companion,java.util.List,long,float,int,int,java.lang.Object)
     public static synthetic androidx.compose.ui.graphics.Brush radialGradient-P_Vx-Ks$default(androidx.compose.ui.graphics.Brush$Companion,kotlin.Pair[],long,float,int,int,java.lang.Object)
-    public final androidx.compose.ui.graphics.Brush sweepGradient-Uv8p0NA(java.util.List,long)
     public final androidx.compose.ui.graphics.Brush sweepGradient-Uv8p0NA(kotlin.Pair[],long)
-    public static synthetic androidx.compose.ui.graphics.Brush sweepGradient-Uv8p0NA$default(androidx.compose.ui.graphics.Brush$Companion,java.util.List,long,int,java.lang.Object)
     public static synthetic androidx.compose.ui.graphics.Brush sweepGradient-Uv8p0NA$default(androidx.compose.ui.graphics.Brush$Companion,kotlin.Pair[],long,int,java.lang.Object)
     public final androidx.compose.ui.graphics.Brush verticalGradient-8A-3gB4(java.util.List,float,float,int)
     public static synthetic androidx.compose.ui.graphics.Brush verticalGradient-8A-3gB4$default(androidx.compose.ui.graphics.Brush$Companion,java.util.List,float,float,int,int,java.lang.Object)
@@ -19732,7 +19721,6 @@ androidx.compose.ui.graphics.ShaderKt:
     public static synthetic android.graphics.Shader LinearGradientShader-VjE6UOU$default(long,long,java.util.List,java.util.List,int,int,java.lang.Object)
     public static final android.graphics.Shader RadialGradientShader-8uybcMk(long,float,java.util.List,java.util.List,int)
     public static synthetic android.graphics.Shader RadialGradientShader-8uybcMk$default(long,float,java.util.List,java.util.List,int,int,java.lang.Object)
-    public static final android.graphics.Shader SweepGradientShader-9KIMszo(long,java.util.List,java.util.List)
     public static synthetic android.graphics.Shader SweepGradientShader-9KIMszo$default(long,java.util.List,java.util.List,int,java.lang.Object)
 androidx.compose.ui.graphics.Shadow$Companion:
     public static synthetic void getNone$annotations()
@@ -19764,7 +19752,8 @@ androidx.compose.ui.graphics.StrokeJoin:
     public int hashCode()
     public java.lang.String toString()
     public final synthetic int unbox-impl()
-androidx.compose.ui.graphics.SweepGradient
+androidx.compose.ui.graphics.SweepGradient:
+    public synthetic void <init>(long,java.util.List,java.util.List,int,kotlin.jvm.internal.DefaultConstructorMarker)
 androidx.compose.ui.graphics.TileMode:
     private final int value
     private synthetic void <init>(int)
@@ -24576,7 +24565,28 @@ androidx.concurrent.futures.ResolvableFuture:
     public boolean setFuture(com.google.common.util.concurrent.ListenableFuture)
 androidx.core.R$attr
 androidx.core.R$color
-androidx.core.R$dimen
+androidx.core.R$dimen:
+    public static int compat_button_inset_horizontal_material
+    public static int compat_button_inset_vertical_material
+    public static int compat_button_padding_horizontal_material
+    public static int compat_button_padding_vertical_material
+    public static int compat_control_corner_material
+    public static int notification_action_icon_size
+    public static int notification_action_text_size
+    public static int notification_big_circle_margin
+    public static int notification_content_margin_start
+    public static int notification_large_icon_height
+    public static int notification_large_icon_width
+    public static int notification_main_column_padding_top
+    public static int notification_media_narrow_margin
+    public static int notification_right_icon_size
+    public static int notification_right_side_padding_top
+    public static int notification_small_icon_background_padding
+    public static int notification_small_icon_size_as_large
+    public static int notification_subtext_size
+    public static int notification_top_pad
+    public static int notification_top_pad_large_text
+    private void <init>()
 androidx.core.R$drawable
 androidx.core.R$id:
     public static int action_container
@@ -24898,7 +24908,6 @@ androidx.core.app.NotificationCompat$Builder:
     public androidx.core.app.NotificationCompat$Builder setGroup(java.lang.String)
     public androidx.core.app.NotificationCompat$Builder setGroupAlertBehavior(int)
     public androidx.core.app.NotificationCompat$Builder setGroupSummary(boolean)
-    public androidx.core.app.NotificationCompat$Builder setLargeIcon(android.graphics.Bitmap)
     public androidx.core.app.NotificationCompat$Builder setLargeIcon(android.graphics.drawable.Icon)
     public androidx.core.app.NotificationCompat$Builder setLights(int,int,int)
     public androidx.core.app.NotificationCompat$Builder setLocalOnly(boolean)
@@ -25177,7 +25186,6 @@ androidx.core.app.NotificationCompat:
     public static boolean getUsesChronometer(android.app.Notification)
     public static int getVisibility(android.app.Notification)
     public static boolean isGroupSummary(android.app.Notification)
-    public static android.graphics.Bitmap reduceLargeIconSize(android.content.Context,android.graphics.Bitmap)
 androidx.core.app.NotificationCompatBuilder$Api20Impl:
     private void <init>()
 androidx.core.app.NotificationCompatBuilder$Api21Impl:
@@ -25761,7 +25769,6 @@ androidx.core.graphics.drawable.IconCompat:
     public static androidx.core.graphics.drawable.IconCompat createWithAdaptiveBitmap(android.graphics.Bitmap)
     public static androidx.core.graphics.drawable.IconCompat createWithAdaptiveBitmapContentUri(android.net.Uri)
     public static androidx.core.graphics.drawable.IconCompat createWithAdaptiveBitmapContentUri(java.lang.String)
-    public static androidx.core.graphics.drawable.IconCompat createWithBitmap(android.graphics.Bitmap)
     public static androidx.core.graphics.drawable.IconCompat createWithContentUri(android.net.Uri)
     public static androidx.core.graphics.drawable.IconCompat createWithContentUri(java.lang.String)
     public static androidx.core.graphics.drawable.IconCompat createWithData(byte[],int,int)
@@ -30686,6 +30693,12 @@ com.volumepilot.R$drawable:
     private void <init>()
 com.volumepilot.R$mipmap
 com.volumepilot.R$string:
+    public static int accessibility_enable_btn
+    public static int accessibility_permission_desc
+    public static int accessibility_permission_title
+    public static int accessibility_service_desc
+    public static int accessibility_status_active
+    public static int accessibility_status_needed
     public static int action_close
     public static int action_grant_permission
     public static int action_learn_more
@@ -30712,18 +30725,28 @@ com.volumepilot.R$string:
     public static int nav_diagnostics
     public static int nav_home
     public static int nav_settings
+    public static int notification_action_pause
+    public static int notification_action_resume
     public static int notification_action_settings
+    public static int notification_text
     public static int overlay_panel_title
     public static int privacy_banner_title
     public static int section_appearance
+    public static int section_floating_controls
     public static int section_haptics
     public static int section_privacy
+    public static int setting_button_arrangement
     public static int setting_haptics_desc
     public static int setting_haptics_title
+    public static int setting_power_long_press
+    public static int setting_power_single_tap
     public static int setting_theme_dark
     public static int setting_theme_light
     public static int setting_theme_system
     public static int setting_theme_title
+    public static int setting_widget_color
+    public static int setting_widget_opacity
+    public static int setting_widget_size
     public static int settings_title
     public static int stream_alarm
     public static int stream_bluetooth
@@ -30734,6 +30757,7 @@ com.volumepilot.R$string:
     public static int warning_max_volume_reached
     private void <init>()
 com.volumepilot.R$style
+com.volumepilot.R$xml
 com.volumepilot.R
 com.volumepilot.VolumePilotApp:
     private static final java.lang.String TAG
@@ -30864,6 +30888,9 @@ com.volumepilot.core.designsystem.ColorKt:
     public static final long getMd_theme_light_surfaceVariant()
     public static final long getMd_theme_light_tertiary()
     public static final long getMd_theme_light_tertiaryContainer()
+com.volumepilot.core.designsystem.RgbGlowKt:
+    public static final java.util.List getRgbNeonSpectrum()
+    private static final float rgbGlow_FJfuzF0$lambda$0(androidx.compose.runtime.State)
 com.volumepilot.core.designsystem.Spacing:
     public static final int $stable
     public final float component1-D9Ej5fM()
@@ -30878,6 +30905,7 @@ com.volumepilot.core.designsystem.Spacing:
     public final com.volumepilot.core.designsystem.Spacing copy-rcZgCMo(float,float,float,float,float,float,float,float,float)
     public static synthetic com.volumepilot.core.designsystem.Spacing copy-rcZgCMo$default(com.volumepilot.core.designsystem.Spacing,float,float,float,float,float,float,float,float,float,int,java.lang.Object)
     public final float getCardCornerRadius-D9Ej5fM()
+    public final float getElevationRaised-D9Ej5fM()
 com.volumepilot.core.designsystem.components.BannerType:
     public static kotlin.enums.EnumEntries getEntries()
 com.volumepilot.core.designsystem.components.ComposableSingletons$ErrorStateKt$lambda-1$1
@@ -30957,13 +30985,10 @@ com.volumepilot.data.repository.VolumeRepositoryImpl_Factory
 com.volumepilot.data.settings.SettingsRepositoryImpl$getSettings$$inlined$map$1$2$1:
     java.lang.Object L$0
 com.volumepilot.data.settings.SettingsRepositoryImpl$updateHapticFeedback$1
-com.volumepilot.data.settings.SettingsRepositoryImpl$updateOverlayAppearance$1
 com.volumepilot.data.settings.SettingsRepositoryImpl$updateThemeMode$1
 com.volumepilot.data.settings.SettingsRepositoryImpl:
     public java.lang.Object updateHapticFeedback-gIAlu-s(boolean,kotlin.coroutines.Continuation)
     private static final kotlin.Unit updateHapticFeedback_gIAlu_s$lambda$2(boolean,androidx.datastore.preferences.core.MutablePreferences)
-    public java.lang.Object updateOverlayAppearance-BWLJW6A(float,int,int,kotlin.coroutines.Continuation)
-    private static final kotlin.Unit updateOverlayAppearance_BWLJW6A$lambda$7(float,int,int,androidx.datastore.preferences.core.MutablePreferences)
     public java.lang.Object updateThemeMode-gIAlu-s(com.volumepilot.domain.model.ThemeMode,kotlin.coroutines.Continuation)
     private static final kotlin.Unit updateThemeMode_gIAlu_s$lambda$3(com.volumepilot.domain.model.ThemeMode,androidx.datastore.preferences.core.MutablePreferences)
 com.volumepilot.data.settings.SettingsRepositoryImpl_Factory
@@ -30972,7 +30997,6 @@ com.volumepilot.domain.repository.AutomationRepository:
     public abstract java.lang.Object saveAppRule-gIAlu-s(com.volumepilot.domain.model.AppRule,kotlin.coroutines.Continuation)
 com.volumepilot.domain.repository.SettingsRepository:
     public abstract java.lang.Object updateHapticFeedback-gIAlu-s(boolean,kotlin.coroutines.Continuation)
-    public abstract java.lang.Object updateOverlayAppearance-BWLJW6A(float,int,int,kotlin.coroutines.Continuation)
     public abstract java.lang.Object updateThemeMode-gIAlu-s(com.volumepilot.domain.model.ThemeMode,kotlin.coroutines.Continuation)
 com.volumepilot.domain.repository.VolumeRepository:
     public abstract java.lang.Object applyPreset-gIAlu-s(com.volumepilot.domain.model.VolumePreset,kotlin.coroutines.Continuation)
@@ -31005,11 +31029,9 @@ com.volumepilot.domain.usecase.SetVolumeUseCase_Factory
 com.volumepilot.domain.usecase.ToggleMasterAutomationUseCase_Factory
 com.volumepilot.domain.usecase.ToggleVibrateUseCase_Factory
 com.volumepilot.domain.usecase.UpdateSettingsUseCase$setHapticFeedback$1
-com.volumepilot.domain.usecase.UpdateSettingsUseCase$setOverlayAppearance$1
 com.volumepilot.domain.usecase.UpdateSettingsUseCase$setThemeMode$1
 com.volumepilot.domain.usecase.UpdateSettingsUseCase:
     public final java.lang.Object setHapticFeedback-gIAlu-s(boolean,kotlin.coroutines.Continuation)
-    public final java.lang.Object setOverlayAppearance-BWLJW6A(float,int,int,kotlin.coroutines.Continuation)
     public final java.lang.Object setThemeMode-gIAlu-s(com.volumepilot.domain.model.ThemeMode,kotlin.coroutines.Continuation)
 com.volumepilot.domain.usecase.UpdateSettingsUseCase_Factory
 com.volumepilot.feature.automation.AutomationUiState:
@@ -31050,6 +31072,7 @@ com.volumepilot.feature.home.HomeUiState:
     public final com.volumepilot.core.common.AppError component4()
     public final boolean component5()
     public final boolean component6()
+    public final boolean component7()
     public final boolean isNotificationPolicyGranted()
 com.volumepilot.feature.home.HomeViewModel_Factory
 com.volumepilot.feature.home.HomeViewModel_HiltModules$BindsModule
@@ -31087,6 +31110,8 @@ com.volumepilot.feature.onboarding.OnboardingViewModel_HiltModules$KeyModule:
 com.volumepilot.feature.onboarding.OnboardingViewModel_HiltModules
 com.volumepilot.feature.onboarding.OnboardingViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
 com.volumepilot.feature.onboarding.OnboardingViewModel_HiltModules_KeyModule_ProvideFactory
+com.volumepilot.feature.overlay.OverlayBubbleContentKt$OverlayBubbleContent$1$1
+com.volumepilot.feature.overlay.OverlayBubbleContentKt
 com.volumepilot.feature.profiles.ProfilesUiState:
     public void <init>()
     public final java.util.List component1()
@@ -31102,6 +31127,11 @@ com.volumepilot.feature.profiles.ProfilesViewModel_HiltModules$KeyModule:
 com.volumepilot.feature.profiles.ProfilesViewModel_HiltModules
 com.volumepilot.feature.profiles.ProfilesViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
 com.volumepilot.feature.profiles.ProfilesViewModel_HiltModules_KeyModule_ProvideFactory
+com.volumepilot.service.accessibility.VolumeAccessibilityService$Companion:
+    public final kotlinx.coroutines.flow.StateFlow isConnected()
+com.volumepilot.service.accessibility.VolumeAccessibilityService:
+    public static final int $stable
+    public static final synthetic kotlinx.coroutines.flow.StateFlow access$isConnected$cp()
 com.volumepilot.service.automation.TimeAutomationReceiver:
     public static final java.lang.String ACTION_TIME_AUTOMATION_TRIGGER
     private static final java.lang.String TAG
@@ -31131,9 +31161,12 @@ com.volumepilot.service.overlay.Hilt_OverlayService:
     public synthetic bridge dagger.hilt.internal.GeneratedComponentManager componentManager()
 com.volumepilot.service.overlay.OverlayNotificationHelper:
     public static final int $stable
+    public static final java.lang.String ACTION_HIDE
     public static final java.lang.String ACTION_PAUSE
     public static final java.lang.String ACTION_RESUME
+    public static final java.lang.String ACTION_SHOW
     public static final java.lang.String ACTION_STOP
+    public static final java.lang.String ACTION_TOGGLE
     public static final java.lang.String CHANNEL_ID
     public static final int NOTIFICATION_ID
 com.volumepilot.service.overlay.OverlayService:
@@ -40717,8 +40750,12 @@ androidx.compose.animation.EnterExitTransitionKt$shrinkVertically$1:
     public final java.lang.Integer invoke(int)
 androidx.compose.animation.EnterExitTransitionKt$shrinkVertically$2:
     public final long invoke-mzRDjE0()
+androidx.compose.animation.EnterExitTransitionKt$slideInHorizontally$2:
+    public final long invoke-mHKZG7I()
 androidx.compose.animation.EnterExitTransitionKt$slideInVertically$1
 androidx.compose.animation.EnterExitTransitionKt$slideInVertically$2:
+    public final long invoke-mHKZG7I()
+androidx.compose.animation.EnterExitTransitionKt$slideOutHorizontally$2:
     public final long invoke-mHKZG7I()
 androidx.compose.animation.EnterExitTransitionKt$slideOutVertically$1
 androidx.compose.animation.EnterExitTransitionKt$slideOutVertically$2:
@@ -40726,6 +40763,11 @@ androidx.compose.animation.EnterExitTransitionKt$slideOutVertically$2:
 androidx.compose.animation.EnterExitTransitionKt:
     public static final androidx.compose.animation.EnterTransitionImpl scaleIn-L8ZKh-E(androidx.compose.animation.core.FiniteAnimationSpec,float,long)
     public static androidx.compose.animation.EnterTransitionImpl scaleIn-L8ZKh-E$default(androidx.compose.animation.core.TweenSpec)
+    public static final androidx.compose.animation.EnterTransitionImpl slideIn(androidx.compose.animation.core.FiniteAnimationSpec,kotlin.jvm.functions.Function1)
+    public static final androidx.compose.animation.EnterTransitionImpl slideInHorizontally(androidx.compose.animation.core.TweenSpec,kotlin.jvm.functions.Function1)
+    public static final androidx.compose.animation.EnterTransitionImpl slideInVertically(androidx.compose.animation.core.FiniteAnimationSpec,kotlin.jvm.functions.Function1)
+    public static final androidx.compose.animation.ExitTransitionImpl slideOut(androidx.compose.animation.core.FiniteAnimationSpec,kotlin.jvm.functions.Function1)
+    public static final androidx.compose.animation.ExitTransitionImpl slideOutHorizontally(androidx.compose.animation.core.TweenSpec,kotlin.jvm.functions.Function1)
     public static final androidx.compose.ui.BiasAlignment toAlignment(androidx.compose.ui.Alignment$Horizontal)
     public static final androidx.compose.ui.BiasAlignment toAlignment(androidx.compose.ui.Alignment$Vertical)
 androidx.compose.animation.EnterExitTransitionModifierNode$WhenMappings
@@ -41449,8 +41491,6 @@ androidx.compose.foundation.BackgroundElement:
     public static androidx.compose.foundation.BackgroundNode create()
     public static void update$1()
 androidx.compose.foundation.BackgroundKt$background-bw27NRU$$inlined$debugInspectorInfo$1
-androidx.compose.foundation.BackgroundKt:
-    public static synthetic androidx.compose.ui.Modifier background-bw27NRU$default(androidx.compose.ui.Modifier,long)
 androidx.compose.foundation.BackgroundNode$getOutline$1:
     public final void invoke()
 androidx.compose.foundation.BackgroundNode:
@@ -41471,7 +41511,7 @@ androidx.compose.foundation.BorderKt$drawRectBorder$1:
 androidx.compose.foundation.BorderKt:
     public static final androidx.compose.ui.Modifier border(androidx.compose.ui.Modifier,androidx.compose.foundation.BorderStroke,androidx.compose.ui.graphics.Shape)
     public static final androidx.compose.ui.Modifier border-xT4_qwU(androidx.compose.ui.Modifier,float,long,androidx.compose.ui.graphics.Shape)
-    public static final androidx.compose.ui.Modifier border-ziNgDLE(androidx.compose.ui.Modifier,float,androidx.compose.ui.graphics.SolidColor,androidx.compose.ui.graphics.Shape)
+    public static final androidx.compose.ui.Modifier border-ziNgDLE(androidx.compose.ui.Modifier,float,androidx.compose.ui.graphics.Brush,androidx.compose.ui.graphics.Shape)
 androidx.compose.foundation.BorderModifierNode$drawGenericBorder$1:
     public final void invoke(androidx.compose.ui.graphics.drawscope.ContentDrawScope)
 androidx.compose.foundation.BorderModifierNode$drawGenericBorder$3:
@@ -42327,7 +42367,6 @@ androidx.compose.foundation.layout.Arrangement:
     public static androidx.compose.foundation.layout.Arrangement$Vertical getBottom()
     public static androidx.compose.foundation.layout.Arrangement$HorizontalOrVertical getCenter()
     public static androidx.compose.foundation.layout.Arrangement$Horizontal getEnd()
-    public static androidx.compose.foundation.layout.Arrangement$HorizontalOrVertical getSpaceBetween()
     public static androidx.compose.foundation.layout.Arrangement$HorizontalOrVertical getSpaceEvenly()
     public static androidx.compose.foundation.layout.Arrangement$Horizontal getStart()
     public static androidx.compose.foundation.layout.Arrangement$Vertical getTop()
@@ -42652,8 +42691,6 @@ androidx.compose.foundation.layout.RowMeasurePolicy$placeHelper$1$1:
 androidx.compose.foundation.layout.RowMeasurePolicy:
     static void <clinit>()
     public static int getCrossAxisPosition$2()
-androidx.compose.foundation.layout.RowScope:
-    public static synthetic androidx.compose.ui.Modifier weight$default(androidx.compose.foundation.layout.RowScope,androidx.compose.ui.Modifier,float)
 androidx.compose.foundation.layout.SiblingsAlignedNode$WithAlignmentLineBlockNode:
     public static final int $stable
     static void <clinit>()
@@ -42683,7 +42720,6 @@ androidx.compose.foundation.layout.SizeKt$widthIn-VpY3zN4$$inlined$debugInspecto
 androidx.compose.foundation.layout.SizeKt:
     public static androidx.compose.ui.Modifier fillMaxHeight$default(androidx.compose.ui.Modifier)
     public static androidx.compose.ui.Modifier fillMaxSize$default(androidx.compose.ui.Modifier)
-    public static androidx.compose.ui.Modifier fillMaxWidth$default(androidx.compose.ui.Modifier)
 androidx.compose.foundation.layout.SizeNode$measure$1:
     public final void invoke(androidx.compose.ui.layout.Placeable$PlacementScope)
 androidx.compose.foundation.layout.SizeNode:
@@ -45210,6 +45246,10 @@ androidx.compose.material.icons.filled.CheckCircleKt:
     static void <clinit>()
 androidx.compose.material.icons.filled.CheckKt:
     static void <clinit>()
+androidx.compose.material.icons.filled.ChevronLeftKt:
+    static void <clinit>()
+androidx.compose.material.icons.filled.ChevronRightKt:
+    static void <clinit>()
 androidx.compose.material.icons.filled.CloseKt:
     static void <clinit>()
 androidx.compose.material.icons.filled.ContentCopyKt:
@@ -45244,6 +45284,8 @@ androidx.compose.material.icons.filled.NotificationsOffKt:
     static void <clinit>()
 androidx.compose.material.icons.filled.PhoneAndroidKt:
     static void <clinit>()
+androidx.compose.material.icons.filled.PowerSettingsNewKt:
+    static void <clinit>()
 androidx.compose.material.icons.filled.RemoveKt:
     static void <clinit>()
 androidx.compose.material.icons.filled.SettingsKt:
@@ -45253,6 +45295,8 @@ androidx.compose.material.icons.filled.ShieldKt:
 androidx.compose.material.icons.filled.SpeakerKt:
     static void <clinit>()
 androidx.compose.material.icons.filled.SportsEsportsKt:
+    static void <clinit>()
+androidx.compose.material.icons.filled.TouchAppKt:
     static void <clinit>()
 androidx.compose.material.icons.filled.TuneKt:
     static void <clinit>()
@@ -45624,7 +45668,7 @@ androidx.compose.runtime.Composer:
     public abstract kotlin.coroutines.CoroutineContext getApplyCoroutineContext()
     public abstract androidx.compose.runtime.tooling.CompositionData getCompositionData()
     public abstract int getCompoundKeyHash()
-    public abstract androidx.compose.runtime.CompositionLocalMap getCurrentCompositionLocalMap()
+    public abstract androidx.compose.runtime.PersistentCompositionLocalMap getCurrentCompositionLocalMap()
     public abstract boolean getDefaultsInvalid()
     public abstract boolean getInserting()
     public abstract androidx.compose.runtime.RecomposeScope getRecomposeScope()
@@ -45682,10 +45726,8 @@ androidx.compose.runtime.ComposerImpl:
     public static void dispose$runtime_release()
     public static void endGroup()
     public final void endMovableGroup()
-    public final void endNode()
     public final void endProvider()
     public final void endProviders()
-    public final void endReplaceGroup()
     public final void endReplaceableGroup()
     public final void endReusableGroup()
     public static void endReuseFromRoot()
@@ -45698,9 +45740,7 @@ androidx.compose.runtime.ComposerImpl:
     public static androidx.compose.runtime.ControlledComposition getComposition()
     public final androidx.compose.runtime.tooling.CompositionData getCompositionData()
     public final int getCompoundKeyHash()
-    public final androidx.compose.runtime.CompositionLocalMap getCurrentCompositionLocalMap()
     public static androidx.compose.runtime.changelist.ChangeList getDeferredChanges$runtime_release()
-    public final boolean getInserting()
     public static java.lang.Object getNode()
     public static androidx.compose.runtime.SlotReader getReader$runtime_release()
     public final androidx.compose.runtime.RecomposeScope getRecomposeScope()
@@ -47433,7 +47473,6 @@ androidx.compose.ui.draw.ScopedGraphicsContext
 androidx.compose.ui.draw.ShadowGraphicsLayerElement$createBlock$1:
     public final void invoke(androidx.compose.ui.graphics.GraphicsLayerScope)
 androidx.compose.ui.draw.ShadowGraphicsLayerElement:
-    public final float elevation
     static void <clinit>()
     public final androidx.compose.ui.graphics.BlockGraphicsLayerModifier create()
     public static kotlin.jvm.functions.Function1 createBlock()
@@ -47443,7 +47482,6 @@ androidx.compose.ui.draw.ShadowGraphicsLayerElement:
     public static androidx.compose.ui.graphics.Shape getShape()
     public static long getSpotColor-0d7_KjU()
     public final void update$49()
-androidx.compose.ui.draw.ShadowKt
 androidx.compose.ui.focus.CustomDestinationResult$EnumUnboxingLocalUtility
 androidx.compose.ui.focus.CustomDestinationResult
 androidx.compose.ui.focus.FocusChangedElement:
@@ -47793,7 +47831,9 @@ androidx.compose.ui.graphics.AndroidPathMeasure_androidKt
 androidx.compose.ui.graphics.AndroidPath_androidKt$WhenMappings
 androidx.compose.ui.graphics.AndroidPath_androidKt:
     public static final android.graphics.Path$Direction access$toPlatformPathDirection(int)
-androidx.compose.ui.graphics.AndroidShader_androidKt
+androidx.compose.ui.graphics.AndroidShader_androidKt:
+    public static final int countTransparentColors()
+    public static final int[] makeTransparentColors(java.util.ArrayList)
 androidx.compose.ui.graphics.AndroidTileMode_androidKt
 androidx.compose.ui.graphics.Api26Bitmap:
     public static final androidx.compose.ui.graphics.Api26Bitmap INSTANCE
@@ -47894,7 +47934,6 @@ androidx.compose.ui.graphics.ClipOp
 androidx.compose.ui.graphics.Color$Companion:
     public static long getBlue-0d7_KjU()
     public static long getRed-0d7_KjU()
-    public static long getTransparent-0d7_KjU()
     public static long getUnspecified-0d7_KjU()
     public static long getWhite-0d7_KjU()
 androidx.compose.ui.graphics.Color:
@@ -48162,6 +48201,8 @@ androidx.compose.ui.graphics.StrokeJoin:
     public static final synthetic int access$getBevel$cp()
     public static final synthetic int access$getMiter$cp()
     public static final synthetic int access$getRound$cp()
+androidx.compose.ui.graphics.SweepGradient:
+    public final java.util.List stops
 androidx.compose.ui.graphics.TileMode$Companion
 androidx.compose.ui.graphics.TileMode:
     public static final int Clamp
@@ -49805,7 +49846,6 @@ androidx.compose.ui.node.ComposeUiNode$Companion:
     public static final kotlin.jvm.functions.Function2 SetDensity
     public static final kotlin.jvm.functions.Function2 SetLayoutDirection
     public static final kotlin.jvm.functions.Function2 SetViewConfiguration
-    public static kotlin.jvm.functions.Function0 getConstructor()
     public static kotlin.jvm.functions.Function0 getVirtualConstructor()
 androidx.compose.ui.node.ComposeUiNode:
     public abstract void setCompositeKeyHash()
@@ -51332,7 +51372,6 @@ androidx.compose.ui.semantics.SemanticsConfiguration:
 androidx.compose.ui.semantics.SemanticsConfigurationKt$getOrNull$1
 androidx.compose.ui.semantics.SemanticsModifierKt:
     public static final int generateSemanticsId()
-    public static synthetic androidx.compose.ui.Modifier semantics$default(androidx.compose.ui.Modifier,kotlin.jvm.functions.Function1)
 androidx.compose.ui.semantics.SemanticsNode$emitFakeNodes$fakeNode$1:
     public final void invoke(androidx.compose.ui.semantics.SemanticsPropertyReceiver)
 androidx.compose.ui.semantics.SemanticsNode$emitFakeNodes$fakeNode$2:
@@ -51440,10 +51479,9 @@ androidx.compose.ui.semantics.SemanticsPropertiesKt:
     public static void dismiss$default(androidx.compose.ui.semantics.SemanticsPropertyReceiver,kotlin.jvm.functions.Function0)
     public static final void error(androidx.compose.ui.semantics.SemanticsPropertyReceiver,java.lang.String)
     public static final void expand(androidx.compose.ui.semantics.SemanticsPropertyReceiver,java.lang.String,kotlin.jvm.functions.Function0)
-    public static final void onClick(androidx.compose.ui.semantics.SemanticsPropertyReceiver,java.lang.String,kotlin.jvm.functions.Function0)
+    public static synthetic void onClick$default(androidx.compose.ui.semantics.SemanticsPropertyReceiver,kotlin.jvm.functions.Function0)
     public static final void onLongClick(androidx.compose.ui.semantics.SemanticsPropertyReceiver,java.lang.String,kotlin.jvm.functions.Function0)
     public static final void selectableGroup(androidx.compose.ui.semantics.SemanticsPropertyReceiver)
-    public static final void setCustomActions(androidx.compose.ui.semantics.SemanticsPropertyReceiver,java.util.List)
     public static final void setHorizontalScrollAxisRange(androidx.compose.ui.semantics.SemanticsPropertyReceiver,androidx.compose.ui.semantics.ScrollAxisRange)
     public static final void setShowingTextSubstitution(androidx.compose.ui.semantics.SemanticsPropertyReceiver,boolean)
     public static final void setStateDescription(androidx.compose.ui.semantics.SemanticsPropertyReceiver,java.lang.String)
@@ -52250,7 +52288,11 @@ androidx.compose.ui.text.font.FontSynthesis:
 androidx.compose.ui.text.font.FontSynthesis_androidKt
 androidx.compose.ui.text.font.FontVariation$Setting
 androidx.compose.ui.text.font.FontVariation$Settings
-androidx.compose.ui.text.font.FontWeight$Companion
+androidx.compose.ui.text.font.FontWeight$Companion:
+    public static androidx.compose.ui.text.font.FontWeight getSemiBold()
+    public static androidx.compose.ui.text.font.FontWeight getW400()
+    public static androidx.compose.ui.text.font.FontWeight getW500()
+    public static androidx.compose.ui.text.font.FontWeight getW600()
 androidx.compose.ui.text.font.FontWeight:
     public static final androidx.compose.ui.text.font.FontWeight Black
     public static final androidx.compose.ui.text.font.FontWeight$Companion Companion
@@ -53119,6 +53161,7 @@ androidx.concurrent.futures.AbstractResolvableFuture:
     public abstract java.lang.String userObjectToString(java.lang.Object)
 androidx.concurrent.futures.ResolvableFuture:
     public final boolean set()
+androidx.core.R$dimen
 androidx.core.R$id
 androidx.core.R$styleable
 androidx.core.app.ActivityCompat
@@ -53154,53 +53197,7 @@ androidx.core.app.NotificationCompat$Action:
 androidx.core.app.NotificationCompat$BubbleMetadata$Api29Impl
 androidx.core.app.NotificationCompat$BubbleMetadata$Api30Impl
 androidx.core.app.NotificationCompat$BubbleMetadata
-androidx.core.app.NotificationCompat$Builder:
-    public int mBadgeIcon
-    public android.widget.RemoteViews mBigContentView
-    public androidx.core.app.NotificationCompat$BubbleMetadata mBubbleMetadata
-    public int mColor
-    public boolean mColorized
-    public boolean mColorizedSet
-    public java.lang.CharSequence mContentInfo
-    public android.widget.RemoteViews mContentView
-    public int mFgsDeferBehavior
-    public android.app.PendingIntent mFullScreenIntent
-    public int mGroupAlertBehavior
-    public java.lang.String mGroupKey
-    public boolean mGroupSummary
-    public android.widget.RemoteViews mHeadsUpContentView
-    public androidx.core.graphics.drawable.IconCompat mLargeIcon
-    public boolean mLocalOnly
-    public androidx.core.content.LocusIdCompat mLocusId
-    public int mNumber
-    public int mProgress
-    public boolean mProgressIndeterminate
-    public int mProgressMax
-    public android.app.Notification mPublicVersion
-    public java.lang.CharSequence[] mRemoteInputHistory
-    public java.lang.CharSequence mSettingsText
-    public java.lang.String mShortcutId
-    public boolean mSilent
-    public java.lang.Object mSmallIcon
-    public java.lang.String mSortKey
-    public androidx.core.app.NotificationCompat$CallStyle mStyle
-    public java.lang.CharSequence mSubText
-    public android.widget.RemoteViews mTickerView
-    public long mTimeout
-    public boolean mUseChronometer
-    public int mVisibility
-    public final void addAction(java.lang.String,android.app.PendingIntent)
-    public static android.app.Notification build()
-    public final android.os.Bundle getExtras()
-    public static java.lang.CharSequence limitCharSequenceLength(java.lang.String)
-    public static androidx.core.app.NotificationCompat$Builder setCategory()
-    public static androidx.core.app.NotificationCompat$Builder setContentIntent()
-    public static androidx.core.app.NotificationCompat$Builder setContentText()
-    public static androidx.core.app.NotificationCompat$Builder setContentTitle()
-    public static void setFlag()
-    public static androidx.core.app.NotificationCompat$Builder setOngoing()
-    public static androidx.core.app.NotificationCompat$Builder setPriority()
-    public static androidx.core.app.NotificationCompat$Builder setSmallIcon()
+androidx.core.app.NotificationCompat$Builder
 androidx.core.app.NotificationCompat$CallStyle
 androidx.core.app.NotificationCompat$Style
 androidx.core.app.NotificationCompat
@@ -53211,17 +53208,7 @@ androidx.core.app.NotificationCompatBuilder$Api21Impl
 androidx.core.app.NotificationCompatBuilder$Api23Impl
 androidx.core.app.NotificationCompatBuilder$Api24Impl
 androidx.core.app.NotificationCompatBuilder$Api26Impl
-androidx.core.app.NotificationCompatBuilder:
-    public final java.util.ArrayList mActionExtrasList
-    public android.widget.RemoteViews mBigContentView
-    public android.widget.RemoteViews mContentView
-    public final com.volumepilot.service.overlay.OverlayService mContext
-    public int mGroupAlertBehavior
-    public android.widget.RemoteViews mHeadsUpContentView
-    public final void addAction(androidx.core.app.NotificationCompat$Action)
-    public static android.app.Notification build()
-    public static android.app.Notification buildInternal()
-    public static void removeSoundAndVibration()
+androidx.core.app.NotificationCompatBuilder
 androidx.core.app.NotificationCompatJellybean
 androidx.core.app.NotificationManagerCompat$Api24Impl
 androidx.core.app.NotificationManagerCompat:
@@ -53326,7 +53313,6 @@ androidx.core.graphics.drawable.IconCompat:
     public static void onPostParceling()
     public static void onPreParceling()
     public static android.graphics.drawable.Icon toIcon()
-    public final android.graphics.drawable.Icon toIcon$1()
 androidx.core.math.MathUtils
 androidx.core.os.BuildCompat$Api30Impl:
     public static final androidx.core.os.BuildCompat$Api30Impl INSTANCE
@@ -55939,13 +55925,12 @@ com.volumepilot.core.designsystem.ColorKt:
 com.volumepilot.core.designsystem.Spacing:
     static void <clinit>()
     public static float getElevationDefault-D9Ej5fM()
-    public static float getElevationRaised-D9Ej5fM()
     public static float getExtraLarge-D9Ej5fM()
-    public static float getExtraSmall-D9Ej5fM()
+    public final float getExtraSmall-D9Ej5fM()
     public static float getLarge-D9Ej5fM()
-    public static float getMedium-D9Ej5fM()
+    public final float getMedium-D9Ej5fM()
     public static float getMinTouchTarget-D9Ej5fM()
-    public static float getSmall-D9Ej5fM()
+    public final float getSmall-D9Ej5fM()
 com.volumepilot.core.designsystem.ThemeKt$VolumePilotTheme$1:
     public final void invoke(androidx.compose.runtime.Composer,int)
 com.volumepilot.core.designsystem.components.BannerType:
@@ -55979,6 +55964,8 @@ com.volumepilot.core.designsystem.components.StatusBannerKt$StatusBanner$1:
 com.volumepilot.core.designsystem.components.StatusBannerKt$WhenMappings
 com.volumepilot.core.designsystem.components.ToggleRowKt$$InternalSyntheticLambda$6$10b1e2e65ad8d02b1431a983c864a90640ea91578991697acdf4992d95978214$2:
     public final synthetic int f$7
+com.volumepilot.core.designsystem.components.VolumeSliderKt$$InternalSyntheticLambda$6$1500a63dbfdbf89b6b76afd23f057a4064abb381db8377f1ebdf954389a683fc$0:
+    public final synthetic int f$13
 com.volumepilot.core.designsystem.components.VolumeSliderKt$VolumeSlider$1$1$1$1$2:
     public final void invoke(androidx.compose.runtime.Composer,int)
 com.volumepilot.core.designsystem.components.VolumeSliderKt$VolumeSlider$1:
@@ -56098,10 +56085,14 @@ com.volumepilot.domain.repository.ProfileRepository:
 com.volumepilot.domain.repository.SettingsRepository:
     public abstract com.volumepilot.data.settings.SettingsRepositoryImpl$getSettings$$inlined$map$1 getSettings()
     public abstract java.lang.Object setOnboardingCompleted-gIAlu-s(boolean,kotlin.coroutines.jvm.internal.ContinuationImpl)
+    public abstract java.lang.Object updateFloatingWidgetCustomization-yxL6bBk(com.volumepilot.domain.model.FloatingButtonArrangement,com.volumepilot.domain.model.FloatingButtonColor,com.volumepilot.domain.model.PowerSingleTapAction,com.volumepilot.domain.model.PowerLongPressAction,kotlin.coroutines.jvm.internal.ContinuationImpl)
     public abstract java.lang.Object updateMaxVolumeLimiter-0E7RQCE(boolean,int,kotlin.coroutines.jvm.internal.ContinuationImpl)
+    public abstract java.lang.Object updateOverlayAppearance-BWLJW6A(float,int,int,kotlin.coroutines.jvm.internal.ContinuationImpl)
     public abstract java.lang.Object updateOverlayEnabled-gIAlu-s(boolean,kotlin.coroutines.jvm.internal.ContinuationImpl)
+    public abstract java.lang.Object updateOverlayHidden-gIAlu-s(boolean,kotlin.coroutines.jvm.internal.ContinuationImpl)
     public abstract java.lang.Object updateOverlayPosition-gIAlu-s(com.volumepilot.domain.model.OverlayPosition,kotlin.coroutines.jvm.internal.ContinuationImpl)
     public abstract java.lang.Object updatePreferredStreamType-gIAlu-s(com.volumepilot.domain.model.AudioStreamType,kotlin.coroutines.jvm.internal.ContinuationImpl)
+    public abstract java.lang.Object updateRgbGlowSettings-0E7RQCE(boolean,float,kotlin.coroutines.jvm.internal.ContinuationImpl)
     public abstract java.lang.Object updateStartOnBoot-gIAlu-s(boolean,kotlin.coroutines.jvm.internal.ContinuationImpl)
 com.volumepilot.domain.repository.VolumeRepository:
     public abstract kotlinx.coroutines.flow.Flow getVolumeState()
@@ -56427,6 +56418,8 @@ com.volumepilot.feature.home.ComposableSingletons$HomeScreenKt$lambda-6$1:
     public final void invoke$66()
 com.volumepilot.feature.home.ComposableSingletons$HomeScreenKt$lambda-7$1:
     public final void invoke$66()
+com.volumepilot.feature.home.ComposableSingletons$HomeScreenKt$lambda-8$1:
+    public final void invoke(androidx.compose.foundation.layout.RowScope,androidx.compose.runtime.Composer,int)
 com.volumepilot.feature.home.ComposableSingletons$HomeScreenKt:
     public static final com.volumepilot.feature.home.ComposableSingletons$HomeScreenKt INSTANCE
     public static kotlin.jvm.functions.Function2 getLambda-1$app_release()
@@ -56436,62 +56429,85 @@ com.volumepilot.feature.home.ComposableSingletons$HomeScreenKt:
     public static kotlin.jvm.functions.Function3 getLambda-5$app_release()
     public static kotlin.jvm.functions.Function3 getLambda-6$app_release()
     public static kotlin.jvm.functions.Function3 getLambda-7$app_release()
-com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$beb54ce6521c3e426c79667476d76a3ba4dd51cbf0068f381473198301a45fe0$0
-com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$beb54ce6521c3e426c79667476d76a3ba4dd51cbf0068f381473198301a45fe0$1
-com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$beb54ce6521c3e426c79667476d76a3ba4dd51cbf0068f381473198301a45fe0$2:
-    public final synthetic int f$15
+    public static kotlin.jvm.functions.Function3 getLambda-8$app_release()
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$488adee689706295f5cb15ce67b93c95e4b7e2c88dad8545c4397646029b8e4a$0
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$488adee689706295f5cb15ce67b93c95e4b7e2c88dad8545c4397646029b8e4a$1
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$488adee689706295f5cb15ce67b93c95e4b7e2c88dad8545c4397646029b8e4a$2
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$488adee689706295f5cb15ce67b93c95e4b7e2c88dad8545c4397646029b8e4a$3
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$488adee689706295f5cb15ce67b93c95e4b7e2c88dad8545c4397646029b8e4a$4
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$488adee689706295f5cb15ce67b93c95e4b7e2c88dad8545c4397646029b8e4a$5
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$488adee689706295f5cb15ce67b93c95e4b7e2c88dad8545c4397646029b8e4a$6
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$488adee689706295f5cb15ce67b93c95e4b7e2c88dad8545c4397646029b8e4a$7
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$3$488adee689706295f5cb15ce67b93c95e4b7e2c88dad8545c4397646029b8e4a$8:
+    public final synthetic int f$21
 com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$6$f27325b6818c75bc0d1bf87a1748634168e2e852a1569bfdf0a8aaeac6a5055c$0:
     public final synthetic int f$3
 com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$7$00e0813aacaa0706648705fd56f3b7cee234daa75041cff63ca3ce4da318435d$1:
     public final synthetic int f$4
+com.volumepilot.feature.home.HomeScreenKt$$InternalSyntheticLambda$7$b3676cae9ebe9b213753fc7a3763afef0055ee2326a089a26d7fa19653864ff2$0:
+    public final synthetic int f$11
 com.volumepilot.feature.home.HomeScreenKt$AudioOutputDeviceCard$1:
     public final void invoke(androidx.compose.foundation.layout.ColumnScope,androidx.compose.runtime.Composer,int)
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$3$1:
-    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$4$1:
+com.volumepilot.feature.home.HomeScreenKt$FloatingWidgetCustomizationCard$1$1$2:
+    public final void invoke(androidx.compose.foundation.layout.ColumnScope,androidx.compose.runtime.Composer,int)
+com.volumepilot.feature.home.HomeScreenKt$FloatingWidgetCustomizationCard$1$1$4$1$2:
+    public final void invoke(androidx.compose.runtime.Composer,int)
+com.volumepilot.feature.home.HomeScreenKt$FloatingWidgetCustomizationCard$1$1$6$1$2:
+    public final void invoke(androidx.compose.runtime.Composer,int)
+com.volumepilot.feature.home.HomeScreenKt$FloatingWidgetCustomizationCard$1$1$7$1$2:
+    public final void invoke(androidx.compose.runtime.Composer,int)
+com.volumepilot.feature.home.HomeScreenKt$FloatingWidgetCustomizationCard$1:
+    public final void invoke(androidx.compose.foundation.layout.ColumnScope,androidx.compose.runtime.Composer,int)
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$10$1:
     public final void invoke(androidx.compose.foundation.layout.RowScope,androidx.compose.runtime.Composer,int)
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$4:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$10:
     public final void invoke(androidx.compose.runtime.Composer,int)
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$5:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$11:
     public final void invoke(androidx.compose.runtime.Composer,int)
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$2$1$1:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$2$1$1:
     public final void invoke$66()
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$2$1$2:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$2$1$2:
     public final void invoke$66()
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$2$1$3:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$2$1$3:
     public final void invoke$66()
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$2$1$5$1$1:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$2$1$5$1$1:
     public final void invoke(int)
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$2$1$5$2$1:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$2$1$5$2$1:
     public final void invoke()
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$2$1$6:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$2$1$6:
     public final void invoke$66()
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$2$1$7:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$2$1$7:
     public final void invoke$66()
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$invoke$lambda$6$lambda$5$$inlined$items$default$1
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$invoke$lambda$6$lambda$5$$inlined$items$default$2:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$invoke$lambda$6$lambda$5$$inlined$items$default$1
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$invoke$lambda$6$lambda$5$$inlined$items$default$2:
     public final java.lang.Object invoke$10()
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$invoke$lambda$6$lambda$5$$inlined$items$default$3:
-    public final synthetic com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$invoke$lambda$6$lambda$5$$inlined$items$default$1 $contentType
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$invoke$lambda$6$lambda$5$$inlined$items$default$3:
+    public final synthetic com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$invoke$lambda$6$lambda$5$$inlined$items$default$1 $contentType
     public final java.lang.Object invoke$10()
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6$invoke$lambda$6$lambda$5$$inlined$items$default$4:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12$invoke$lambda$6$lambda$5$$inlined$items$default$4:
     public final void invoke(androidx.compose.foundation.lazy.LazyItemScope,int,androidx.compose.runtime.Composer,int)
-com.volumepilot.feature.home.HomeScreenKt$HomeScreen$6:
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$12:
     public final void invoke$67()
+com.volumepilot.feature.home.HomeScreenKt$HomeScreen$9$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
 com.volumepilot.feature.home.HomeScreenKt$PresetChip$1:
     public final void invoke(androidx.compose.runtime.Composer,int)
 com.volumepilot.feature.home.HomeScreenKt:
-    public static synthetic kotlin.Unit $r8$lambda$5ro9C6vddRGMwh9zdrRQe7chb7E()
-    public static synthetic kotlin.Unit $r8$lambda$ZsRkd0yotRUQSFzy8WxBxsSzh3c()
-    public static final kotlin.Unit HomeScreen$lambda$1$lambda$0()
-    public static final kotlin.Unit HomeScreen$lambda$3$lambda$2()
+    public static synthetic kotlin.Unit $r8$lambda$-pg2o0YSkJMxeU6VmcMevoxoYys()
+    public static synthetic kotlin.Unit $r8$lambda$3AoK1pwEiYuXJE4KwSNOKZOZYhg()
+    public static synthetic kotlin.Unit $r8$lambda$SnFYIKCuyENmIjSLzwKHC6PCe1E()
+    public static synthetic kotlin.Unit $r8$lambda$jXGYpy-mtK0o-CK1bkwG7SLvEaU()
+    public static final kotlin.Unit HomeScreen$lambda$11$lambda$10()
+    public static final kotlin.Unit HomeScreen$lambda$13$lambda$12()
+    public static final kotlin.Unit HomeScreen$lambda$15$lambda$14()
+    public static final kotlin.Unit HomeScreen$lambda$9$lambda$8()
 com.volumepilot.feature.home.HomeUiState:
     public static final int $stable
-    static void <clinit>()
     public static com.volumepilot.feature.home.HomeUiState copy()
     public static com.volumepilot.core.common.AppError getError()
     public static com.volumepilot.domain.model.UserSettings getSettings()
     public static com.volumepilot.domain.model.VolumeState getVolumeState()
+    public static boolean isAccessibilityGranted()
     public static boolean isLoading()
     public static boolean isOverlayPermissionGranted()
 com.volumepilot.feature.home.HomeViewModel$observeData$1$1:
@@ -56513,6 +56529,18 @@ com.volumepilot.feature.home.HomeViewModel$onToggleStartOnBoot$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
 com.volumepilot.feature.home.HomeViewModel$onToggleVibrate$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.feature.home.HomeViewModel$onUpdateOverlayAppearance$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.feature.home.HomeViewModel$onUpdatePowerLongPress$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.feature.home.HomeViewModel$onUpdatePowerSingleTap$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.feature.home.HomeViewModel$onUpdateRgbGlow$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.feature.home.HomeViewModel$onUpdateWidgetArrangement$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.feature.home.HomeViewModel$onUpdateWidgetColor$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
 com.volumepilot.feature.home.HomeViewModel$onVolumeChange$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
 com.volumepilot.feature.home.HomeViewModel:
@@ -56528,6 +56556,12 @@ com.volumepilot.feature.home.HomeViewModel:
     public static void onToggleOverlay()
     public static void onToggleStartOnBoot()
     public static void onToggleVibrate()
+    public static void onUpdateOverlayAppearance()
+    public static void onUpdatePowerLongPress()
+    public static void onUpdatePowerSingleTap()
+    public static void onUpdateRgbGlow()
+    public static void onUpdateWidgetArrangement()
+    public static void onUpdateWidgetColor()
     public static void onVolumeChange()
 com.volumepilot.feature.home.HomeViewModel_HiltModules$KeyModule
 com.volumepilot.feature.navigation.NavDestination$Automation
@@ -56585,23 +56619,28 @@ com.volumepilot.feature.onboarding.OnboardingViewModel:
     public static void completeOnboarding()
     public final kotlinx.coroutines.flow.StateFlow getUiState()
 com.volumepilot.feature.onboarding.OnboardingViewModel_HiltModules$KeyModule
-com.volumepilot.feature.overlay.ComposableSingletons$OverlayPanelContentKt$lambda-1$1:
-    public final void invoke(androidx.compose.runtime.Composer,int)
-com.volumepilot.feature.overlay.ComposableSingletons$OverlayPanelContentKt:
-    public static final com.volumepilot.feature.overlay.ComposableSingletons$OverlayPanelContentKt INSTANCE
-    public static kotlin.jvm.functions.Function2 getLambda-1$app_release()
-com.volumepilot.feature.overlay.OverlayBubbleContentKt$$InternalSyntheticLambda$3$f726e80e1031116d7bd68561fce1cf8e57bcd7ad15f87da3383ac5ba09966d77$2:
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$$InternalSyntheticLambda$3$d64d5f3e504aa29dddf510a4854eb721ecad84d7653e30a239d23974ff995029$0:
+    public final synthetic int f$18
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$$InternalSyntheticLambda$4$22022256d784468e633d86033980272bd79b9c9ee96e9f9309cf5428abb13a0e$1:
     public final synthetic int f$8
-com.volumepilot.feature.overlay.OverlayBubbleContentKt$OverlayBubbleContent$1$1:
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$$InternalSyntheticLambda$4$452cae1532c419d19139aeb7678ca6f4da83803fe2e3db574df8a7a65b4309ff$0:
+    public final synthetic int f$4
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$$InternalSyntheticLambda$4$79da3c16e51db358fe936ae0b751ba529ab70bdacd6121aada6c639e8c44cb49$1:
+    public final synthetic int f$6
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$$InternalSyntheticLambda$4$b5c9d530f1e1166fe0a90c507e7613cf9c34c3ca3e5ad541f7f1a0e7de975086$1:
+    public final synthetic int f$6
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$$InternalSyntheticLambda$4$c739b29d65d53e56668c823774fb74ff12b2a2bc53d893e916baf4d1c58f398a$1:
+    public final synthetic int f$8
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$ExpandToggleNub$1$1:
     public final java.lang.Object invoke(androidx.compose.ui.input.pointer.PointerInputScope,kotlin.coroutines.Continuation)
-com.volumepilot.feature.overlay.OverlayPanelContentKt$$InternalSyntheticLambda$3$ae494bbe00631eddc3aca618faf0aaeb7d5dfb22f8ee03fcaaf1fc9b2b3f17fd$1:
-    public final synthetic int f$10
-com.volumepilot.feature.overlay.OverlayPanelContentKt$OverlayPanelContent$2$1$1$2$2:
-    public final void invoke(androidx.compose.runtime.Composer,int)
-com.volumepilot.feature.overlay.OverlayPanelContentKt$OverlayPanelContent$2$1$2$1$2:
-    public final void invoke(androidx.compose.runtime.Composer,int)
-com.volumepilot.feature.overlay.OverlayPanelContentKt$OverlayPanelContent$2$1$2:
-    public final void invoke(androidx.compose.runtime.Composer,int)
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$PowerControlButton$1$1:
+    public final java.lang.Object invoke(androidx.compose.ui.input.pointer.PointerInputScope,kotlin.coroutines.Continuation)
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$VolumeDownControlButton$1$1:
+    public final java.lang.Object invoke(androidx.compose.ui.input.pointer.PointerInputScope,kotlin.coroutines.Continuation)
+com.volumepilot.feature.overlay.BasilFloatingControlWidgetKt$VolumeUpControlButton$1$1:
+    public final java.lang.Object invoke(androidx.compose.ui.input.pointer.PointerInputScope,kotlin.coroutines.Continuation)
+com.volumepilot.feature.overlay.OverlayPanelContentKt$$InternalSyntheticLambda$4$69b6217b9153f93fc44083b05c743052d479c6414ce0120289d65feb332a6ce9$1:
+    public final synthetic int f$14
 com.volumepilot.feature.overlay.OverlayPanelContentKt$OverlayPanelContent$2:
     public final void invoke(androidx.compose.foundation.layout.ColumnScope,androidx.compose.runtime.Composer,int)
 com.volumepilot.feature.profiles.ComposableSingletons$ProfilesScreenKt$lambda-1$1:
@@ -56725,6 +56764,13 @@ com.volumepilot.feature.profiles.ProfilesViewModel:
     public static void onStartEditProfile()
     public static void saveProfile()
 com.volumepilot.feature.profiles.ProfilesViewModel_HiltModules$KeyModule
+com.volumepilot.service.accessibility.VolumeAccessibilityService$Companion:
+    public static boolean isAccessibilityServiceEnabled()
+    public static void performPowerDialog(com.volumepilot.service.overlay.OverlayService)
+    public static boolean performTakeScreenshot()
+com.volumepilot.service.accessibility.VolumeAccessibilityService:
+    public static final com.volumepilot.service.accessibility.VolumeAccessibilityService$Companion Companion
+    public static final kotlinx.coroutines.flow.StateFlow isConnected
 com.volumepilot.service.automation.Hilt_TimeAutomationReceiver:
     public abstract void inject()
 com.volumepilot.service.automation.TimeAutomationReceiver$Companion
@@ -56762,6 +56808,11 @@ com.volumepilot.service.overlay.Hilt_OverlayService:
     public abstract dagger.hilt.android.internal.managers.ServiceComponentManager componentManager()
     public abstract dagger.hilt.android.internal.managers.ServiceComponentManager createComponentManager()
     public abstract void inject()
+com.volumepilot.service.overlay.OverlayContainerView:
+    public static final int $stable
+    static void <clinit>()
+    public final void cancelAnimation()
+    public static void snapToEdge()
 com.volumepilot.service.overlay.OverlayLifecycleOwner:
     public static final int $stable
     static void <clinit>()
@@ -56774,55 +56825,78 @@ com.volumepilot.service.overlay.OverlayNotificationHelper:
     static void <clinit>()
     public static void createNotificationChannel()
 com.volumepilot.service.overlay.OverlayService$Companion
-com.volumepilot.service.overlay.OverlayService$handleTouchEvent$1:
+com.volumepilot.service.overlay.OverlayService$handleMuteToggle$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.volumepilot.service.overlay.OverlayService$initOverlay$1$2$1$1$1$1$1:
+com.volumepilot.service.overlay.OverlayService$handleVolumeStep$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.volumepilot.service.overlay.OverlayService$initOverlay$1$2$1$1$2$1$1:
+com.volumepilot.service.overlay.OverlayService$hideWidget$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.volumepilot.service.overlay.OverlayService$initOverlay$1$2$1$1$3$1$1:
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$12$1$1$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.volumepilot.service.overlay.OverlayService$initOverlay$1$2$1$1$4$1$1:
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$12$2$1$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.volumepilot.service.overlay.OverlayService$initOverlay$1$2$1$1$7$1$1:
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$12$3$1$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.volumepilot.service.overlay.OverlayService$initOverlay$1$2$1$1:
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$12$4$1$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$12:
+    public final void invoke(androidx.compose.animation.AnimatedVisibilityScope,androidx.compose.runtime.Composer,int)
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$9$1$1$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$9$2$1$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$9$3$1$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$9$4$1$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1$1$9:
+    public final void invoke(androidx.compose.animation.AnimatedVisibilityScope,androidx.compose.runtime.Composer,int)
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1$1:
     public final void invoke(androidx.compose.runtime.Composer,int)
-com.volumepilot.service.overlay.OverlayService$initOverlay$1$2$1:
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$composeView$1$1:
     public final void invoke(androidx.compose.runtime.Composer,int)
+com.volumepilot.service.overlay.OverlayService$initOverlay$1$container$3$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
 com.volumepilot.service.overlay.OverlayService$initOverlay$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
 com.volumepilot.service.overlay.OverlayService$observeDeviceChanges$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
 com.volumepilot.service.overlay.OverlayService$onStartCommand$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.volumepilot.service.overlay.OverlayService$showWidget$1:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
 com.volumepilot.service.overlay.OverlayService:
     public static final int $stable
     public static final com.volumepilot.service.overlay.OverlayService$Companion Companion
+    public androidx.compose.ui.platform.ComposeView overlayView
     static void <clinit>()
-    public static final com.volumepilot.domain.model.AudioStreamType access$getSelectedStreamType(com.volumepilot.service.overlay.OverlayService)
-    public static final void access$setExpanded(com.volumepilot.service.overlay.OverlayService,boolean)
+    public static final com.volumepilot.domain.model.OverlayPosition access$getCurrentPosition(com.volumepilot.service.overlay.OverlayService)
+    public static final void access$handleMuteToggle(com.volumepilot.service.overlay.OverlayService,boolean)
+    public static final void access$setCurrentPosition(com.volumepilot.service.overlay.OverlayService,com.volumepilot.domain.model.OverlayPosition)
+    public static final void access$setDockedToLeft(com.volumepilot.service.overlay.OverlayService,boolean)
     public static final void access$setSelectedStreamType(com.volumepilot.service.overlay.OverlayService,com.volumepilot.domain.model.AudioStreamType)
+    public static com.volumepilot.domain.model.OverlayPosition getCurrentPosition()
     public final com.volumepilot.domain.usecase.GetSettingsUseCase getGetSettingsUseCase()
     public final com.volumepilot.domain.usecase.GetVolumeStateUseCase getGetVolumeStateUseCase()
     public static com.volumepilot.domain.usecase.HandleDeviceConnectedUseCase getHandleDeviceConnectedUseCase()
     public final com.volumepilot.domain.usecase.MuteUseCase getMuteUseCase()
     public static com.volumepilot.domain.model.AudioStreamType getSelectedStreamType()
-    public static com.volumepilot.domain.usecase.SetVolumeUseCase getSetVolumeUseCase()
-    public static com.volumepilot.domain.usecase.ToggleVibrateUseCase getToggleVibrateUseCase()
-    public final com.volumepilot.domain.usecase.UpdateSettingsUseCase getUpdateSettingsUseCase()
-    public static boolean handleTouchEvent()
+    public final com.volumepilot.domain.usecase.SetVolumeUseCase getSetVolumeUseCase()
+    public final com.volumepilot.domain.usecase.ToggleVibrateUseCase getToggleVibrateUseCase()
+    public static void handleMuteToggle()
+    public static void handlePowerLongPress()
+    public static void handlePowerSingleTap()
+    public static void handleVolumeStep()
     public static void initOverlay()
-    public static boolean isExpanded()
-    public final boolean isPaused()
+    public final boolean isDockedToLeft()
+    public final boolean isWidgetHidden()
     public static void observeDeviceChanges()
+    public static void setCurrentPosition()
+    public static void setDockedToLeft()
     public static void setExpanded()
-    public final void setPaused(boolean)
     public static void setSelectedStreamType()
+    public final void setWidgetHidden(boolean)
     public static void startServiceAsForeground()
-    public static void triggerHaptic()
-    public final void updateNotification()
-    public static int widthWidth()
 com.volumepilot.service.overlay.OverlayService_GeneratedInjector:
     public abstract void injectOverlayService()
 com.volumepilot.service.overlay.OverlayService_MembersInjector
@@ -56863,12 +56937,20 @@ com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$1:
     public final void invoke$63()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$1$1:
     public static void invoke$70()
+com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$10$1:
+    public static void invoke$71()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$11$1:
+    public static void invoke$72()
+com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$12$1:
+    public static void invoke$73()
+com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$13$1:
+    public static void invoke$74()
+com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$17$1:
     public final void invoke()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$2$1:
-    public static void invoke$71()
+    public static void invoke$75()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$3$1:
-    public static void invoke$72()
+    public static void invoke$76()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$4$1:
     public final void invoke()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$5$1:
@@ -56877,6 +56959,10 @@ com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$6$1:
     public final void invoke(boolean)
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$7$1:
     public final void invoke(boolean)
+com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$8$1:
+    public static void invoke$77()
+com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2$9$1:
+    public static void invoke$78()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$2:
     public final void invoke$63()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$3$1$1:
@@ -56886,13 +56972,13 @@ com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$3$2$1:
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$3:
     public final void invoke$63()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$4$1$1:
-    public final void invoke$73()
+    public final void invoke$79()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$4$2$1:
-    public final void invoke$74()
+    public final void invoke$80()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$4$3$1:
-    public final void invoke$73()
+    public final void invoke$79()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$4$4$1:
-    public final void invoke$74()
+    public final void invoke$80()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$4$5$1:
     public final void invoke()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$4$6$1:
@@ -56902,17 +56988,17 @@ com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$4:
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$5$1$1:
     public final void invoke(boolean)
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$5$2$1:
-    public static void invoke$75()
+    public static void invoke$81()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$5$3$1:
-    public static void invoke$76()
+    public static void invoke$82()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$5$4$1:
-    public final void invoke$73()
+    public final void invoke$79()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$5$5$1:
-    public static void invoke$77()
+    public static void invoke$83()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$5$6$1:
     public final void invoke()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$5$7$1:
-    public final void invoke$73()
+    public final void invoke$79()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$5$8$1:
     public final void invoke()
 com.volumepilot.ui.VolumePilotAppNavHostKt$VolumePilotAppNavHost$1$1$5$9$1:
@@ -57332,6 +57418,8 @@ kotlin.ranges.RangesKt:
     public static long coerceAtLeast(long)
     public static long coerceAtMost(long,long)
     public static kotlin.ranges.IntProgression downTo(int,int)
+kotlin.ranges.RangesKt__RangesKt:
+    public static kotlin.ranges.ClosedFloatRange rangeTo(float,float)
 kotlin.ranges.RangesKt___RangesKt
 kotlin.reflect.KClass:
     public abstract java.lang.String getQualifiedName()
@@ -57744,7 +57832,7 @@ kotlinx.coroutines.channels.BufferedChannel$BufferedChannelIterator:
     public static void tryResumeHasNextOnClosedChannel()
 kotlinx.coroutines.channels.BufferedChannel$SendBroadcast
 kotlinx.coroutines.channels.BufferedChannel$bindCancellationFun$2:
-    public static void invoke$78()
+    public static void invoke$84()
 kotlinx.coroutines.channels.BufferedChannel$bindCancellationFunResult$1:
     public static void invoke-5_sEAP8()
 kotlinx.coroutines.channels.BufferedChannel$receiveCatchingOnNoWaiterSuspend$1:
@@ -58555,6 +58643,6 @@ okio.internal.ZipEntry:
     public static long getSize()
     public static boolean isDirectory()
 okio.internal.ZipFilesKt$readEntry$1:
-    public final void invoke$80()
+    public final void invoke$86()
 okio.internal.ZipFilesKt$readOrSkipLocalHeader$1:
-    public final void invoke$80()
+    public final void invoke$86()

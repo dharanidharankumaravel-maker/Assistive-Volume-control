@@ -92,6 +92,9 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable assistive_app_logo
+drawable bg_notification_action_btn
+drawable bg_notification_stop_btn
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -100,6 +103,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_notification
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -154,6 +158,9 @@ id actions
 id androidx_compose_ui_view_composition_context
 id async
 id blocking
+id btn_notification_stop
+id btn_notification_toggle
+id btn_notification_toggle_expanded
 id chronometer
 id compose_view_saveable_id_tag
 id consume_window_insets_tag
@@ -175,8 +182,14 @@ id line3
 id nav_controller_view_tag
 id normal
 id notification_background
+id notification_icon
+id notification_icon_expanded
 id notification_main_column
 id notification_main_column_container
+id notification_subtitle
+id notification_subtitle_expanded
+id notification_title
+id notification_title_expanded
 id pooling_container_listener_holder_tag
 id report_drawn
 id right_icon
@@ -212,11 +225,21 @@ layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout notification_action
 layout notification_action_tombstone
+layout notification_overlay_compact
+layout notification_overlay_expanded
 layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 mipmap ic_launcher
+mipmap ic_launcher_foreground
+mipmap ic_launcher_round
+string accessibility_enable_btn
+string accessibility_permission_desc
+string accessibility_permission_title
+string accessibility_service_desc
+string accessibility_status_active
+string accessibility_status_needed
 string action_close
 string action_grant_permission
 string action_learn_more
@@ -341,17 +364,24 @@ string range_end
 string range_start
 string section_appearance
 string section_audio
+string section_floating_controls
 string section_haptics
 string section_privacy
 string selected
+string setting_button_arrangement
 string setting_haptics_desc
 string setting_haptics_title
 string setting_max_volume_cap_desc
 string setting_max_volume_cap_title
+string setting_power_long_press
+string setting_power_single_tap
 string setting_theme_dark
 string setting_theme_light
 string setting_theme_system
 string setting_theme_title
+string setting_widget_color
+string setting_widget_opacity
+string setting_widget_size
 string settings_title
 string state_empty
 string state_off
@@ -399,3 +429,4 @@ styleable NavGraphNavigator startDestination
 styleable NavHost navGraph
 styleable NavInclude graph
 styleable Navigator android_label android_id route
+xml accessibility_service_config

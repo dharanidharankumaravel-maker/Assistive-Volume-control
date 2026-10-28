@@ -23,4 +23,11 @@ object PreferencesKeys {
     val PROFILES_JSON = stringPreferencesKey("profiles_json")
     val ACTIVE_PROFILE_ID = stringPreferencesKey("active_profile_id")
     val AUTOMATION_CONFIG_JSON = stringPreferencesKey("automation_config_json")
+    val BUTTON_ARRANGEMENT = stringPreferencesKey("button_arrangement")
+    val WIDGET_COLOR = stringPreferencesKey("widget_color")
+    val POWER_SINGLE_TAP_ACTION = stringPreferencesKey("power_single_tap_action")
+    val POWER_LONG_PRESS_ACTION = stringPreferencesKey("power_long_press_action")
+    val RGB_GLOW_ENABLED = booleanPreferencesKey("rgb_glow_enabled")
+    val RGB_GLOW_INTENSITY = floatPreferencesKey("rgb_glow_intensity")
+    val IS_OVERLAY_HIDDEN = booleanPreferencesKey("is_overlay_hidden")
 }

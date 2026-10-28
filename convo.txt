@@ -133,4 +133,127 @@ Whenever you are ready to continue, next steps include:
 3. Post-v1.0 enhancements:
    - Android Quick Settings Tile (VolumePilotTileService).
    - Launcher App Shortcuts (shortcuts.xml for quick mute / profiles).
+
+6. FLOATING BUTTON DRAGGING & TOUCH INTERCEPTION FIX
+--------------------------------------------------------------------------------
+Problem:
+- The floating volume bubble rendered on WindowManager was not draggable across the screen.
+Root Cause:
+- `overlayView.setOnTouchListener` was attached directly to `ComposeView`.
+- In Android's ViewGroup touch hierarchy, `ComposeView`'s child (`AndroidComposeView`)
+  consumed touches via `detectTapGestures`.
+- Because `ComposeView` did not implement touch interception, `ViewGroup.dispatchTouchEvent`
+  routed all `ACTION_MOVE` events directly to child views, bypassing `setOnTouchListener`.
+Fix Implemented:
+- Created `OverlayContainerView` (extending `FrameLayout`) hosting the `ComposeView`.
+- Overrode `onInterceptTouchEvent`:
+  - When collapsed: intercepts touch stream whenever movement exceeds system `touchSlop`
+    (`abs(dx) > touchSlop || abs(dy) > touchSlop`), sending `ACTION_CANCEL` to Compose
+    (cancelling pending tap/long-press gestures) and routing all subsequent `ACTION_MOVE`
+    and `ACTION_UP` events directly into `onTouchEvent`.
+  - When expanded: returns `false` so the expanded volume panel sliders, tabs, and buttons
+    receive unhindered touch events without window dragging.
+- In `onTouchEvent`:
+  - Calculates movement delta using `rawX` and `rawY` (absolute digitizer coordinates) to
+    prevent coordinate jitter during window relocation.
+  - Updates `windowManager.updateViewLayout` in real-time.
+  - On `ACTION_UP`, runs a 200ms `ValueAnimator` with `DecelerateInterpolator` to smoothly
+    snap magnetically to the nearest screen edge (left or right, 16dp margin), and persists
+    the new `OverlayPosition` to `UserSettings`.
+- Preserves TalkBack accessibility (`Role.Button`, `onClick`, `customActions`) and Compose gestures.
+- Verified: All 47 unit tests pass, and debug/release APKs build cleanly.
+
+7. BASIL FLOATING WIDGET REDESIGN (ASSISTIVE VOLUME BUTTON INSPIRATION)
+--------------------------------------------------------------------------------
+Overview:
+- Redesigned the floating widget inspired by the Assistive Volume Button paradigm,
+  maintaining Basil's distinct minimalist emerald/slate design language.
+Architecture & Capabilities:
+- Three Vertically Arranged Controls:
+  1. Power:
+     - Single Tap: Lock Screen (or configurable Power Menu / Toggle Panel).
+     - Long Press: Take Screenshot (or configurable Power Menu / Lock Screen).
+  2. Volume Up (+):
+     - Single Tap: Increases active audio stream level by 1 step.
+     - Long Press: Opens the expanded Basil multi-stream volume panel.
+  3. Volume Down (−):
+     - Single Tap: Decreases active audio stream level by 1 step.
+     - Long Press: Toggles stream mute.
+- Hardware Shortcuts Accessibility Service:
+  - VolumeAccessibilityService (100% offline, zero network, zero event logging).
+  - Invokes system performGlobalAction(GLOBAL_ACTION_LOCK_SCREEN / GLOBAL_ACTION_TAKE_SCREENSHOT).
+- Compact Docked Layout & Smooth Animated Expansion:
+  - BasilFloatingControlWidget: Slim, docked vertical pill (width ~44-48dp) with dock-edge awareness
+    (flat against screen bezel, rounded toward screen interior), hairline dividers, and subtle shadow.
+  - Seamlessly connected to the expanded volume panel in a shared Row with ZERO gaps.
+  - Smooth horizontal slide and fade transition (slideInHorizontally / slideOutHorizontally).
+  - Outside Touch Auto-Dismissal: Sets FLAG_WATCH_OUTSIDE_TOUCH when expanded; OverlayContainerView
+    detects ACTION_OUTSIDE and automatically collapses the panel.
+- Full Customization Suite (Persisted in DataStore):
+  - Button Arrangement: Power • + • −, + • − • Power, + • Power • −.
+  - Widget Accent Color: Basil Emerald (#00875A), Slate Dark (#22323F), Ocean Blue (#006495),
+    Sunset Amber (#D97706), Royal Violet (#7C3AED).
+  - Power Single Tap & Long Press action assignments.
+  - Button Size slider (38dp - 56dp) & Transparency slider (30% - 100%).
+- Verification:
+  - All 47 unit tests pass (./gradlew.bat testDebugUnitTest).
+  - Debug APK built successfully (./gradlew.bat assembleDebug).
+
+PHASE 10: Modern Redesign, RGB Glow, Same-Side Positioning & Notification Controls
+- UI/UX Refinement:
+  - Redesigned `OverlayPanelContent.kt`: Replaced heavy tab row with sleek segmented stream
+    selector pills (Media, Ring, Call, Alarm), compact telemetry badges, interactive volume track
+    with stepped micro-steppers (− / +), and a minimalist close button.
+  - Animated RGB Glow (`RgbGlow.kt`): Created high-performance `Modifier.rgbGlow(...)` utilizing
+    rotating sweep gradient and ambient neon drop shadow with configurable toggle and intensity.
+  - Applied RGB aura to both `BasilFloatingControlWidget` and `OverlayPanelContent`.
+- Panel Positioning Fix:
+  - Converted `currentPosition` and `isDockedToLeft` in `OverlayService.kt` to Compose `mutableStateOf`.
+  - Resolved the bug where tapping the expand arrow opened the panel on the opposite screen side.
+  - Calibrated exact window bounds for both left and right docks: panel opens strictly adjacent
+    on the inner side while the slider stays locked to the screen edge with zero jumping.
+- Interactive Notification Controls:
+  - Updated `OverlayNotificationHelper.kt` and `OverlayService.kt` with dynamic Show / Hide action.
+  - Shows "Hide" when widget is active and "Show" when widget is concealed.
+  - Tapping Hide conceals the widget without killing the background service; tapping Show restores
+    it at its exact saved coordinates.
+  - State synchronized across app launches and service recreation via `UserSettings.isOverlayHidden`.
+- App Icon Borderless Adaptive Configuration (White Border Fix):
+  - Problem: The app icon was rendering with an unwanted white circular container/border on Android launchers.
+  - Root Cause: `AndroidManifest.xml` had `android:icon` pointing directly to a PNG drawable (`@drawable/assistive_app_logo`). On Android 8.0+ (API 26+), launchers classify direct drawable bitmaps as legacy non-adaptive icons and forcibly embed them inside a white circular/squircle plate. Furthermore, `ic_launcher.xml` had identical opaque bitmaps for both background and foreground layers without transparency or safe zone calibration.
+  - Fix Implemented:
+    1. Switched `AndroidManifest.xml` to standard `@mipmap/ic_launcher` and `@mipmap/ic_launcher_round`.
+    2. Generated full-bleed adaptive background (`ic_launcher_background.xml`) using the logo's rich blue gradient (#369FFD to #1458E0).
+    3. Extracted foreground transparency matte and calibrated the assistive volume widget (slider + 3 buttons) to fit 100% within the 66dp safe zone (52dp height out of 108dp canvas).
+    4. Generated complete set of density-specific adaptive foregrounds (`ic_launcher_foreground.png` for mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi).
+    5. Generated legacy square (`ic_launcher.png`) and round (`ic_launcher_round.png`) icons with gradient bleed and antialiased edges across all densities.
+    6. Added Android 13+ themed icon support (`<monochrome>`) in both `ic_launcher.xml` and `ic_launcher_round.xml`.
+    7. Separated notification icon to `res/drawable/ic_notification.xml` to avoid collision with launcher foreground.
+- Verification:
+  - All launcher density buckets verified (mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi).
+  - Safe zone mathematical verification: 100.00% of artwork preserved inside system circular and squircle masks with zero white border.
+
+PHASE 11: Flowing RGB Neon Border, 4-Slider Minimal Panel, Symmetric Expansion & 1-Tap Notification
+- Animated RGB Perimeter Light Tracing (`RgbGlow.kt`):
+  - Upgraded to a continuously rotating `SweepGradient` via dynamic Android `Matrix.postRotate` in hardware-accelerated `ShaderBrush`.
+  - Colors travel seamlessly along the entire shape perimeter (dock flat-edge pill & rounded panel).
+  - Synchronized outer glowing halo (`strokeWidth * 2.8`) and razor-sharp inner neon line (`strokeWidth = 1.4dp`).
+  - Battery-optimized: updates strictly during GPU draw phase without tree recomposition.
+- Ultra-Minimalist Volume Panel UI (`OverlayPanelContent.kt`):
+  - Exactly 4 vertical capsule sliders: Media, Ring, In-Call, Alarm.
+  - Zero text labels: clean, modern iconography.
+  - 1:1 real-time drag and tap adjustments respecting Android stream min/max volume limits.
+  - Tap-icon-to-mute with instant high-contrast visual feedback.
+  - Compact 210dp width with rounded corners and perimeter RGB aura.
+- Symmetric Left & Right Screen Edge Expansion (`OverlayService.kt`):
+  - Fixed panel positioning formula for both docks using constant `PANEL_WIDTH_DP` (210dp) and live `currentWidgetSizeDp`.
+  - Floating button on the right edge remains anchored to the exact same screen pixel during expansion and collapse (0px jump).
+  - Smooth mirrored slide animations: left docks expand inward toward the right, right docks expand inward toward the left.
+- Single-Tap Collapsed Notification Show/Hide (`OverlayNotificationHelper.kt`):
+  - Built compliant custom `RemoteViews` (`notification_overlay_compact.xml` & `notification_overlay_expanded.xml`).
+  - Show / Hide toggle button is directly visible in the default collapsed notification view with zero requirement to expand the card.
+  - Distinct state-based `requestCode` and `ACTION_SHOW` / `ACTION_HIDE` dispatches with debounced execution prevent duplicate clicks.
 ================================================================================
+
+
+

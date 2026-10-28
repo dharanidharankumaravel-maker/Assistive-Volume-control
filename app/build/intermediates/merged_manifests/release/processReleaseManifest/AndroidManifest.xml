@@ -30,9 +30,9 @@
         android:allowBackup="false"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:extractNativeLibs="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/assistive_app_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher"
+        android:roundIcon="@drawable/assistive_app_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.VolumePilot" >
         <activity
@@ -78,6 +78,20 @@
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
             </intent-filter>
         </receiver>
+
+        <!-- Accessibility Service for Power / Lock / Screenshot hardware shortcuts -->
+        <service
+            android:name="com.volumepilot.service.accessibility.VolumeAccessibilityService"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
 
         <provider
             android:name="androidx.startup.InitializationProvider"

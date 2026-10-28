@@ -15,14 +15,23 @@ import android.os.Vibrator
 import android.os.VibratorManager
 import android.provider.Settings
 import android.view.Gravity
-import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.setViewTreeLifecycleOwner
 import androidx.lifecycle.setViewTreeViewModelStoreOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
@@ -30,6 +39,8 @@ import com.volumepilot.core.common.AppLogger
 import com.volumepilot.core.designsystem.VolumePilotTheme
 import com.volumepilot.domain.model.AudioStreamType
 import com.volumepilot.domain.model.OverlayPosition
+import com.volumepilot.domain.model.PowerLongPressAction
+import com.volumepilot.domain.model.PowerSingleTapAction
 import com.volumepilot.domain.model.UserSettings
 import com.volumepilot.domain.model.VolumeState
 import com.volumepilot.domain.usecase.GetSettingsUseCase
@@ -39,8 +50,9 @@ import com.volumepilot.domain.usecase.MuteUseCase
 import com.volumepilot.domain.usecase.SetVolumeUseCase
 import com.volumepilot.domain.usecase.ToggleVibrateUseCase
 import com.volumepilot.domain.usecase.UpdateSettingsUseCase
-import com.volumepilot.feature.overlay.OverlayBubbleContent
+import com.volumepilot.feature.overlay.BasilFloatingControlWidget
 import com.volumepilot.feature.overlay.OverlayPanelContent
+import com.volumepilot.service.accessibility.VolumeAccessibilityService
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -49,7 +61,6 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.math.abs
 
 @AndroidEntryPoint
 class OverlayService : Service() {
@@ -67,19 +78,17 @@ class OverlayService : Service() {
     private val lifecycleOwner = OverlayLifecycleOwner()
 
     private var windowManager: WindowManager? = null
+    private var containerView: OverlayContainerView? = null
     private var overlayView: ComposeView? = null
     private var layoutParams: WindowManager.LayoutParams? = null
 
     private var isExpanded by mutableStateOf(false)
-    private var isPaused by mutableStateOf(false)
+    private var isWidgetHidden by mutableStateOf(false)
+    private var isDockedToLeft by mutableStateOf(false)
+    private var currentPosition by mutableStateOf(OverlayPosition())
     private var selectedStreamType by mutableStateOf(AudioStreamType.MEDIA)
-
-    private var currentPosition = OverlayPosition()
-    private var initialX = 0
-    private var initialY = 0
-    private var initialTouchX = 0f
-    private var initialTouchY = 0f
-    private var isDragging = false
+    private var currentWidgetSizeDp by mutableStateOf(48)
+    private var lastActionTime = 0L
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -119,9 +128,8 @@ class OverlayService : Service() {
         }
     }
 
-
     private fun startServiceAsForeground() {
-        val notification = OverlayNotificationHelper.buildForegroundNotification(this, isPaused)
+        val notification = OverlayNotificationHelper.buildForegroundNotification(this, isWidgetHidden)
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
                 startForeground(
@@ -143,15 +151,16 @@ class OverlayService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
+            OverlayNotificationHelper.ACTION_HIDE,
             OverlayNotificationHelper.ACTION_PAUSE -> {
-                isPaused = true
-                overlayView?.visibility = View.GONE
-                updateNotification()
+                hideWidget()
             }
+            OverlayNotificationHelper.ACTION_SHOW,
             OverlayNotificationHelper.ACTION_RESUME -> {
-                isPaused = false
-                overlayView?.visibility = View.VISIBLE
-                updateNotification()
+                showWidget()
+            }
+            OverlayNotificationHelper.ACTION_TOGGLE -> {
+                if (isWidgetHidden) showWidget() else hideWidget()
             }
             OverlayNotificationHelper.ACTION_STOP -> {
                 serviceScope.launch {
@@ -163,12 +172,52 @@ class OverlayService : Service() {
         return START_STICKY
     }
 
+    private fun hideWidget() {
+        val now = android.os.SystemClock.elapsedRealtime()
+        if (now - lastActionTime < 200L && isWidgetHidden) return
+        lastActionTime = now
+
+        isWidgetHidden = true
+        containerView?.visibility = View.GONE
+        updateNotification()
+        serviceScope.launch {
+            updateSettingsUseCase.setOverlayHidden(true)
+        }
+    }
+
+    private fun showWidget() {
+        val now = android.os.SystemClock.elapsedRealtime()
+        if (now - lastActionTime < 200L && !isWidgetHidden) return
+        lastActionTime = now
+
+        isWidgetHidden = false
+        containerView?.visibility = View.VISIBLE
+        updateNotification()
+        serviceScope.launch {
+            updateSettingsUseCase.setOverlayHidden(false)
+        }
+    }
+
     @SuppressLint("ClickableViewAccessibility")
     private fun initOverlay() {
         serviceScope.launch {
             val settings = getSettingsUseCase().first()
             currentPosition = settings.overlayPosition
+            isDockedToLeft = currentPosition.isSnappedToLeft
+            isWidgetHidden = settings.isOverlayHidden
             selectedStreamType = settings.preferredStreamType
+            currentWidgetSizeDp = settings.overlaySizeDp
+
+            val screenWidth = resources.displayMetrics.widthPixels
+            val density = resources.displayMetrics.density
+            val bubbleSizePx = (settings.overlaySizeDp * density).toInt()
+            val marginPx = (4 * density).toInt()
+
+            val initialXPos = if (currentPosition.x == 0 && !currentPosition.isSnappedToLeft) {
+                (screenWidth - bubbleSizePx - marginPx).coerceAtLeast(marginPx)
+            } else {
+                currentPosition.x
+            }
 
             val layoutFlag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
@@ -177,7 +226,7 @@ class OverlayService : Service() {
                 WindowManager.LayoutParams.TYPE_PHONE
             }
 
-            layoutParams = WindowManager.LayoutParams(
+            val params = WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 layoutFlag,
@@ -186,11 +235,14 @@ class OverlayService : Service() {
                 PixelFormat.TRANSLUCENT
             ).apply {
                 gravity = Gravity.TOP or Gravity.START
-                x = currentPosition.x
+                x = initialXPos
                 y = currentPosition.y
             }
+            layoutParams = params
 
-            overlayView = ComposeView(this@OverlayService).apply {
+            val wm = windowManager ?: return@launch
+
+            val composeView = ComposeView(this@OverlayService).apply {
                 setViewTreeLifecycleOwner(lifecycleOwner)
                 setViewTreeSavedStateRegistryOwner(lifecycleOwner)
                 setViewTreeViewModelStoreOwner(lifecycleOwner)
@@ -200,131 +252,300 @@ class OverlayService : Service() {
                     val currentSettings by getSettingsUseCase().collectAsState(initial = UserSettings())
 
                     VolumePilotTheme {
-                        if (isExpanded) {
-                            OverlayPanelContent(
-                                volumeState = volumeState,
-                                selectedStreamType = selectedStreamType,
-                                onStreamSelected = { type ->
-                                    selectedStreamType = type
-                                    serviceScope.launch {
-                                        updateSettingsUseCase.setPreferredStreamType(type)
-                                    }
-                                },
-                                onVolumeChange = { type, level ->
-                                    serviceScope.launch {
-                                        setVolumeUseCase(type, level)
-                                    }
-                                },
-                                onMuteToggle = { type ->
-                                    val stream = volumeState.getStream(type)
-                                    if (stream != null) {
-                                        serviceScope.launch {
-                                            muteUseCase(type, !stream.isMuted)
-                                        }
-                                    }
-                                },
-                                onToggleVibrate = {
-                                    serviceScope.launch {
-                                        toggleVibrateUseCase()
-                                    }
-                                },
-                                onClose = {
-                                    isExpanded = false
-                                },
-                                opacity = currentSettings.overlayOpacity
-                            )
-                        } else {
-                            OverlayBubbleContent(
-                                stream = volumeState.getStream(selectedStreamType),
-                                opacity = currentSettings.overlayOpacity,
-                                sizeDp = currentSettings.overlaySizeDp,
-                                onSingleTap = {
-                                    isExpanded = true
-                                    triggerHaptic(currentSettings.hapticFeedbackEnabled)
-                                },
-                                onDoubleTap = {
-                                    val stream = volumeState.getStream(selectedStreamType)
-                                    if (stream != null) {
-                                        serviceScope.launch {
-                                            muteUseCase(selectedStreamType, !stream.isMuted)
-                                        }
+                        currentWidgetSizeDp = currentSettings.overlaySizeDp
+
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            if (isDockedToLeft) {
+                                // Docked to Left Edge: [Vertical 3-Button Dock] [Expanded Panel to the right]
+                                BasilFloatingControlWidget(
+                                    stream = volumeState.getStream(selectedStreamType),
+                                    opacity = currentSettings.overlayOpacity,
+                                    sizeDp = currentSettings.overlaySizeDp,
+                                    arrangement = currentSettings.buttonArrangement,
+                                    colorTheme = currentSettings.widgetColor,
+                                    isExpanded = isExpanded,
+                                    isDockedToLeft = true,
+                                    onPowerSingleTap = { handlePowerSingleTap(currentSettings) },
+                                    onPowerLongPress = { handlePowerLongPress(currentSettings) },
+                                    onVolumeUp = { handleVolumeStep(1, currentSettings.hapticFeedbackEnabled) },
+                                    onVolumeDown = { handleVolumeStep(-1, currentSettings.hapticFeedbackEnabled) },
+                                    onToggleExpand = {
+                                        setPanelExpanded(!isExpanded)
                                         triggerHaptic(currentSettings.hapticFeedbackEnabled)
-                                    }
-                                },
-                                onLongPress = {
-                                    // Quick action: cycle to next stream
-                                    val streamTypes = AudioStreamType.values()
-                                    val nextIndex = (selectedStreamType.ordinal + 1) % streamTypes.size
-                                    selectedStreamType = streamTypes[nextIndex]
-                                    triggerHaptic(currentSettings.hapticFeedbackEnabled)
+                                    },
+                                    onMuteToggle = { handleMuteToggle(currentSettings.hapticFeedbackEnabled) },
+                                    rgbGlowEnabled = currentSettings.rgbGlowEnabled,
+                                    rgbGlowIntensity = currentSettings.rgbGlowIntensity
+                                )
+
+                                AnimatedVisibility(
+                                    visible = isExpanded,
+                                    enter = slideInHorizontally(
+                                        initialOffsetX = { -it / 2 },
+                                        animationSpec = tween(220)
+                                    ) + fadeIn(tween(220)),
+                                    exit = slideOutHorizontally(
+                                        targetOffsetX = { -it / 2 },
+                                        animationSpec = tween(200)
+                                    ) + fadeOut(tween(200))
+                                ) {
+                                    OverlayPanelContent(
+                                        volumeState = volumeState,
+                                        selectedStreamType = selectedStreamType,
+                                        onStreamSelected = { type ->
+                                            selectedStreamType = type
+                                            serviceScope.launch {
+                                                updateSettingsUseCase.setPreferredStreamType(type)
+                                            }
+                                        },
+                                        onVolumeChange = { type, level ->
+                                            serviceScope.launch {
+                                                setVolumeUseCase(type, level)
+                                            }
+                                        },
+                                        onMuteToggle = { type ->
+                                            val stream = volumeState.getStream(type)
+                                            if (stream != null) {
+                                                serviceScope.launch {
+                                                    muteUseCase(type, !stream.isMuted)
+                                                }
+                                            }
+                                        },
+                                        onToggleVibrate = {
+                                            serviceScope.launch {
+                                                toggleVibrateUseCase()
+                                            }
+                                        },
+                                        onClose = {
+                                            setPanelExpanded(false)
+                                        },
+                                        opacity = currentSettings.overlayOpacity,
+                                        colorTheme = currentSettings.widgetColor,
+                                        rgbGlowEnabled = currentSettings.rgbGlowEnabled,
+                                        rgbGlowIntensity = currentSettings.rgbGlowIntensity
+                                    )
                                 }
-                            )
+                            } else {
+                                // Docked to Right Edge: [Expanded Panel to the left] [Vertical 3-Button Dock]
+                                AnimatedVisibility(
+                                    visible = isExpanded,
+                                    enter = slideInHorizontally(
+                                        initialOffsetX = { it / 2 },
+                                        animationSpec = tween(220)
+                                    ) + fadeIn(tween(220)),
+                                    exit = slideOutHorizontally(
+                                        targetOffsetX = { it / 2 },
+                                        animationSpec = tween(200)
+                                    ) + fadeOut(tween(200))
+                                ) {
+                                    OverlayPanelContent(
+                                        volumeState = volumeState,
+                                        selectedStreamType = selectedStreamType,
+                                        onStreamSelected = { type ->
+                                            selectedStreamType = type
+                                            serviceScope.launch {
+                                                updateSettingsUseCase.setPreferredStreamType(type)
+                                            }
+                                        },
+                                        onVolumeChange = { type, level ->
+                                            serviceScope.launch {
+                                                setVolumeUseCase(type, level)
+                                            }
+                                        },
+                                        onMuteToggle = { type ->
+                                            val stream = volumeState.getStream(type)
+                                            if (stream != null) {
+                                                serviceScope.launch {
+                                                    muteUseCase(type, !stream.isMuted)
+                                                }
+                                            }
+                                        },
+                                        onToggleVibrate = {
+                                            serviceScope.launch {
+                                                toggleVibrateUseCase()
+                                            }
+                                        },
+                                        onClose = {
+                                            setPanelExpanded(false)
+                                        },
+                                        opacity = currentSettings.overlayOpacity,
+                                        colorTheme = currentSettings.widgetColor,
+                                        rgbGlowEnabled = currentSettings.rgbGlowEnabled,
+                                        rgbGlowIntensity = currentSettings.rgbGlowIntensity
+                                    )
+                                }
+
+                                BasilFloatingControlWidget(
+                                    stream = volumeState.getStream(selectedStreamType),
+                                    opacity = currentSettings.overlayOpacity,
+                                    sizeDp = currentSettings.overlaySizeDp,
+                                    arrangement = currentSettings.buttonArrangement,
+                                    colorTheme = currentSettings.widgetColor,
+                                    isExpanded = isExpanded,
+                                    isDockedToLeft = false,
+                                    onPowerSingleTap = { handlePowerSingleTap(currentSettings) },
+                                    onPowerLongPress = { handlePowerLongPress(currentSettings) },
+                                    onVolumeUp = { handleVolumeStep(1, currentSettings.hapticFeedbackEnabled) },
+                                    onVolumeDown = { handleVolumeStep(-1, currentSettings.hapticFeedbackEnabled) },
+                                    onToggleExpand = {
+                                        setPanelExpanded(!isExpanded)
+                                        triggerHaptic(currentSettings.hapticFeedbackEnabled)
+                                    },
+                                    onMuteToggle = { handleMuteToggle(currentSettings.hapticFeedbackEnabled) },
+                                    rgbGlowEnabled = currentSettings.rgbGlowEnabled,
+                                    rgbGlowIntensity = currentSettings.rgbGlowIntensity
+                                )
+                            }
                         }
                     }
                 }
+            }
+            overlayView = composeView
 
-                setOnTouchListener { _, event ->
-                    handleTouchEvent(event)
+            val container = OverlayContainerView(
+                context = this@OverlayService,
+                windowManager = wm,
+                layoutParams = params,
+                isExpandedProvider = { isExpanded },
+                onDismissOutside = {
+                    setPanelExpanded(false)
+                },
+                onPositionChanged = { newPosition ->
+                    currentPosition = newPosition
+                    isDockedToLeft = newPosition.isSnappedToLeft
+                    serviceScope.launch {
+                        updateSettingsUseCase.setOverlayPosition(newPosition)
+                    }
                 }
+            ).apply {
+                setViewTreeLifecycleOwner(lifecycleOwner)
+                setViewTreeSavedStateRegistryOwner(lifecycleOwner)
+                setViewTreeViewModelStoreOwner(lifecycleOwner)
+                addView(composeView)
+            }
+            containerView = container
+
+            if (isWidgetHidden) {
+                container.visibility = View.GONE
             }
 
             try {
-                windowManager?.addView(overlayView, layoutParams)
+                wm.addView(container, params)
             } catch (e: Exception) {
-                logger.e(TAG, "Failed to add overlay view to WindowManager", e)
+                logger.e(TAG, "Failed to add overlay container view to WindowManager", e)
+            }
+
+            updateNotification()
+        }
+    }
+
+    private fun handlePowerSingleTap(settings: UserSettings) {
+        triggerHaptic(settings.hapticFeedbackEnabled)
+        when (settings.powerSingleTapAction) {
+            PowerSingleTapAction.LOCK_SCREEN -> {
+                VolumeAccessibilityService.performLockScreen(this)
+            }
+            PowerSingleTapAction.POWER_MENU -> {
+                VolumeAccessibilityService.performPowerDialog(this)
+            }
+            PowerSingleTapAction.TOGGLE_PANEL -> {
+                setPanelExpanded(!isExpanded)
             }
         }
     }
 
-    private fun handleTouchEvent(event: MotionEvent): Boolean {
-        val params = layoutParams ?: return false
-        val wm = windowManager ?: return false
-
-        when (event.action) {
-            MotionEvent.ACTION_DOWN -> {
-                initialX = params.x
-                initialY = params.y
-                initialTouchX = event.rawX
-                initialTouchY = event.rawY
-                isDragging = false
-                return false // allow Compose child to receive tap gestures
+    private fun handlePowerLongPress(settings: UserSettings) {
+        triggerHaptic(settings.hapticFeedbackEnabled)
+        when (settings.powerLongPressAction) {
+            PowerLongPressAction.TAKE_SCREENSHOT -> {
+                VolumeAccessibilityService.performTakeScreenshot(this)
             }
-            MotionEvent.ACTION_MOVE -> {
-                val dx = (event.rawX - initialTouchX).toInt()
-                val dy = (event.rawY - initialTouchY).toInt()
-
-                if (!isDragging && (abs(dx) > 10 || abs(dy) > 10)) {
-                    isDragging = true
-                }
-
-                if (isDragging) {
-                    params.x = initialX + dx
-                    params.y = initialY + dy
-                    wm.updateViewLayout(overlayView, params)
-                    return true
-                }
+            PowerLongPressAction.POWER_MENU -> {
+                VolumeAccessibilityService.performPowerDialog(this)
             }
-            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                if (isDragging) {
-                    // Snap to nearest screen edge
-                    val screenWidth = resources.displayMetrics.widthWidth()
-                    val isLeft = event.rawX < screenWidth / 2f
-                    params.x = if (isLeft) 16 else screenWidth - (overlayView?.width ?: 140) - 16
-                    wm.updateViewLayout(overlayView, params)
-
-                    currentPosition = OverlayPosition(params.x, params.y, isLeft)
-                    serviceScope.launch {
-                        updateSettingsUseCase.setOverlayPosition(currentPosition)
-                    }
-                    return true
-                }
+            PowerLongPressAction.LOCK_SCREEN -> {
+                VolumeAccessibilityService.performLockScreen(this)
             }
         }
-        return false
     }
 
-    private fun android.util.DisplayMetrics.widthWidth(): Int {
-        return this.widthPixels
+    private fun handleVolumeStep(delta: Int, hapticEnabled: Boolean) {
+        triggerHaptic(hapticEnabled)
+        serviceScope.launch {
+            val state = getVolumeStateUseCase().first()
+            val stream = state.getStream(selectedStreamType) ?: return@launch
+            val newLevel = (stream.currentVolume + delta).coerceIn(stream.minVolume, stream.maxVolume)
+            setVolumeUseCase(selectedStreamType, newLevel)
+        }
+    }
+
+    private fun handleMuteToggle(hapticEnabled: Boolean) {
+        triggerHaptic(hapticEnabled)
+        serviceScope.launch {
+            val state = getVolumeStateUseCase().first()
+            val stream = state.getStream(selectedStreamType) ?: return@launch
+            muteUseCase(selectedStreamType, !stream.isMuted)
+        }
+    }
+
+    private fun setPanelExpanded(expanded: Boolean) {
+        if (isExpanded == expanded) return
+        isExpanded = expanded
+
+        val wm = windowManager ?: return
+        val params = layoutParams ?: return
+        val container = containerView ?: return
+
+        val screenWidth = resources.displayMetrics.widthPixels
+        val density = resources.displayMetrics.density
+        val marginPx = (4 * density).toInt()
+
+        val widgetWidthPx = (currentWidgetSizeDp * density).toInt()
+        val panelWidthPx = (210 * density).toInt()
+        val spacerPx = (6 * density).toInt()
+        val totalWidthPx = widgetWidthPx + panelWidthPx + spacerPx
+
+        if (expanded) {
+            container.cancelAnimation()
+            // Enable WATCH_OUTSIDE_TOUCH so tapping outside dismisses the panel automatically
+            params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                    WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH or
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+
+            if (isDockedToLeft) {
+                // Docked on Left: Slider stays anchored at marginPx, panel opens adjacent on the right
+                params.x = marginPx
+            } else {
+                // Docked on Right: Slider stays anchored at (screenWidth - widgetWidthPx - marginPx),
+                // panel opens adjacent on the left without switching sides or jumping
+                val targetX = (screenWidth - totalWidthPx - marginPx).coerceAtLeast(marginPx)
+                params.x = targetX
+            }
+            try {
+                wm.updateViewLayout(container, params)
+            } catch (e: Exception) {
+                logger.w(TAG, "Error updating overlay layout on expand", e)
+            }
+        } else {
+            // Restore collapsed state
+            params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+
+            params.x = if (isDockedToLeft) {
+                marginPx
+            } else {
+                (screenWidth - widgetWidthPx - marginPx).coerceAtLeast(marginPx)
+            }
+            try {
+                wm.updateViewLayout(container, params)
+            } catch (e: Exception) {
+                logger.w(TAG, "Error updating overlay layout on collapse", e)
+            }
+        }
     }
 
     private fun triggerHaptic(enabled: Boolean) {
@@ -349,20 +570,27 @@ class OverlayService : Service() {
     }
 
     private fun updateNotification() {
-        val notification = OverlayNotificationHelper.buildForegroundNotification(this, isPaused)
+        val notification = OverlayNotificationHelper.buildForegroundNotification(this, isWidgetHidden)
         val nm = getSystemService(Context.NOTIFICATION_SERVICE) as android.app.NotificationManager
         nm.notify(OverlayNotificationHelper.NOTIFICATION_ID, notification)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        // Screen rotated - re-clamp position to stay safely on screen
         layoutParams?.let { params ->
             val screenWidth = resources.displayMetrics.widthPixels
             val screenHeight = resources.displayMetrics.heightPixels
-            params.x = params.x.coerceIn(0, (screenWidth - 100).coerceAtLeast(0))
-            params.y = params.y.coerceIn(50, (screenHeight - 150).coerceAtLeast(50))
-            windowManager?.updateViewLayout(overlayView, params)
+            val viewWidth = containerView?.width ?: (52 * resources.displayMetrics.density).toInt()
+            val viewHeight = containerView?.height ?: (140 * resources.displayMetrics.density).toInt()
+            params.x = params.x.coerceIn(0, (screenWidth - viewWidth).coerceAtLeast(0))
+            params.y = params.y.coerceIn(50, (screenHeight - viewHeight).coerceAtLeast(50))
+            containerView?.let { container ->
+                try {
+                    windowManager?.updateViewLayout(container, params)
+                } catch (e: Exception) {
+                    logger.w(TAG, "Error updating overlay layout on config change", e)
+                }
+            }
         }
     }
 
@@ -375,13 +603,15 @@ class OverlayService : Service() {
         lifecycleOwner.onDestroy()
         serviceScope.cancel()
 
-        overlayView?.let { view ->
+        containerView?.let { view ->
+            view.cancelAnimation()
             try {
                 windowManager?.removeView(view)
             } catch (e: Exception) {
-                logger.w(TAG, "Error removing overlay view from WindowManager", e)
+                logger.w(TAG, "Error removing overlay container view from WindowManager", e)
             }
         }
+        containerView = null
         overlayView = null
     }
 

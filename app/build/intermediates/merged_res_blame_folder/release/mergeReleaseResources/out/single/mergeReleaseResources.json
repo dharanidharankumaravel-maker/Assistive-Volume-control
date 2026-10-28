@@ -1,194 +1,206 @@
 [
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_notification_bg_low.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\notification_bg_low.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/layout-v21_notification_template_custom_big.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/layout-v21/notification_template_custom_big.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/layout_custom_dialog.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/layout/custom_dialog.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_ic_call_answer_video.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\ic_call_answer_video.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/layout-v21_notification_template_icon_group.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/layout-v21/notification_template_icon_group.xml"
+        "merged": "com.volumepilot.app-release-59:/drawable_assistive_app_logo.png.flat",
+        "source": "com.volumepilot.app-main-60:/drawable/assistive_app_logo.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_ic_call_decline_low.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/ic_call_decline_low.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\layout-v21_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\layout-v21\\notification_action_tombstone.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.volumepilot.app-main-60:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-hdpi-v4_notification_oversize_large_icon_bg.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-hdpi-v4\\notification_oversize_large_icon_bg.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/layout_ime_secondary_split_test_activity.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/layout/ime_secondary_split_test_activity.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_ic_call_decline_low.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\ic_call_decline_low.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-main-60:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\layout-v21_notification_action.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_ic_call_answer_video_low.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/ic_call_answer_video_low.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_ic_call_decline.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\ic_call_decline.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\layout_notification_template_part_time.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_notification_bg.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\notification_bg.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_ic_call_answer_low.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/ic_call_answer_low.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\animator_fragment_close_enter.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-fragment-1.5.1-36:\\animator\\fragment_close_enter.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.volumepilot.app-main-60:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-hdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_notification_icon_background.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/notification_icon_background.xml"
-    },
-    {
-        "merged": "com.volumepilot.app-release-59:/animator_fragment_fade_exit.xml.flat",
-        "source": "com.volumepilot.app-fragment-1.5.1-36:/animator/fragment_fade_exit.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\anim-v21_fragment_fast_out_extra_slow_in.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-fragment-1.5.1-36:\\anim-v21\\fragment_fast_out_extra_slow_in.xml"
     },
     {
         "merged": "com.volumepilot.app-release-59:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "com.volumepilot.app-main-60:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/layout-v21_notification_action_tombstone.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/layout-v21/notification_action_tombstone.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_ic_call_answer_video_low.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\ic_call_answer_video_low.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-hdpi-v4/notification_bg_normal.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-v21_notification_action_background.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-v21\\notification_action_background.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/color_vector_tint_theme_color.xml.flat",
-        "source": "com.volumepilot.app-ui-release-42:/color/vector_tint_theme_color.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_notification_icon_background.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\notification_icon_background.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/color_vector_tint_color.xml.flat",
-        "source": "com.volumepilot.app-ui-release-42:/color/vector_tint_color.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\animator_fragment_open_enter.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-fragment-1.5.1-36:\\animator\\fragment_open_enter.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-hdpi-v4_notification_oversize_large_icon_bg.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-hdpi-v4/notification_oversize_large_icon_bg.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\layout_ime_secondary_split_test_activity.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\layout\\ime_secondary_split_test_activity.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_notification_bg_low.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/notification_bg_low.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/layout_notification_template_part_chronometer.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/layout/notification_template_part_chronometer.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-main-60:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/layout-v21_notification_action.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/layout-v21/notification_action.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_ic_call_answer_low.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\ic_call_answer_low.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/layout_notification_template_part_time.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/layout/notification_template_part_time.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\animator_fragment_close_exit.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-fragment-1.5.1-36:\\animator\\fragment_close_exit.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_notification_bg.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/notification_bg.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/animator_fragment_close_enter.xml.flat",
-        "source": "com.volumepilot.app-fragment-1.5.1-36:/animator/fragment_close_enter.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\animator_fragment_fade_exit.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-fragment-1.5.1-36:\\animator\\fragment_fade_exit.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-xhdpi-v4/notification_bg_normal.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\layout_notification_template_part_chronometer.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/animator_fragment_open_enter.xml.flat",
-        "source": "com.volumepilot.app-fragment-1.5.1-36:/animator/fragment_open_enter.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_ic_call_answer.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\ic_call_answer.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/animator_fragment_close_exit.xml.flat",
-        "source": "com.volumepilot.app-fragment-1.5.1-36:/animator/fragment_close_exit.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\layout_ime_base_split_test_activity.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\layout\\ime_base_split_test_activity.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_notification_tile_bg.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/notification_tile_bg.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\animator_fragment_open_exit.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-fragment-1.5.1-36:\\animator\\fragment_open_exit.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/layout_ime_base_split_test_activity.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/layout/ime_base_split_test_activity.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\layout_custom_dialog.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\layout\\custom_dialog.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-mdpi-v4/notification_bg_normal.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\color_vector_tint_theme_color.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-ui-release-42:\\color\\vector_tint_theme_color.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\layout-v21\\notification_template_custom_big.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_ic_call_decline.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/ic_call_decline.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-main-60:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_ic_call_answer.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/ic_call_answer.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/animator_fragment_fade_enter.xml.flat",
-        "source": "com.volumepilot.app-fragment-1.5.1-36:/animator/fragment_fade_enter.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-v21_notification_action_background.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-v21/notification_action_background.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\layout-v21_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\layout-v21\\notification_template_icon_group.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/drawable_ic_call_answer_video.xml.flat",
-        "source": "com.volumepilot.app-core-1.15.0-40:/drawable/ic_call_answer_video.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\animator_fragment_fade_enter.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-fragment-1.5.1-36:\\animator\\fragment_fade_enter.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/animator_fragment_open_exit.xml.flat",
-        "source": "com.volumepilot.app-fragment-1.5.1-36:/animator/fragment_open_exit.xml"
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable_notification_tile_bg.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable\\notification_tile_bg.xml"
     },
     {
-        "merged": "com.volumepilot.app-release-59:/anim-v21_fragment_fast_out_extra_slow_in.xml.flat",
-        "source": "com.volumepilot.app-fragment-1.5.1-36:/anim-v21/fragment_fast_out_extra_slow_in.xml"
+        "merged": "com.volumepilot.app-release-59:/xml_accessibility_service_config.xml.flat",
+        "source": "com.volumepilot.app-main-60:/xml/accessibility_service_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\color_vector_tint_color.xml.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-ui-release-42:\\color\\vector_tint_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-release-59:\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Santhana Raja - DCI\\.gradle\\daemon\\9.1.0\\com.volumepilot.app-core-1.15.0-40:\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     }
 ]
