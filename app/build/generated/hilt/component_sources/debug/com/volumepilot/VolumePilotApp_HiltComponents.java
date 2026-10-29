@@ -9,6 +9,7 @@ import com.volumepilot.feature.diagnostics.DiagnosticsViewModel_HiltModules;
 import com.volumepilot.feature.home.HomeViewModel_HiltModules;
 import com.volumepilot.feature.onboarding.OnboardingViewModel_HiltModules;
 import com.volumepilot.feature.profiles.ProfilesViewModel_HiltModules;
+import com.volumepilot.feature.styles.SliderStylesViewModel_HiltModules;
 import com.volumepilot.service.automation.TimeAutomationReceiver_GeneratedInjector;
 import com.volumepilot.service.overlay.BootReceiver_GeneratedInjector;
 import com.volumepilot.service.overlay.OverlayService_GeneratedInjector;
@@ -176,6 +177,7 @@ public final class VolumePilotApp_HiltComponents {
           HomeViewModel_HiltModules.KeyModule.class,
           OnboardingViewModel_HiltModules.KeyModule.class,
           ProfilesViewModel_HiltModules.KeyModule.class,
+          SliderStylesViewModel_HiltModules.KeyModule.class,
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class
       }
@@ -218,7 +220,8 @@ public final class VolumePilotApp_HiltComponents {
           HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
           HomeViewModel_HiltModules.BindsModule.class,
           OnboardingViewModel_HiltModules.BindsModule.class,
-          ProfilesViewModel_HiltModules.BindsModule.class
+          ProfilesViewModel_HiltModules.BindsModule.class,
+          SliderStylesViewModel_HiltModules.BindsModule.class
       }
   )
   @ViewModelScoped

@@ -1,5 +1,6 @@
 package com.volumepilot.domain.repository
 
+import com.volumepilot.domain.model.SliderStyle
 import com.volumepilot.domain.model.ThemeMode
 import com.volumepilot.domain.model.UserSettings
 import kotlinx.coroutines.flow.Flow
@@ -23,4 +24,13 @@ interface SettingsRepository {
     ): Result<Unit>
     suspend fun updateRgbGlowSettings(enabled: Boolean, intensity: Float): Result<Unit>
     suspend fun updateOverlayHidden(hidden: Boolean): Result<Unit>
+    suspend fun updateSliderStyleCustomization(
+        sliderStyle: SliderStyle,
+        accentColor: Long,
+        widthDp: Int,
+        heightDp: Int,
+        cornerRadiusDp: Int,
+        backgroundAlpha: Float,
+        rgbSpeedMillis: Int
+    ): Result<Unit>
 }

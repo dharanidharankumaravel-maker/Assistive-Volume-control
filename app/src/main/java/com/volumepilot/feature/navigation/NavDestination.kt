@@ -7,5 +7,5 @@ sealed class NavDestination(val route: String) {
     object Diagnostics : NavDestination("diagnostics")
     object Profiles : NavDestination("profiles")
     object Automation : NavDestination("automation")
+    object SliderStyles : NavDestination("slider_styles")
 }
-

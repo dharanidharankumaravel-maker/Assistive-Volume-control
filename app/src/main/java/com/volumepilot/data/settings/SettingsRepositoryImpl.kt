@@ -86,6 +86,19 @@ class SettingsRepositoryImpl @Inject constructor(
             val rgbGlowIntensity = preferences[PreferencesKeys.RGB_GLOW_INTENSITY] ?: 0.6f
             val isOverlayHidden = preferences[PreferencesKeys.IS_OVERLAY_HIDDEN] ?: false
 
+            val sliderStyleStr = preferences[PreferencesKeys.SLIDER_STYLE] ?: com.volumepilot.domain.model.SliderStyle.GOOGLE.name
+            val sliderStyle = try {
+                com.volumepilot.domain.model.SliderStyle.valueOf(sliderStyleStr)
+            } catch (e: Exception) {
+                com.volumepilot.domain.model.SliderStyle.GOOGLE
+            }
+            val sliderAccentColor = preferences[PreferencesKeys.SLIDER_ACCENT_COLOR] ?: 0xFF7C3AEDL
+            val sliderWidthDp = preferences[PreferencesKeys.SLIDER_WIDTH_DP] ?: sliderStyle.defaultWidthDp
+            val sliderHeightDp = preferences[PreferencesKeys.SLIDER_HEIGHT_DP] ?: sliderStyle.defaultHeightDp
+            val sliderCornerRadiusDp = preferences[PreferencesKeys.SLIDER_CORNER_RADIUS_DP] ?: sliderStyle.defaultCornerRadiusDp
+            val sliderBackgroundAlpha = preferences[PreferencesKeys.SLIDER_BACKGROUND_ALPHA] ?: 0.5f
+            val rgbSpeedMillis = preferences[PreferencesKeys.RGB_SPEED_MILLIS] ?: 3500
+
             UserSettings(
                 maxVolumeLimiterEnabled = preferences[PreferencesKeys.MAX_VOLUME_LIMITER_ENABLED] ?: false,
                 maxVolumeCapPercent = preferences[PreferencesKeys.MAX_VOLUME_CAP_PERCENT] ?: 80,
@@ -105,7 +118,14 @@ class SettingsRepositoryImpl @Inject constructor(
                 powerLongPressAction = longPress,
                 rgbGlowEnabled = rgbGlowEnabled,
                 rgbGlowIntensity = rgbGlowIntensity,
-                isOverlayHidden = isOverlayHidden
+                isOverlayHidden = isOverlayHidden,
+                sliderStyle = sliderStyle,
+                sliderAccentColor = sliderAccentColor,
+                sliderWidthDp = sliderWidthDp,
+                sliderHeightDp = sliderHeightDp,
+                sliderCornerRadiusDp = sliderCornerRadiusDp,
+                sliderBackgroundAlpha = sliderBackgroundAlpha,
+                rgbSpeedMillis = rgbSpeedMillis
             )
         }
 
@@ -184,6 +204,24 @@ class SettingsRepositoryImpl @Inject constructor(
         safeEdit { preferences ->
             preferences[PreferencesKeys.IS_OVERLAY_HIDDEN] = hidden
         }
+
+    override suspend fun updateSliderStyleCustomization(
+        sliderStyle: com.volumepilot.domain.model.SliderStyle,
+        accentColor: Long,
+        widthDp: Int,
+        heightDp: Int,
+        cornerRadiusDp: Int,
+        backgroundAlpha: Float,
+        rgbSpeedMillis: Int
+    ): Result<Unit> = safeEdit { preferences ->
+        preferences[PreferencesKeys.SLIDER_STYLE] = sliderStyle.name
+        preferences[PreferencesKeys.SLIDER_ACCENT_COLOR] = accentColor
+        preferences[PreferencesKeys.SLIDER_WIDTH_DP] = widthDp
+        preferences[PreferencesKeys.SLIDER_HEIGHT_DP] = heightDp
+        preferences[PreferencesKeys.SLIDER_CORNER_RADIUS_DP] = cornerRadiusDp
+        preferences[PreferencesKeys.SLIDER_BACKGROUND_ALPHA] = backgroundAlpha
+        preferences[PreferencesKeys.RGB_SPEED_MILLIS] = rgbSpeedMillis
+    }
 
     private suspend fun safeEdit(action: (androidx.datastore.preferences.core.MutablePreferences) -> Unit): Result<Unit> {
         return try {

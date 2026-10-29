@@ -91,4 +91,27 @@ class FakeSettingsRepository(
         _settings.update { it.copy(isOverlayHidden = hidden) }
         return Result.success(Unit)
     }
+
+    override suspend fun updateSliderStyleCustomization(
+        sliderStyle: com.volumepilot.domain.model.SliderStyle,
+        accentColor: Long,
+        widthDp: Int,
+        heightDp: Int,
+        cornerRadiusDp: Int,
+        backgroundAlpha: Float,
+        rgbSpeedMillis: Int
+    ): Result<Unit> {
+        _settings.update {
+            it.copy(
+                sliderStyle = sliderStyle,
+                sliderAccentColor = accentColor,
+                sliderWidthDp = widthDp,
+                sliderHeightDp = heightDp,
+                sliderCornerRadiusDp = cornerRadiusDp,
+                sliderBackgroundAlpha = backgroundAlpha,
+                rgbSpeedMillis = rgbSpeedMillis
+            )
+        }
+        return Result.success(Unit)
+    }
 }

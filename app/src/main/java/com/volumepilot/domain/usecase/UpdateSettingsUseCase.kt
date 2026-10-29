@@ -59,4 +59,24 @@ class UpdateSettingsUseCase @Inject constructor(
     suspend fun setOverlayHidden(hidden: Boolean): Result<Unit> {
         return settingsRepository.updateOverlayHidden(hidden)
     }
+
+    suspend fun updateSliderStyleCustomization(
+        sliderStyle: com.volumepilot.domain.model.SliderStyle,
+        accentColor: Long,
+        widthDp: Int,
+        heightDp: Int,
+        cornerRadiusDp: Int,
+        backgroundAlpha: Float,
+        rgbSpeedMillis: Int
+    ): Result<Unit> {
+        return settingsRepository.updateSliderStyleCustomization(
+            sliderStyle = sliderStyle,
+            accentColor = accentColor,
+            widthDp = widthDp,
+            heightDp = heightDp,
+            cornerRadiusDp = cornerRadiusDp,
+            backgroundAlpha = backgroundAlpha,
+            rgbSpeedMillis = rgbSpeedMillis
+        )
+    }
 }

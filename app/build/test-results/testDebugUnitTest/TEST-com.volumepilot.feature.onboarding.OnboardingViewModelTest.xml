@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.feature.onboarding.OnboardingViewModelTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-28T13:44:27.322Z" hostname="DESKTOP-45Q6PEN" time="0.038">
+<testsuite name="com.volumepilot.feature.onboarding.OnboardingViewModelTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-29T09:49:04.323Z" hostname="DESKTOP-45Q6PEN" time="0.009">
   <properties/>
-  <testcase name="completeOnboarding persists completion and triggers callback" classname="com.volumepilot.feature.onboarding.OnboardingViewModelTest" time="0.027"/>
-  <testcase name="refreshPermissions updates UI state permissions" classname="com.volumepilot.feature.onboarding.OnboardingViewModelTest" time="0.004"/>
+  <testcase name="completeOnboarding persists completion and triggers callback" classname="com.volumepilot.feature.onboarding.OnboardingViewModelTest" time="0.006"/>
+  <testcase name="refreshPermissions updates UI state permissions" classname="com.volumepilot.feature.onboarding.OnboardingViewModelTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

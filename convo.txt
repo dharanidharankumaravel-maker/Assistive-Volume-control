@@ -253,6 +253,55 @@ PHASE 11: Flowing RGB Neon Border, 4-Slider Minimal Panel, Symmetric Expansion &
   - Built compliant custom `RemoteViews` (`notification_overlay_compact.xml` & `notification_overlay_expanded.xml`).
   - Show / Hide toggle button is directly visible in the default collapsed notification view with zero requirement to expand the card.
   - Distinct state-based `requestCode` and `ACTION_SHOW` / `ACTION_HIDE` dispatches with debounced execution prevent duplicate clicks.
+
+PHASE 12: Dynamic Button Configurations, Compact Slider Bar & Redundant Arrow Removal
+- Dynamic Overlay Interaction & Layouts (`FloatingWidgetConfig.kt`, `HomeScreen.kt`):
+  - Added new arrangements: `UP_DOWN` ("Vol+ • Vol-"), `POWER_UP` ("Power • Vol+"), `POWER_DOWN` ("Power • Vol-") alongside existing configurations.
+  - Added domain helpers `isVolumeOnly`, `hasPower`, `hasVolumeUp`, `hasVolumeDown`.
+  - Settings UI dynamically hides Power button action cards (Single Tap / Long Press) when Power button is not selected.
+- Case 1: Vol+ and Vol- Only (`CompactVolumeSliderBar.kt`):
+  - When only Volume Up (+) and Volume Down (−) are selected, overlay renders only volume buttons.
+  - Tapping either volume button displays only the sleek, 52dp compact vertical volume slider bar adjacent to the widget, without the full 4-stream toggle panel.
+  - Minimalist capsule track with flowing RGB perimeter lighting, drag & tap adjustments, and tap-icon-to-mute.
+- Case 2 & 3: Power + Other Buttons:
+  - Interacting with overlay expands the full 4-stream toggle panel (`OverlayPanelContent.kt`).
+  - Single-tap and long-press (screenshot capture) actions for Power button work smoothly without conflict.
+- Removal of Redundant Expansion Arrow (`BasilFloatingControlWidget.kt`):
+  - Completely removed `ExpandToggleNub` (the chevron arrow nub at the bottom of the floating widget).
+  - Cleaner, more compact floating pill with reduced height and zero unnecessary UI clutter.
+- Mirrored Sizing & Dock Stability (`OverlayService.kt`):
+  - Dynamically calculates panel offset based on active panel width (52dp for compact volume bar, 210dp for 4-stream panel).
+  - Anchors floating widget at the exact same screen pixel on both left and right edges during expansion and collapse.
+- Verification:
+  - 47 / 47 unit tests pass (`.\gradlew.bat testDebugUnitTest`).
+  - Clean APK compilation and packaging (`.\gradlew.bat assembleDebug`).
+
+PHASE 13: Volume Slider Style Customization (Google, Apple, Samsung, Xiaomi, OnePlus)
+- Five Presets Faithful to Reference Image (`SliderStyle.kt`, `StylizedVolumeSlider.kt`):
+  - Google: Tall Material You pill, light track, top circular speaker badge, inner active pill with music note, bottom dash, separate bottom circular mute button.
+  - Apple: Sleek, frosted vertical capsule with smooth rounded corners, clean solid fill, and integrated volume indicator.
+  - Samsung: Slim One UI capsule with top triple-dot indicator and minimal volume level fill.
+  - Xiaomi: MIUI / HyperOS rounded capsule with bottom quick action buttons (Bell & Crescent Moon).
+  - OnePlus: Bold OxygenOS capsule with bottom action controls (Three dots & Alert mode).
+- Dedicated Slider Customization Screen (`SliderStylesScreen.kt`, `SliderStylesViewModel.kt`):
+  - Rich violet/purple showcase matching reference design with all 5 presets side by side.
+  - Live interactive drag and tap volume testing on each preview card.
+  - Clear selection highlighting with subtle border ring and badge.
+  - Apply Button with instant persistence to DataStore.
+- Additional Customization Controls:
+  - Curated Accent Color Palette (Royal Violet, Neon Cyan, Basil, Ocean, Amber, Pink, Slate).
+  - Slider Width / Thickness slider (30dp - 50dp).
+  - Slider Height slider (95dp - 165dp).
+  - Rounded Corner Radius slider (8dp - 28dp).
+  - Background Transparency slider (20% - 100%).
+  - RGB Border Glow toggle, intensity, and animation speed slider (1.5s - 5.5s).
+  - Reset to Preset Defaults button.
+- Floating Panel & Compact Bar Integration:
+  - `OverlayPanelContent.kt` and `CompactVolumeSliderBar.kt` render the chosen `SliderStyle`.
+  - Dynamic panel width sizing and mirrored left/right screen edge anchor stability.
+- Verification:
+  - All unit tests pass (`.\gradlew.bat testDebugUnitTest`).
+  - Clean APK compilation and packaging (`.\gradlew.bat assembleDebug`).
 ================================================================================
 
 

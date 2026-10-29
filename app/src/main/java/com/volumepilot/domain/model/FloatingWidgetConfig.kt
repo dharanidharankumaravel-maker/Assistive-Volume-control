@@ -1,9 +1,29 @@
 package com.volumepilot.domain.model
 
 enum class FloatingButtonArrangement(val displayName: String) {
+    UP_DOWN("Vol+ • Vol-"),
     POWER_UP_DOWN("Power • Vol+ • Vol-"),
     UP_DOWN_POWER("Vol+ • Vol- • Power"),
-    UP_POWER_DOWN("Vol+ • Power • Vol-")
+    UP_POWER_DOWN("Vol+ • Power • Vol-"),
+    POWER_UP("Power • Vol+"),
+    POWER_DOWN("Power • Vol-");
+
+    /**
+     * Case 1: Only Volume Up (+) and Volume Down (-) selected (without Power).
+     * Interacting with the overlay displays only the compact volume slider bar
+     * rather than the full toggle control panel.
+     */
+    val isVolumeOnly: Boolean get() = this == UP_DOWN
+
+    /**
+     * Case 2: Power + Any Other Button selected.
+     * Allows opening the full volume toggle panel while preserving
+     * the Power button's tap and long-press screenshot shortcuts.
+     */
+    val hasPower: Boolean get() = this != UP_DOWN
+
+    val hasVolumeUp: Boolean get() = this != POWER_DOWN
+    val hasVolumeDown: Boolean get() = this != POWER_UP
 }
 
 enum class FloatingButtonColor(

@@ -50,7 +50,9 @@ import com.volumepilot.domain.usecase.MuteUseCase
 import com.volumepilot.domain.usecase.SetVolumeUseCase
 import com.volumepilot.domain.usecase.ToggleVibrateUseCase
 import com.volumepilot.domain.usecase.UpdateSettingsUseCase
+import androidx.compose.ui.graphics.Color
 import com.volumepilot.feature.overlay.BasilFloatingControlWidget
+import com.volumepilot.feature.overlay.CompactVolumeSliderBar
 import com.volumepilot.feature.overlay.OverlayPanelContent
 import com.volumepilot.service.accessibility.VolumeAccessibilityService
 import dagger.hilt.android.AndroidEntryPoint
@@ -88,6 +90,8 @@ class OverlayService : Service() {
     private var currentPosition by mutableStateOf(OverlayPosition())
     private var selectedStreamType by mutableStateOf(AudioStreamType.MEDIA)
     private var currentWidgetSizeDp by mutableStateOf(48)
+    private var isVolumeOnlyMode by mutableStateOf(false)
+    private var currentSliderWidthDp by mutableStateOf(40)
     private var lastActionTime = 0L
 
     override fun onBind(intent: Intent?): IBinder? = null
@@ -207,6 +211,8 @@ class OverlayService : Service() {
             isWidgetHidden = settings.isOverlayHidden
             selectedStreamType = settings.preferredStreamType
             currentWidgetSizeDp = settings.overlaySizeDp
+            isVolumeOnlyMode = settings.buttonArrangement.isVolumeOnly
+            currentSliderWidthDp = settings.sliderWidthDp
 
             val screenWidth = resources.displayMetrics.widthPixels
             val density = resources.displayMetrics.density
@@ -253,13 +259,15 @@ class OverlayService : Service() {
 
                     VolumePilotTheme {
                         currentWidgetSizeDp = currentSettings.overlaySizeDp
+                        isVolumeOnlyMode = currentSettings.buttonArrangement.isVolumeOnly
+                        currentSliderWidthDp = currentSettings.sliderWidthDp
 
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.spacedBy(6.dp)
                         ) {
                             if (isDockedToLeft) {
-                                // Docked to Left Edge: [Vertical 3-Button Dock] [Expanded Panel to the right]
+                                // Docked to Left Edge: [Floating Pill Widget] [Spacer(6.dp)] [Expanded Slider or Panel]
                                 BasilFloatingControlWidget(
                                     stream = volumeState.getStream(selectedStreamType),
                                     opacity = currentSettings.overlayOpacity,
@@ -270,8 +278,18 @@ class OverlayService : Service() {
                                     isDockedToLeft = true,
                                     onPowerSingleTap = { handlePowerSingleTap(currentSettings) },
                                     onPowerLongPress = { handlePowerLongPress(currentSettings) },
-                                    onVolumeUp = { handleVolumeStep(1, currentSettings.hapticFeedbackEnabled) },
-                                    onVolumeDown = { handleVolumeStep(-1, currentSettings.hapticFeedbackEnabled) },
+                                    onVolumeUp = {
+                                        handleVolumeStep(1, currentSettings.hapticFeedbackEnabled)
+                                        if (currentSettings.buttonArrangement.isVolumeOnly) {
+                                            setPanelExpanded(true)
+                                        }
+                                    },
+                                    onVolumeDown = {
+                                        handleVolumeStep(-1, currentSettings.hapticFeedbackEnabled)
+                                        if (currentSettings.buttonArrangement.isVolumeOnly) {
+                                            setPanelExpanded(true)
+                                        }
+                                    },
                                     onToggleExpand = {
                                         setPanelExpanded(!isExpanded)
                                         triggerHaptic(currentSettings.hapticFeedbackEnabled)
@@ -292,44 +310,88 @@ class OverlayService : Service() {
                                         animationSpec = tween(200)
                                     ) + fadeOut(tween(200))
                                 ) {
-                                    OverlayPanelContent(
-                                        volumeState = volumeState,
-                                        selectedStreamType = selectedStreamType,
-                                        onStreamSelected = { type ->
-                                            selectedStreamType = type
-                                            serviceScope.launch {
-                                                updateSettingsUseCase.setPreferredStreamType(type)
-                                            }
-                                        },
-                                        onVolumeChange = { type, level ->
-                                            serviceScope.launch {
-                                                setVolumeUseCase(type, level)
-                                            }
-                                        },
-                                        onMuteToggle = { type ->
-                                            val stream = volumeState.getStream(type)
-                                            if (stream != null) {
+                                    if (currentSettings.buttonArrangement.isVolumeOnly) {
+                                        // Case 1: Only Vol+ and Vol- -> Compact single volume slider bar
+                                        CompactVolumeSliderBar(
+                                            stream = volumeState.getStream(selectedStreamType),
+                                            accentColor = Color(currentSettings.sliderAccentColor),
+                                            onVolumeChange = { level ->
                                                 serviceScope.launch {
-                                                    muteUseCase(type, !stream.isMuted)
+                                                    setVolumeUseCase(selectedStreamType, level)
                                                 }
-                                            }
-                                        },
-                                        onToggleVibrate = {
-                                            serviceScope.launch {
-                                                toggleVibrateUseCase()
-                                            }
-                                        },
-                                        onClose = {
-                                            setPanelExpanded(false)
-                                        },
-                                        opacity = currentSettings.overlayOpacity,
-                                        colorTheme = currentSettings.widgetColor,
-                                        rgbGlowEnabled = currentSettings.rgbGlowEnabled,
-                                        rgbGlowIntensity = currentSettings.rgbGlowIntensity
-                                    )
+                                            },
+                                            onMuteToggle = {
+                                                val stream = volumeState.getStream(selectedStreamType)
+                                                if (stream != null) {
+                                                    serviceScope.launch {
+                                                        muteUseCase(selectedStreamType, !stream.isMuted)
+                                                    }
+                                                }
+                                            },
+                                            onSecondaryAction = {
+                                                serviceScope.launch {
+                                                    toggleVibrateUseCase()
+                                                }
+                                            },
+                                            opacity = currentSettings.overlayOpacity,
+                                            colorTheme = currentSettings.widgetColor,
+                                            rgbGlowEnabled = currentSettings.rgbGlowEnabled,
+                                            rgbGlowIntensity = currentSettings.rgbGlowIntensity,
+                                            sliderStyle = currentSettings.sliderStyle,
+                                            sliderWidthDp = currentSettings.sliderWidthDp,
+                                            sliderHeightDp = currentSettings.sliderHeightDp,
+                                            sliderCornerRadiusDp = currentSettings.sliderCornerRadiusDp,
+                                            sliderBackgroundAlpha = currentSettings.sliderBackgroundAlpha,
+                                            rgbSpeedMillis = currentSettings.rgbSpeedMillis
+                                        )
+                                    } else {
+                                        // Case 2 & 3: Power + Other Controls -> Full toggle volume panel
+                                        OverlayPanelContent(
+                                            volumeState = volumeState,
+                                            selectedStreamType = selectedStreamType,
+                                            onStreamSelected = { type ->
+                                                selectedStreamType = type
+                                                serviceScope.launch {
+                                                    updateSettingsUseCase.setPreferredStreamType(type)
+                                                }
+                                            },
+                                            onVolumeChange = { type, level ->
+                                                serviceScope.launch {
+                                                    setVolumeUseCase(type, level)
+                                                }
+                                            },
+                                            onMuteToggle = { type ->
+                                                val stream = volumeState.getStream(type)
+                                                if (stream != null) {
+                                                    serviceScope.launch {
+                                                        muteUseCase(type, !stream.isMuted)
+                                                    }
+                                                }
+                                            },
+                                            onToggleVibrate = {
+                                                serviceScope.launch {
+                                                    toggleVibrateUseCase()
+                                                }
+                                            },
+                                            onClose = {
+                                                setPanelExpanded(false)
+                                            },
+                                            opacity = currentSettings.overlayOpacity,
+                                            colorTheme = currentSettings.widgetColor,
+                                            rgbGlowEnabled = currentSettings.rgbGlowEnabled,
+                                            rgbGlowIntensity = currentSettings.rgbGlowIntensity,
+                                            sliderStyle = currentSettings.sliderStyle,
+                                            sliderAccentColor = currentSettings.sliderAccentColor,
+                                            sliderWidthDp = currentSettings.sliderWidthDp,
+                                            sliderHeightDp = currentSettings.sliderHeightDp,
+                                            sliderCornerRadiusDp = currentSettings.sliderCornerRadiusDp,
+                                            sliderBackgroundAlpha = currentSettings.sliderBackgroundAlpha,
+                                            rgbSpeedMillis = currentSettings.rgbSpeedMillis
+                                        )
+                                    }
                                 }
                             } else {
-                                // Docked to Right Edge: [Expanded Panel to the left] [Vertical 3-Button Dock]
+                                // Docked to Right Edge: [Expanded Slider or Panel to the left] [Spacer(6.dp)] [Floating Pill Widget]
                                 AnimatedVisibility(
                                     visible = isExpanded,
                                     enter = slideInHorizontally(
@@ -341,41 +403,85 @@ class OverlayService : Service() {
                                         animationSpec = tween(200)
                                     ) + fadeOut(tween(200))
                                 ) {
-                                    OverlayPanelContent(
-                                        volumeState = volumeState,
-                                        selectedStreamType = selectedStreamType,
-                                        onStreamSelected = { type ->
-                                            selectedStreamType = type
-                                            serviceScope.launch {
-                                                updateSettingsUseCase.setPreferredStreamType(type)
-                                            }
-                                        },
-                                        onVolumeChange = { type, level ->
-                                            serviceScope.launch {
-                                                setVolumeUseCase(type, level)
-                                            }
-                                        },
-                                        onMuteToggle = { type ->
-                                            val stream = volumeState.getStream(type)
-                                            if (stream != null) {
+                                    if (currentSettings.buttonArrangement.isVolumeOnly) {
+                                        // Case 1: Only Vol+ and Vol- -> Compact single volume slider bar
+                                        CompactVolumeSliderBar(
+                                            stream = volumeState.getStream(selectedStreamType),
+                                            accentColor = Color(currentSettings.sliderAccentColor),
+                                            onVolumeChange = { level ->
                                                 serviceScope.launch {
-                                                    muteUseCase(type, !stream.isMuted)
+                                                    setVolumeUseCase(selectedStreamType, level)
                                                 }
-                                            }
-                                        },
-                                        onToggleVibrate = {
-                                            serviceScope.launch {
-                                                toggleVibrateUseCase()
-                                            }
-                                        },
-                                        onClose = {
-                                            setPanelExpanded(false)
-                                        },
-                                        opacity = currentSettings.overlayOpacity,
-                                        colorTheme = currentSettings.widgetColor,
-                                        rgbGlowEnabled = currentSettings.rgbGlowEnabled,
-                                        rgbGlowIntensity = currentSettings.rgbGlowIntensity
-                                    )
+                                            },
+                                            onMuteToggle = {
+                                                val stream = volumeState.getStream(selectedStreamType)
+                                                if (stream != null) {
+                                                    serviceScope.launch {
+                                                        muteUseCase(selectedStreamType, !stream.isMuted)
+                                                    }
+                                                }
+                                            },
+                                            onSecondaryAction = {
+                                                serviceScope.launch {
+                                                    toggleVibrateUseCase()
+                                                }
+                                            },
+                                            opacity = currentSettings.overlayOpacity,
+                                            colorTheme = currentSettings.widgetColor,
+                                            rgbGlowEnabled = currentSettings.rgbGlowEnabled,
+                                            rgbGlowIntensity = currentSettings.rgbGlowIntensity,
+                                            sliderStyle = currentSettings.sliderStyle,
+                                            sliderWidthDp = currentSettings.sliderWidthDp,
+                                            sliderHeightDp = currentSettings.sliderHeightDp,
+                                            sliderCornerRadiusDp = currentSettings.sliderCornerRadiusDp,
+                                            sliderBackgroundAlpha = currentSettings.sliderBackgroundAlpha,
+                                            rgbSpeedMillis = currentSettings.rgbSpeedMillis
+                                        )
+                                    } else {
+                                        // Case 2 & 3: Power + Other Controls -> Full toggle volume panel
+                                        OverlayPanelContent(
+                                            volumeState = volumeState,
+                                            selectedStreamType = selectedStreamType,
+                                            onStreamSelected = { type ->
+                                                selectedStreamType = type
+                                                serviceScope.launch {
+                                                    updateSettingsUseCase.setPreferredStreamType(type)
+                                                }
+                                            },
+                                            onVolumeChange = { type, level ->
+                                                serviceScope.launch {
+                                                    setVolumeUseCase(type, level)
+                                                }
+                                            },
+                                            onMuteToggle = { type ->
+                                                val stream = volumeState.getStream(type)
+                                                if (stream != null) {
+                                                    serviceScope.launch {
+                                                        muteUseCase(type, !stream.isMuted)
+                                                    }
+                                                }
+                                            },
+                                            onToggleVibrate = {
+                                                serviceScope.launch {
+                                                    toggleVibrateUseCase()
+                                                }
+                                            },
+                                            onClose = {
+                                                setPanelExpanded(false)
+                                            },
+                                            opacity = currentSettings.overlayOpacity,
+                                            colorTheme = currentSettings.widgetColor,
+                                            rgbGlowEnabled = currentSettings.rgbGlowEnabled,
+                                            rgbGlowIntensity = currentSettings.rgbGlowIntensity,
+                                            sliderStyle = currentSettings.sliderStyle,
+                                            sliderAccentColor = currentSettings.sliderAccentColor,
+                                            sliderWidthDp = currentSettings.sliderWidthDp,
+                                            sliderHeightDp = currentSettings.sliderHeightDp,
+                                            sliderCornerRadiusDp = currentSettings.sliderCornerRadiusDp,
+                                            sliderBackgroundAlpha = currentSettings.sliderBackgroundAlpha,
+                                            rgbSpeedMillis = currentSettings.rgbSpeedMillis
+                                        )
+                                    }
                                 }
 
                                 BasilFloatingControlWidget(
@@ -388,8 +494,18 @@ class OverlayService : Service() {
                                     isDockedToLeft = false,
                                     onPowerSingleTap = { handlePowerSingleTap(currentSettings) },
                                     onPowerLongPress = { handlePowerLongPress(currentSettings) },
-                                    onVolumeUp = { handleVolumeStep(1, currentSettings.hapticFeedbackEnabled) },
-                                    onVolumeDown = { handleVolumeStep(-1, currentSettings.hapticFeedbackEnabled) },
+                                    onVolumeUp = {
+                                        handleVolumeStep(1, currentSettings.hapticFeedbackEnabled)
+                                        if (currentSettings.buttonArrangement.isVolumeOnly) {
+                                            setPanelExpanded(true)
+                                        }
+                                    },
+                                    onVolumeDown = {
+                                        handleVolumeStep(-1, currentSettings.hapticFeedbackEnabled)
+                                        if (currentSettings.buttonArrangement.isVolumeOnly) {
+                                            setPanelExpanded(true)
+                                        }
+                                    },
                                     onToggleExpand = {
                                         setPanelExpanded(!isExpanded)
                                         triggerHaptic(currentSettings.hapticFeedbackEnabled)
@@ -503,8 +619,13 @@ class OverlayService : Service() {
         val density = resources.displayMetrics.density
         val marginPx = (4 * density).toInt()
 
+        val panelWidthDp = if (isVolumeOnlyMode) {
+            currentSliderWidthDp + 14
+        } else {
+            (currentSliderWidthDp * 4) + 56
+        }
         val widgetWidthPx = (currentWidgetSizeDp * density).toInt()
-        val panelWidthPx = (210 * density).toInt()
+        val panelWidthPx = (panelWidthDp * density).toInt()
         val spacerPx = (6 * density).toInt()
         val totalWidthPx = widgetWidthPx + panelWidthPx + spacerPx
 

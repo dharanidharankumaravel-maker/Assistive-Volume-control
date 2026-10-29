@@ -20,11 +20,14 @@ import androidx.compose.material.icons.filled.HealthAndSafety
 import androidx.compose.material.icons.filled.Hearing
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.NotificationsOff
+import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.Shield
 import androidx.compose.material.icons.filled.Speaker
 import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material.icons.filled.Vibration
 
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -70,6 +73,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.volumepilot.R
 import com.volumepilot.core.designsystem.LocalSpacing
@@ -104,6 +108,7 @@ fun HomeScreen(
     onNavigateToDiagnostics: () -> Unit,
     onNavigateToProfiles: () -> Unit = {},
     onNavigateToAutomation: () -> Unit = {},
+    onNavigateToSliderStyles: () -> Unit = {},
     onClearError: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -129,6 +134,13 @@ fun HomeScreen(
                     )
                 },
                 actions = {
+                    IconButton(onClick = onNavigateToSliderStyles) {
+                        Icon(
+                            imageVector = Icons.Default.Palette,
+                            contentDescription = "Slider Styles",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
                     IconButton(onClick = onNavigateToProfiles) {
                         Icon(
                             imageVector = Icons.Default.Tune,
@@ -226,6 +238,63 @@ fun HomeScreen(
                                     VolumeAccessibilityService.openAccessibilitySettings(context)
                                 }
                             )
+                        }
+                    }
+                }
+
+                // Volume Slider Styles Showcase Entry Card
+                item {
+                    SectionHeader(title = "Volume Slider Styles")
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { onNavigateToSliderStyles() },
+                        shape = RoundedCornerShape(18.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = Color(0xFF58406E).copy(alpha = 0.95f)
+                        ),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(spacing.medium),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
+                            Column(modifier = Modifier.weight(1f)) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Palette,
+                                        contentDescription = null,
+                                        tint = Color(uiState.settings.sliderAccentColor),
+                                        modifier = Modifier.size(20.dp)
+                                    )
+                                    Text(
+                                        text = "Slider Styles & Themes",
+                                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                                        color = Color.White
+                                    )
+                                }
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(
+                                    text = "Active: ${uiState.settings.sliderStyle.displayName} • Google, Apple, Samsung, Xiaomi, OnePlus",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = Color.White.copy(alpha = 0.85f)
+                                )
+                            }
+                            Button(
+                                onClick = onNavigateToSliderStyles,
+                                shape = RoundedCornerShape(12.dp),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = Color(uiState.settings.sliderAccentColor)
+                                )
+                            ) {
+                                Text("Customize", style = MaterialTheme.typography.labelSmall)
+                            }
                         }
                     }
                 }
@@ -505,14 +574,16 @@ private fun FloatingWidgetCustomizationCard(
                 }
             }
 
-            // 1. Button Order
+            // 1. Button Configuration & Order
             Text(
-                text = "Button Order",
+                text = "Button Configuration & Order",
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(rememberScrollState()),
                 horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
             ) {
                 FloatingButtonArrangement.values().forEach { arrangement ->
@@ -522,9 +593,12 @@ private fun FloatingWidgetCustomizationCard(
                         label = {
                             Text(
                                 text = when (arrangement) {
+                                    FloatingButtonArrangement.UP_DOWN -> "+ • − (Volume Only)"
                                     FloatingButtonArrangement.POWER_UP_DOWN -> "Power • + • −"
                                     FloatingButtonArrangement.UP_DOWN_POWER -> "+ • − • Power"
                                     FloatingButtonArrangement.UP_POWER_DOWN -> "+ • Power • −"
+                                    FloatingButtonArrangement.POWER_UP -> "Power • +"
+                                    FloatingButtonArrangement.POWER_DOWN -> "Power • −"
                                 },
                                 style = MaterialTheme.typography.labelSmall
                             )
@@ -573,41 +647,44 @@ private fun FloatingWidgetCustomizationCard(
                 }
             }
 
-            // 3. Power Button Single Tap Action
-            Text(
-                text = "Power Single Tap",
-                style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
-            ) {
-                PowerSingleTapAction.values().forEach { action ->
-                    FilterChip(
-                        selected = settings.powerSingleTapAction == action,
-                        onClick = { onUpdatePowerSingleTap(action) },
-                        label = { Text(action.displayName, style = MaterialTheme.typography.labelSmall) }
-                    )
+            // Power Actions (Only displayed if Power button is enabled in the chosen arrangement)
+            if (settings.buttonArrangement.hasPower) {
+                // 3. Power Button Single Tap Action
+                Text(
+                    text = "Power Single Tap",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+                ) {
+                    PowerSingleTapAction.values().forEach { action ->
+                        FilterChip(
+                            selected = settings.powerSingleTapAction == action,
+                            onClick = { onUpdatePowerSingleTap(action) },
+                            label = { Text(action.displayName, style = MaterialTheme.typography.labelSmall) }
+                        )
+                    }
                 }
-            }
 
-            // 4. Power Button Long Press Action
-            Text(
-                text = "Power Long Press",
-                style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
-            ) {
-                PowerLongPressAction.values().forEach { action ->
-                    FilterChip(
-                        selected = settings.powerLongPressAction == action,
-                        onClick = { onUpdatePowerLongPress(action) },
-                        label = { Text(action.displayName, style = MaterialTheme.typography.labelSmall) }
-                    )
+                // 4. Power Button Long Press Action
+                Text(
+                    text = "Power Long Press",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+                ) {
+                    PowerLongPressAction.values().forEach { action ->
+                        FilterChip(
+                            selected = settings.powerLongPressAction == action,
+                            onClick = { onUpdatePowerLongPress(action) },
+                            label = { Text(action.displayName, style = MaterialTheme.typography.labelSmall) }
+                        )
+                    }
                 }
             }
 

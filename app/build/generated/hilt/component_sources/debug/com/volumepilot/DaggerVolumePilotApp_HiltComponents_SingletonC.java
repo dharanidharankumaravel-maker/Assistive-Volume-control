@@ -52,6 +52,8 @@ import com.volumepilot.feature.onboarding.OnboardingViewModel;
 import com.volumepilot.feature.onboarding.OnboardingViewModel_HiltModules;
 import com.volumepilot.feature.profiles.ProfilesViewModel;
 import com.volumepilot.feature.profiles.ProfilesViewModel_HiltModules;
+import com.volumepilot.feature.styles.SliderStylesViewModel;
+import com.volumepilot.feature.styles.SliderStylesViewModel_HiltModules;
 import com.volumepilot.service.automation.TimeAutomationReceiver;
 import com.volumepilot.service.automation.TimeAutomationReceiver_MembersInjector;
 import com.volumepilot.service.automation.TimeAutomationScheduler;
@@ -422,7 +424,7 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
 
     @Override
     public Map<Class<?>, Boolean> getViewModelKeys() {
-      return LazyClassKeyMap.<Boolean>of(MapBuilder.<String, Boolean>newMapBuilder(5).put(LazyClassKeyProvider.com_volumepilot_feature_automation_AutomationViewModel, AutomationViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_diagnostics_DiagnosticsViewModel, DiagnosticsViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_home_HomeViewModel, HomeViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_onboarding_OnboardingViewModel, OnboardingViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_profiles_ProfilesViewModel, ProfilesViewModel_HiltModules.KeyModule.provide()).build());
+      return LazyClassKeyMap.<Boolean>of(MapBuilder.<String, Boolean>newMapBuilder(6).put(LazyClassKeyProvider.com_volumepilot_feature_automation_AutomationViewModel, AutomationViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_diagnostics_DiagnosticsViewModel, DiagnosticsViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_home_HomeViewModel, HomeViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_onboarding_OnboardingViewModel, OnboardingViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_profiles_ProfilesViewModel, ProfilesViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_volumepilot_feature_styles_SliderStylesViewModel, SliderStylesViewModel_HiltModules.KeyModule.provide()).build());
     }
 
     @Override
@@ -447,30 +449,35 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
-
-      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
-
       static String com_volumepilot_feature_onboarding_OnboardingViewModel = "com.volumepilot.feature.onboarding.OnboardingViewModel";
-
-      static String com_volumepilot_feature_diagnostics_DiagnosticsViewModel = "com.volumepilot.feature.diagnostics.DiagnosticsViewModel";
 
       static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
 
-      @KeepFieldType
-      HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
+      static String com_volumepilot_feature_diagnostics_DiagnosticsViewModel = "com.volumepilot.feature.diagnostics.DiagnosticsViewModel";
 
-      @KeepFieldType
-      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
+      static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
+
+      static String com_volumepilot_feature_styles_SliderStylesViewModel = "com.volumepilot.feature.styles.SliderStylesViewModel";
+
+      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
 
       @KeepFieldType
       OnboardingViewModel com_volumepilot_feature_onboarding_OnboardingViewModel2;
 
       @KeepFieldType
+      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
+
+      @KeepFieldType
       DiagnosticsViewModel com_volumepilot_feature_diagnostics_DiagnosticsViewModel2;
 
       @KeepFieldType
-      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
+      HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
+
+      @KeepFieldType
+      SliderStylesViewModel com_volumepilot_feature_styles_SliderStylesViewModel2;
+
+      @KeepFieldType
+      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
     }
   }
 
@@ -490,6 +497,8 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
     private Provider<OnboardingViewModel> onboardingViewModelProvider;
 
     private Provider<ProfilesViewModel> profilesViewModelProvider;
+
+    private Provider<SliderStylesViewModel> sliderStylesViewModelProvider;
 
     private ViewModelCImpl(SingletonCImpl singletonCImpl,
         ActivityRetainedCImpl activityRetainedCImpl, SavedStateHandle savedStateHandleParam,
@@ -565,11 +574,12 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
       this.homeViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 2);
       this.onboardingViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 3);
       this.profilesViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 4);
+      this.sliderStylesViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 5);
     }
 
     @Override
     public Map<Class<?>, javax.inject.Provider<ViewModel>> getHiltViewModelMap() {
-      return LazyClassKeyMap.<javax.inject.Provider<ViewModel>>of(MapBuilder.<String, javax.inject.Provider<ViewModel>>newMapBuilder(5).put(LazyClassKeyProvider.com_volumepilot_feature_automation_AutomationViewModel, ((Provider) automationViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_diagnostics_DiagnosticsViewModel, ((Provider) diagnosticsViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_home_HomeViewModel, ((Provider) homeViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_onboarding_OnboardingViewModel, ((Provider) onboardingViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_profiles_ProfilesViewModel, ((Provider) profilesViewModelProvider)).build());
+      return LazyClassKeyMap.<javax.inject.Provider<ViewModel>>of(MapBuilder.<String, javax.inject.Provider<ViewModel>>newMapBuilder(6).put(LazyClassKeyProvider.com_volumepilot_feature_automation_AutomationViewModel, ((Provider) automationViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_diagnostics_DiagnosticsViewModel, ((Provider) diagnosticsViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_home_HomeViewModel, ((Provider) homeViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_onboarding_OnboardingViewModel, ((Provider) onboardingViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_profiles_ProfilesViewModel, ((Provider) profilesViewModelProvider)).put(LazyClassKeyProvider.com_volumepilot_feature_styles_SliderStylesViewModel, ((Provider) sliderStylesViewModelProvider)).build());
     }
 
     @Override
@@ -579,30 +589,35 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_volumepilot_feature_diagnostics_DiagnosticsViewModel = "com.volumepilot.feature.diagnostics.DiagnosticsViewModel";
+      static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
 
       static String com_volumepilot_feature_onboarding_OnboardingViewModel = "com.volumepilot.feature.onboarding.OnboardingViewModel";
 
-      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
-
       static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
 
-      static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
+      static String com_volumepilot_feature_diagnostics_DiagnosticsViewModel = "com.volumepilot.feature.diagnostics.DiagnosticsViewModel";
+
+      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
+
+      static String com_volumepilot_feature_styles_SliderStylesViewModel = "com.volumepilot.feature.styles.SliderStylesViewModel";
 
       @KeepFieldType
-      DiagnosticsViewModel com_volumepilot_feature_diagnostics_DiagnosticsViewModel2;
+      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
 
       @KeepFieldType
       OnboardingViewModel com_volumepilot_feature_onboarding_OnboardingViewModel2;
 
       @KeepFieldType
-      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
-
-      @KeepFieldType
       HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
 
       @KeepFieldType
-      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
+      DiagnosticsViewModel com_volumepilot_feature_diagnostics_DiagnosticsViewModel2;
+
+      @KeepFieldType
+      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
+
+      @KeepFieldType
+      SliderStylesViewModel com_volumepilot_feature_styles_SliderStylesViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {
@@ -640,6 +655,9 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
 
           case 4: // com.volumepilot.feature.profiles.ProfilesViewModel 
           return (T) new ProfilesViewModel(viewModelCImpl.getProfilesUseCase(), singletonCImpl.profileRepositoryImplProvider.get(), singletonCImpl.activateProfileUseCaseProvider.get(), viewModelCImpl.saveProfileUseCase(), viewModelCImpl.deleteProfileUseCase());
+
+          case 5: // com.volumepilot.feature.styles.SliderStylesViewModel 
+          return (T) new SliderStylesViewModel(singletonCImpl.getSettingsUseCase(), viewModelCImpl.updateSettingsUseCase());
 
           default: throw new AssertionError(id);
         }

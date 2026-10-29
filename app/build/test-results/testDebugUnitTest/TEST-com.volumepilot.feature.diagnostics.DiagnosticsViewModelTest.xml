@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-28T13:44:27.129Z" hostname="DESKTOP-45Q6PEN" time="0.036">
+<testsuite name="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-29T09:49:04.226Z" hostname="DESKTOP-45Q6PEN" time="0.017">
   <properties/>
-  <testcase name="initial uiState observes diagnostic state" classname="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" time="0.015"/>
-  <testcase name="onRepairOverlay failure emits failure message" classname="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" time="0.012"/>
-  <testcase name="onRepairOverlay executes repair and emits success message" classname="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" time="0.008"/>
+  <testcase name="initial uiState observes diagnostic state" classname="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" time="0.007"/>
+  <testcase name="onRepairOverlay failure emits failure message" classname="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" time="0.006"/>
+  <testcase name="onRepairOverlay executes repair and emits success message" classname="com.volumepilot.feature.diagnostics.DiagnosticsViewModelTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

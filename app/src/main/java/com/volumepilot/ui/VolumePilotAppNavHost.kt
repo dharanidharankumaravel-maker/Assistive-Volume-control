@@ -79,6 +79,9 @@ fun VolumePilotAppNavHost(
                 onNavigateToAutomation = {
                     navController.navigate(NavDestination.Automation.route)
                 },
+                onNavigateToSliderStyles = {
+                    navController.navigate(NavDestination.SliderStyles.route)
+                },
                 onClearError = homeViewModel::onClearError
             )
         }
@@ -130,6 +133,30 @@ fun VolumePilotAppNavHost(
                 onImportSettings = automationViewModel::importSettings,
                 onClearFeedback = automationViewModel::clearFeedback,
                 onClearError = automationViewModel::clearError,
+                onBack = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        composable(NavDestination.SliderStyles.route) {
+            val sliderStylesViewModel: com.volumepilot.feature.styles.SliderStylesViewModel = hiltViewModel()
+            val uiState by sliderStylesViewModel.uiState.collectAsStateWithLifecycle()
+
+            com.volumepilot.feature.styles.SliderStylesScreen(
+                uiState = uiState,
+                onSelectStyle = sliderStylesViewModel::onSelectStyle,
+                onPreviewVolumeChange = sliderStylesViewModel::onPreviewVolumeChange,
+                onUpdateAccentColor = sliderStylesViewModel::onUpdateAccentColor,
+                onUpdateWidth = sliderStylesViewModel::onUpdateWidth,
+                onUpdateHeight = sliderStylesViewModel::onUpdateHeight,
+                onUpdateCornerRadius = sliderStylesViewModel::onUpdateCornerRadius,
+                onUpdateBackgroundAlpha = sliderStylesViewModel::onUpdateBackgroundAlpha,
+                onUpdateRgbSpeed = sliderStylesViewModel::onUpdateRgbSpeed,
+                onUpdateRgbGlow = sliderStylesViewModel::onUpdateRgbGlow,
+                onResetDefaults = sliderStylesViewModel::onResetToPresetDefaults,
+                onApplyCustomization = sliderStylesViewModel::applyCustomization,
+                onClearSuccess = sliderStylesViewModel::clearAppliedSuccess,
                 onBack = {
                     navController.popBackStack()
                 }

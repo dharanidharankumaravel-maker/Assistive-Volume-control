@@ -113,18 +113,20 @@ fun Modifier.rgbGlow(
     shape: Shape,
     enabled: Boolean = true,
     intensity: Float = 0.6f,
-    strokeWidth: Dp = 1.4.dp
+    strokeWidth: Dp = 1.4.dp,
+    durationMillis: Int = 3500
 ): Modifier {
     if (!enabled || intensity <= 0.05f) {
         return this
     }
 
+    val safeDuration = durationMillis.coerceIn(1000, 10000)
     val infiniteTransition = rememberInfiniteTransition(label = "rgbPerimeterTransition")
     val animatedAngle by infiniteTransition.animateFloat(
         initialValue = 0f,
         targetValue = 360f,
         animationSpec = infiniteRepeatable(
-            animation = tween(durationMillis = 3500, easing = LinearEasing),
+            animation = tween(durationMillis = safeDuration, easing = LinearEasing),
             repeatMode = RepeatMode.Restart
         ),
         label = "rgbPerimeterAngle"

@@ -3,6 +3,7 @@ package com.volumepilot.data.local
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 
 object PreferencesKeys {
@@ -30,4 +31,11 @@ object PreferencesKeys {
     val RGB_GLOW_ENABLED = booleanPreferencesKey("rgb_glow_enabled")
     val RGB_GLOW_INTENSITY = floatPreferencesKey("rgb_glow_intensity")
     val IS_OVERLAY_HIDDEN = booleanPreferencesKey("is_overlay_hidden")
+    val SLIDER_STYLE = stringPreferencesKey("slider_style")
+    val SLIDER_ACCENT_COLOR = longPreferencesKey("slider_accent_color")
+    val SLIDER_WIDTH_DP = intPreferencesKey("slider_width_dp")
+    val SLIDER_HEIGHT_DP = intPreferencesKey("slider_height_dp")
+    val SLIDER_CORNER_RADIUS_DP = intPreferencesKey("slider_corner_radius_dp")
+    val SLIDER_BACKGROUND_ALPHA = floatPreferencesKey("slider_background_alpha")
+    val RGB_SPEED_MILLIS = intPreferencesKey("rgb_speed_millis")
 }

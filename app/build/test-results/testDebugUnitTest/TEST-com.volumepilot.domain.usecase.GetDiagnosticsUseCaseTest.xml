@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.domain.usecase.GetDiagnosticsUseCaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-28T13:44:24.588Z" hostname="DESKTOP-45Q6PEN" time="0.016">
+<testsuite name="com.volumepilot.domain.usecase.GetDiagnosticsUseCaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-29T09:49:02.160Z" hostname="DESKTOP-45Q6PEN" time="0.008">
   <properties/>
-  <testcase name="getDiagnostics returns current diagnostic state and evaluates health" classname="com.volumepilot.domain.usecase.GetDiagnosticsUseCaseTest" time="0.011"/>
-  <testcase name="isHealthy returns false when overlay permission is missing" classname="com.volumepilot.domain.usecase.GetDiagnosticsUseCaseTest" time="0.005"/>
+  <testcase name="getDiagnostics returns current diagnostic state and evaluates health" classname="com.volumepilot.domain.usecase.GetDiagnosticsUseCaseTest" time="0.003"/>
+  <testcase name="isHealthy returns false when overlay permission is missing" classname="com.volumepilot.domain.usecase.GetDiagnosticsUseCaseTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,6 +1,5 @@
 package com.volumepilot.feature.overlay
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -9,7 +8,6 @@ import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -19,11 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.VolumeDown
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
-import androidx.compose.material.icons.filled.ChevronLeft
-import androidx.compose.material.icons.filled.ChevronRight
-import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.PowerSettingsNew
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -38,11 +32,11 @@ import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.customActions
-import com.volumepilot.core.designsystem.rgbGlow
 import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import com.volumepilot.core.designsystem.rgbGlow
 import com.volumepilot.domain.model.FloatingButtonArrangement
 import com.volumepilot.domain.model.FloatingButtonColor
 import com.volumepilot.domain.model.VolumeStream
@@ -50,13 +44,12 @@ import com.volumepilot.domain.model.VolumeStream
 /**
  * Compact, minimalist floating control widget designed with Basil's visual identity.
  *
- * Hosts three vertically arranged accessibility controls:
- * 1. Power (Lock Screen, Screenshot on long press, Power Menu)
- * 2. Volume Up (+)
- * 3. Volume Down (−)
+ * Dynamically renders the exact controls chosen in settings:
+ * - Case 1: Only Volume Up (+) and Volume Down (−) without Power.
+ * - Case 2: Power + Volume Up (+) and Volume Down (−) in configured order.
+ * - Case 3: Other custom combinations (Power + Vol+, Power + Vol-).
  *
- * Includes a sleek docked pill container, custom button arrangements,
- * tactile haptic support, and smooth expansion into the multi-stream panel.
+ * All redundant expansion arrows have been completely removed.
  */
 @Composable
 fun BasilFloatingControlWidget(
@@ -130,9 +123,31 @@ fun BasilFloatingControlWidget(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(2.dp)
     ) {
-
-        // Render controls according to the configured arrangement
+        // Dynamically render controls based on the configured arrangement
         when (arrangement) {
+            // Case 1: Only Volume Up (+) and Volume Down (−) without Power
+            FloatingButtonArrangement.UP_DOWN -> {
+                VolumeUpControlButton(
+                    sizeDp = sizeDp,
+                    accentColor = accentColor,
+                    streamName = streamName,
+                    percentage = percentage,
+                    onSingleTap = onVolumeUp,
+                    onLongPress = onToggleExpand,
+                    isVolumeOnly = true
+                )
+                PillDivider(opacity = opacity, accentColor = accentColor)
+                VolumeDownControlButton(
+                    sizeDp = sizeDp,
+                    accentColor = accentColor,
+                    streamName = streamName,
+                    isMuted = isMuted,
+                    onSingleTap = onVolumeDown,
+                    onLongPress = onMuteToggle
+                )
+            }
+
+            // Case 2: Power + Vol+ + Vol-
             FloatingButtonArrangement.POWER_UP_DOWN -> {
                 PowerControlButton(
                     sizeDp = sizeDp,
@@ -147,7 +162,8 @@ fun BasilFloatingControlWidget(
                     streamName = streamName,
                     percentage = percentage,
                     onSingleTap = onVolumeUp,
-                    onLongPress = onToggleExpand
+                    onLongPress = onToggleExpand,
+                    isVolumeOnly = false
                 )
                 PillDivider(opacity = opacity, accentColor = accentColor)
                 VolumeDownControlButton(
@@ -159,6 +175,8 @@ fun BasilFloatingControlWidget(
                     onLongPress = onMuteToggle
                 )
             }
+
+            // Case 2: Vol+ + Vol- + Power
             FloatingButtonArrangement.UP_DOWN_POWER -> {
                 VolumeUpControlButton(
                     sizeDp = sizeDp,
@@ -166,7 +184,8 @@ fun BasilFloatingControlWidget(
                     streamName = streamName,
                     percentage = percentage,
                     onSingleTap = onVolumeUp,
-                    onLongPress = onToggleExpand
+                    onLongPress = onToggleExpand,
+                    isVolumeOnly = false
                 )
                 PillDivider(opacity = opacity, accentColor = accentColor)
                 VolumeDownControlButton(
@@ -185,6 +204,8 @@ fun BasilFloatingControlWidget(
                     onLongPress = onPowerLongPress
                 )
             }
+
+            // Case 2: Vol+ + Power + Vol-
             FloatingButtonArrangement.UP_POWER_DOWN -> {
                 VolumeUpControlButton(
                     sizeDp = sizeDp,
@@ -192,9 +213,49 @@ fun BasilFloatingControlWidget(
                     streamName = streamName,
                     percentage = percentage,
                     onSingleTap = onVolumeUp,
-                    onLongPress = onToggleExpand
+                    onLongPress = onToggleExpand,
+                    isVolumeOnly = false
                 )
                 PillDivider(opacity = opacity, accentColor = accentColor)
+                PowerControlButton(
+                    sizeDp = sizeDp,
+                    accentColor = accentColor,
+                    onSingleTap = onPowerSingleTap,
+                    onLongPress = onPowerLongPress
+                )
+                PillDivider(opacity = opacity, accentColor = accentColor)
+                VolumeDownControlButton(
+                    sizeDp = sizeDp,
+                    accentColor = accentColor,
+                    streamName = streamName,
+                    isMuted = isMuted,
+                    onSingleTap = onVolumeDown,
+                    onLongPress = onMuteToggle
+                )
+            }
+
+            // Case 3: Power + Vol+
+            FloatingButtonArrangement.POWER_UP -> {
+                PowerControlButton(
+                    sizeDp = sizeDp,
+                    accentColor = accentColor,
+                    onSingleTap = onPowerSingleTap,
+                    onLongPress = onPowerLongPress
+                )
+                PillDivider(opacity = opacity, accentColor = accentColor)
+                VolumeUpControlButton(
+                    sizeDp = sizeDp,
+                    accentColor = accentColor,
+                    streamName = streamName,
+                    percentage = percentage,
+                    onSingleTap = onVolumeUp,
+                    onLongPress = onToggleExpand,
+                    isVolumeOnly = false
+                )
+            }
+
+            // Case 3: Power + Vol-
+            FloatingButtonArrangement.POWER_DOWN -> {
                 PowerControlButton(
                     sizeDp = sizeDp,
                     accentColor = accentColor,
@@ -212,14 +273,6 @@ fun BasilFloatingControlWidget(
                 )
             }
         }
-
-        // Mini Expand / Panel Toggle indicator button at the bottom of the pill
-        ExpandToggleNub(
-            isExpanded = isExpanded,
-            isDockedToLeft = isDockedToLeft,
-            accentColor = accentColor,
-            onClick = onToggleExpand
-        )
     }
 }
 
@@ -243,8 +296,8 @@ private fun PowerControlButton(
             }
             .semantics {
                 role = Role.Button
-                contentDescription = "Power button. Tap to lock screen, long press to take screenshot."
-                onClick(label = "Lock Screen") {
+                contentDescription = "Power button. Tap to perform power action, long press to capture screenshot."
+                onClick(label = "Power action") {
                     onSingleTap()
                     true
                 }
@@ -274,8 +327,11 @@ private fun VolumeUpControlButton(
     percentage: Int,
     onSingleTap: () -> Unit,
     onLongPress: () -> Unit,
+    isVolumeOnly: Boolean = false,
     modifier: Modifier = Modifier
 ) {
+    val actionLabel = if (isVolumeOnly) "Show volume slider" else "Open volume panel"
+
     Box(
         modifier = modifier
             .size((sizeDp - 4).dp)
@@ -294,7 +350,7 @@ private fun VolumeUpControlButton(
                     true
                 }
                 customActions = listOf(
-                    CustomAccessibilityAction(label = "Open volume panel") {
+                    CustomAccessibilityAction(label = actionLabel) {
                         onLongPress()
                         true
                     }
@@ -368,43 +424,4 @@ private fun PillDivider(
             .height(0.8.dp)
             .background(accentColor.copy(alpha = opacity * 0.3f))
     )
-}
-
-@Composable
-private fun ExpandToggleNub(
-    isExpanded: Boolean,
-    isDockedToLeft: Boolean,
-    accentColor: Color,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    val chevronIcon = when {
-        isExpanded -> if (isDockedToLeft) Icons.Default.ChevronLeft else Icons.Default.ChevronRight
-        else -> if (isDockedToLeft) Icons.Default.ChevronRight else Icons.Default.ChevronLeft
-    }
-
-    Box(
-        modifier = modifier
-            .size(width = 24.dp, height = 16.dp)
-            .clip(RoundedCornerShape(8.dp))
-            .pointerInput(Unit) {
-                detectTapGestures(onTap = { onClick() })
-            }
-            .semantics {
-                role = Role.Button
-                contentDescription = if (isExpanded) "Collapse volume panel" else "Expand volume panel"
-                onClick(label = if (isExpanded) "Collapse" else "Expand") {
-                    onClick()
-                    true
-                }
-            },
-        contentAlignment = Alignment.Center
-    ) {
-        Icon(
-            imageVector = chevronIcon,
-            contentDescription = null,
-            tint = accentColor.copy(alpha = 0.8f),
-            modifier = Modifier.size(16.dp)
-        )
-    }
 }

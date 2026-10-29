@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.domain.usecase.MuteUseCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-28T13:44:24.621Z" hostname="DESKTOP-45Q6PEN" time="0.004">
+<testsuite name="com.volumepilot.domain.usecase.MuteUseCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-29T09:49:02.179Z" hostname="DESKTOP-45Q6PEN" time="0.006">
   <properties/>
-  <testcase name="muteUseCase sets stream isMuted to true and false" classname="com.volumepilot.domain.usecase.MuteUseCaseTest" time="0.004"/>
+  <testcase name="muteUseCase sets stream isMuted to true and false" classname="com.volumepilot.domain.usecase.MuteUseCaseTest" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

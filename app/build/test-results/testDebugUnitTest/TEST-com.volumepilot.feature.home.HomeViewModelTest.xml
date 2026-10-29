@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.feature.home.HomeViewModelTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-28T13:44:27.177Z" hostname="DESKTOP-45Q6PEN" time="0.138">
+<testsuite name="com.volumepilot.feature.home.HomeViewModelTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-29T09:49:04.250Z" hostname="DESKTOP-45Q6PEN" time="0.069">
   <properties/>
-  <testcase name="onMuteToggle toggles stream mute state" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.013"/>
+  <testcase name="onMuteToggle toggles stream mute state" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.011"/>
   <testcase name="onToggleStartOnBoot updates start on boot setting" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.006"/>
-  <testcase name="onVolumeChange successfully updates state" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.009"/>
-  <testcase name="onToggleOverlay fails with AudioPermissionDenied when overlay permission is denied" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.007"/>
-  <testcase name="initial uiState combines volume state and settings" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.041"/>
-  <testcase name="onToggleOverlay enables overlay when permission is granted" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.012"/>
-  <testcase name="onVolumeChange failure produces AppError in state and onClearError clears it" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.007"/>
-  <testcase name="onApplyPreset adjusts stream levels" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.042"/>
+  <testcase name="onVolumeChange successfully updates state" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.007"/>
+  <testcase name="onToggleOverlay fails with AudioPermissionDenied when overlay permission is denied" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.006"/>
+  <testcase name="initial uiState combines volume state and settings" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.014"/>
+  <testcase name="onToggleOverlay enables overlay when permission is granted" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.01"/>
+  <testcase name="onVolumeChange failure produces AppError in state and onClearError clears it" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.006"/>
+  <testcase name="onApplyPreset adjusts stream levels" classname="com.volumepilot.feature.home.HomeViewModelTest" time="0.007"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

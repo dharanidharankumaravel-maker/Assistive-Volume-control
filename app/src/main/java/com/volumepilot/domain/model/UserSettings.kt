@@ -19,5 +19,12 @@ data class UserSettings(
     val powerLongPressAction: PowerLongPressAction = PowerLongPressAction.TAKE_SCREENSHOT,
     val rgbGlowEnabled: Boolean = true,
     val rgbGlowIntensity: Float = 0.6f,
-    val isOverlayHidden: Boolean = false
+    val isOverlayHidden: Boolean = false,
+    val sliderStyle: SliderStyle = SliderStyle.GOOGLE,
+    val sliderAccentColor: Long = 0xFF7C3AED, // Royal Violet as primary reference color
+    val sliderWidthDp: Int = 40,
+    val sliderHeightDp: Int = 135,
+    val sliderCornerRadiusDp: Int = 20,
+    val sliderBackgroundAlpha: Float = 0.5f,
+    val rgbSpeedMillis: Int = 3500
 )
