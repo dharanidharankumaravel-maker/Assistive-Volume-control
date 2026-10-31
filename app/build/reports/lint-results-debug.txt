@@ -1,4 +1,4 @@
-D:\assitivePilot\app\src\main\java\com\volumepilot\feature\automation\AutomationScreen.kt:439: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/feature/automation/AutomationScreen.kt:439: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
     val timeRangeStr = String.format("%02d:%02d - %02d:%02d", rule.startHour, rule.startMinute, rule.endHour, rule.endMinute)
                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -17,7 +17,7 @@ D:\assitivePilot\app\src\main\java\com\volumepilot\feature\automation\Automation
 
    https://developer.android.com/reference/java/util/Locale.html#default_locale
 
-D:\assitivePilot\app\build.gradle.kts:16: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+/Users/apple/Documents/Assistive-Volume-control/app/build.gradle.kts:16: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
         targetSdk = 35
         ~~~~~~~~~~~~~~
 
@@ -39,7 +39,7 @@ D:\assitivePilot\app\build.gradle.kts:16: Warning: Not targeting the latest vers
 
    https://developer.android.com/distribute/best-practices/develop/target-sdk.html
 
-D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\BatteryOptimizationHelper.kt:22: Warning: Use of REQUEST_IGNORE_BATTERY_OPTIMIZATIONS violates the Play Store Content Policy regarding acceptable use cases, as described in https://developer.android.com/training/monitoring-device-state/doze-standby.html [BatteryLife]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/core/battery/BatteryOptimizationHelper.kt:22: Warning: Use of REQUEST_IGNORE_BATTERY_OPTIMIZATIONS violates the Play Store Content Policy regarding acceptable use cases, as described in https://developer.android.com/training/monitoring-device-state/doze-standby.html [BatteryLife]
             Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS).apply {
                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -55,7 +55,7 @@ D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\BatteryOptimizat
    https://developer.android.com/topic/performance/background-optimization
 
 
-D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\OemSettingsHelper.kt:113: Warning: Consider adding a <queries> declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details [QueryPermissionsNeeded]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/core/battery/OemSettingsHelper.kt:113: Warning: Consider adding a <queries> declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details [QueryPermissionsNeeded]
             if (intent.resolveActivity(pm) != null) {
                        ~~~~~~~~~~~~~~~
 
@@ -72,13 +72,13 @@ D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\OemSettingsHelpe
 
    https://g.co/dev/packagevisibility
 
-D:\assitivePilot\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.7.3 is available: 9.4.1 [AndroidGradlePluginVersion]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.7.3 is available: 9.4.1 [AndroidGradlePluginVersion]
 agp = "8.7.3"
       ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.7.3 is available: 9.4.1 [AndroidGradlePluginVersion]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.7.3 is available: 9.4.1 [AndroidGradlePluginVersion]
 agp = "8.7.3"
       ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.7.3 is available: 9.4.1 [AndroidGradlePluginVersion]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.7.3 is available: 9.4.1 [AndroidGradlePluginVersion]
 agp = "8.7.3"
       ~~~~~~~
 
@@ -89,168 +89,123 @@ agp = "8.7.3"
    with an older version. However, you may simply not be aware that a more
    recent version is available, and that is what this lint check helps find.
 
-D:\assitivePilot\gradle\libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.21 is available: 2.3.20 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.21 is available: 2.3.20 [GradleDependency]
 kotlin = "2.0.21"
          ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.21 is available: 2.3.20 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.21 is available: 2.3.20 [GradleDependency]
 kotlin = "2.0.21"
          ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.21 is available: 2.3.20 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.21 is available: 2.3.20 [GradleDependency]
 kotlin = "2.0.21"
          ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.21 is available: 2.2.10 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.21 is available: 2.2.10 [GradleDependency]
 kotlin = "2.0.21"
          ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.21 is available: 2.2.10 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.21 is available: 2.2.10 [GradleDependency]
 kotlin = "2.0.21"
          ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.21 is available: 2.2.10 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.21 is available: 2.2.10 [GradleDependency]
 kotlin = "2.0.21"
          ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:4: Warning: A newer version of com.google.devtools.ksp than 2.0.21-1.0.28 is available: 2.3.5 [GradleDependency]
-ksp = "2.0.21-1.0.28"
-      ~~~~~~~~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:4: Warning: A newer version of com.google.devtools.ksp than 2.0.21-1.0.28 is available: 2.3.5 [GradleDependency]
-ksp = "2.0.21-1.0.28"
-      ~~~~~~~~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:4: Warning: A newer version of com.google.devtools.ksp than 2.0.21-1.0.28 is available: 2.3.5 [GradleDependency]
-ksp = "2.0.21-1.0.28"
-      ~~~~~~~~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:6: Warning: A newer version of androidx.compose:compose-bom than 2024.10.01 is available: 2026.09.00 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:6: Warning: A newer version of androidx.compose:compose-bom than 2024.10.01 is available: 2026.09.00 [GradleDependency]
 compose-bom = "2024.10.01"
               ~~~~~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:6: Warning: A newer version of androidx.compose:compose-bom than 2024.10.01 is available: 2026.09.00 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:6: Warning: A newer version of androidx.compose:compose-bom than 2024.10.01 is available: 2026.09.00 [GradleDependency]
 compose-bom = "2024.10.01"
               ~~~~~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:6: Warning: A newer version of androidx.compose:compose-bom than 2024.10.01 is available: 2026.09.00 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:6: Warning: A newer version of androidx.compose:compose-bom than 2024.10.01 is available: 2026.09.00 [GradleDependency]
 compose-bom = "2024.10.01"
               ~~~~~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:7: Warning: A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:7: Warning: A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1 [GradleDependency]
 androidx-core = "1.15.0"
                 ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:7: Warning: A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:7: Warning: A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1 [GradleDependency]
 androidx-core = "1.15.0"
                 ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:7: Warning: A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:7: Warning: A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1 [GradleDependency]
 androidx-core = "1.15.0"
                 ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
 androidx-lifecycle = "2.8.7"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
 androidx-lifecycle = "2.8.7"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
 androidx-lifecycle = "2.8.7"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.7 is available: 2.11.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.7 is available: 2.11.0 [GradleDependency]
 androidx-lifecycle = "2.8.7"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.7 is available: 2.11.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.7 is available: 2.11.0 [GradleDependency]
 androidx-lifecycle = "2.8.7"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.7 is available: 2.11.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.7 is available: 2.11.0 [GradleDependency]
 androidx-lifecycle = "2.8.7"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
 androidx-lifecycle = "2.8.7"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
 androidx-lifecycle = "2.8.7"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.7 is available: 2.11.0 [GradleDependency]
 androidx-lifecycle = "2.8.7"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:9: Warning: A newer version of androidx.activity:activity-compose than 1.9.3 is available: 1.13.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:9: Warning: A newer version of androidx.activity:activity-compose than 1.9.3 is available: 1.13.0 [GradleDependency]
 androidx-activity = "1.9.3"
                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:9: Warning: A newer version of androidx.activity:activity-compose than 1.9.3 is available: 1.13.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:9: Warning: A newer version of androidx.activity:activity-compose than 1.9.3 is available: 1.13.0 [GradleDependency]
 androidx-activity = "1.9.3"
                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:9: Warning: A newer version of androidx.activity:activity-compose than 1.9.3 is available: 1.13.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:9: Warning: A newer version of androidx.activity:activity-compose than 1.9.3 is available: 1.13.0 [GradleDependency]
 androidx-activity = "1.9.3"
                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:10: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.4 is available: 2.10.2 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:10: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.4 is available: 2.10.2 [GradleDependency]
 androidx-navigation = "2.8.4"
                       ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:10: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.4 is available: 2.10.2 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:10: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.4 is available: 2.10.2 [GradleDependency]
 androidx-navigation = "2.8.4"
                       ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:10: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.4 is available: 2.10.2 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:10: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.4 is available: 2.10.2 [GradleDependency]
 androidx-navigation = "2.8.4"
                       ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:11: Warning: A newer version of androidx.hilt:hilt-navigation-compose than 1.2.0 is available: 1.4.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:11: Warning: A newer version of androidx.hilt:hilt-navigation-compose than 1.2.0 is available: 1.4.0 [GradleDependency]
 androidx-hilt-navigation = "1.2.0"
                            ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:11: Warning: A newer version of androidx.hilt:hilt-navigation-compose than 1.2.0 is available: 1.4.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:11: Warning: A newer version of androidx.hilt:hilt-navigation-compose than 1.2.0 is available: 1.4.0 [GradleDependency]
 androidx-hilt-navigation = "1.2.0"
                            ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:11: Warning: A newer version of androidx.hilt:hilt-navigation-compose than 1.2.0 is available: 1.4.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:11: Warning: A newer version of androidx.hilt:hilt-navigation-compose than 1.2.0 is available: 1.4.0 [GradleDependency]
 androidx-hilt-navigation = "1.2.0"
                            ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:12: Warning: A newer version of androidx.datastore:datastore-preferences than 1.1.1 is available: 1.3.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:12: Warning: A newer version of androidx.datastore:datastore-preferences than 1.1.1 is available: 1.3.0 [GradleDependency]
 androidx-datastore = "1.1.1"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:12: Warning: A newer version of androidx.datastore:datastore-preferences than 1.1.1 is available: 1.3.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:12: Warning: A newer version of androidx.datastore:datastore-preferences than 1.1.1 is available: 1.3.0 [GradleDependency]
 androidx-datastore = "1.1.1"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:12: Warning: A newer version of androidx.datastore:datastore-preferences than 1.1.1 is available: 1.3.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:12: Warning: A newer version of androidx.datastore:datastore-preferences than 1.1.1 is available: 1.3.0 [GradleDependency]
 androidx-datastore = "1.1.1"
                      ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.9.0 is available: 1.10.2 [GradleDependency]
-kotlinx-coroutines = "1.9.0"
-                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.9.0 is available: 1.10.2 [GradleDependency]
-kotlinx-coroutines = "1.9.0"
-                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.9.0 is available: 1.10.2 [GradleDependency]
-kotlinx-coroutines = "1.9.0"
-                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.9.0 is available: 1.10.2 [GradleDependency]
-kotlinx-coroutines = "1.9.0"
-                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.9.0 is available: 1.10.2 [GradleDependency]
-kotlinx-coroutines = "1.9.0"
-                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.9.0 is available: 1.10.2 [GradleDependency]
-kotlinx-coroutines = "1.9.0"
-                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.9.0 is available: 1.10.2 [GradleDependency]
-kotlinx-coroutines = "1.9.0"
-                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.9.0 is available: 1.10.2 [GradleDependency]
-kotlinx-coroutines = "1.9.0"
-                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.9.0 is available: 1.10.2 [GradleDependency]
-kotlinx-coroutines = "1.9.0"
-                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:15: Warning: A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:15: Warning: A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0 [GradleDependency]
 androidx-test-ext = "1.2.1"
                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:15: Warning: A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:15: Warning: A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0 [GradleDependency]
 androidx-test-ext = "1.2.1"
                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:15: Warning: A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:15: Warning: A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0 [GradleDependency]
 androidx-test-ext = "1.2.1"
                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:16: Warning: A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:16: Warning: A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0 [GradleDependency]
 androidx-espresso = "3.6.1"
                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:16: Warning: A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:16: Warning: A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0 [GradleDependency]
 androidx-espresso = "3.6.1"
                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:16: Warning: A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0 [GradleDependency]
+/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml:16: Warning: A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0 [GradleDependency]
 androidx-espresso = "3.6.1"
                     ~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:19: Warning: A newer version of org.robolectric:robolectric than 4.14.1 is available: 4.16.1 [GradleDependency]
-robolectric = "4.14.1"
-              ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:19: Warning: A newer version of org.robolectric:robolectric than 4.14.1 is available: 4.16.1 [GradleDependency]
-robolectric = "4.14.1"
-              ~~~~~~~~
-D:\assitivePilot\gradle\libs.versions.toml:19: Warning: A newer version of org.robolectric:robolectric than 4.14.1 is available: 4.16.1 [GradleDependency]
-robolectric = "4.14.1"
-              ~~~~~~~~
 
    Explanation for issues of type "GradleDependency":
    This detector looks for usages of libraries where the version you are using
@@ -259,8 +214,11 @@ robolectric = "4.14.1"
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
-D:\assitivePilot\app\src\main\java\com\volumepilot\feature\home\HomeScreen.kt:80: Warning: Modifier parameter should be the first optional parameter [ModifierParameter from androidx.compose.ui]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/feature/home/HomeScreen.kt:123: Warning: Modifier parameter should be the first optional parameter [ModifierParameter from androidx.compose.ui]
     modifier: Modifier = Modifier
+    ~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/feature/overlay/OverlayPanelContent.kt:52: Warning: Modifier parameter should be the first optional parameter [ModifierParameter from androidx.compose.ui]
+    modifier: Modifier = Modifier,
     ~~~~~~~~
 
    Explanation for issues of type "ModifierParameter":
@@ -275,7 +233,7 @@ D:\assitivePilot\app\src\main\java\com\volumepilot\feature\home\HomeScreen.kt:80
    Identifier: androidx.compose.ui
    Feedback: https://issuetracker.google.com/issues/new?component=612128
 
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt:208: Warning: Switch statement on an int with known associated constant missing case AudioDeviceInfo.TYPE_AUX_LINE, AudioDeviceInfo.TYPE_BLE_BROADCAST, AudioDeviceInfo.TYPE_BUILTIN_EARPIECE, AudioDeviceInfo.TYPE_BUILTIN_MIC, AudioDeviceInfo.TYPE_BUILTIN_SPEAKER_SAFE, AudioDeviceInfo.TYPE_BUS, AudioDeviceInfo.TYPE_DOCK, AudioDeviceInfo.TYPE_DOCK_ANALOG, AudioDeviceInfo.TYPE_FM, AudioDeviceInfo.TYPE_FM_TUNER, AudioDeviceInfo.TYPE_HDMI, AudioDeviceInfo.TYPE_HDMI_ARC, AudioDeviceInfo.TYPE_HDMI_EARC, AudioDeviceInfo.TYPE_HEARING_AID, AudioDeviceInfo.TYPE_IP, AudioDeviceInfo.TYPE_LINE_ANALOG, AudioDeviceInfo.TYPE_LINE_DIGITAL, AudioDeviceInfo.TYPE_REMOTE_SUBMIX, AudioDeviceInfo.TYPE_TELEPHONY, AudioDeviceInfo.TYPE_TV_TUNER, AudioDeviceInfo.TYPE_USB_ACCESSORY [SwitchIntDef]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt:208: Warning: Switch statement on an int with known associated constant missing case AudioDeviceInfo.TYPE_AUX_LINE, AudioDeviceInfo.TYPE_BLE_BROADCAST, AudioDeviceInfo.TYPE_BUILTIN_EARPIECE, AudioDeviceInfo.TYPE_BUILTIN_MIC, AudioDeviceInfo.TYPE_BUILTIN_SPEAKER_SAFE, AudioDeviceInfo.TYPE_BUS, AudioDeviceInfo.TYPE_DOCK, AudioDeviceInfo.TYPE_DOCK_ANALOG, AudioDeviceInfo.TYPE_FM, AudioDeviceInfo.TYPE_FM_TUNER, AudioDeviceInfo.TYPE_HDMI, AudioDeviceInfo.TYPE_HDMI_ARC, AudioDeviceInfo.TYPE_HDMI_EARC, AudioDeviceInfo.TYPE_HEARING_AID, AudioDeviceInfo.TYPE_IP, AudioDeviceInfo.TYPE_LINE_ANALOG, AudioDeviceInfo.TYPE_LINE_DIGITAL, AudioDeviceInfo.TYPE_REMOTE_SUBMIX, AudioDeviceInfo.TYPE_TELEPHONY, AudioDeviceInfo.TYPE_TV_TUNER, AudioDeviceInfo.TYPE_USB_ACCESSORY [SwitchIntDef]
                 when (device.type) {
                 ~~~~
 
@@ -283,7 +241,7 @@ D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeC
    This check warns if a switch statement does not explicitly include all the
    values declared by the typedef @IntDef declaration.
 
-D:\assitivePilot\app\src\main\res\values\strings.xml:84: Warning: Formatting %d followed by words ("percent"): This should probably be a plural rather than a string [PluralsCandidate]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:84: Warning: Formatting %d followed by words ("percent"): This should probably be a plural rather than a string [PluralsCandidate]
     <string name="cd_volume_slider">%1$s volume: %2$d percent</string>
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -308,7 +266,7 @@ D:\assitivePilot\app\src\main\res\values\strings.xml:84: Warning: Formatting %d 
 
    https://developer.android.com/guide/topics/resources/string-resource.html#Plurals
 
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\automation\TimeAutomationReceiver.kt:21: Warning: This broadcast receiver declares an intent-filter for a protected broadcast action string, which can only be sent by the system, not third-party applications. However, the receiver's onReceive method does not appear to call getAction to ensure that the received Intent's action string matches the expected value, potentially making it possible for another actor to send a spoofed intent with no action string or a different action string and cause undesired behavior. [UnsafeProtectedBroadcastReceiver]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/automation/TimeAutomationReceiver.kt:21: Warning: This broadcast receiver declares an intent-filter for a protected broadcast action string, which can only be sent by the system, not third-party applications. However, the receiver's onReceive method does not appear to call getAction to ensure that the received Intent's action string matches the expected value, potentially making it possible for another actor to send a spoofed intent with no action string or a different action string and cause undesired behavior. [UnsafeProtectedBroadcastReceiver]
     override fun onReceive(context: Context?, intent: Intent?) {
                  ~~~~~~~~~
 
@@ -320,7 +278,7 @@ D:\assitivePilot\app\src\main\java\com\volumepilot\service\automation\TimeAutoma
 
    https://goo.gle/UnsafeProtectedBroadcastReceiver
 
-D:\assitivePilot\app\src\main\AndroidManifest.xml:20: Warning: The attribute android:allowBackup is deprecated from Android 12 and higher and may be removed in future versions. Consider adding the attribute android:dataExtractionRules specifying an @xml resource which configures cloud backups and device transfers on Android 12 and higher. [DataExtractionRules]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/AndroidManifest.xml:20: Warning: The attribute android:allowBackup is deprecated from Android 12 and higher and may be removed in future versions. Consider adding the attribute android:dataExtractionRules specifying an @xml resource which configures cloud backups and device transfers on Android 12 and higher. [DataExtractionRules]
         android:allowBackup="false"
                              ~~~~~
 
@@ -340,43 +298,43 @@ D:\assitivePilot\app\src\main\AndroidManifest.xml:20: Warning: The attribute and
    https://developer.android.com/about/versions/12/backup-restore#xml-changes
    https://goo.gle/DataExtractionRules
 
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt:59: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt:59: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt:104: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt:104: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
                 val isMuted = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt:129: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt:129: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
         val isDnd = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt:168: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt:168: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\BatteryOptimizationHelper.kt:13: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/core/battery/BatteryOptimizationHelper.kt:13: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\BatteryOptimizationHelper.kt:21: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/core/battery/BatteryOptimizationHelper.kt:21: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\overlay\OverlayNotificationHelper.kt:24: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayNotificationHelper.kt:37: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\overlay\OverlayService.kt:173: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt:228: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
             val layoutFlag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\overlay\OverlayService.kt:339: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt:689: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\overlay\OverlayService.kt:393: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt:752: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\automation\TimeAutomationScheduler.kt:25: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/automation/TimeAutomationScheduler.kt:25: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
         val flags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\java\com\volumepilot\service\automation\TimeAutomationScheduler.kt:50: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/automation/TimeAutomationScheduler.kt:50: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
         val flags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\mipmap-anydpi-v26: Warning: This folder configuration (v26) is unnecessary; minSdkVersion is 26. Merge all the resources in this folder into mipmap-anydpi. [ObsoleteSdkInt]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/mipmap-anydpi-v26: Warning: This folder configuration (v26) is unnecessary; minSdkVersion is 26. Merge all the resources in this folder into mipmap-anydpi. [ObsoleteSdkInt]
 
    Explanation for issues of type "ObsoleteSdkInt":
    This check flags version checks that are not necessary, because the
@@ -387,192 +345,263 @@ D:\assitivePilot\app\src\main\res\mipmap-anydpi-v26: Warning: This folder config
    where the version qualifier is less than or equal to the minSdkVersion,
    where the contents should be merged into the best folder.
 
-D:\assitivePilot\app\src\main\res\values\colors.xml:3: Warning: The resource R.color.md_theme_light_primary appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt:92: Information: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    private var currentWidgetSizeDp by mutableStateOf(48)
+                                       ~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt:94: Information: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    private var currentSliderWidthDp by mutableStateOf(40)
+                                        ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AutoboxingStateCreation":
+   Calling mutableStateOf<T>() when T is either backed by a primitive type on
+   the JVM or is a value class results in a state implementation that requires
+   all state values to be boxed. This usually causes an additional allocation
+   for each state write, and adds some additional work to auto-unbox values
+   when reading the value of the state. Instead, prefer to use a specialized
+   primitive state implementation for Int, Long, Float, and Double when the
+   state does not need to track null values and does not override the default
+   SnapshotMutationPolicy. See mutableIntStateOf(), mutableLongStateOf(),
+   mutableFloatStateOf(), and mutableDoubleStateOf() for more information.
+
+   Vendor: Jetpack Compose
+   Identifier: androidx.compose.runtime
+   Feedback: https://issuetracker.google.com/issues/new?component=612128
+
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/drawable/assistive_app_logo.png: Warning: The resource R.drawable.assistive_app_logo appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:3: Warning: The resource R.color.md_theme_light_primary appears to be unused [UnusedResources]
     <color name="md_theme_light_primary">#006495</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:4: Warning: The resource R.color.md_theme_light_onPrimary appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:4: Warning: The resource R.color.md_theme_light_onPrimary appears to be unused [UnusedResources]
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:5: Warning: The resource R.color.md_theme_light_primaryContainer appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:5: Warning: The resource R.color.md_theme_light_primaryContainer appears to be unused [UnusedResources]
     <color name="md_theme_light_primaryContainer">#CBE6FF</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:6: Warning: The resource R.color.md_theme_light_onPrimaryContainer appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:6: Warning: The resource R.color.md_theme_light_onPrimaryContainer appears to be unused [UnusedResources]
     <color name="md_theme_light_onPrimaryContainer">#001E30</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:7: Warning: The resource R.color.md_theme_light_background appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:7: Warning: The resource R.color.md_theme_light_background appears to be unused [UnusedResources]
     <color name="md_theme_light_background">#FDFCFF</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:8: Warning: The resource R.color.md_theme_light_onBackground appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:8: Warning: The resource R.color.md_theme_light_onBackground appears to be unused [UnusedResources]
     <color name="md_theme_light_onBackground">#1A1C1E</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:9: Warning: The resource R.color.md_theme_light_surface appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:9: Warning: The resource R.color.md_theme_light_surface appears to be unused [UnusedResources]
     <color name="md_theme_light_surface">#FDFCFF</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:10: Warning: The resource R.color.md_theme_light_onSurface appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:10: Warning: The resource R.color.md_theme_light_onSurface appears to be unused [UnusedResources]
     <color name="md_theme_light_onSurface">#1A1C1E</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:12: Warning: The resource R.color.md_theme_dark_primary appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:12: Warning: The resource R.color.md_theme_dark_primary appears to be unused [UnusedResources]
     <color name="md_theme_dark_primary">#8FCEFF</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:13: Warning: The resource R.color.md_theme_dark_onPrimary appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:13: Warning: The resource R.color.md_theme_dark_onPrimary appears to be unused [UnusedResources]
     <color name="md_theme_dark_onPrimary">#003450</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:14: Warning: The resource R.color.md_theme_dark_primaryContainer appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:14: Warning: The resource R.color.md_theme_dark_primaryContainer appears to be unused [UnusedResources]
     <color name="md_theme_dark_primaryContainer">#004B72</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:15: Warning: The resource R.color.md_theme_dark_onPrimaryContainer appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:15: Warning: The resource R.color.md_theme_dark_onPrimaryContainer appears to be unused [UnusedResources]
     <color name="md_theme_dark_onPrimaryContainer">#CBE6FF</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:16: Warning: The resource R.color.md_theme_dark_background appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:16: Warning: The resource R.color.md_theme_dark_background appears to be unused [UnusedResources]
     <color name="md_theme_dark_background">#111416</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:17: Warning: The resource R.color.md_theme_dark_onBackground appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:17: Warning: The resource R.color.md_theme_dark_onBackground appears to be unused [UnusedResources]
     <color name="md_theme_dark_onBackground">#E2E2E5</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:18: Warning: The resource R.color.md_theme_dark_surface appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:18: Warning: The resource R.color.md_theme_dark_surface appears to be unused [UnusedResources]
     <color name="md_theme_dark_surface">#111416</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\colors.xml:19: Warning: The resource R.color.md_theme_dark_onSurface appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml:19: Warning: The resource R.color.md_theme_dark_onSurface appears to be unused [UnusedResources]
     <color name="md_theme_dark_onSurface">#E2E2E5</color>
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:4: Warning: The resource R.string.app_tagline appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/drawable/ic_launcher_foreground.xml:1: Warning: The resource R.drawable.ic_launcher_foreground appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:4: Warning: The resource R.string.app_tagline appears to be unused [UnusedResources]
     <string name="app_tagline">Private, reliable, battery-friendly volume assistant</string>
             ~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:7: Warning: The resource R.string.nav_home appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:7: Warning: The resource R.string.nav_home appears to be unused [UnusedResources]
     <string name="nav_home">Volume</string>
             ~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:8: Warning: The resource R.string.nav_settings appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:8: Warning: The resource R.string.nav_settings appears to be unused [UnusedResources]
     <string name="nav_settings">Settings</string>
             ~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:9: Warning: The resource R.string.nav_diagnostics appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:9: Warning: The resource R.string.nav_diagnostics appears to be unused [UnusedResources]
     <string name="nav_diagnostics">Diagnostics</string>
             ~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:12: Warning: The resource R.string.stream_media appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:12: Warning: The resource R.string.stream_media appears to be unused [UnusedResources]
     <string name="stream_media">Media</string>
             ~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:13: Warning: The resource R.string.stream_ring appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:13: Warning: The resource R.string.stream_ring appears to be unused [UnusedResources]
     <string name="stream_ring">Ring</string>
             ~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:14: Warning: The resource R.string.stream_notification appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:14: Warning: The resource R.string.stream_notification appears to be unused [UnusedResources]
     <string name="stream_notification">Notification</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:15: Warning: The resource R.string.stream_alarm appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:15: Warning: The resource R.string.stream_alarm appears to be unused [UnusedResources]
     <string name="stream_alarm">Alarm</string>
             ~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:16: Warning: The resource R.string.stream_voice_call appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:16: Warning: The resource R.string.stream_voice_call appears to be unused [UnusedResources]
     <string name="stream_voice_call">In-Call</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:17: Warning: The resource R.string.stream_bluetooth appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:17: Warning: The resource R.string.stream_bluetooth appears to be unused [UnusedResources]
     <string name="stream_bluetooth">Bluetooth</string>
             ~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:20: Warning: The resource R.string.device_speaker appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:20: Warning: The resource R.string.device_speaker appears to be unused [UnusedResources]
     <string name="device_speaker">Phone Speaker</string>
             ~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:21: Warning: The resource R.string.device_wired_headphones appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:21: Warning: The resource R.string.device_wired_headphones appears to be unused [UnusedResources]
     <string name="device_wired_headphones">Wired Headphones</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:22: Warning: The resource R.string.device_bluetooth appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:22: Warning: The resource R.string.device_bluetooth appears to be unused [UnusedResources]
     <string name="device_bluetooth">Bluetooth Audio</string>
             ~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:23: Warning: The resource R.string.device_usb appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:23: Warning: The resource R.string.device_usb appears to be unused [UnusedResources]
     <string name="device_usb">USB Audio</string>
             ~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:24: Warning: The resource R.string.device_unknown appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:24: Warning: The resource R.string.device_unknown appears to be unused [UnusedResources]
     <string name="device_unknown">Audio Device</string>
             ~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:27: Warning: The resource R.string.action_mute appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:27: Warning: The resource R.string.action_mute appears to be unused [UnusedResources]
     <string name="action_mute">Mute</string>
             ~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:28: Warning: The resource R.string.action_unmute appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:28: Warning: The resource R.string.action_unmute appears to be unused [UnusedResources]
     <string name="action_unmute">Unmute</string>
             ~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:29: Warning: The resource R.string.action_vibrate appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:29: Warning: The resource R.string.action_vibrate appears to be unused [UnusedResources]
     <string name="action_vibrate">Vibrate</string>
             ~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:30: Warning: The resource R.string.action_retry appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:30: Warning: The resource R.string.action_retry appears to be unused [UnusedResources]
     <string name="action_retry">Try Again</string>
             ~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:31: Warning: The resource R.string.action_grant_permission appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:31: Warning: The resource R.string.action_grant_permission appears to be unused [UnusedResources]
     <string name="action_grant_permission">Grant Permission</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:32: Warning: The resource R.string.action_learn_more appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:32: Warning: The resource R.string.action_learn_more appears to be unused [UnusedResources]
     <string name="action_learn_more">Learn More</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:33: Warning: The resource R.string.action_reset appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:33: Warning: The resource R.string.action_reset appears to be unused [UnusedResources]
     <string name="action_reset">Reset</string>
             ~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:42: Warning: The resource R.string.settings_title appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:42: Warning: The resource R.string.settings_title appears to be unused [UnusedResources]
     <string name="settings_title">Settings</string>
             ~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:44: Warning: The resource R.string.section_haptics appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:44: Warning: The resource R.string.section_haptics appears to be unused [UnusedResources]
     <string name="section_haptics">Feedback</string>
             ~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:45: Warning: The resource R.string.section_appearance appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:45: Warning: The resource R.string.section_appearance appears to be unused [UnusedResources]
     <string name="section_appearance">Appearance</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:46: Warning: The resource R.string.section_privacy appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:46: Warning: The resource R.string.section_privacy appears to be unused [UnusedResources]
     <string name="section_privacy">Privacy &amp; Battery</string>
             ~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:50: Warning: The resource R.string.setting_haptics_title appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:50: Warning: The resource R.string.setting_haptics_title appears to be unused [UnusedResources]
     <string name="setting_haptics_title">Haptic Feedback</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:51: Warning: The resource R.string.setting_haptics_desc appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:51: Warning: The resource R.string.setting_haptics_desc appears to be unused [UnusedResources]
     <string name="setting_haptics_desc">Provide subtle tactile vibration when sliders snap or mute toggles.</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:52: Warning: The resource R.string.setting_theme_title appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:52: Warning: The resource R.string.setting_theme_title appears to be unused [UnusedResources]
     <string name="setting_theme_title">Theme Mode</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:53: Warning: The resource R.string.setting_theme_system appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:53: Warning: The resource R.string.setting_theme_system appears to be unused [UnusedResources]
     <string name="setting_theme_system">System Default</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:54: Warning: The resource R.string.setting_theme_light appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:54: Warning: The resource R.string.setting_theme_light appears to be unused [UnusedResources]
     <string name="setting_theme_light">Light</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:55: Warning: The resource R.string.setting_theme_dark appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:55: Warning: The resource R.string.setting_theme_dark appears to be unused [UnusedResources]
     <string name="setting_theme_dark">Dark</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:58: Warning: The resource R.string.warning_max_volume_reached appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:58: Warning: The resource R.string.warning_max_volume_reached appears to be unused [UnusedResources]
     <string name="warning_max_volume_reached">Maximum safe volume cap active (%1$d%%)</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:62: Warning: The resource R.string.privacy_banner_title appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:62: Warning: The resource R.string.privacy_banner_title appears to be unused [UnusedResources]
     <string name="privacy_banner_title">100% Offline &amp; Private</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:72: Warning: The resource R.string.notification_action_settings appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:69: Warning: The resource R.string.notification_text appears to be unused [UnusedResources]
+    <string name="notification_text">Tap to open VolumePilot settings or adjust volume.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:70: Warning: The resource R.string.notification_action_pause appears to be unused [UnusedResources]
+    <string name="notification_action_pause">Pause</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:71: Warning: The resource R.string.notification_action_resume appears to be unused [UnusedResources]
+    <string name="notification_action_resume">Resume</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:72: Warning: The resource R.string.notification_action_settings appears to be unused [UnusedResources]
     <string name="notification_action_settings">Settings</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:80: Warning: The resource R.string.overlay_panel_title appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:80: Warning: The resource R.string.overlay_panel_title appears to be unused [UnusedResources]
     <string name="overlay_panel_title">Volume Control</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:81: Warning: The resource R.string.action_close appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:81: Warning: The resource R.string.action_close appears to be unused [UnusedResources]
     <string name="action_close">Close</string>
             ~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:84: Warning: The resource R.string.cd_volume_slider appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:84: Warning: The resource R.string.cd_volume_slider appears to be unused [UnusedResources]
     <string name="cd_volume_slider">%1$s volume: %2$d percent</string>
             ~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:85: Warning: The resource R.string.cd_mute_button appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:85: Warning: The resource R.string.cd_mute_button appears to be unused [UnusedResources]
     <string name="cd_mute_button">Mute %1$s stream</string>
             ~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:86: Warning: The resource R.string.cd_unmute_button appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:86: Warning: The resource R.string.cd_unmute_button appears to be unused [UnusedResources]
     <string name="cd_unmute_button">Unmute %1$s stream</string>
             ~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:87: Warning: The resource R.string.cd_decrease_volume appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:87: Warning: The resource R.string.cd_decrease_volume appears to be unused [UnusedResources]
     <string name="cd_decrease_volume">Decrease %1$s volume</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:88: Warning: The resource R.string.cd_increase_volume appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:88: Warning: The resource R.string.cd_increase_volume appears to be unused [UnusedResources]
     <string name="cd_increase_volume">Increase %1$s volume</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:89: Warning: The resource R.string.cd_audio_device_indicator appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:89: Warning: The resource R.string.cd_audio_device_indicator appears to be unused [UnusedResources]
     <string name="cd_audio_device_indicator">Current audio output: %1$s</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:90: Warning: The resource R.string.cd_app_icon appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:90: Warning: The resource R.string.cd_app_icon appears to be unused [UnusedResources]
     <string name="cd_app_icon">VolumePilot logo</string>
             ~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:91: Warning: The resource R.string.cd_overlay_bubble appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:91: Warning: The resource R.string.cd_overlay_bubble appears to be unused [UnusedResources]
     <string name="cd_overlay_bubble">VolumePilot floating button. Tap to expand, drag to move, double-tap to mute.</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~
-D:\assitivePilot\app\src\main\res\values\strings.xml:92: Warning: The resource R.string.cd_overlay_panel appears to be unused [UnusedResources]
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:92: Warning: The resource R.string.cd_overlay_panel appears to be unused [UnusedResources]
     <string name="cd_overlay_panel">Floating volume panel</string>
             ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:96: Warning: The resource R.string.accessibility_permission_title appears to be unused [UnusedResources]
+    <string name="accessibility_permission_title">Accessibility Service</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:97: Warning: The resource R.string.accessibility_permission_desc appears to be unused [UnusedResources]
+    <string name="accessibility_permission_desc">Required to lock your screen and capture screenshots from the floating power button without using physical hardware keys.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:98: Warning: The resource R.string.accessibility_enable_btn appears to be unused [UnusedResources]
+    <string name="accessibility_enable_btn">Enable Accessibility</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:99: Warning: The resource R.string.accessibility_status_active appears to be unused [UnusedResources]
+    <string name="accessibility_status_active">Accessibility Service Active</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:100: Warning: The resource R.string.accessibility_status_needed appears to be unused [UnusedResources]
+    <string name="accessibility_status_needed">Accessibility permission required for power and screenshot actions</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:103: Warning: The resource R.string.section_floating_controls appears to be unused [UnusedResources]
+    <string name="section_floating_controls">Floating Control Widget</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:104: Warning: The resource R.string.setting_button_arrangement appears to be unused [UnusedResources]
+    <string name="setting_button_arrangement">Button Order</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:105: Warning: The resource R.string.setting_widget_color appears to be unused [UnusedResources]
+    <string name="setting_widget_color">Accent Color</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:106: Warning: The resource R.string.setting_power_single_tap appears to be unused [UnusedResources]
+    <string name="setting_power_single_tap">Power Single Tap</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:107: Warning: The resource R.string.setting_power_long_press appears to be unused [UnusedResources]
+    <string name="setting_power_long_press">Power Long Press</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:108: Warning: The resource R.string.setting_widget_size appears to be unused [UnusedResources]
+    <string name="setting_widget_size">Widget Button Size</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml:109: Warning: The resource R.string.setting_widget_opacity appears to be unused [UnusedResources]
+    <string name="setting_widget_opacity">Transparency</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "UnusedResources":
    Unused resources make applications larger and slow down builds.
@@ -588,20 +617,72 @@ D:\assitivePilot\app\src\main\res\values\strings.xml:92: Warning: The resource R
    lint.unused-resources.exclude-tests =true.
    ,
 
-D:\assitivePilot\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-^
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/drawable/assistive_app_logo.png: Warning: Found bitmap drawable res/drawable/assistive_app_logo.png in densityless folder [IconLocation]
 
-   Explanation for issues of type "MonochromeLauncherIcon":
-   If android:roundIcon and android:icon are both in your manifest, you must
-   either remove the reference to android:roundIcon if it is not needed; or,
-   supply the monochrome icon in the drawable defined by the android:roundIcon
-   and android:icon attribute.
+   Explanation for issues of type "IconLocation":
+   The res/drawable folder is intended for density-independent graphics such
+   as shapes defined in XML. For bitmaps, move it to drawable-mdpi and
+   consider providing higher and lower resolution versions in drawable-ldpi,
+   drawable-hdpi and drawable-xhdpi. If the icon really is density independent
+   (for example a solid color) you can place it in drawable-nodpi.
 
-   For example, if android:roundIcon and android:icon are both in the
-   manifest, a launcher might choose to use android:roundIcon over
-   android:icon to display the adaptive app icon. Therefore, your themed
-   application iconwill not show if your monochrome attribute is not also
-   specified in android:roundIcon.
+   https://developer.android.com/guide/practices/screens_support.html
 
-0 errors, 142 warnings
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_expanded.xml:58: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+        <Button
+         ~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_expanded.xml:71: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+        <Button
+         ~~~~~~
+
+   Explanation for issues of type "ButtonStyle":
+   Button bars typically use a borderless style for the buttons. Set the
+   style="?android:attr/buttonBarButtonStyle" attribute on each of the
+   buttons, and set style="?android:attr/buttonBarStyle" on the parent layout
+
+   https://d.android.com/r/studio-ui/designer/material/dialogs
+
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayContainerView.kt:24: Warning: Custom view OverlayContainerView is missing constructor used by tools: (Context) or (Context,AttributeSet) or (Context,AttributeSet,int) [ViewConstructor]
+class OverlayContainerView(
+      ~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ViewConstructor":
+   Some layout tools (such as the Android layout editor) need to find a
+   constructor with one of the following signatures:
+   * View(Context context)
+   * View(Context context, AttributeSet attrs)
+   * View(Context context, AttributeSet attrs, int defStyle)
+
+   If your custom view needs to perform initialization which does not apply
+   when used in a layout editor, you can surround the given code with a check
+   to see if View#isInEditMode() is false, since that method will return false
+   at runtime but true within a user interface editor.
+
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_compact.xml:41: Warning: Hardcoded string "Floating controls active", should use @string resource [HardcodedText]
+            android:text="Floating controls active"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_compact.xml:54: Warning: Hardcoded string "Hide", should use @string resource [HardcodedText]
+        android:text="Hide"
+        ~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_expanded.xml:45: Warning: Hardcoded string "Floating controls active", should use @string resource [HardcodedText]
+                android:text="Floating controls active"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_expanded.xml:77: Warning: Hardcoded string "Hide", should use @string resource [HardcodedText]
+            android:text="Hide"
+            ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+0 errors, 152 warnings

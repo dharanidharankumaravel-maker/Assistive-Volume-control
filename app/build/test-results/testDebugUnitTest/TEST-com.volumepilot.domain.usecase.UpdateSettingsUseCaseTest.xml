@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-29T09:49:02.230Z" hostname="DESKTOP-45Q6PEN" time="0.023">
+<testsuite name="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-31T10:45:14.210Z" hostname="Selva-MacBook-Air.local" time="0.004">
   <properties/>
-  <testcase name="setOverlayAppearance updates opacity size and auto hide delay" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.007"/>
-  <testcase name="setOverlayPosition persists coordinates and snapped edge" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.003"/>
-  <testcase name="setPreferredStreamType updates active default stream" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.003"/>
-  <testcase name="setThemeMode updates theme preference" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.003"/>
-  <testcase name="setStartOnBoot toggles reboot restoration preference" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.006"/>
+  <testcase name="setOverlayAppearance updates opacity size and auto hide delay" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.001"/>
+  <testcase name="setOverlayPosition persists coordinates and snapped edge" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.001"/>
+  <testcase name="setPreferredStreamType updates active default stream" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.0"/>
+  <testcase name="setThemeMode updates theme preference" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.0"/>
+  <testcase name="setStartOnBoot toggles reboot restoration preference" classname="com.volumepilot.domain.usecase.UpdateSettingsUseCaseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

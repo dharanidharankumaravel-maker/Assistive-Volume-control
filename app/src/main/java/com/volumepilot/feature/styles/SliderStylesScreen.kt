@@ -586,12 +586,13 @@ private fun StyleShowcaseSection(
                         )
 
                         // 2. Interactive stylized volume slider
+                        val isPreviewMuted = progress <= 0.02f
                         val previewStream = VolumeStream(
                             streamType = AudioStreamType.MEDIA,
                             currentVolume = (progress * 15).toInt(),
                             minVolume = 0,
                             maxVolume = 15,
-                            isMuted = false
+                            isMuted = isPreviewMuted
                         )
 
                         // If selected, use custom user width/height/radius; if unselected, use preset default proportions
@@ -613,8 +614,13 @@ private fun StyleShowcaseSection(
                                 onPreviewVolumeChange(style, pct)
                             },
                             onMuteToggle = {
-                                val current = previewLevels[style] ?: 0.65f
-                                onPreviewVolumeChange(style, if (current > 0f) 0f else 0.65f)
+                                onPreviewVolumeChange(style, if (isPreviewMuted) 0.65f else 0f)
+                            },
+                            onSecondaryAction = {
+                                onPreviewVolumeChange(style, if (isPreviewMuted) 0.65f else 0f)
+                            },
+                            onMoreOptions = {
+                                onSelectStyle(style)
                             },
                             overrideProgress = progress
                         )

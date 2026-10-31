@@ -116,7 +116,8 @@ fun OverlayPanelContent(
                     backgroundAlpha = sliderBackgroundAlpha,
                     onVolumeChange = { level -> onVolumeChange(streamType, level) },
                     onMuteToggle = { onMuteToggle(streamType) },
-                    onSecondaryAction = onToggleVibrate
+                    onSecondaryAction = onToggleVibrate,
+                    onMoreOptions = onClose
                 )
             }
         }

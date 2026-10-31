@@ -37,6 +37,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Remove
+import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.PowerSettingsNew
 import androidx.compose.material.icons.filled.TouchApp
@@ -45,11 +48,17 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Slider
+import com.volumepilot.core.designsystem.rgbGlow
 import com.volumepilot.domain.model.FloatingButtonArrangement
 import com.volumepilot.domain.model.FloatingButtonColor
+import com.volumepilot.domain.model.FloatingButtonType
 import com.volumepilot.domain.model.PowerLongPressAction
 import com.volumepilot.domain.model.PowerSingleTapAction
 import com.volumepilot.service.accessibility.VolumeAccessibilityService
+import androidx.compose.runtime.DisposableEffect
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.Card
@@ -105,6 +114,7 @@ fun HomeScreen(
     onUpdatePowerLongPress: (com.volumepilot.domain.model.PowerLongPressAction) -> Unit = {},
     onUpdateOverlayAppearance: (Float, Int) -> Unit = { _, _ -> },
     onUpdateRgbGlow: (Boolean, Float) -> Unit = { _, _ -> },
+    onRefreshPermissions: () -> Unit = {},
     onNavigateToDiagnostics: () -> Unit,
     onNavigateToProfiles: () -> Unit = {},
     onNavigateToAutomation: () -> Unit = {},
@@ -114,7 +124,21 @@ fun HomeScreen(
 ) {
     val spacing = LocalSpacing.current
     val context = androidx.compose.ui.platform.LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
     val snackbarHostState = remember { SnackbarHostState() }
+
+    // Automatically synchronize permission states when returning from Android Settings
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME) {
+                onRefreshPermissions()
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+        }
+    }
 
     LaunchedEffect(uiState.error) {
         uiState.error?.let { err ->
@@ -227,7 +251,7 @@ fun HomeScreen(
                             Spacer(modifier = Modifier.height(spacing.small))
                             FloatingWidgetCustomizationCard(
                                 settings = uiState.settings,
-                                isAccessibilityGranted = uiState.isAccessibilityGranted,
+                                accessibilityStatus = uiState.accessibilityStatus,
                                 onUpdateArrangement = onUpdateWidgetArrangement,
                                 onUpdateColor = onUpdateWidgetColor,
                                 onUpdatePowerSingleTap = onUpdatePowerSingleTap,
@@ -481,7 +505,7 @@ private fun PresetChip(
 @Composable
 private fun FloatingWidgetCustomizationCard(
     settings: com.volumepilot.domain.model.UserSettings,
-    isAccessibilityGranted: Boolean,
+    accessibilityStatus: VolumeAccessibilityService.AccessibilityServiceStatus,
     onUpdateArrangement: (FloatingButtonArrangement) -> Unit,
     onUpdateColor: (FloatingButtonColor) -> Unit,
     onUpdatePowerSingleTap: (PowerSingleTapAction) -> Unit,
@@ -492,18 +516,20 @@ private fun FloatingWidgetCustomizationCard(
     modifier: Modifier = Modifier
 ) {
     val spacing = LocalSpacing.current
+    val accentColor = Color(settings.widgetColor.primaryColor)
 
     Card(
         modifier = modifier.fillMaxWidth(),
-        shape = MaterialTheme.shapes.medium,
+        shape = RoundedCornerShape(18.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f)
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)
         )
     ) {
         Column(
             modifier = Modifier.padding(spacing.medium),
-            verticalArrangement = Arrangement.spacedBy(spacing.small)
+            verticalArrangement = Arrangement.spacedBy(spacing.medium)
         ) {
+            // Header
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
@@ -511,101 +537,46 @@ private fun FloatingWidgetCustomizationCard(
                 Icon(
                     imageVector = Icons.Default.TouchApp,
                     contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary,
+                    tint = accentColor,
                     modifier = Modifier.size(20.dp)
                 )
                 Text(
-                    text = "Floating Controls Customization",
-                    style = MaterialTheme.typography.titleMedium,
+                    text = "Floating Controls Setup",
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                     color = MaterialTheme.colorScheme.onSurface
                 )
             }
 
-            // Accessibility permission helper card
-            if (!isAccessibilityGranted) {
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = MaterialTheme.shapes.small,
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.5f)
-                    )
-                ) {
-                    Column(
-                        modifier = Modifier.padding(spacing.small),
-                        verticalArrangement = Arrangement.spacedBy(spacing.extraSmall)
-                    ) {
-                        Text(
-                            text = "Accessibility Permission Needed",
-                            style = MaterialTheme.typography.labelMedium,
-                            color = MaterialTheme.colorScheme.error
-                        )
-                        Text(
-                            text = "Required for software Lock Screen and Screenshot shortcuts without hardware buttons.",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onErrorContainer
-                        )
-                        Button(
-                            onClick = onOpenAccessibility,
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.error
-                            ),
-                            modifier = Modifier.align(Alignment.End)
-                        ) {
-                            Text("Enable Accessibility", style = MaterialTheme.typography.labelSmall)
-                        }
-                    }
-                }
-            } else {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Check,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.size(16.dp)
-                    )
-                    Text(
-                        text = "Accessibility Service Active (Power & Screenshot ready)",
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                }
+            // 1. Accessibility Service Status Component
+            AccessibilityStatusCard(
+                status = accessibilityStatus,
+                onOpenAccessibility = onOpenAccessibility
+            )
+
+            // 2. Live Floating Controls Preview
+            FloatingControlsLivePreview(
+                settings = settings
+            )
+
+            // 3. Button Configuration & Ordering UI (Clean 6-option visual selection cards)
+            Column(verticalArrangement = Arrangement.spacedBy(spacing.extraSmall)) {
+                Text(
+                    text = "Button Combination",
+                    style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                Text(
+                    text = "Choose the floating buttons to display on your screen edge",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
             }
 
-            // 1. Button Configuration & Order
-            Text(
-                text = "Button Configuration & Order",
-                style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+            ButtonConfigurationSelectionGrid(
+                selectedArrangement = settings.buttonArrangement,
+                accentColor = accentColor,
+                onSelectArrangement = onUpdateArrangement
             )
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .horizontalScroll(rememberScrollState()),
-                horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
-            ) {
-                FloatingButtonArrangement.values().forEach { arrangement ->
-                    FilterChip(
-                        selected = settings.buttonArrangement == arrangement,
-                        onClick = { onUpdateArrangement(arrangement) },
-                        label = {
-                            Text(
-                                text = when (arrangement) {
-                                    FloatingButtonArrangement.UP_DOWN -> "+ • − (Volume Only)"
-                                    FloatingButtonArrangement.POWER_UP_DOWN -> "Power • + • −"
-                                    FloatingButtonArrangement.UP_DOWN_POWER -> "+ • − • Power"
-                                    FloatingButtonArrangement.UP_POWER_DOWN -> "+ • Power • −"
-                                    FloatingButtonArrangement.POWER_UP -> "Power • +"
-                                    FloatingButtonArrangement.POWER_DOWN -> "Power • −"
-                                },
-                                style = MaterialTheme.typography.labelSmall
-                            )
-                        }
-                    )
-                }
-            }
 
             // 2. Widget Color Accent
             Text(
@@ -788,6 +759,482 @@ private fun FloatingWidgetCustomizationCard(
                         onUpdateRgbGlow(settings.rgbGlowEnabled, newIntensity)
                     },
                     valueRange = 0.2f..1.0f
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun AccessibilityStatusCard(
+    status: VolumeAccessibilityService.AccessibilityServiceStatus,
+    onOpenAccessibility: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val spacing = LocalSpacing.current
+
+    when (status) {
+        VolumeAccessibilityService.AccessibilityServiceStatus.ENABLED -> {
+            Card(
+                modifier = modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(14.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.35f)
+                ),
+                border = androidx.compose.foundation.BorderStroke(
+                    width = 1.dp,
+                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)
+                )
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(spacing.medium),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(spacing.small)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .size(36.dp)
+                            .clip(CircleShape)
+                            .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Check,
+                            contentDescription = "Accessibility active",
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = "Accessibility Enabled",
+                            style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.SemiBold),
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Spacer(modifier = Modifier.height(2.dp))
+                        Text(
+                            text = "Active • Lock Screen, Power Menu & Screenshot shortcuts ready.",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            }
+        }
+
+        VolumeAccessibilityService.AccessibilityServiceStatus.CONNECTING -> {
+            Card(
+                modifier = modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(14.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.35f)
+                ),
+                border = androidx.compose.foundation.BorderStroke(
+                    width = 1.dp,
+                    color = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.5f)
+                )
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(spacing.medium),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(spacing.small)
+                ) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(24.dp),
+                        strokeWidth = 2.5.dp,
+                        color = MaterialTheme.colorScheme.tertiary
+                    )
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = "Connecting to Service...",
+                            style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.SemiBold),
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Spacer(modifier = Modifier.height(2.dp))
+                        Text(
+                            text = "Permission enabled in Settings. Initializing accessibility link...",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            }
+        }
+
+        VolumeAccessibilityService.AccessibilityServiceStatus.DISABLED -> {
+            Card(
+                modifier = modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(14.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.25f)
+                ),
+                border = androidx.compose.foundation.BorderStroke(
+                    width = 1.dp,
+                    color = MaterialTheme.colorScheme.error.copy(alpha = 0.4f)
+                )
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(spacing.medium),
+                    verticalArrangement = Arrangement.spacedBy(spacing.small)
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(spacing.small)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(34.dp)
+                                .clip(CircleShape)
+                                .background(MaterialTheme.colorScheme.error.copy(alpha = 0.15f)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.HealthAndSafety,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.error,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = "Accessibility Disabled",
+                                style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.SemiBold),
+                                color = MaterialTheme.colorScheme.error
+                            )
+                            Text(
+                                text = "Required for software Power, Lock Screen, and Screenshot actions without hardware buttons.",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.End
+                    ) {
+                        Button(
+                            onClick = onOpenAccessibility,
+                            shape = RoundedCornerShape(10.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.error
+                            )
+                        ) {
+                            Text("Enable Accessibility", style = MaterialTheme.typography.labelSmall)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun FloatingControlsLivePreview(
+    settings: com.volumepilot.domain.model.UserSettings,
+    modifier: Modifier = Modifier
+) {
+    val spacing = LocalSpacing.current
+    val accentColor = Color(settings.widgetColor.primaryColor)
+    val buttons = settings.buttonArrangement.getButtons()
+
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.95f)
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            width = 1.dp,
+            color = accentColor.copy(alpha = 0.35f)
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(spacing.medium),
+            verticalArrangement = Arrangement.spacedBy(spacing.small)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(spacing.extraSmall)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Visibility,
+                        contentDescription = null,
+                        tint = accentColor,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Text(
+                        text = "Live Floating Controls Preview",
+                        style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                }
+
+                AssistChip(
+                    onClick = {},
+                    enabled = false,
+                    label = {
+                        Text(
+                            text = if (settings.buttonArrangement.isVolumeOnly) "Compact Bar" else "Full Panel",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = accentColor
+                        )
+                    },
+                    colors = AssistChipDefaults.assistChipColors(
+                        containerColor = accentColor.copy(alpha = 0.12f),
+                        disabledContainerColor = accentColor.copy(alpha = 0.12f),
+                        disabledLabelColor = accentColor
+                    ),
+                    border = null
+                )
+            }
+
+            // Preview Stage
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(130.dp)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(Color(0xFF161A22))
+                    .border(
+                        width = 1.dp,
+                        color = Color.White.copy(alpha = 0.08f),
+                        shape = RoundedCornerShape(12.dp)
+                    ),
+                contentAlignment = Alignment.Center
+            ) {
+                // Render circular buttons in vertical arrangement exactly as shown on the screen edge
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    buttons.forEach { buttonType ->
+                        val icon = when (buttonType) {
+                            FloatingButtonType.POWER -> Icons.Default.PowerSettingsNew
+                            FloatingButtonType.VOLUME_UP -> Icons.Default.Add
+                            FloatingButtonType.VOLUME_DOWN -> Icons.Default.Remove
+                            FloatingButtonType.TOGGLE_CONTROL -> Icons.Default.Tune
+                        }
+                        val iconTint = when (buttonType) {
+                            FloatingButtonType.POWER -> MaterialTheme.colorScheme.error.copy(alpha = 0.95f)
+                            else -> accentColor
+                        }
+
+                        Box(
+                            modifier = Modifier
+                                .size(34.dp)
+                                .rgbGlow(
+                                    shape = CircleShape,
+                                    enabled = settings.rgbGlowEnabled,
+                                    intensity = settings.rgbGlowIntensity,
+                                    strokeWidth = 1.3.dp,
+                                    durationMillis = settings.rgbSpeedMillis
+                                )
+                                .clip(CircleShape)
+                                .background(MaterialTheme.colorScheme.surface.copy(alpha = settings.overlayOpacity))
+                                .border(
+                                    width = if (settings.rgbGlowEnabled) 0.5.dp else 1.2.dp,
+                                    color = if (settings.rgbGlowEnabled) Color.Transparent else accentColor.copy(alpha = 0.7f),
+                                    shape = CircleShape
+                                ),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(
+                                imageVector = icon,
+                                contentDescription = null,
+                                tint = iconTint,
+                                modifier = Modifier.size(16.dp)
+                            )
+                        }
+                    }
+                }
+            }
+
+            Text(
+                text = when {
+                    settings.buttonArrangement.isVolumeOnly ->
+                        "• Compact Mode: Touching controls directly slides out the slim single volume bar."
+                    settings.buttonArrangement.hasToggle ->
+                        "• Panel Mode: Dedicated sliders button toggles the expanded multi-stream volume panel."
+                    settings.buttonArrangement == FloatingButtonArrangement.POWER_ONLY ->
+                        "• Standalone circular power button for screen lock and screenshot gestures."
+                    else ->
+                        "• Floating buttons provide direct volume adjustment; power button performs system actions."
+                },
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+    }
+}
+
+@Composable
+private fun ButtonConfigurationSelectionGrid(
+    selectedArrangement: FloatingButtonArrangement,
+    accentColor: Color,
+    onSelectArrangement: (FloatingButtonArrangement) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val spacing = LocalSpacing.current
+    val configurations = FloatingButtonArrangement.PRIMARY_CONFIGURATIONS
+
+    Column(
+        modifier = modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(spacing.small)
+    ) {
+        configurations.chunked(2).forEach { rowConfigs ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(spacing.small)
+            ) {
+                rowConfigs.forEach { config ->
+                    val isSelected = selectedArrangement == config ||
+                            (selectedArrangement.getButtons() == config.getButtons())
+                    ButtonConfigurationCard(
+                        arrangement = config,
+                        isSelected = isSelected,
+                        accentColor = accentColor,
+                        onClick = { onSelectArrangement(config) },
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                if (rowConfigs.size == 1) {
+                    Spacer(modifier = Modifier.weight(1f))
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ButtonConfigurationCard(
+    arrangement: FloatingButtonArrangement,
+    isSelected: Boolean,
+    accentColor: Color,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val buttons = arrangement.getButtons()
+    val title = when (arrangement) {
+        FloatingButtonArrangement.POWER_ONLY -> "Power Only"
+        FloatingButtonArrangement.UP_DOWN -> "Vol+ & Vol-"
+        FloatingButtonArrangement.POWER_TOGGLE -> "Power + Panel"
+        FloatingButtonArrangement.POWER_UP_DOWN -> "Power + Volume"
+        FloatingButtonArrangement.TOGGLE_ONLY -> "Panel Only"
+        FloatingButtonArrangement.POWER_TOGGLE_UP_DOWN -> "All Controls"
+        else -> arrangement.displayName
+    }
+
+    val subtitle = when (arrangement) {
+        FloatingButtonArrangement.POWER_ONLY -> "Key fallback"
+        FloatingButtonArrangement.UP_DOWN -> "Compact slider"
+        FloatingButtonArrangement.POWER_TOGGLE -> "Power & panel"
+        FloatingButtonArrangement.POWER_UP_DOWN -> "Power & volume"
+        FloatingButtonArrangement.TOGGLE_ONLY -> "Volume panel"
+        FloatingButtonArrangement.POWER_TOGGLE_UP_DOWN -> "Full suite"
+        else -> "Custom"
+    }
+
+    Card(
+        modifier = modifier
+            .fillMaxWidth()
+            .clickable { onClick() },
+        shape = RoundedCornerShape(14.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = if (isSelected) accentColor.copy(alpha = 0.12f) else MaterialTheme.colorScheme.surface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            width = if (isSelected) 2.dp else 1.dp,
+            color = if (isSelected) accentColor else MaterialTheme.colorScheme.outline.copy(alpha = 0.2f)
+        )
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
+            // Top: Row of mini circular button icons + Check indicator if selected
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(4.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    buttons.forEach { buttonType ->
+                        val icon = when (buttonType) {
+                            FloatingButtonType.POWER -> Icons.Default.PowerSettingsNew
+                            FloatingButtonType.VOLUME_UP -> Icons.Default.Add
+                            FloatingButtonType.VOLUME_DOWN -> Icons.Default.Remove
+                            FloatingButtonType.TOGGLE_CONTROL -> Icons.Default.Tune
+                        }
+                        val tint = when (buttonType) {
+                            FloatingButtonType.POWER -> MaterialTheme.colorScheme.error
+                            else -> if (isSelected) accentColor else MaterialTheme.colorScheme.onSurfaceVariant
+                        }
+
+                        Box(
+                            modifier = Modifier
+                                .size(24.dp)
+                                .clip(CircleShape)
+                                .background(tint.copy(alpha = 0.14f)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(
+                                imageVector = icon,
+                                contentDescription = null,
+                                tint = tint,
+                                modifier = Modifier.size(14.dp)
+                            )
+                        }
+                    }
+                }
+
+                if (isSelected) {
+                    Box(
+                        modifier = Modifier
+                            .size(18.dp)
+                            .clip(CircleShape)
+                            .background(accentColor),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Check,
+                            contentDescription = "Selected",
+                            tint = Color.White,
+                            modifier = Modifier.size(12.dp)
+                        )
+                    }
+                }
+            }
+
+            Column {
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.labelMedium.copy(fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium),
+                    color = if (isSelected) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = subtitle,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (isSelected) accentColor else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
                 )
             }
         }

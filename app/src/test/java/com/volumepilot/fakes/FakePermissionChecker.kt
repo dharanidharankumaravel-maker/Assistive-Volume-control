@@ -9,6 +9,15 @@ class FakePermissionChecker : PermissionChecker {
     var notificationPolicyGranted: Boolean = true
     var postNotificationsGranted: Boolean = true
     var accessibilityGranted: Boolean = true
+    var customAccessibilityStatus: com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus? = null
+
+    override fun getAccessibilityStatus(): com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus {
+        return customAccessibilityStatus ?: if (accessibilityGranted) {
+            com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.ENABLED
+        } else {
+            com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.DISABLED
+        }
+    }
 
     override fun isPermissionGranted(permission: PermissionType): Boolean {
         return when (permission) {

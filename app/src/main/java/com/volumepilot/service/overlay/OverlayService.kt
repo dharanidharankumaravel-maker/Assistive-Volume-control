@@ -296,7 +296,8 @@ class OverlayService : Service() {
                                     },
                                     onMuteToggle = { handleMuteToggle(currentSettings.hapticFeedbackEnabled) },
                                     rgbGlowEnabled = currentSettings.rgbGlowEnabled,
-                                    rgbGlowIntensity = currentSettings.rgbGlowIntensity
+                                    rgbGlowIntensity = currentSettings.rgbGlowIntensity,
+                                    rgbSpeedMillis = currentSettings.rgbSpeedMillis
                                 )
 
                                 AnimatedVisibility(
@@ -332,6 +333,9 @@ class OverlayService : Service() {
                                                 serviceScope.launch {
                                                     toggleVibrateUseCase()
                                                 }
+                                            },
+                                            onMoreOptions = {
+                                                setPanelExpanded(true)
                                             },
                                             opacity = currentSettings.overlayOpacity,
                                             colorTheme = currentSettings.widgetColor,
@@ -426,6 +430,9 @@ class OverlayService : Service() {
                                                     toggleVibrateUseCase()
                                                 }
                                             },
+                                            onMoreOptions = {
+                                                setPanelExpanded(true)
+                                            },
                                             opacity = currentSettings.overlayOpacity,
                                             colorTheme = currentSettings.widgetColor,
                                             rgbGlowEnabled = currentSettings.rgbGlowEnabled,
@@ -512,7 +519,8 @@ class OverlayService : Service() {
                                     },
                                     onMuteToggle = { handleMuteToggle(currentSettings.hapticFeedbackEnabled) },
                                     rgbGlowEnabled = currentSettings.rgbGlowEnabled,
-                                    rgbGlowIntensity = currentSettings.rgbGlowIntensity
+                                    rgbGlowIntensity = currentSettings.rgbGlowIntensity,
+                                    rgbSpeedMillis = currentSettings.rgbSpeedMillis
                                 )
                             }
                         }

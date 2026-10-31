@@ -5,19 +5,19 @@
     minSdkVersion="26"
     targetSdkVersion="35"
     debuggable="true"
-    mergedManifest="build\intermediates\merged_manifest\debug\processDebugMainManifest\AndroidManifest.xml"
-    partialResultsDir="build\intermediates\android_test_lint_partial_results\debug\lintAnalyzeDebugAndroidTest\out"
-    desugaredMethodsFiles="C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\eee24a13c031a25de9f4944a63612237\workspace\transformed\D8BackportedDesugaredMethods.txt">
+    mergedManifest="build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml"
+    partialResultsDir="build/intermediates/android_test_lint_partial_results/debug/lintAnalyzeDebugAndroidTest/out"
+    desugaredMethodsFiles="/Users/apple/.gradle/caches/9.1.0/transforms/eee24a13c031a25de9f4944a63612237/transformed/D8BackportedDesugaredMethods.txt">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
   </sourceProviders>
   <testSourceProviders>
     <sourceProvider
-        manifests="src\androidTest\AndroidManifest.xml"
-        javaDirectories="src\androidTest\java;src\androidTestDebug\java;src\androidTest\kotlin;src\androidTestDebug\kotlin"
-        resDirectories="src\androidTest\res;src\androidTestDebug\res"
-        assetsDirectories="src\androidTest\assets;src\androidTestDebug\assets"
+        manifests="src/androidTest/AndroidManifest.xml"
+        javaDirectories="src/androidTest/java:src/androidTestDebug/java:src/androidTest/kotlin:src/androidTestDebug/kotlin"
+        resDirectories="src/androidTest/res:src/androidTestDebug/res"
+        assetsDirectories="src/androidTest/assets:src/androidTestDebug/assets"
         androidTest="true"/>
   </testSourceProviders>
   <testFixturesSourceProviders>
@@ -25,7 +25,7 @@
   <artifact
       type="INSTRUMENTATION_TEST"
       applicationId="com.volumepilot.debug.test"
-      generatedResourceFolders="build\generated\res\resValues\androidTest\debug"
-      desugaredMethodsFiles="C:\Users\Santhana Raja - DCI\.gradle\caches\9.1.0\transforms\eee24a13c031a25de9f4944a63612237\workspace\transformed\D8BackportedDesugaredMethods.txt">
+      generatedResourceFolders="build/generated/res/resValues/androidTest/debug"
+      desugaredMethodsFiles="/Users/apple/.gradle/caches/9.1.0/transforms/eee24a13c031a25de9f4944a63612237/transformed/D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

@@ -8,12 +8,12 @@
         <fix-data missing="android.permission.POST_NOTIFICATIONS"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/volumepilot/service/overlay/OverlayService.kt"
-            line="354"
+            line="704"
             column="9"
-            startOffset="15100"
-            endLine="354"
+            startOffset="36767"
+            endLine="704"
             endColumn="75"
-            endOffset="15166"/>
+            endOffset="36833"/>
     </incident>
 
     <incident

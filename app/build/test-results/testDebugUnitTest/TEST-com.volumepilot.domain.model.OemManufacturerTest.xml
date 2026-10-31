@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.domain.model.OemManufacturerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-29T09:49:01.839Z" hostname="DESKTOP-45Q6PEN" time="0.021">
+<testsuite name="com.volumepilot.domain.model.OemManufacturerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-31T10:45:14.119Z" hostname="Selva-MacBook-Air.local" time="0.004">
   <properties/>
-  <testcase name="detect correctly classifies popular OEM brands" classname="com.volumepilot.domain.model.OemManufacturerTest" time="0.021"/>
+  <testcase name="detect correctly classifies popular OEM brands" classname="com.volumepilot.domain.model.OemManufacturerTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

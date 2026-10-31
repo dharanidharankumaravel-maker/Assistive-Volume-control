@@ -4,7 +4,6 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.detectVerticalDragGestures
@@ -12,10 +11,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -28,7 +23,6 @@ import androidx.compose.material.icons.automirrored.filled.PhoneMissed
 import androidx.compose.material.icons.automirrored.filled.VolumeMute
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.Alarm
-import androidx.compose.material.icons.filled.Bedtime
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.MoreHoriz
 import androidx.compose.material.icons.filled.MusicNote
@@ -42,7 +36,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.pointer.pointerInput
@@ -63,8 +56,8 @@ import kotlin.math.roundToInt
  * - [SliderStyle.GOOGLE]: Tall Material You pill with top circular speaker badge, inner active pill with music note, and bottom mute button.
  * - [SliderStyle.APPLE]: Sleek, frosted vertical capsule with smooth rounded corners and clean integrated indicator.
  * - [SliderStyle.SAMSUNG]: Slim One UI capsule with top triple-dot indicator and minimal volume level fill.
- * - [SliderStyle.XIAOMI]: MIUI / HyperOS rounded capsule with bottom quick action buttons (Bell & Crescent Moon).
- * - [SliderStyle.ONEPLUS]: Bold OxygenOS capsule with bottom action controls (Three dots & Alert mode).
+ * - [SliderStyle.XIAOMI]: MIUI / HyperOS rounded capsule with bottom quick action buttons (Stream Mute & Vibration).
+ * - [SliderStyle.ONEPLUS]: Bold OxygenOS capsule with bottom action controls (More options & Vibration mode).
  */
 @Composable
 fun StylizedVolumeSlider(
@@ -79,6 +72,7 @@ fun StylizedVolumeSlider(
     onVolumeChange: (Int) -> Unit,
     onMuteToggle: () -> Unit,
     onSecondaryAction: () -> Unit = {},
+    onMoreOptions: () -> Unit = onSecondaryAction,
     modifier: Modifier = Modifier,
     overrideProgress: Float? = null // For preview mock sliders
 ) {
@@ -113,6 +107,7 @@ fun StylizedVolumeSlider(
             SliderStyle.GOOGLE -> GoogleSlider(
                 progress = animatedProgress,
                 isMuted = isMuted,
+                streamType = streamType,
                 accentColor = accentColor,
                 sliderWidth = sliderWidth,
                 sliderHeight = sliderHeight,
@@ -128,6 +123,7 @@ fun StylizedVolumeSlider(
             SliderStyle.APPLE -> AppleSlider(
                 progress = animatedProgress,
                 isMuted = isMuted,
+                streamType = streamType,
                 accentColor = accentColor,
                 sliderWidth = sliderWidth,
                 sliderHeight = sliderHeight,
@@ -143,6 +139,7 @@ fun StylizedVolumeSlider(
             SliderStyle.SAMSUNG -> SamsungSlider(
                 progress = animatedProgress,
                 isMuted = isMuted,
+                streamType = streamType,
                 accentColor = accentColor,
                 sliderWidth = sliderWidth,
                 sliderHeight = sliderHeight,
@@ -153,11 +150,13 @@ fun StylizedVolumeSlider(
                     val newLevel = (minVol + (pct * (maxVol - minVol)).roundToInt()).coerceIn(minVol, maxVol)
                     onVolumeChange(newLevel)
                 },
-                onMuteToggle = onMuteToggle
+                onMuteToggle = onMuteToggle,
+                onMoreOptions = onMoreOptions
             )
             SliderStyle.XIAOMI -> XiaomiSlider(
                 progress = animatedProgress,
                 isMuted = isMuted,
+                streamType = streamType,
                 accentColor = accentColor,
                 sliderWidth = sliderWidth,
                 sliderHeight = sliderHeight,
@@ -174,6 +173,7 @@ fun StylizedVolumeSlider(
             SliderStyle.ONEPLUS -> OnePlusSlider(
                 progress = animatedProgress,
                 isMuted = isMuted,
+                streamType = streamType,
                 accentColor = accentColor,
                 sliderWidth = sliderWidth,
                 sliderHeight = sliderHeight,
@@ -185,7 +185,8 @@ fun StylizedVolumeSlider(
                     onVolumeChange(newLevel)
                 },
                 onMuteToggle = onMuteToggle,
-                onSecondaryAction = onSecondaryAction
+                onSecondaryAction = onSecondaryAction,
+                onMoreOptions = onMoreOptions
             )
         }
     }
@@ -199,6 +200,7 @@ fun StylizedVolumeSlider(
 private fun GoogleSlider(
     progress: Float,
     isMuted: Boolean,
+    streamType: AudioStreamType,
     accentColor: Color,
     sliderWidth: Dp,
     sliderHeight: Dp,
@@ -297,7 +299,7 @@ private fun GoogleSlider(
         )
     }
 
-    // 2. Separate Bottom Circular Button (Mute/Ringer toggle)
+    // 2. Separate Bottom Circular Button (Stream Mute toggle)
     Box(
         modifier = Modifier
             .size((sliderWidth - 4.dp).coerceAtLeast(30.dp))
@@ -306,9 +308,10 @@ private fun GoogleSlider(
             .clickable { onMuteToggle() },
         contentAlignment = Alignment.Center
     ) {
+        val buttonIcon = getStreamMuteIcon(streamType, isMuted)
         Icon(
-            imageVector = if (isMuted) Icons.AutoMirrored.Filled.VolumeMute else Icons.AutoMirrored.Filled.VolumeUp,
-            contentDescription = "Toggle Mute",
+            imageVector = buttonIcon,
+            contentDescription = if (isMuted) "Unmute ${streamType.displayName}" else "Mute ${streamType.displayName}",
             tint = if (isMuted) MaterialTheme.colorScheme.error else Color(0xFF45325A),
             modifier = Modifier.size(16.dp)
         )
@@ -323,6 +326,7 @@ private fun GoogleSlider(
 private fun AppleSlider(
     progress: Float,
     isMuted: Boolean,
+    streamType: AudioStreamType,
     accentColor: Color,
     sliderWidth: Dp,
     sliderHeight: Dp,
@@ -396,7 +400,7 @@ private fun AppleSlider(
         ) {
             Icon(
                 imageVector = streamIcon,
-                contentDescription = null,
+                contentDescription = if (isMuted) "Unmute ${streamType.displayName}" else "Mute ${streamType.displayName}",
                 tint = iconTint,
                 modifier = Modifier.size(17.dp)
             )
@@ -412,6 +416,7 @@ private fun AppleSlider(
 private fun SamsungSlider(
     progress: Float,
     isMuted: Boolean,
+    streamType: AudioStreamType,
     accentColor: Color,
     sliderWidth: Dp,
     sliderHeight: Dp,
@@ -419,7 +424,8 @@ private fun SamsungSlider(
     backgroundAlpha: Float,
     streamIcon: ImageVector,
     onVolumeChange: (Float) -> Unit,
-    onMuteToggle: () -> Unit
+    onMuteToggle: () -> Unit,
+    onMoreOptions: () -> Unit
 ) {
     val trackShape = RoundedCornerShape(cornerRadius)
     val containerBg = Color(0xFF422F55).copy(alpha = backgroundAlpha.coerceIn(0.2f, 0.95f))
@@ -467,17 +473,20 @@ private fun SamsungSlider(
                 .background(activeFillColor)
         )
 
-        // Top One UI Triple-dot indicator (...)
+        // Top One UI Triple-dot indicator (...) - Tapping triggers More Options / Expand
         Box(
             modifier = Modifier
                 .align(Alignment.TopCenter)
                 .padding(top = 6.dp)
+                .size(24.dp)
+                .clickable { onMoreOptions() },
+            contentAlignment = Alignment.Center
         ) {
             Icon(
                 imageVector = Icons.Default.MoreHoriz,
-                contentDescription = null,
-                tint = Color.White.copy(alpha = 0.65f),
-                modifier = Modifier.size(14.dp)
+                contentDescription = "More volume options",
+                tint = Color.White.copy(alpha = 0.85f),
+                modifier = Modifier.size(15.dp)
             )
         }
 
@@ -499,7 +508,7 @@ private fun SamsungSlider(
         ) {
             Icon(
                 imageVector = streamIcon,
-                contentDescription = null,
+                contentDescription = if (isMuted) "Unmute ${streamType.displayName}" else "Mute ${streamType.displayName}",
                 tint = iconTint,
                 modifier = Modifier.size(15.dp)
             )
@@ -515,6 +524,7 @@ private fun SamsungSlider(
 private fun XiaomiSlider(
     progress: Float,
     isMuted: Boolean,
+    streamType: AudioStreamType,
     accentColor: Color,
     sliderWidth: Dp,
     sliderHeight: Dp,
@@ -600,15 +610,15 @@ private fun XiaomiSlider(
             contentAlignment = Alignment.Center
         ) {
             Icon(
-                imageVector = Icons.Default.MusicNote,
-                contentDescription = null,
+                imageVector = streamIcon,
+                contentDescription = if (isMuted) "Unmute ${streamType.displayName}" else "Mute ${streamType.displayName}",
                 tint = iconTint,
                 modifier = Modifier.size(17.dp)
             )
         }
     }
 
-    // 2. Dual Bottom Circular Quick-Action Buttons (Bell & Crescent Moon)
+    // 2. Dual Bottom Circular Quick-Action Buttons (Mute & Vibration Mode)
     val buttonSize = (sliderWidth - 6.dp).coerceAtLeast(28.dp)
     Box(
         modifier = Modifier
@@ -618,10 +628,11 @@ private fun XiaomiSlider(
             .clickable { onMuteToggle() },
         contentAlignment = Alignment.Center
     ) {
+        val muteIcon = getStreamMuteIcon(streamType, isMuted)
         Icon(
-            imageVector = if (isMuted) Icons.Default.NotificationsOff else Icons.Default.NotificationsActive,
-            contentDescription = "Ringer Mode",
-            tint = Color.White,
+            imageVector = muteIcon,
+            contentDescription = if (isMuted) "Unmute ${streamType.displayName}" else "Mute ${streamType.displayName}",
+            tint = if (isMuted) MaterialTheme.colorScheme.error else Color.White,
             modifier = Modifier.size(14.dp)
         )
     }
@@ -635,9 +646,9 @@ private fun XiaomiSlider(
         contentAlignment = Alignment.Center
     ) {
         Icon(
-            imageVector = Icons.Default.Bedtime,
-            contentDescription = "DND Mode",
-            tint = Color.White.copy(alpha = 0.85f),
+            imageVector = Icons.Default.Vibration,
+            contentDescription = "Toggle Vibration Mode",
+            tint = Color.White.copy(alpha = 0.9f),
             modifier = Modifier.size(14.dp)
         )
     }
@@ -651,6 +662,7 @@ private fun XiaomiSlider(
 private fun OnePlusSlider(
     progress: Float,
     isMuted: Boolean,
+    streamType: AudioStreamType,
     accentColor: Color,
     sliderWidth: Dp,
     sliderHeight: Dp,
@@ -659,7 +671,8 @@ private fun OnePlusSlider(
     streamIcon: ImageVector,
     onVolumeChange: (Float) -> Unit,
     onMuteToggle: () -> Unit,
-    onSecondaryAction: () -> Unit
+    onSecondaryAction: () -> Unit,
+    onMoreOptions: () -> Unit
 ) {
     val trackShape = RoundedCornerShape(cornerRadius)
     val containerBg = Color(0xFF402E54).copy(alpha = backgroundAlpha.coerceIn(0.2f, 0.95f))
@@ -708,7 +721,7 @@ private fun OnePlusSlider(
                 .background(activeFillColor)
         )
 
-        // Bottom volume icon
+        // Bottom volume icon inside fill
         val iconTint = if (progress > 0.22f && !isMuted) {
             Color(0xFF332044)
         } else if (isMuted) {
@@ -726,26 +739,26 @@ private fun OnePlusSlider(
         ) {
             Icon(
                 imageVector = streamIcon,
-                contentDescription = null,
+                contentDescription = if (isMuted) "Unmute ${streamType.displayName}" else "Mute ${streamType.displayName}",
                 tint = iconTint,
                 modifier = Modifier.size(18.dp)
             )
         }
     }
 
-    // 2. Dual Bottom Circular Buttons (More ... & Sound Mode / Vibration)
+    // 2. Dual Bottom Circular Buttons (More Options ... & Alert Mode / Vibration)
     val buttonSize = (sliderWidth - 6.dp).coerceAtLeast(28.dp)
     Box(
         modifier = Modifier
             .size(buttonSize)
             .clip(CircleShape)
             .background(Color(0xFFF5EEF8))
-            .clickable { onSecondaryAction() },
+            .clickable { onMoreOptions() },
         contentAlignment = Alignment.Center
     ) {
         Icon(
             imageVector = Icons.Default.MoreHoriz,
-            contentDescription = "More Options",
+            contentDescription = "More volume options",
             tint = Color(0xFF3B2850),
             modifier = Modifier.size(16.dp)
         )
@@ -756,15 +769,27 @@ private fun OnePlusSlider(
             .size(buttonSize)
             .clip(CircleShape)
             .background(Color(0xFFF5EEF8))
-            .clickable { onMuteToggle() },
+            .clickable { onSecondaryAction() },
         contentAlignment = Alignment.Center
     ) {
         Icon(
-            imageVector = if (isMuted) Icons.AutoMirrored.Filled.VolumeMute else Icons.Default.Vibration,
-            contentDescription = "Alert Slider",
+            imageVector = Icons.Default.Vibration,
+            contentDescription = "Alert Mode / Toggle Vibrate",
             tint = Color(0xFF3B2850),
             modifier = Modifier.size(15.dp)
         )
+    }
+}
+
+/**
+ * Returns stream mute / unmute icons accurately reflecting stream type.
+ */
+fun getStreamMuteIcon(streamType: AudioStreamType, isMuted: Boolean): ImageVector {
+    return when (streamType) {
+        AudioStreamType.RING -> if (isMuted) Icons.Default.NotificationsOff else Icons.Default.NotificationsActive
+        AudioStreamType.VOICE_CALL -> if (isMuted) Icons.AutoMirrored.Filled.PhoneMissed else Icons.Default.Call
+        AudioStreamType.ALARM -> if (isMuted) Icons.AutoMirrored.Filled.VolumeMute else Icons.Default.Alarm
+        else -> if (isMuted) Icons.AutoMirrored.Filled.VolumeMute else Icons.AutoMirrored.Filled.VolumeUp
     }
 }
 
@@ -788,4 +813,3 @@ fun getStreamIcon(streamType: AudioStreamType, isMuted: Boolean): ImageVector {
         else -> Icons.AutoMirrored.Filled.VolumeUp
     }
 }
-

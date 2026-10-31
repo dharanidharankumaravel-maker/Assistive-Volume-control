@@ -14,7 +14,7 @@
         errorLine1="    val timeRangeStr = String.format(&quot;%02d:%02d - %02d:%02d&quot;, rule.startHour, rule.startMinute, rule.endHour, rule.endMinute)"
         errorLine2="                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\feature\automation\AutomationScreen.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/feature/automation/AutomationScreen.kt"
             line="439"
             column="24"/>
     </issue>
@@ -32,7 +32,7 @@
         errorLine1="        targetSdk = 35"
         errorLine2="        ~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\build.gradle.kts"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/build.gradle.kts"
             line="16"
             column="9"/>
     </issue>
@@ -50,7 +50,7 @@
         errorLine1="            Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS).apply {"
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\BatteryOptimizationHelper.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/core/battery/BatteryOptimizationHelper.kt"
             line="22"
             column="29"/>
     </issue>
@@ -68,7 +68,7 @@
         errorLine1="            if (intent.resolveActivity(pm) != null) {"
         errorLine2="                       ~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\OemSettingsHelper.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/core/battery/OemSettingsHelper.kt"
             line="113"
             column="24"/>
     </issue>
@@ -84,7 +84,7 @@
         errorLine1="agp = &quot;8.7.3&quot;"
         errorLine2="      ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="2"
             column="7"/>
     </issue>
@@ -100,7 +100,7 @@
         errorLine1="agp = &quot;8.7.3&quot;"
         errorLine2="      ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="2"
             column="7"/>
     </issue>
@@ -116,7 +116,7 @@
         errorLine1="agp = &quot;8.7.3&quot;"
         errorLine2="      ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="2"
             column="7"/>
     </issue>
@@ -132,7 +132,7 @@
         errorLine1="kotlin = &quot;2.0.21&quot;"
         errorLine2="         ~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="3"
             column="10"/>
     </issue>
@@ -148,7 +148,7 @@
         errorLine1="kotlin = &quot;2.0.21&quot;"
         errorLine2="         ~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="3"
             column="10"/>
     </issue>
@@ -164,7 +164,7 @@
         errorLine1="kotlin = &quot;2.0.21&quot;"
         errorLine2="         ~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="3"
             column="10"/>
     </issue>
@@ -180,7 +180,7 @@
         errorLine1="kotlin = &quot;2.0.21&quot;"
         errorLine2="         ~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="3"
             column="10"/>
     </issue>
@@ -196,7 +196,7 @@
         errorLine1="kotlin = &quot;2.0.21&quot;"
         errorLine2="         ~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="3"
             column="10"/>
     </issue>
@@ -212,7 +212,7 @@
         errorLine1="kotlin = &quot;2.0.21&quot;"
         errorLine2="         ~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="3"
             column="10"/>
     </issue>
@@ -220,54 +220,6 @@
     <issue
         id="GradleDependency"
         severity="Warning"
-        message="A newer version of com.google.devtools.ksp than 2.0.21-1.0.28 is available: 2.3.5"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="ksp = &quot;2.0.21-1.0.28&quot;"
-        errorLine2="      ~~~~~~~~~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="4"
-            column="7"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of com.google.devtools.ksp than 2.0.21-1.0.28 is available: 2.3.5"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="ksp = &quot;2.0.21-1.0.28&quot;"
-        errorLine2="      ~~~~~~~~~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="4"
-            column="7"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of com.google.devtools.ksp than 2.0.21-1.0.28 is available: 2.3.5"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="ksp = &quot;2.0.21-1.0.28&quot;"
-        errorLine2="      ~~~~~~~~~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="4"
-            column="7"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
         message="A newer version of androidx.compose:compose-bom than 2024.10.01 is available: 2026.09.00"
         category="Correctness"
         priority="4"
@@ -276,7 +228,7 @@
         errorLine1="compose-bom = &quot;2024.10.01&quot;"
         errorLine2="              ~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="6"
             column="15"/>
     </issue>
@@ -292,7 +244,7 @@
         errorLine1="compose-bom = &quot;2024.10.01&quot;"
         errorLine2="              ~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="6"
             column="15"/>
     </issue>
@@ -308,7 +260,7 @@
         errorLine1="compose-bom = &quot;2024.10.01&quot;"
         errorLine2="              ~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="6"
             column="15"/>
     </issue>
@@ -324,7 +276,7 @@
         errorLine1="androidx-core = &quot;1.15.0&quot;"
         errorLine2="                ~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="7"
             column="17"/>
     </issue>
@@ -340,7 +292,7 @@
         errorLine1="androidx-core = &quot;1.15.0&quot;"
         errorLine2="                ~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="7"
             column="17"/>
     </issue>
@@ -356,7 +308,7 @@
         errorLine1="androidx-core = &quot;1.15.0&quot;"
         errorLine2="                ~~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="7"
             column="17"/>
     </issue>
@@ -372,7 +324,7 @@
         errorLine1="androidx-lifecycle = &quot;2.8.7&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="8"
             column="22"/>
     </issue>
@@ -388,7 +340,7 @@
         errorLine1="androidx-lifecycle = &quot;2.8.7&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="8"
             column="22"/>
     </issue>
@@ -404,7 +356,7 @@
         errorLine1="androidx-lifecycle = &quot;2.8.7&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="8"
             column="22"/>
     </issue>
@@ -420,7 +372,7 @@
         errorLine1="androidx-lifecycle = &quot;2.8.7&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="8"
             column="22"/>
     </issue>
@@ -436,7 +388,7 @@
         errorLine1="androidx-lifecycle = &quot;2.8.7&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="8"
             column="22"/>
     </issue>
@@ -452,7 +404,7 @@
         errorLine1="androidx-lifecycle = &quot;2.8.7&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="8"
             column="22"/>
     </issue>
@@ -468,7 +420,7 @@
         errorLine1="androidx-lifecycle = &quot;2.8.7&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="8"
             column="22"/>
     </issue>
@@ -484,7 +436,7 @@
         errorLine1="androidx-lifecycle = &quot;2.8.7&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="8"
             column="22"/>
     </issue>
@@ -500,7 +452,7 @@
         errorLine1="androidx-lifecycle = &quot;2.8.7&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="8"
             column="22"/>
     </issue>
@@ -516,7 +468,7 @@
         errorLine1="androidx-activity = &quot;1.9.3&quot;"
         errorLine2="                    ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="9"
             column="21"/>
     </issue>
@@ -532,7 +484,7 @@
         errorLine1="androidx-activity = &quot;1.9.3&quot;"
         errorLine2="                    ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="9"
             column="21"/>
     </issue>
@@ -548,7 +500,7 @@
         errorLine1="androidx-activity = &quot;1.9.3&quot;"
         errorLine2="                    ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="9"
             column="21"/>
     </issue>
@@ -564,7 +516,7 @@
         errorLine1="androidx-navigation = &quot;2.8.4&quot;"
         errorLine2="                      ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="10"
             column="23"/>
     </issue>
@@ -580,7 +532,7 @@
         errorLine1="androidx-navigation = &quot;2.8.4&quot;"
         errorLine2="                      ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="10"
             column="23"/>
     </issue>
@@ -596,7 +548,7 @@
         errorLine1="androidx-navigation = &quot;2.8.4&quot;"
         errorLine2="                      ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="10"
             column="23"/>
     </issue>
@@ -612,7 +564,7 @@
         errorLine1="androidx-hilt-navigation = &quot;1.2.0&quot;"
         errorLine2="                           ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="11"
             column="28"/>
     </issue>
@@ -628,7 +580,7 @@
         errorLine1="androidx-hilt-navigation = &quot;1.2.0&quot;"
         errorLine2="                           ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="11"
             column="28"/>
     </issue>
@@ -644,7 +596,7 @@
         errorLine1="androidx-hilt-navigation = &quot;1.2.0&quot;"
         errorLine2="                           ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="11"
             column="28"/>
     </issue>
@@ -660,7 +612,7 @@
         errorLine1="androidx-datastore = &quot;1.1.1&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="12"
             column="22"/>
     </issue>
@@ -676,7 +628,7 @@
         errorLine1="androidx-datastore = &quot;1.1.1&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="12"
             column="22"/>
     </issue>
@@ -692,7 +644,7 @@
         errorLine1="androidx-datastore = &quot;1.1.1&quot;"
         errorLine2="                     ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="12"
             column="22"/>
     </issue>
@@ -700,150 +652,6 @@
     <issue
         id="GradleDependency"
         severity="Warning"
-        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.9.0 is available: 1.10.2"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="kotlinx-coroutines = &quot;1.9.0&quot;"
-        errorLine2="                     ~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="13"
-            column="22"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.9.0 is available: 1.10.2"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="kotlinx-coroutines = &quot;1.9.0&quot;"
-        errorLine2="                     ~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="13"
-            column="22"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.9.0 is available: 1.10.2"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="kotlinx-coroutines = &quot;1.9.0&quot;"
-        errorLine2="                     ~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="13"
-            column="22"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.9.0 is available: 1.10.2"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="kotlinx-coroutines = &quot;1.9.0&quot;"
-        errorLine2="                     ~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="13"
-            column="22"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.9.0 is available: 1.10.2"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="kotlinx-coroutines = &quot;1.9.0&quot;"
-        errorLine2="                     ~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="13"
-            column="22"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.9.0 is available: 1.10.2"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="kotlinx-coroutines = &quot;1.9.0&quot;"
-        errorLine2="                     ~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="13"
-            column="22"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.9.0 is available: 1.10.2"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="kotlinx-coroutines = &quot;1.9.0&quot;"
-        errorLine2="                     ~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="13"
-            column="22"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.9.0 is available: 1.10.2"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="kotlinx-coroutines = &quot;1.9.0&quot;"
-        errorLine2="                     ~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="13"
-            column="22"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.9.0 is available: 1.10.2"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="kotlinx-coroutines = &quot;1.9.0&quot;"
-        errorLine2="                     ~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="13"
-            column="22"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
         message="A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0"
         category="Correctness"
         priority="4"
@@ -852,7 +660,7 @@
         errorLine1="androidx-test-ext = &quot;1.2.1&quot;"
         errorLine2="                    ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="15"
             column="21"/>
     </issue>
@@ -868,7 +676,7 @@
         errorLine1="androidx-test-ext = &quot;1.2.1&quot;"
         errorLine2="                    ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="15"
             column="21"/>
     </issue>
@@ -884,7 +692,7 @@
         errorLine1="androidx-test-ext = &quot;1.2.1&quot;"
         errorLine2="                    ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="15"
             column="21"/>
     </issue>
@@ -900,7 +708,7 @@
         errorLine1="androidx-espresso = &quot;3.6.1&quot;"
         errorLine2="                    ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="16"
             column="21"/>
     </issue>
@@ -916,7 +724,7 @@
         errorLine1="androidx-espresso = &quot;3.6.1&quot;"
         errorLine2="                    ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="16"
             column="21"/>
     </issue>
@@ -932,57 +740,9 @@
         errorLine1="androidx-espresso = &quot;3.6.1&quot;"
         errorLine2="                    ~~~~~~~">
         <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
+            file="/Users/apple/Documents/Assistive-Volume-control/gradle/libs.versions.toml"
             line="16"
             column="21"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.robolectric:robolectric than 4.14.1 is available: 4.16.1"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="robolectric = &quot;4.14.1&quot;"
-        errorLine2="              ~~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="19"
-            column="15"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.robolectric:robolectric than 4.14.1 is available: 4.16.1"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="robolectric = &quot;4.14.1&quot;"
-        errorLine2="              ~~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="19"
-            column="15"/>
-    </issue>
-
-    <issue
-        id="GradleDependency"
-        severity="Warning"
-        message="A newer version of org.robolectric:robolectric than 4.14.1 is available: 4.16.1"
-        category="Correctness"
-        priority="4"
-        summary="Obsolete Gradle Dependency"
-        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
-        errorLine1="robolectric = &quot;4.14.1&quot;"
-        errorLine2="              ~~~~~~~~">
-        <location
-            file="D:\assitivePilot\gradle\libs.versions.toml"
-            line="19"
-            column="15"/>
     </issue>
 
     <issue
@@ -996,8 +756,24 @@
         errorLine1="    modifier: Modifier = Modifier"
         errorLine2="    ~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\feature\home\HomeScreen.kt"
-            line="80"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/feature/home/HomeScreen.kt"
+            line="123"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ModifierParameter"
+        severity="Warning"
+        message="Modifier parameter should be the first optional parameter"
+        category="Correctness"
+        priority="3"
+        summary="Guidelines for Modifier parameters in a Composable function"
+        explanation="The first (or only) Modifier parameter in a Composable function should follow the following rules:&#xA;- Be named `modifier`&#xA;- Have a type of `Modifier`&#xA;- Either have no default value, or have a default value of `Modifier`&#xA;- If optional, be the first optional parameter in the parameter list"
+        errorLine1="    modifier: Modifier = Modifier,"
+        errorLine2="    ~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/feature/overlay/OverlayPanelContent.kt"
+            line="52"
             column="5"/>
     </issue>
 
@@ -1012,7 +788,7 @@
         errorLine1="                when (device.type) {"
         errorLine2="                ~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt"
             line="208"
             column="17"/>
     </issue>
@@ -1030,7 +806,7 @@
         errorLine1="    &lt;string name=&quot;cd_volume_slider&quot;>%1$s volume: %2$d percent&lt;/string>"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="84"
             column="5"/>
     </issue>
@@ -1048,7 +824,7 @@
         errorLine1="    override fun onReceive(context: Context?, intent: Intent?) {"
         errorLine2="                 ~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\automation\TimeAutomationReceiver.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/automation/TimeAutomationReceiver.kt"
             line="21"
             column="18"/>
     </issue>
@@ -1066,7 +842,7 @@
         errorLine1="        android:allowBackup=&quot;false&quot;"
         errorLine2="                             ~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\AndroidManifest.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/AndroidManifest.xml"
             line="20"
             column="30"/>
     </issue>
@@ -1082,7 +858,7 @@
         errorLine1="            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt"
             line="59"
             column="17"/>
     </issue>
@@ -1098,7 +874,7 @@
         errorLine1="                val isMuted = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
         errorLine2="                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt"
             line="104"
             column="35"/>
     </issue>
@@ -1114,7 +890,7 @@
         errorLine1="        val isDnd = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt"
             line="129"
             column="25"/>
     </issue>
@@ -1130,7 +906,7 @@
         errorLine1="                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\volume\AndroidVolumeController.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/volume/AndroidVolumeController.kt"
             line="168"
             column="21"/>
     </issue>
@@ -1146,7 +922,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\BatteryOptimizationHelper.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/core/battery/BatteryOptimizationHelper.kt"
             line="13"
             column="13"/>
     </issue>
@@ -1162,7 +938,7 @@
         errorLine1="        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\core\battery\BatteryOptimizationHelper.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/core/battery/BatteryOptimizationHelper.kt"
             line="21"
             column="20"/>
     </issue>
@@ -1178,8 +954,8 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\overlay\OverlayNotificationHelper.kt"
-            line="24"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayNotificationHelper.kt"
+            line="37"
             column="13"/>
     </issue>
 
@@ -1194,8 +970,8 @@
         errorLine1="            val layoutFlag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
         errorLine2="                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\overlay\OverlayService.kt"
-            line="173"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt"
+            line="228"
             column="34"/>
     </issue>
 
@@ -1210,8 +986,8 @@
         errorLine1="                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\overlay\OverlayService.kt"
-            line="339"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt"
+            line="689"
             column="21"/>
     </issue>
 
@@ -1226,8 +1002,8 @@
         errorLine1="            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\overlay\OverlayService.kt"
-            line="393"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt"
+            line="752"
             column="17"/>
     </issue>
 
@@ -1242,7 +1018,7 @@
         errorLine1="        val flags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\automation\TimeAutomationScheduler.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/automation/TimeAutomationScheduler.kt"
             line="25"
             column="25"/>
     </issue>
@@ -1258,7 +1034,7 @@
         errorLine1="        val flags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\java\com\volumepilot\service\automation\TimeAutomationScheduler.kt"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/automation/TimeAutomationScheduler.kt"
             line="50"
             column="25"/>
     </issue>
@@ -1272,7 +1048,51 @@
         summary="Obsolete SDK_INT Version Check"
         explanation="This check flags version checks that are not necessary, because the `minSdkVersion` (or surrounding known API level) is already at least as high as the version checked for.&#xA;&#xA;Similarly, it also looks for resources in `-vNN` folders, such as `values-v14` where the version qualifier is less than or equal to the `minSdkVersion`, where the contents should be merged into the best folder.">
         <location
-            file="D:\assitivePilot\app\src\main\res\mipmap-anydpi-v26"/>
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/mipmap-anydpi-v26"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        severity="Information"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        category="Performance"
+        priority="3"
+        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
+        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
+        errorLine1="    private var currentWidgetSizeDp by mutableStateOf(48)"
+        errorLine2="                                       ~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt"
+            line="92"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        severity="Information"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        category="Performance"
+        priority="3"
+        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
+        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
+        errorLine1="    private var currentSliderWidthDp by mutableStateOf(40)"
+        errorLine2="                                        ~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayService.kt"
+            line="94"
+            column="41"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.assistive_app_logo` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/drawable/assistive_app_logo.png"/>
     </issue>
 
     <issue
@@ -1286,7 +1106,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_light_primary&quot;>#006495&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="3"
             column="12"/>
     </issue>
@@ -1302,7 +1122,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_light_onPrimary&quot;>#FFFFFF&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="4"
             column="12"/>
     </issue>
@@ -1318,7 +1138,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_light_primaryContainer&quot;>#CBE6FF&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="5"
             column="12"/>
     </issue>
@@ -1334,7 +1154,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_light_onPrimaryContainer&quot;>#001E30&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="6"
             column="12"/>
     </issue>
@@ -1350,7 +1170,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_light_background&quot;>#FDFCFF&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="7"
             column="12"/>
     </issue>
@@ -1366,7 +1186,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_light_onBackground&quot;>#1A1C1E&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="8"
             column="12"/>
     </issue>
@@ -1382,7 +1202,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_light_surface&quot;>#FDFCFF&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="9"
             column="12"/>
     </issue>
@@ -1398,7 +1218,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_light_onSurface&quot;>#1A1C1E&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="10"
             column="12"/>
     </issue>
@@ -1414,7 +1234,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_dark_primary&quot;>#8FCEFF&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="12"
             column="12"/>
     </issue>
@@ -1430,7 +1250,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_dark_onPrimary&quot;>#003450&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="13"
             column="12"/>
     </issue>
@@ -1446,7 +1266,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_dark_primaryContainer&quot;>#004B72&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="14"
             column="12"/>
     </issue>
@@ -1462,7 +1282,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_dark_onPrimaryContainer&quot;>#CBE6FF&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="15"
             column="12"/>
     </issue>
@@ -1478,7 +1298,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_dark_background&quot;>#111416&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="16"
             column="12"/>
     </issue>
@@ -1494,7 +1314,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_dark_onBackground&quot;>#E2E2E5&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="17"
             column="12"/>
     </issue>
@@ -1510,7 +1330,7 @@
         errorLine1="    &lt;color name=&quot;md_theme_dark_surface&quot;>#111416&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="18"
             column="12"/>
     </issue>
@@ -1526,9 +1346,25 @@
         errorLine1="    &lt;color name=&quot;md_theme_dark_onSurface&quot;>#E2E2E5&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\colors.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/colors.xml"
             line="19"
             column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_launcher_foreground` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/drawable/ic_launcher_foreground.xml"
+            line="1"
+            column="1"/>
     </issue>
 
     <issue
@@ -1542,7 +1378,7 @@
         errorLine1="    &lt;string name=&quot;app_tagline&quot;>Private, reliable, battery-friendly volume assistant&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="4"
             column="13"/>
     </issue>
@@ -1558,7 +1394,7 @@
         errorLine1="    &lt;string name=&quot;nav_home&quot;>Volume&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="7"
             column="13"/>
     </issue>
@@ -1574,7 +1410,7 @@
         errorLine1="    &lt;string name=&quot;nav_settings&quot;>Settings&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="8"
             column="13"/>
     </issue>
@@ -1590,7 +1426,7 @@
         errorLine1="    &lt;string name=&quot;nav_diagnostics&quot;>Diagnostics&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="9"
             column="13"/>
     </issue>
@@ -1606,7 +1442,7 @@
         errorLine1="    &lt;string name=&quot;stream_media&quot;>Media&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="12"
             column="13"/>
     </issue>
@@ -1622,7 +1458,7 @@
         errorLine1="    &lt;string name=&quot;stream_ring&quot;>Ring&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="13"
             column="13"/>
     </issue>
@@ -1638,7 +1474,7 @@
         errorLine1="    &lt;string name=&quot;stream_notification&quot;>Notification&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="14"
             column="13"/>
     </issue>
@@ -1654,7 +1490,7 @@
         errorLine1="    &lt;string name=&quot;stream_alarm&quot;>Alarm&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="15"
             column="13"/>
     </issue>
@@ -1670,7 +1506,7 @@
         errorLine1="    &lt;string name=&quot;stream_voice_call&quot;>In-Call&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="16"
             column="13"/>
     </issue>
@@ -1686,7 +1522,7 @@
         errorLine1="    &lt;string name=&quot;stream_bluetooth&quot;>Bluetooth&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="17"
             column="13"/>
     </issue>
@@ -1702,7 +1538,7 @@
         errorLine1="    &lt;string name=&quot;device_speaker&quot;>Phone Speaker&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="20"
             column="13"/>
     </issue>
@@ -1718,7 +1554,7 @@
         errorLine1="    &lt;string name=&quot;device_wired_headphones&quot;>Wired Headphones&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="21"
             column="13"/>
     </issue>
@@ -1734,7 +1570,7 @@
         errorLine1="    &lt;string name=&quot;device_bluetooth&quot;>Bluetooth Audio&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="22"
             column="13"/>
     </issue>
@@ -1750,7 +1586,7 @@
         errorLine1="    &lt;string name=&quot;device_usb&quot;>USB Audio&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="23"
             column="13"/>
     </issue>
@@ -1766,7 +1602,7 @@
         errorLine1="    &lt;string name=&quot;device_unknown&quot;>Audio Device&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="24"
             column="13"/>
     </issue>
@@ -1782,7 +1618,7 @@
         errorLine1="    &lt;string name=&quot;action_mute&quot;>Mute&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="27"
             column="13"/>
     </issue>
@@ -1798,7 +1634,7 @@
         errorLine1="    &lt;string name=&quot;action_unmute&quot;>Unmute&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="28"
             column="13"/>
     </issue>
@@ -1814,7 +1650,7 @@
         errorLine1="    &lt;string name=&quot;action_vibrate&quot;>Vibrate&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="29"
             column="13"/>
     </issue>
@@ -1830,7 +1666,7 @@
         errorLine1="    &lt;string name=&quot;action_retry&quot;>Try Again&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="30"
             column="13"/>
     </issue>
@@ -1846,7 +1682,7 @@
         errorLine1="    &lt;string name=&quot;action_grant_permission&quot;>Grant Permission&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="31"
             column="13"/>
     </issue>
@@ -1862,7 +1698,7 @@
         errorLine1="    &lt;string name=&quot;action_learn_more&quot;>Learn More&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="32"
             column="13"/>
     </issue>
@@ -1878,7 +1714,7 @@
         errorLine1="    &lt;string name=&quot;action_reset&quot;>Reset&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="33"
             column="13"/>
     </issue>
@@ -1894,7 +1730,7 @@
         errorLine1="    &lt;string name=&quot;settings_title&quot;>Settings&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="42"
             column="13"/>
     </issue>
@@ -1910,7 +1746,7 @@
         errorLine1="    &lt;string name=&quot;section_haptics&quot;>Feedback&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="44"
             column="13"/>
     </issue>
@@ -1926,7 +1762,7 @@
         errorLine1="    &lt;string name=&quot;section_appearance&quot;>Appearance&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="45"
             column="13"/>
     </issue>
@@ -1942,7 +1778,7 @@
         errorLine1="    &lt;string name=&quot;section_privacy&quot;>Privacy &amp;amp; Battery&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="46"
             column="13"/>
     </issue>
@@ -1958,7 +1794,7 @@
         errorLine1="    &lt;string name=&quot;setting_haptics_title&quot;>Haptic Feedback&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="50"
             column="13"/>
     </issue>
@@ -1974,7 +1810,7 @@
         errorLine1="    &lt;string name=&quot;setting_haptics_desc&quot;>Provide subtle tactile vibration when sliders snap or mute toggles.&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="51"
             column="13"/>
     </issue>
@@ -1990,7 +1826,7 @@
         errorLine1="    &lt;string name=&quot;setting_theme_title&quot;>Theme Mode&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="52"
             column="13"/>
     </issue>
@@ -2006,7 +1842,7 @@
         errorLine1="    &lt;string name=&quot;setting_theme_system&quot;>System Default&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="53"
             column="13"/>
     </issue>
@@ -2022,7 +1858,7 @@
         errorLine1="    &lt;string name=&quot;setting_theme_light&quot;>Light&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="54"
             column="13"/>
     </issue>
@@ -2038,7 +1874,7 @@
         errorLine1="    &lt;string name=&quot;setting_theme_dark&quot;>Dark&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="55"
             column="13"/>
     </issue>
@@ -2054,7 +1890,7 @@
         errorLine1="    &lt;string name=&quot;warning_max_volume_reached&quot;>Maximum safe volume cap active (%1$d%%)&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="58"
             column="13"/>
     </issue>
@@ -2070,8 +1906,56 @@
         errorLine1="    &lt;string name=&quot;privacy_banner_title&quot;>100% Offline &amp;amp; Private&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="62"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.notification_text` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;notification_text&quot;>Tap to open VolumePilot settings or adjust volume.&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="69"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.notification_action_pause` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;notification_action_pause&quot;>Pause&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="70"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.notification_action_resume` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;notification_action_resume&quot;>Resume&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="71"
             column="13"/>
     </issue>
 
@@ -2086,7 +1970,7 @@
         errorLine1="    &lt;string name=&quot;notification_action_settings&quot;>Settings&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="72"
             column="13"/>
     </issue>
@@ -2102,7 +1986,7 @@
         errorLine1="    &lt;string name=&quot;overlay_panel_title&quot;>Volume Control&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="80"
             column="13"/>
     </issue>
@@ -2118,7 +2002,7 @@
         errorLine1="    &lt;string name=&quot;action_close&quot;>Close&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="81"
             column="13"/>
     </issue>
@@ -2134,7 +2018,7 @@
         errorLine1="    &lt;string name=&quot;cd_volume_slider&quot;>%1$s volume: %2$d percent&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="84"
             column="13"/>
     </issue>
@@ -2150,7 +2034,7 @@
         errorLine1="    &lt;string name=&quot;cd_mute_button&quot;>Mute %1$s stream&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="85"
             column="13"/>
     </issue>
@@ -2166,7 +2050,7 @@
         errorLine1="    &lt;string name=&quot;cd_unmute_button&quot;>Unmute %1$s stream&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="86"
             column="13"/>
     </issue>
@@ -2182,7 +2066,7 @@
         errorLine1="    &lt;string name=&quot;cd_decrease_volume&quot;>Decrease %1$s volume&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="87"
             column="13"/>
     </issue>
@@ -2198,7 +2082,7 @@
         errorLine1="    &lt;string name=&quot;cd_increase_volume&quot;>Increase %1$s volume&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="88"
             column="13"/>
     </issue>
@@ -2214,7 +2098,7 @@
         errorLine1="    &lt;string name=&quot;cd_audio_device_indicator&quot;>Current audio output: %1$s&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="89"
             column="13"/>
     </issue>
@@ -2230,7 +2114,7 @@
         errorLine1="    &lt;string name=&quot;cd_app_icon&quot;>VolumePilot logo&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="90"
             column="13"/>
     </issue>
@@ -2246,7 +2130,7 @@
         errorLine1="    &lt;string name=&quot;cd_overlay_bubble&quot;>VolumePilot floating button. Tap to expand, drag to move, double-tap to mute.&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="91"
             column="13"/>
     </issue>
@@ -2262,25 +2146,331 @@
         errorLine1="    &lt;string name=&quot;cd_overlay_panel&quot;>Floating volume panel&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\values\strings.xml"
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
             line="92"
             column="13"/>
     </issue>
 
     <issue
-        id="MonochromeLauncherIcon"
+        id="UnusedResources"
         severity="Warning"
-        message="The application adaptive icon is missing a monochrome tag"
-        category="Usability:Icons"
-        priority="6"
-        summary="Monochrome icon is not defined"
-        explanation="If `android:roundIcon` and `android:icon` are both in your manifest, you must either remove the reference to `android:roundIcon` if it is not needed; or, supply the monochrome icon in the drawable defined by the `android:roundIcon` and `android:icon` attribute.&#xA;&#xA;For example, if `android:roundIcon` and `android:icon` are both in the manifest, a launcher might choose to use `android:roundIcon` over `android:icon` to display the adaptive app icon. Therefore, your themed application iconwill not show if your monochrome attribute is not also specified in `android:roundIcon`."
-        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
-        errorLine2="^">
+        message="The resource `R.string.accessibility_permission_title` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;accessibility_permission_title&quot;>Accessibility Service&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\assitivePilot\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml"
-            line="2"
-            column="1"/>
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="96"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.accessibility_permission_desc` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;accessibility_permission_desc&quot;>Required to lock your screen and capture screenshots from the floating power button without using physical hardware keys.&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="97"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.accessibility_enable_btn` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;accessibility_enable_btn&quot;>Enable Accessibility&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="98"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.accessibility_status_active` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;accessibility_status_active&quot;>Accessibility Service Active&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="99"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.accessibility_status_needed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;accessibility_status_needed&quot;>Accessibility permission required for power and screenshot actions&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="100"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.section_floating_controls` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;section_floating_controls&quot;>Floating Control Widget&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="103"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.setting_button_arrangement` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;setting_button_arrangement&quot;>Button Order&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="104"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.setting_widget_color` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;setting_widget_color&quot;>Accent Color&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="105"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.setting_power_single_tap` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;setting_power_single_tap&quot;>Power Single Tap&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="106"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.setting_power_long_press` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;setting_power_long_press&quot;>Power Long Press&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="107"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.setting_widget_size` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;setting_widget_size&quot;>Widget Button Size&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="108"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.setting_widget_opacity` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;setting_widget_opacity&quot;>Transparency&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/values/strings.xml"
+            line="109"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/assistive_app_logo.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon **really** is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="https://developer.android.com/guide/practices/screens_support.html"
+        urls="https://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/drawable/assistive_app_logo.png"/>
+    </issue>
+
+    <issue
+        id="ButtonStyle"
+        severity="Warning"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)"
+        category="Usability"
+        priority="5"
+        summary="Button should be borderless"
+        explanation="Button bars typically use a borderless style for the buttons. Set the `style=&quot;?android:attr/buttonBarButtonStyle&quot;` attribute on each of the buttons, and set `style=&quot;?android:attr/buttonBarStyle&quot;` on the parent layout"
+        url="https://d.android.com/r/studio-ui/designer/material/dialogs"
+        urls="https://d.android.com/r/studio-ui/designer/material/dialogs"
+        errorLine1="        &lt;Button"
+        errorLine2="         ~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_expanded.xml"
+            line="58"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ButtonStyle"
+        severity="Warning"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)"
+        category="Usability"
+        priority="5"
+        summary="Button should be borderless"
+        explanation="Button bars typically use a borderless style for the buttons. Set the `style=&quot;?android:attr/buttonBarButtonStyle&quot;` attribute on each of the buttons, and set `style=&quot;?android:attr/buttonBarStyle&quot;` on the parent layout"
+        url="https://d.android.com/r/studio-ui/designer/material/dialogs"
+        urls="https://d.android.com/r/studio-ui/designer/material/dialogs"
+        errorLine1="        &lt;Button"
+        errorLine2="         ~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_expanded.xml"
+            line="71"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ViewConstructor"
+        severity="Warning"
+        message="Custom view `OverlayContainerView` is missing constructor used by tools: `(Context)` or `(Context,AttributeSet)` or `(Context,AttributeSet,int)`"
+        category="Usability"
+        priority="3"
+        summary="Missing View constructors for XML inflation"
+        explanation="Some layout tools (such as the Android layout editor) need to find a constructor with one of the following signatures:&#xA;* `View(Context context)`&#xA;* `View(Context context, AttributeSet attrs)`&#xA;* `View(Context context, AttributeSet attrs, int defStyle)`&#xA;&#xA;If your custom view needs to perform initialization which does not apply when used in a layout editor, you can surround the given code with a check to see if `View#isInEditMode()` is false, since that method will return `false` at runtime but true within a user interface editor."
+        errorLine1="class OverlayContainerView("
+        errorLine2="      ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/java/com/volumepilot/service/overlay/OverlayContainerView.kt"
+            line="24"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Floating controls active&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;Floating controls active&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_compact.xml"
+            line="41"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Hide&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Hide&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_compact.xml"
+            line="54"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Floating controls active&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:text=&quot;Floating controls active&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_expanded.xml"
+            line="45"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Hide&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;Hide&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/apple/Documents/Assistive-Volume-control/app/src/main/res/layout/notification_overlay_expanded.xml"
+            line="77"
+            column="13"/>
     </issue>
 
 </issues>

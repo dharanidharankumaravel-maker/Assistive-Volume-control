@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.domain.usecase.SetVolumeUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-29T09:49:02.205Z" hostname="DESKTOP-45Q6PEN" time="0.013">
+<testsuite name="com.volumepilot.domain.usecase.SetVolumeUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-31T10:45:14.205Z" hostname="Selva-MacBook-Air.local" time="0.002">
   <properties/>
-  <testcase name="setVolume clamps to safe cap when volume limiter is active" classname="com.volumepilot.domain.usecase.SetVolumeUseCaseTest" time="0.004"/>
-  <testcase name="setVolume fails when stream is unavailable" classname="com.volumepilot.domain.usecase.SetVolumeUseCaseTest" time="0.004"/>
-  <testcase name="setVolume successfully updates stream level within bounds" classname="com.volumepilot.domain.usecase.SetVolumeUseCaseTest" time="0.004"/>
+  <testcase name="setVolume clamps to safe cap when volume limiter is active" classname="com.volumepilot.domain.usecase.SetVolumeUseCaseTest" time="0.001"/>
+  <testcase name="setVolume fails when stream is unavailable" classname="com.volumepilot.domain.usecase.SetVolumeUseCaseTest" time="0.001"/>
+  <testcase name="setVolume successfully updates stream level within bounds" classname="com.volumepilot.domain.usecase.SetVolumeUseCaseTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

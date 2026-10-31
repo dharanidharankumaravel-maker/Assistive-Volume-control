@@ -78,14 +78,31 @@ private fun DrawScope.drawOutlineCompat(
         }
         is Outline.Rounded -> {
             val rr = outline.roundRect
-            drawRoundRect(
-                brush = brush,
-                topLeft = Offset(rr.left, rr.top),
-                size = Size(rr.width, rr.height),
-                cornerRadius = CornerRadius(rr.topLeftCornerRadius.x, rr.topLeftCornerRadius.y),
-                style = stroke,
-                alpha = alpha
-            )
+            val tr = rr.topLeftCornerRadius
+            val uniform = tr.x == rr.topRightCornerRadius.x &&
+                    tr.x == rr.bottomLeftCornerRadius.x &&
+                    tr.x == rr.bottomRightCornerRadius.x &&
+                    tr.x == tr.y
+            if (uniform) {
+                drawRoundRect(
+                    brush = brush,
+                    topLeft = Offset(rr.left, rr.top),
+                    size = Size(rr.width, rr.height),
+                    cornerRadius = CornerRadius(tr.x, tr.y),
+                    style = stroke,
+                    alpha = alpha
+                )
+            } else {
+                val path = androidx.compose.ui.graphics.Path().apply {
+                    addRoundRect(rr)
+                }
+                drawPath(
+                    path = path,
+                    brush = brush,
+                    style = stroke,
+                    alpha = alpha
+                )
+            }
         }
         is Outline.Generic -> {
             drawPath(

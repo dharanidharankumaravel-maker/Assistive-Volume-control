@@ -12,12 +12,23 @@ import javax.inject.Singleton
 
 interface PermissionChecker {
     fun isPermissionGranted(permission: PermissionType): Boolean
+    fun getAccessibilityStatus(): com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus {
+        return if (isPermissionGranted(PermissionType.ACCESSIBILITY)) {
+            com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.ENABLED
+        } else {
+            com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.DISABLED
+        }
+    }
 }
 
 @Singleton
 class AndroidPermissionChecker @Inject constructor(
     @ApplicationContext private val context: Context
 ) : PermissionChecker {
+
+    override fun getAccessibilityStatus(): com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus {
+        return com.volumepilot.service.accessibility.VolumeAccessibilityService.getServiceStatus(context)
+    }
 
     override fun isPermissionGranted(permission: PermissionType): Boolean {
         return when (permission) {

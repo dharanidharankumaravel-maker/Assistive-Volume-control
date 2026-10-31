@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.volumepilot.domain.usecase.ToggleVibrateUseCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-29T09:49:02.222Z" hostname="DESKTOP-45Q6PEN" time="0.003">
+<testsuite name="com.volumepilot.domain.usecase.ToggleVibrateUseCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-31T10:45:14.208Z" hostname="Selva-MacBook-Air.local" time="0.001">
   <properties/>
-  <testcase name="toggleVibrate switches between NORMAL and VIBRATE" classname="com.volumepilot.domain.usecase.ToggleVibrateUseCaseTest" time="0.003"/>
+  <testcase name="toggleVibrate switches between NORMAL and VIBRATE" classname="com.volumepilot.domain.usecase.ToggleVibrateUseCaseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -70,6 +70,7 @@ fun VolumePilotAppNavHost(
                 onUpdatePowerLongPress = homeViewModel::onUpdatePowerLongPress,
                 onUpdateOverlayAppearance = homeViewModel::onUpdateOverlayAppearance,
                 onUpdateRgbGlow = homeViewModel::onUpdateRgbGlow,
+                onRefreshPermissions = homeViewModel::refreshPermissions,
                 onNavigateToDiagnostics = {
                     navController.navigate(NavDestination.Diagnostics.route)
                 },

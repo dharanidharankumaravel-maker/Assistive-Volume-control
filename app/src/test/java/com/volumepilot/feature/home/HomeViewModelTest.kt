@@ -170,4 +170,62 @@ class HomeViewModelTest {
 
         assertTrue(viewModel.uiState.value.settings.startOnBoot)
     }
+
+    @Test
+    fun `refreshPermissions updates accessibilityStatus dynamically`() = runTest {
+        testDispatcher.scheduler.advanceUntilIdle()
+        assertEquals(
+            com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.ENABLED,
+            viewModel.uiState.value.accessibilityStatus
+        )
+        assertTrue(viewModel.uiState.value.isAccessibilityGranted)
+
+        // Simulate user revoking accessibility permission in Android Settings
+        fakePermissionChecker.accessibilityGranted = false
+        fakePermissionChecker.customAccessibilityStatus =
+            com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.DISABLED
+
+        // Trigger onResume refresh
+        viewModel.refreshPermissions()
+
+        assertEquals(
+            com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.DISABLED,
+            viewModel.uiState.value.accessibilityStatus
+        )
+        assertFalse(viewModel.uiState.value.isAccessibilityGranted)
+
+        // Simulate service in CONNECTING state
+        fakePermissionChecker.customAccessibilityStatus =
+            com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.CONNECTING
+        viewModel.refreshPermissions()
+
+        assertEquals(
+            com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.CONNECTING,
+            viewModel.uiState.value.accessibilityStatus
+        )
+        assertFalse(viewModel.uiState.value.isAccessibilityGranted)
+    }
+
+    @Test
+    fun `onUpdateWidgetArrangement updates button arrangement setting`() = runTest {
+        testDispatcher.scheduler.advanceUntilIdle()
+
+        viewModel.onUpdateWidgetArrangement(com.volumepilot.domain.model.FloatingButtonArrangement.UP_DOWN)
+        testDispatcher.scheduler.advanceUntilIdle()
+
+        assertEquals(
+            com.volumepilot.domain.model.FloatingButtonArrangement.UP_DOWN,
+            viewModel.uiState.value.settings.buttonArrangement
+        )
+        assertTrue(viewModel.uiState.value.settings.buttonArrangement.isVolumeOnly)
+
+        viewModel.onUpdateWidgetArrangement(com.volumepilot.domain.model.FloatingButtonArrangement.POWER_ONLY)
+        testDispatcher.scheduler.advanceUntilIdle()
+
+        assertEquals(
+            com.volumepilot.domain.model.FloatingButtonArrangement.POWER_ONLY,
+            viewModel.uiState.value.settings.buttonArrangement
+        )
+        assertTrue(viewModel.uiState.value.settings.buttonArrangement.hasPower)
+    }
 }

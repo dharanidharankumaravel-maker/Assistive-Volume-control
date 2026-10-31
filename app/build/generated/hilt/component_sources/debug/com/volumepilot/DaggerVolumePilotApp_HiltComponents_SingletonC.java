@@ -449,20 +449,20 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_volumepilot_feature_onboarding_OnboardingViewModel = "com.volumepilot.feature.onboarding.OnboardingViewModel";
+      static String com_volumepilot_feature_styles_SliderStylesViewModel = "com.volumepilot.feature.styles.SliderStylesViewModel";
 
       static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
 
       static String com_volumepilot_feature_diagnostics_DiagnosticsViewModel = "com.volumepilot.feature.diagnostics.DiagnosticsViewModel";
 
-      static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
-
-      static String com_volumepilot_feature_styles_SliderStylesViewModel = "com.volumepilot.feature.styles.SliderStylesViewModel";
+      static String com_volumepilot_feature_onboarding_OnboardingViewModel = "com.volumepilot.feature.onboarding.OnboardingViewModel";
 
       static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
 
+      static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
+
       @KeepFieldType
-      OnboardingViewModel com_volumepilot_feature_onboarding_OnboardingViewModel2;
+      SliderStylesViewModel com_volumepilot_feature_styles_SliderStylesViewModel2;
 
       @KeepFieldType
       AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
@@ -471,13 +471,13 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
       DiagnosticsViewModel com_volumepilot_feature_diagnostics_DiagnosticsViewModel2;
 
       @KeepFieldType
-      HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
-
-      @KeepFieldType
-      SliderStylesViewModel com_volumepilot_feature_styles_SliderStylesViewModel2;
+      OnboardingViewModel com_volumepilot_feature_onboarding_OnboardingViewModel2;
 
       @KeepFieldType
       ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
+
+      @KeepFieldType
+      HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
     }
   }
 
@@ -589,23 +589,20 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
-
-      static String com_volumepilot_feature_onboarding_OnboardingViewModel = "com.volumepilot.feature.onboarding.OnboardingViewModel";
+      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
 
       static String com_volumepilot_feature_home_HomeViewModel = "com.volumepilot.feature.home.HomeViewModel";
 
       static String com_volumepilot_feature_diagnostics_DiagnosticsViewModel = "com.volumepilot.feature.diagnostics.DiagnosticsViewModel";
 
-      static String com_volumepilot_feature_profiles_ProfilesViewModel = "com.volumepilot.feature.profiles.ProfilesViewModel";
+      static String com_volumepilot_feature_automation_AutomationViewModel = "com.volumepilot.feature.automation.AutomationViewModel";
 
       static String com_volumepilot_feature_styles_SliderStylesViewModel = "com.volumepilot.feature.styles.SliderStylesViewModel";
 
-      @KeepFieldType
-      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
+      static String com_volumepilot_feature_onboarding_OnboardingViewModel = "com.volumepilot.feature.onboarding.OnboardingViewModel";
 
       @KeepFieldType
-      OnboardingViewModel com_volumepilot_feature_onboarding_OnboardingViewModel2;
+      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
 
       @KeepFieldType
       HomeViewModel com_volumepilot_feature_home_HomeViewModel2;
@@ -614,10 +611,13 @@ public final class DaggerVolumePilotApp_HiltComponents_SingletonC {
       DiagnosticsViewModel com_volumepilot_feature_diagnostics_DiagnosticsViewModel2;
 
       @KeepFieldType
-      ProfilesViewModel com_volumepilot_feature_profiles_ProfilesViewModel2;
+      AutomationViewModel com_volumepilot_feature_automation_AutomationViewModel2;
 
       @KeepFieldType
       SliderStylesViewModel com_volumepilot_feature_styles_SliderStylesViewModel2;
+
+      @KeepFieldType
+      OnboardingViewModel com_volumepilot_feature_onboarding_OnboardingViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {

@@ -47,11 +47,13 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             combine(
                 getVolumeStateUseCase(),
-                getSettingsUseCase()
-            ) { volumeState, settings ->
+                getSettingsUseCase(),
+                com.volumepilot.service.accessibility.VolumeAccessibilityService.isConnected
+            ) { volumeState, settings, _ ->
                 val overlayGranted = permissionChecker.isPermissionGranted(PermissionType.OVERLAY)
                 val dndGranted = permissionChecker.isPermissionGranted(PermissionType.NOTIFICATION_POLICY)
-                val accessibilityGranted = permissionChecker.isPermissionGranted(PermissionType.ACCESSIBILITY)
+                val status = permissionChecker.getAccessibilityStatus()
+                val accessibilityGranted = status == com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.ENABLED
 
                 HomeUiState(
                     isLoading = false,
@@ -60,11 +62,28 @@ class HomeViewModel @Inject constructor(
                     error = null,
                     isOverlayPermissionGranted = overlayGranted,
                     isNotificationPolicyGranted = dndGranted,
-                    isAccessibilityGranted = accessibilityGranted
+                    isAccessibilityGranted = accessibilityGranted,
+                    accessibilityStatus = status
                 )
             }.collect { newState ->
                 _uiState.value = newState
             }
+        }
+    }
+
+    fun refreshPermissions() {
+        val overlayGranted = permissionChecker.isPermissionGranted(PermissionType.OVERLAY)
+        val dndGranted = permissionChecker.isPermissionGranted(PermissionType.NOTIFICATION_POLICY)
+        val status = permissionChecker.getAccessibilityStatus()
+        val accessibilityGranted = status == com.volumepilot.service.accessibility.VolumeAccessibilityService.AccessibilityServiceStatus.ENABLED
+
+        _uiState.update { current ->
+            current.copy(
+                isOverlayPermissionGranted = overlayGranted,
+                isNotificationPolicyGranted = dndGranted,
+                isAccessibilityGranted = accessibilityGranted,
+                accessibilityStatus = status
+            )
         }
     }
 

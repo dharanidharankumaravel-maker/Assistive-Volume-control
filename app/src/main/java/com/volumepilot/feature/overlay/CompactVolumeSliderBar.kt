@@ -45,6 +45,7 @@ fun CompactVolumeSliderBar(
     onVolumeChange: (Int) -> Unit,
     onMuteToggle: () -> Unit,
     onSecondaryAction: () -> Unit = {},
+    onMoreOptions: () -> Unit = onSecondaryAction,
     modifier: Modifier = Modifier,
     opacity: Float = 0.92f,
     colorTheme: FloatingButtonColor = FloatingButtonColor.BASIL,
@@ -104,7 +105,8 @@ fun CompactVolumeSliderBar(
                 backgroundAlpha = sliderBackgroundAlpha,
                 onVolumeChange = onVolumeChange,
                 onMuteToggle = onMuteToggle,
-                onSecondaryAction = onSecondaryAction
+                onSecondaryAction = onSecondaryAction,
+                onMoreOptions = onMoreOptions
             )
         }
     }
